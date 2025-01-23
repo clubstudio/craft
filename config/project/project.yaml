@@ -1,0 +1,16 @@
+dateModified: 1737631635
+email:
+  fromEmail: dev@clubstudio.co.uk
+  fromName: 'Craft CMS'
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    b1d95554-25a7-42c3-822d-09155f628a4b: 'Craft CMS' # Craft CMS
+    fd532b74-9e46-4921-867f-79a80ef26fdf: 'Craft CMS' # Craft CMS
+system:
+  edition: team
+  live: true
+  name: 'Craft CMS'
+  retryDuration: null
+  schemaVersion: 5.6.0.2
+  timeZone: Europe/London
