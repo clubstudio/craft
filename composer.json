@@ -3,6 +3,7 @@
   "prefer-stable": true,
   "require": {
     "craftcms/cms": "^5.0.0",
+    "nystudio107/craft-retour": "5.0.5",
     "nystudio107/craft-seomatic": "5.1.10",
     "vlucas/phpdotenv": "^5.4.0"
   },
