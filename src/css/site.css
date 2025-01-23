@@ -2,6 +2,17 @@
 
 @source "../../templates/**/*";
 
+@theme {
+    --color-facebook: #0866ff;
+    --color-x: #000000;
+    --color-instagram: #ff0069;
+    --color-linkedin: #0a66c2;
+    --color-youtube: #ff0000;
+    --color-vimeo: #1ab7ea;
+    --color-pinterest: #bd081c;
+    --color-tiktok: #000;
+}
+
 .skip-link {
     clip: rect(1px, 1px, 1px, 1px);
     display: block;
