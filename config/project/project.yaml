@@ -1,4 +1,4 @@
-dateModified: 1737633302
+dateModified: 1737633706
 email:
   fromEmail: dev@clubstudio.co.uk
   fromName: 'Craft CMS'
@@ -32,6 +32,10 @@ plugins:
     enabled: true
     licenseKey: 6J4D1LE2U8LDFKEJDVAAG5TW
     schemaVersion: 3.0.12
+  vite:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 system:
   edition: team
   live: true

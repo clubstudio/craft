@@ -6,6 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ craft.app.request.csrfToken }}">
         <link rel="home" href="{{ url('') }}">
+
+        {% if craft.vite.devServerRunning() %}
+            <link rel="stylesheet" href="{{ craft.vite.asset('src/css/site.css') }}">
+        {% endif %}
+
+        {{ craft.vite.script('src/js/site.js', false) }}
     </head>
     <body>
         <noscript>{{ 'This website works best when you have JavaScript enabled.'|t }}</noscript>
