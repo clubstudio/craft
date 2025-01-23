@@ -3,7 +3,7 @@ enabled: true
 handle: default
 hasUrls: true
 language: en-GB
-name: 'Craft CMS'
+name: $CRAFT_SITE_NAME
 primary: true
-siteGroup: b1d95554-25a7-42c3-822d-09155f628a4b # Craft CMS
+siteGroup: b1d95554-25a7-42c3-822d-09155f628a4b # $CRAFT_SITE_NAME
 sortOrder: 1
