@@ -1,0 +1,12 @@
+{% extends '_layouts/base' %}
+
+{% block body %}
+    <div>
+        {% block error %}
+            {% include '_includes/molecules/error' with {
+                heading: 'Whoops'|t,
+                body: 'Sorry, but it looks like something has gone wrong.'|t,
+            } only %}
+        {% endblock %}
+    </div>
+{% endblock %}
