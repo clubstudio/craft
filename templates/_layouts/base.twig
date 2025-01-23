@@ -18,6 +18,10 @@
 
         {% include '_includes/skip-link' %}
 
+        {% if craft.app.config.general.devMode %}
+            {% include '_dev/breakpoint-helper' %}
+        {% endif %}
+
         {% block body '' %}
 
         {% block beforeScripts '' %}
