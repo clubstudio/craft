@@ -1,4 +1,4 @@
-dateModified: 1737632742
+dateModified: 1737632915
 email:
   fromEmail: dev@clubstudio.co.uk
   fromName: 'Craft CMS'
@@ -8,9 +8,15 @@ meta:
     b1d95554-25a7-42c3-822d-09155f628a4b: 'Craft CMS' # Craft CMS
     fd532b74-9e46-4921-867f-79a80ef26fdf: 'Craft CMS' # Craft CMS
 plugins:
+  navigation:
+    edition: standard
+    enabled: true
+    licenseKey: SX7RCYTZQEOZDNSAISS2QATL
+    schemaVersion: 2.1.0
   retour:
     edition: standard
     enabled: true
+    licenseKey: TEQULDJKB6QJ3N4UJR8CXZIW
     schemaVersion: 3.0.12
   seomatic:
     edition: standard
