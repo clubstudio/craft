@@ -1,0 +1,11 @@
+{% import '_macros/classes' as classes %}
+
+{% embed '_includes/builder/section' with { block: block } only %}
+    {% block content %}
+        {% embed '_includes/builder/container' with { block: block } only %}
+            {% block content %}
+                [Media]
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+{% endembed %}

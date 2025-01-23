@@ -1,0 +1,111 @@
+{% macro paddingTop(preference = 'none') %}
+  {{- attribute({
+    none: 'pt-0',
+    sm: 'pt-2 | md:pt-3',
+    md: 'pt-6 | md:pt-10 | lg:pt-16',
+    lg: 'pt-8 | md:pt-12 | lg:pt-20'
+  }, preference)|default('none') -}}
+{% endmacro %}
+
+{% macro paddingBottom(preference = 'none') %}
+  {{- attribute({
+    none: 'pb-0',
+    sm: 'pb-2 | md:pb-3',
+    md: 'pb-8 | md:pb-10 | lg:pb-16',
+    lg: 'pb-6 | md:pb-12 | lg:pb-20'
+  }, preference)|default('none') -}}
+{% endmacro %}
+
+{% macro paddingRight(preference = 'none') %}
+  {{- attribute({
+    none: 'pr-0',
+    sm: 'pr-2 | md:pr-3',
+    md: 'pr-4 | md:pr-6 | lg:pr-10',
+    lg: 'pr-6 | md:pr-12 | lg:pr-24'
+  }, preference)|default('none') -}}
+{% endmacro %}
+
+{% macro paddingLeft(preference = 'none') %}
+  {{- attribute({
+    none: 'pl-0',
+    sm: 'pl-2 | md:pl-3',
+    md: 'pl-4 | md:pl-6 | lg:pl-10',
+    lg: 'pl-6 | md:pl-12 | lg:pl-24'
+  }, preference)|default('none') -}}
+{% endmacro %}
+
+{% macro maxWidth(preference = 'none') %}
+ {{- attribute({
+   none: 'max-w-none',
+   contain: 'container px-8',
+   xs: 'md:max-w-xs',
+   sm: 'max-w-sm',
+   md: 'max-w-md',
+   lg: 'max-w-lg',
+   xl: 'max-w-xl',
+   '2xl': 'max-w-2xl',
+   '3xl': 'max-w-3xl',
+   '4xl': 'max-w-4xl',
+   '5xl': 'max-w-5xl',
+   '6xl': 'max-w-6xl',
+   '7xl': 'max-w-7xl',
+ }, preference)|default('max-w-none') -}}
+{% endmacro %}
+
+{% macro horizontalAlignment(preference = 'none') %}
+  {{- attribute({
+    none: '',
+    left: 'ml-0 mr-auto',
+    center: 'mx-auto',
+    right: 'ml-auto mr-0',
+  }, preference)|default('') -}}
+{% endmacro %}
+
+{% macro backgroundColor(preference = 'none') %}
+  {{- attribute({
+    'none': 'bg-none',
+      'black': 'bg-black',
+    'white': 'bg-white',
+  }, preference) -}}
+{% endmacro %}
+
+{% macro spacer(preference = 'none') %}
+  {{- attribute({
+    none: 'h-0',
+    xs: 'h-3',
+    sm: 'h-4',
+    md: 'h-5 | lg:h-6',
+    lg: 'h-6 | md:h-8 | lg:h-14',
+    xl: 'h-12 | lg:h-24',
+  }, preference) -}}
+{% endmacro %}
+
+{% macro fontSize(preference = 'none') %}
+  {{- attribute({
+    'xs': 'text-xs lg:text-sm',
+    'sm': 'text-sm lg:text-base',
+    'base': 'text-base',
+    'lg': 'text-lg',
+    'xl': 'text-xl',
+    '2xl': 'text-2xl',
+    '3xl': 'text-3xl',
+  }, preference) -}}
+{% endmacro %}
+
+{% macro textAlignment(preference = 'center') %}
+  {{- attribute({
+    left: 'text-left',
+    center: 'text-center',
+    right: 'text-right',
+    justify: 'text-justify',
+  }, preference)|default('text-left') -}}
+{% endmacro %}
+
+{% macro aspectRatio(preference = 'photo') %}
+  {{- attribute({
+    photo: 'aspect-w-4 aspect-h-3',
+    photoPortrait: 'aspect-w-3 aspect-h-4',
+    wide: 'aspect-w-16 aspect-h-9',
+    widePortrait: 'aspect-w-9 aspect-h-16',
+  }, preference)|default('aspect-w-4 aspect-h-3') -}}
+{% endmacro %}

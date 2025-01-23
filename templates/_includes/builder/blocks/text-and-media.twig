@@ -1,0 +1,19 @@
+{% import '_macros/classes' as classes %}
+
+
+{% embed '_includes/builder/section' with { block: block } only %}
+    {% block content %}
+        {% embed '_includes/builder/container' with { block: block } only %}
+            {% block content %}
+                <div class="grid grid-cols-12 gap-8 items-center">
+                    <div class="col-span-6 {{ block.mediaPosition.value == 'left' ? 'order-1' : 'order-3' }}">
+                        [Media]
+                    </div>
+                    <div class="col-span-6 order-2">
+                        {% include '_includes/builder/builder' with { blocks: block.children } only %}
+                    </div>
+                </div>
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+{% endembed %}

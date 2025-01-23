@@ -1,0 +1,13 @@
+{%- embed '_ui/typography' with {
+    heading: 'Kicker',
+} -%}
+    {%- block markup -%}
+        {%- verbatim -%}
+
+{% include '_includes/atoms/kicker' with {
+    text: 'Kicker',
+} only %}
+
+        {%- endverbatim -%}
+    {%- endblock -%}
+{%- endembed -%}

@@ -1,0 +1,22 @@
+{%- embed '_ui/component' with {
+    heading: 'Text Input',
+} -%}
+    {%- block markup -%}
+        {%- verbatim -%}
+
+{% include '_includes/molecules/form-field' with {
+    type: 'text',
+    id: 'text-input',
+    label: 'Text Input',
+    input: {
+        value: 'Input Value',
+        classes: [],
+        attributes: {
+            placeholder: 'Placeholder...',
+        }
+    },
+} only %}
+
+        {%- endverbatim -%}
+    {%- endblock -%}
+{%- endembed -%}

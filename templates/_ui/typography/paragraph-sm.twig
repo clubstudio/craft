@@ -1,0 +1,14 @@
+{%- embed '_ui/typography' with {
+    heading: 'Paragraph Small',
+} -%}
+    {%- block markup -%}
+        {%- verbatim -%}
+
+{% include '_includes/molecules/body' with {
+    body: '<p>The quick brown fox jumps over the lazy dog. Mr. Jack, <a href="#">a quirky and vexed wizard</a>, swiftly zooms past the five bemused nymphs. Gazing at the horizon, he waves with excitement, exchanging <b>jokes and high-fives</b>. Meanwhile, the <em>exquisite</em> pyramids stand tall, majestic symbols of ancient civilizations. A jovial xylophone player serenades the quivering zebra, while a humble vegan chef whips up a delicious feast, adding a touch of flavor to this extraordinary alphabet extravaganza!</p>',
+    size: 'sm',
+} only %}
+
+        {%- endverbatim -%}
+    {%- endblock -%}
+{%- endembed -%}

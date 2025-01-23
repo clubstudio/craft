@@ -1,0 +1,98 @@
+{% extends '_layouts/master' %}
+
+{% block criticalCss %}
+    {{ source('_includes/critical-css/index_critical.min.css', true) }}
+{% endblock %}
+
+{% block content %}
+    <div class="space-y-3">
+        {% include '_includes/builder/builder' with {
+            blocks: [
+                {
+                    type: 'media',
+                    paddingTop: { value: 'none' },
+                    paddingBottom: { value: 'none' },
+                    backgroundColor: { value: 'white' },
+                    maxWidth: { value: 'none' },
+                    horizontalAlignment: { value: 'none' },
+                },
+                {
+                    type: 'text-and-media',
+                    paddingTop: { value: 'md' },
+                    paddingBottom: { value: 'md' },
+                    backgroundColor: { value: 'white' },
+                    maxWidth: { value: 'contain' },
+                    horizontalAlignment: { value: 'center' },
+                    textAlignment: { value: 'justify' },
+                    mediaPosition: { value: 'right' },
+                    children: [
+                        {
+                            type: 'heading',
+                            headingLevel: { value: 2 },
+                            text: 'Heading',
+                        },
+                        {
+                            type: 'spacer',
+                            spacerHeight: { value: 'md' },
+                        },
+                        {
+                            type: 'paragraphs',
+                            body: '<p>This is a test paragraph</p>',
+                        },
+                        {
+                            type: 'spacer',
+                            spacerHeight: { value: 'md' },
+                        },
+                        {
+                            type: 'button',
+                            text: 'Button Text',
+                            link: '#',
+                            buttonSize: { value: 'base' },
+                            buttonType: { value: 'primary' },
+                        },
+                    ],
+                },
+                {
+                    type: 'divider',
+                    maxWidth: { value: 'contain' },
+                    horizontalAlignment: { value: 'center' },
+                },
+                {
+                    type: 'text',
+                    paddingTop: { value: 'md' },
+                    paddingBottom: { value: 'md' },
+                    backgroundColor: { value: 'white' },
+                    maxWidth: { value: 'contain' },
+                    horizontalAlignment: { value: 'center' },
+                    textAlignment: { value: 'justify' },
+                    children: [
+                        {
+                            type: 'heading',
+                            headingLevel: { value: 2 },
+                            text: 'Heading',
+                        },
+                        {
+                            type: 'spacer',
+                            spacerHeight: { value: 'md' },
+                        },
+                        {
+                            type: 'paragraphs',
+                            body: '<p>This is a test paragraph</p>',
+                        },
+                        {
+                            type: 'spacer',
+                            spacerHeight: { value: 'md' },
+                        },
+                        {
+                            type: 'button',
+                            text: 'Button Text',
+                            link: '#',
+                            buttonSize: { value: 'base' },
+                            buttonType: { value: 'primary' },
+                        },
+                    ]
+                },
+            ],
+        } only %}
+    </div>
+{% endblock %}

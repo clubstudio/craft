@@ -1,0 +1,35 @@
+{% set previous %}
+    &larr;
+{% endset %}
+
+{% set next %}
+    &rarr;
+{% endset %}
+
+<div class="flex justify-center items-center space-x-12">
+    {% if pageInfo.prevUrl %}
+        <a href="{{ pageInfo.prevUrl }}">
+            {{ previous }}
+        </a>
+    {% else %}
+        {{ previous}}
+    {% endif %}
+
+    {% for page, url in pageInfo.getPrevUrls(5) %}
+        <a href="{{ url }}">{{ page }}</a>
+    {% endfor %}
+
+    <span class="font-medium">{{ pageInfo.currentPage }}</span>
+
+    {% for page, url in pageInfo.getNextUrls(5) %}
+        <a href="{{ url }}">{{ page }}</a>
+    {% endfor %}
+
+    {% if pageInfo.nextUrl %}
+        <a href="{{ pageInfo.nextUrl }}">
+            {{ next }}
+        </a>
+    {% else %}
+        {{ next }}
+    {% endif %}
+</div>

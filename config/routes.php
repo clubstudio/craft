@@ -10,5 +10,5 @@
  */
 
 return [
-
+    'ui-kit' => ['template' => '_ui/ui-kit'],
 ];

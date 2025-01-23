@@ -1,0 +1,14 @@
+{%- embed '_ui/component' with {
+    heading: 'Error',
+} -%}
+    {%- block markup -%}
+        {%- verbatim -%}
+
+{% include '_includes/molecules/error' with {
+    heading: 'Error Heading',
+    body: 'Error Body',
+} only %}
+
+        {%- endverbatim -%}
+    {%- endblock -%}
+{%- endembed -%}

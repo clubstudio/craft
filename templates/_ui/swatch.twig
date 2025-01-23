@@ -1,0 +1,17 @@
+{% set data = {
+    class: '',
+    hex: '',
+    rgb: '',
+}|merge(_context) %}
+
+<div>
+    <div class="aspect-square {{ data.class }} border mb-2"></div>
+    <div class="font-mono text-xs text-gray-600 leading-4">
+        <div class="flex justify-between">
+            <span>{{ data.name }}</span>
+            <span>.{{ data.class }}</span>
+        </div>
+        <div>{{ data.hex }}</div>
+        <div>{{ data.rgb }}</div>
+    </div>
+</div>

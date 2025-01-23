@@ -24,7 +24,7 @@
         <noscript><link rel="stylesheet" href="{{ rev('/css/main.css') }}"></noscript>
 
         {% for tag in scripts|filter(tag => tag.position == 'head') %}
-          {{ tag.tag|raw }}
+            {{ tag.tag|raw }}
         {% endfor %}
     </head>
     <body hx-boost="true" class="body">

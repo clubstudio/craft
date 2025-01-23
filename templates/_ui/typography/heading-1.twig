@@ -1,0 +1,15 @@
+{%- embed '_ui/typography' with {
+    heading: 'Heading 1',
+    classes: ['truncate']
+} -%}
+    {%- block markup -%}
+        {%- verbatim -%}
+
+{% include '_includes/atoms/heading' with {
+    level: 1,
+    heading: 'The quick brown fox jumped over the lazy dog',
+} only %}
+
+        {%- endverbatim -%}
+    {%- endblock -%}
+{%- endembed -%}
