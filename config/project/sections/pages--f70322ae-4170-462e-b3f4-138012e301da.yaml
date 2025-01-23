@@ -20,7 +20,7 @@ previewTargets:
         - '1'
 propagationMethod: all
 siteSettings:
-  fd532b74-9e46-4921-867f-79a80ef26fdf: # Craft CMS
+  fd532b74-9e46-4921-867f-79a80ef26fdf: # $CRAFT_SITE_NAME
     enabledByDefault: true
     hasUrls: true
     template: _pages/entry.twig

@@ -38,6 +38,28 @@ fieldLayouts:
         name: Content
         uid: 91b07da5-ae7e-4129-8767-862fb11c1c89
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-01-23T14:45:05+00:00'
+            elementCondition: null
+            fieldUid: 948057e1-04f5-43cb-8a4d-43e67384f5eb # SEO
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3f7516d0-f458-4d97-a379-fc44d57d5715
+            userCondition: null
+            warning: null
+            width: 100
+        name: Meta
+        uid: bdaa36a0-07ad-4053-818f-b8325f887335
+        userCondition: null
 handle: basic
 hasTitleField: true
 icon: page
