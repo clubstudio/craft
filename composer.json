@@ -2,6 +2,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
+    "craftcms/ckeditor": "4.4.0",
     "craftcms/cms": "^5.0.0",
     "nystudio107/craft-retour": "5.0.5",
     "nystudio107/craft-seomatic": "5.1.10",

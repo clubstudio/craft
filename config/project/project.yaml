@@ -1,4 +1,4 @@
-dateModified: 1737643042
+dateModified: 1737643259
 elementSources:
   craft\elements\Entry:
     -
@@ -51,12 +51,17 @@ meta:
     948057e1-04f5-43cb-8a4d-43e67384f5eb: SEO # SEO
     b1d95554-25a7-42c3-822d-09155f628a4b: 'Craft CMS' # Craft CMS
     c55ca0a9-4bd6-409b-afd8-c1884dafecd0: Team # Team
+    d6b7a87c-df19-4865-b62e-756d2cfc9271: Simple # Simple
     d14159c6-01c5-410d-b1c8-785d25b4027f: Tag # Tag
     e14f5323-5bc2-40b2-8feb-9b811c97394c: Code # Code
     ea252716-954a-4e85-b183-4852be96df43: Tags # Tags
     f70322ae-4170-462e-b3f4-138012e301da: Pages # Pages
     fd532b74-9e46-4921-867f-79a80ef26fdf: 'Craft CMS' # Craft CMS
 plugins:
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0.0
   navigation:
     edition: standard
     enabled: true
