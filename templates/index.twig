@@ -1,8 +1,20 @@
 {% extends '_layouts/master' %}
 
 {% block content %}
-    <div>
-        <p>{{ 'You have successfully started a new Craft CMS project!'|t }}</p>
-        <a href="{{ siteUrl('admin') }}">{{ 'Log in to the CMS'|t }}</a>
+    <div class="leading-normal flex justify-center items-center text-center flex-1">
+        <div class="container mx-auto px-8 h-full">
+            <div class="rounded-lg border border-current/10 py-8 px-6 h-full flex items-center justify-center">
+                <div>
+                    {{ svg('@svg/logo.svg')|attr({ class: 'w-16 mx-auto' }) }}
+                    <div class="my-6 text-gray-700">
+                        <p>{{ 'You have successfully started a new Craft CMS project!'|t }}</p>
+                    </div>
+                    {% include '_includes/components/button' with {
+                        url: siteUrl('admin'),
+                        text: 'Log in to the CMS'|t,
+                    } only %}
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}

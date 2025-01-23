@@ -1,4 +1,4 @@
-dateModified: 1737633706
+dateModified: 1737640259
 email:
   fromEmail: dev@clubstudio.co.uk
   fromName: 'Craft CMS'
@@ -13,8 +13,10 @@ email:
   transportType: craft\mail\transportadapters\Smtp
 meta:
   __names__:
+    84f8b614-1005-47ab-8c38-5436ca169550: 'Public Schema' # Public Schema
     948057e1-04f5-43cb-8a4d-43e67384f5eb: SEO # SEO
     b1d95554-25a7-42c3-822d-09155f628a4b: 'Craft CMS' # Craft CMS
+    c55ca0a9-4bd6-409b-afd8-c1884dafecd0: Team # Team
     fd532b74-9e46-4921-867f-79a80ef26fdf: 'Craft CMS' # Craft CMS
 plugins:
   navigation:
