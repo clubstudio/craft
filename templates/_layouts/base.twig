@@ -1,3 +1,5 @@
+{%- set tags = meta.tags.all() -%}
+
 <!doctype html>
 <html lang="{{ craft.app.language|slice(0, 2) }}">
     <head>
@@ -12,6 +14,10 @@
         {% endif %}
 
         {{ craft.vite.script('src/js/site.js', false) }}
+
+        {% for tag in tags|filter(tag => tag.position == 'head') %}
+          {{ tag.code|raw }}
+        {% endfor %}
     </head>
     <body>
         <noscript>{{ 'This website works best when you have JavaScript enabled.'|t }}</noscript>
@@ -26,5 +32,9 @@
 
         {% block beforeScripts '' %}
         {% block afterScripts '' %}
+
+        {% for tag in tags|filter(tag => tag.position == 'bodyEnd') %}
+          {{ tag.code|raw }}
+        {% endfor %}
     </body>
 </html>
