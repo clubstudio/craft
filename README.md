@@ -1,4 +1,4 @@
-<img src="./resources/svg/logo.svg" width="64">
+<img src="./src/svg/logo.svg" width="64">
 
 # Craft CMS Boilerplate
 
