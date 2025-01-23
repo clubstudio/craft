@@ -1,4 +1,35 @@
-dateModified: 1737640259
+dateModified: 1737641076
+elementSources:
+  craft\elements\Entry:
+    -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: '*'
+      tableAttributes:
+        - status
+        - section
+        - postDate
+        - expiryDate
+        - authors
+        - link
+      type: native
+    -
+      defaultSort:
+        - structure
+        - asc
+      defaultViewMode: ''
+      disabled: false
+      key: 'section:f70322ae-4170-462e-b3f4-138012e301da' # Pages
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - authors
+        - link
+      type: native
 email:
   fromEmail: dev@clubstudio.co.uk
   fromName: 'Craft CMS'
@@ -13,10 +44,12 @@ email:
   transportType: craft\mail\transportadapters\Smtp
 meta:
   __names__:
+    2b8d277c-c134-499a-bb5b-11c2bec12bb1: Basic # Basic
     84f8b614-1005-47ab-8c38-5436ca169550: 'Public Schema' # Public Schema
     948057e1-04f5-43cb-8a4d-43e67384f5eb: SEO # SEO
     b1d95554-25a7-42c3-822d-09155f628a4b: 'Craft CMS' # Craft CMS
     c55ca0a9-4bd6-409b-afd8-c1884dafecd0: Team # Team
+    f70322ae-4170-462e-b3f4-138012e301da: Pages # Pages
     fd532b74-9e46-4921-867f-79a80ef26fdf: 'Craft CMS' # Craft CMS
 plugins:
   navigation:
