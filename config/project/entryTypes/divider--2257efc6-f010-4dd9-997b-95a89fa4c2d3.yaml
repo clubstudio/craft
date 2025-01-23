@@ -1,0 +1,20 @@
+color: null
+fieldLayouts:
+  3558e644-2130-44f4-a3e9-d8f08ab6842c:
+    tabs:
+      -
+        elementCondition: null
+        name: Content
+        uid: c9879d8c-69c3-45f7-834c-e54a42b1ba78
+        userCondition: null
+handle: divider
+hasTitleField: false
+icon: horizontal-rule
+name: Divider
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

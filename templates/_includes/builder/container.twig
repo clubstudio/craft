@@ -1,0 +1,13 @@
+{% import '_includes/builder/classes' as classes %}
+
+<div {{ attr({
+    class: [
+        'px-8',
+        classes.maxWidth(block.maximumWidth.value),
+        classes.horizontalAlignment(block.horizontalAlignment.value),
+    ]|join(' ')
+}) }}>
+    {% block content %}
+        <p>Default Container Content</p>
+    {% endblock %}
+</div>

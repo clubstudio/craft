@@ -9,10 +9,6 @@
         <meta name="csrf-token" content="{{ craft.app.request.csrfToken }}">
         <link rel="home" href="{{ url('') }}">
 
-        {% if craft.vite.devServerRunning() %}
-            <link rel="stylesheet" href="{{ craft.vite.asset('src/css/site.css') }}">
-        {% endif %}
-
         {{ craft.vite.script('src/js/site.js', false) }}
 
         {% for tag in tags|filter(tag => tag.position == 'head') %}

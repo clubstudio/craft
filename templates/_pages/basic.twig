@@ -1,3 +1,15 @@
-<h1>{{ entry.title }}</h1>
+{% extends '_layouts/master' %}
 
-Posted: {% include '_includes/components/date' with { date: entry.postDate } %}
+{% block content %}
+    <article>
+        <header class="container mx-auto px-8">
+            {% include '_includes/components/heading' with {
+                level: 'h1',
+                heading: entry.title,
+            } %}
+            Posted: {% include '_includes/components/date' with { date: entry.postDate } %}
+        </header>
+        {% include '_includes/builder/builder' with { blocks: entry.contentBlocks.all() } only %}
+    </article>
+{% endblock %}
+

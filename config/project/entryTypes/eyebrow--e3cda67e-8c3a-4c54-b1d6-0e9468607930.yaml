@@ -1,0 +1,51 @@
+color: null
+fieldLayouts:
+  3810d933-6508-429b-b54a-b783f112474d:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-01-23T16:54:43+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: Text
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: b95e3bba-a018-479a-a435-5214618d8e20
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: a3a3400a-c646-49b8-8130-8f5f891b988b
+        userCondition: null
+handle: eyebrow
+hasTitleField: true
+icon: text
+name: Eyebrow
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{title}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

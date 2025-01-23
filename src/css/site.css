@@ -31,3 +31,12 @@
     overflow: visible;
     width: auto;
 }
+
+.body-copy {
+    > * + * {
+        margin-top: --spacing(6);
+    }
+
+    ul { list-style: disc }
+    ol { list-style: decimal }
+}
