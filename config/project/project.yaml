@@ -1,8 +1,16 @@
-dateModified: 1737632941
+dateModified: 1737633302
 email:
   fromEmail: dev@clubstudio.co.uk
   fromName: 'Craft CMS'
-  transportType: craft\mail\transportadapters\Sendmail
+  replyToEmail: null
+  template: null
+  transportSettings:
+    host: $SMTP_HOSTNAME
+    password: $SMTP_PASSWORD
+    port: $SMTP_PORT
+    useAuthentication: $SMTP_AUTHENTICATION
+    username: $SMTP_USERNAME
+  transportType: craft\mail\transportadapters\Smtp
 meta:
   __names__:
     948057e1-04f5-43cb-8a4d-43e67384f5eb: SEO # SEO
