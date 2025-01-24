@@ -1,0 +1,3 @@
+{% for block in blocks %}
+    {% include '_includes/builder/blocks/' ~ block.type|kebab with { block: block } only %}
+{% endfor %}

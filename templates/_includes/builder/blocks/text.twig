@@ -1,0 +1,11 @@
+{% embed '_includes/builder/section' with { block: block } only %}
+    {% block content %}
+        {% embed '_includes/builder/container' with { block: block } only %}
+            {% block content %}
+                <div class="body-copy">
+                    {{ block.richText }}
+                </div>
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+{% endembed %}

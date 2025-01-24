@@ -1,0 +1,39 @@
+color: null
+fieldLayouts:
+  a583cce7-75d5-4cf7-9578-612763aed5f5:
+    cardView:
+      - 'layoutElement:89ff7fcf-8c7e-48b5-8f82-7e6658064542'
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-01-23T16:25:03+00:00'
+            elementCondition: null
+            fieldUid: 198475be-dc00-42d7-8ed4-b48aa2865944 # Paragraph
+            handle: null
+            includeInCards: true
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 89ff7fcf-8c7e-48b5-8f82-7e6658064542
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: e93b80f4-f139-41a9-bf8a-01ce391291ce
+        userCondition: null
+handle: paragraph
+hasTitleField: false
+icon: paragraph
+name: Paragraph
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

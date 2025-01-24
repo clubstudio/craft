@@ -1,0 +1,89 @@
+color: null
+fieldLayouts:
+  43c5fa8f-583b-44e1-a926-fa0719ab5c7f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-01-23T14:01:48+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 9263a32d-681e-4211-bbca-ea3099d8fccc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-01-23T15:53:33+00:00'
+            elementCondition: null
+            fieldUid: 4e472aae-8399-4bd0-ae02-daf1b837bdfd # Content Blocks
+            handle: contentBlocks
+            includeInCards: false
+            instructions: null
+            label: 'Content Blocks'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d4ebf333-fbe2-4298-a294-5b85b5c07001
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 91b07da5-ae7e-4129-8767-862fb11c1c89
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-01-23T14:45:05+00:00'
+            elementCondition: null
+            fieldUid: 948057e1-04f5-43cb-8a4d-43e67384f5eb # SEO
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3f7516d0-f458-4d97-a379-fc44d57d5715
+            userCondition: null
+            warning: null
+            width: 100
+        name: Meta
+        uid: bdaa36a0-07ad-4053-818f-b8325f887335
+        userCondition: null
+handle: basic
+hasTitleField: true
+icon: page
+name: Basic
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

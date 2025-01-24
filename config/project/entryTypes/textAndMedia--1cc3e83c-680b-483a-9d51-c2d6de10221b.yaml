@@ -1,0 +1,129 @@
+color: null
+fieldLayouts:
+  7c5c5cf2-5252-43c0-9ada-4a1e5acfa6ee:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-01-23T18:35:31+00:00'
+            elementCondition: null
+            fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 880eec01-7422-4f0d-8fa0-1784ea9fbec6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-01-23T19:32:02+00:00'
+            elementCondition: null
+            fieldUid: e10b1344-6730-4ebf-b792-fbc2e3a15e04 # Media Position
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c2b4bf69-f738-4df9-b00b-352275c2960a
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: e5545267-423a-4364-aa58-913a6d4e8c87
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-01-23T18:35:31+00:00'
+            elementCondition: null
+            fieldUid: e2c74420-bbaf-40c8-acf9-daf436a33bbd # Maximum Width
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8a5c8d92-84fe-4e01-8779-bfe381bc07d5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-01-23T18:35:31+00:00'
+            elementCondition: null
+            fieldUid: 1414d7cb-fb98-4f48-88f2-e5b2401cf402 # Horizontal Alignment
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d0b46514-808c-4550-91bb-8a710ae34c04
+            userCondition: null
+            warning: null
+            width: 100
+        name: Container
+        uid: 4059abb2-68c8-498a-97bc-180eb20a5f00
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-01-23T18:35:31+00:00'
+            elementCondition: null
+            fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
+            handle: paddingTop
+            includeInCards: false
+            instructions: null
+            label: 'Padding Top'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3cf1c5c7-e613-4b74-a03f-d71b1d03eaa0
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-01-23T18:35:31+00:00'
+            elementCondition: null
+            fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
+            handle: paddingBottom
+            includeInCards: false
+            instructions: null
+            label: 'Padding Bottom'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e160684c-6698-44c7-8bdb-ce2f466cf5fc
+            userCondition: null
+            warning: null
+            width: 50
+        name: Style
+        uid: 6619d92b-2f7b-43d7-ab87-0c86d11b36dc
+        userCondition: null
+handle: textAndMedia
+hasTitleField: false
+icon: photo-film
+name: 'Text & Media'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

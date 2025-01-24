@@ -1,0 +1,19 @@
+{% set links = block.links.all() %}
+
+{% if links|length %}
+    <div>
+        {% for link in links %}
+            {% set link = link.hyperlink %}
+            {% include '_includes/components/button' with {
+                url: link.url,
+                text: link.label,
+                classes: [
+                    not loop.last ? 'mr-1' : '',
+                ],
+                attributes: {
+                    target: link.target,
+                },
+            } %}
+        {% endfor %}
+    </div>
+{% endif %}

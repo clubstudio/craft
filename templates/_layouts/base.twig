@@ -1,0 +1,36 @@
+{%- set tags = meta.tags.all() -%}
+
+<!doctype html>
+<html lang="{{ craft.app.language|slice(0, 2) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="csrf-token" content="{{ craft.app.request.csrfToken }}">
+        <link rel="home" href="{{ url('') }}">
+
+        {{ craft.vite.script('src/js/site.js', false) }}
+
+        {% for tag in tags|filter(tag => tag.position == 'head') %}
+          {{ tag.code|raw }}
+        {% endfor %}
+    </head>
+    <body>
+        <noscript>{{ 'This website works best when you have JavaScript enabled.'|t }}</noscript>
+
+        {% include '_includes/skip-link' %}
+
+        {% if craft.app.config.general.devMode %}
+            {% include '_includes/dev/breakpoint-helper' %}
+        {% endif %}
+
+        {% block body '' %}
+
+        {% block beforeScripts '' %}
+        {% block afterScripts '' %}
+
+        {% for tag in tags|filter(tag => tag.position == 'bodyEnd') %}
+          {{ tag.code|raw }}
+        {% endfor %}
+    </body>
+</html>

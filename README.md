@@ -1,50 +1,69 @@
-<img src="./resources/svg/logo.svg" width="64">
+<img src="./src/svg/logo.svg" width="64">
 
-# Craft 3 Boilerplate
+# Craft CMS Boilerplate
 
 A scaffolding package to help you hit the ground running with your next [Craft CMS](https://craftcms.com) project.
 
 ## What's included?
 
-* [Craft CMS 3](https://craftcms.com)
+* [Craft CMS](https://craftcms.com)
 * [Tailwind CSS](https://tailwindcss.com)
-* [Laravel Mix](https://laravel-mix.com)
+* [DDEV](https://ddev.com/) configuration
 * A sensible directory structure
-* Commonly used Craft CMS plugins:
-  * [Asset Rev](https://github.com/clubstudioltd/craft-asset-rev)
-  * [Imager](https://github.com/aelvan/Imager-Craft)
-  * [Minify](https://github.com/nystudio107/craft-minify)
-  * [Redactor](https://github.com/craftcms/redactor)
-  * [Sentry](https://github.com/lukeyouell/craft-sentry)
-  * [SEOmatic](https://github.com/nystudio107/craft-seomatic)
+* Commonly used Craft CMS plugins
 
 ## Getting Started
 
-Once you're happy that your server/machine meets Craft's [requirements](https://docs.craftcms.com/v3/requirements.html), you can start your new project by running the following command in your terminal:
+Install or update [DDEV](https://ddev.com/), then follow these steps:
 
-```
-composer create-project clubstudioltd/craft PATH
-```
+1. Create a project directory and move into it:
+   ```
+   mkdir my-craft-project && cd my-craft-project
+   ```
+2. Create DDEV configuration files:
+   ```
+   ddev config --project-type=craftcms --docroot=web
+   ```
+3. Scaffold the project from this starter project:
+   ```
+   ddev composer create -y "clubstudio/craft"
+   ```
+4. Run `ddev craft install` and answer each prompt
+5. Run `ddev launch` to view the project in your browser
 
-This will clone a copy of this repo to your machine and automatically install any Composer dependencies.
-
-Next, head over to the Craft [installation documentation](https://docs.craftcms.com/v3/installation.html) and continue from [Step 2](https://docs.craftcms.com/v3/installation.html#step-2-set-the-file-permissions).
+Next, feel free to read the offical [Craft installation documentation](https://craftcms.com/docs/5.x/install.html).
 
 ## Developing
 
-After setting up Craft you're ready to start building your new project! Before getting started you'll want to pull in all frontend dependencies by running:
+After setting up Craft, you're almost ready to start building your new project! Before getting started you'll want to configure Vite and pull in all frontend dependencies.
+
+First, add the following to your `.ddev/config.yaml`:
 
 ```
-npm install
+web_extra_exposed_ports:
+    - name: vite
+      container_port: 5173
+      http_port: 5172
+      https_port: 5173
+```
+
+and run `ddev restart`.
+
+Next, install frontend dependencies by running:
+
+```
+ddev npm install
 ```
 
 Once the dependencies have been installed, you can compile assets and start a watcher using:
 
 ```
-npm run watch
+ddev npm run dev
 ```
 
 That's it! Happy coding! 🎉
+
+When you've finished working, run `ddev stop` to shut down the project containers and free up resources.
 
 ## About Craft CMS
 
@@ -53,10 +72,10 @@ Craft is a content-first CMS that aims to make life enjoyable for developers and
 Learn more about Craft at [craftcms.com](https://craftcms.com).
 
 ## Resources
-- **[Documentation](http://docs.craftcms.com/v3/)** – Read the official docs.
+- **[Documentation](https://craftcms.com/docs)** – Read the official docs.
 - **[Guides](https://craftcms.com/guides)** – Follow along with the official guides.
-- **[#craftcms](https://twitter.com/hashtag/craftcms)** – See the latest tweets about Craft.
+- **[#craftcms](https://x.com/hashtag/craftcms)** – See the latest posts about Craft.
 - **[Discord](https://craftcms.com/discord)** – Meet the community.
-- **[Stack Exchange](http://craftcms.stackexchange.com/)** – Get help and help others.
-- **[CraftQuest](https://craftquest.io/)** – Watch unlimited video lessons and courses.
-- **[Craft Link List](http://craftlinklist.com/)** – Stay in-the-know.
+- **[Stack Exchange](http://craftcms.stackexchange.com)** – Get help and help others.
+- **[CraftQuest](https://craftquest.io)** – Watch unlimited video lessons and courses.
+- **[Craft CMS Newsletter](https://craftcms.com/newsletter)** – Stay in-the-know.

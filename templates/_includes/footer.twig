@@ -1,0 +1,10 @@
+<footer role="contentinfo" class="py-6">
+    <div class="container mx-auto px-8 flex space-x-6 justify-between text-sm">
+        <p>&copy; {{ 'now'|date('Y') }} {{ siteName }}.</p>
+        <nav aria-label="{{ 'Footer navigation'|t }}">
+            <ul class="flex space-x-6">
+                <li><a href="{{ url('') }}">{{ 'Home'|t }}</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>

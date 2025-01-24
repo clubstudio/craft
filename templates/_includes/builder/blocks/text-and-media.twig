@@ -1,0 +1,18 @@
+{% embed '_includes/builder/section' with { block: block } only %}
+    {% block content %}
+        {% embed '_includes/builder/container' with { block: block } only %}
+            {% block content %}
+                {% set textRight = block.mediaPosition.value == 'left' %}
+
+                <div class="grid gap-12 lg:grid-cols-2 lg:gap-24 lg:items-center">
+                    <div class="{{ textRight ? 'lg:order-1' : 'lg:order-2' }}">
+                        <div class="aspect-square bg-black rounded-xl"></div>
+                    </div>
+                    <div class="{{ textRight ? 'lg:order-2' : 'lg:order-1' }} space-y-4">
+                        {% include '_includes/builder/builder' with { blocks: block.textContent.all() } only %}
+                    </div>
+                </div>
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+{% endembed %}

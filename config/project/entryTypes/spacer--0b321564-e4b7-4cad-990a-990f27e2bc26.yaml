@@ -1,0 +1,37 @@
+color: null
+fieldLayouts:
+  e4ec0dad-9cfa-4b77-9c00-e72334b08469:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-01-23T18:51:18+00:00'
+            elementCondition: null
+            fieldUid: 05fe8308-3bae-4067-ba98-f1ac9bc90dd8 # Spacer Size
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6c6fa2d3-8ce4-4942-8e77-69440d65d96d
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 8f5b22f2-c57f-49e9-811d-d8cd210c3f41
+        userCondition: null
+handle: spacer
+hasTitleField: false
+icon: bars
+name: Spacer
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

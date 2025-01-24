@@ -1,0 +1,40 @@
+columnSuffix: null
+handle: textContent
+instructions: null
+name: 'Text Content'
+searchable: false
+settings:
+  createButtonLabel: 'New block'
+  defaultIndexViewMode: cards
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - e3cda67e-8c3a-4c54-b1d6-0e9468607930 # Eyebrow
+    -
+      __assoc__:
+        -
+          - uid
+          - 3e21768c-5b31-4bba-be9f-8341e29cc796 # Heading
+    -
+      __assoc__:
+        -
+          - uid
+          - a49385d7-d5af-4d02-a3b0-40a69c749712 # Paragraph
+    -
+      __assoc__:
+        -
+          - uid
+          - 06995b69-1665-4491-b99a-edfe08b151fd # Links
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

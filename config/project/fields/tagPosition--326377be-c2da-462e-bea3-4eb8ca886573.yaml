@@ -1,0 +1,33 @@
+columnSuffix: null
+handle: tagPosition
+instructions: null
+name: 'Tag Position'
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Head
+        -
+          - value
+          - head
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Body End'
+        -
+          - value
+          - bodyEnd
+        -
+          - default
+          - '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

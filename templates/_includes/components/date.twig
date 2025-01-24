@@ -1,0 +1,16 @@
+{% set data = {
+    date: 'now',
+    relative: true,
+    format: 'jS F Y',
+}|merge(_context) %}
+
+<time datetime="{{ data.date|date('Y-m-d') }}">
+    {%- if data.relative and now|date('U') <= data.date|date_modify('+7 days')|date('U') -%}
+        {%- set difference = data.date.diff(date('now'))|duration -%}
+        {{ '{difference} ago'|t({
+            difference: difference|split(',')|first
+        }) }}
+    {%- else -%}
+        {{ data.date|date(data.format) }}
+    {%- endif -%}
+</time>

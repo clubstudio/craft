@@ -1,0 +1,25 @@
+columnSuffix: null
+handle: tags
+instructions: null
+name: Tags
+searchable: false
+settings:
+  createButtonLabel: 'Add Tag'
+  defaultIndexViewMode: cards
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - d14159c6-01c5-410d-b1c8-785d25b4027f # Tag
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

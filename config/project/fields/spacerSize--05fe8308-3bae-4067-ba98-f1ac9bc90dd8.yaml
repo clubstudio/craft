@@ -1,0 +1,66 @@
+columnSuffix: null
+handle: spacerSize
+instructions: null
+name: 'Spacer Size'
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - XS
+        -
+          - value
+          - xs
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - SM
+        -
+          - value
+          - sm
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - MD
+        -
+          - value
+          - md
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - LG
+        -
+          - value
+          - lg
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - XL
+        -
+          - value
+          - xl
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

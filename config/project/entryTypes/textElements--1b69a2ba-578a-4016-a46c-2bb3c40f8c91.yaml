@@ -1,0 +1,129 @@
+color: null
+fieldLayouts:
+  c5d0c881-57d1-4854-85f2-ed2c41294fc9:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-01-23T16:39:01+00:00'
+            elementCondition: null
+            fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3b1afde2-d722-44a5-a43b-5d2aba538d96
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: c37f2056-387c-41d2-838d-dda40aa16724
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-01-23T16:39:01+00:00'
+            elementCondition: null
+            fieldUid: e2c74420-bbaf-40c8-acf9-daf436a33bbd # Maximum Width
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c35d1437-027a-49d0-955f-661258052e44
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-01-23T16:39:01+00:00'
+            elementCondition: null
+            fieldUid: 1414d7cb-fb98-4f48-88f2-e5b2401cf402 # Horizontal Alignment
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 13318f1a-6e59-4ad9-8f3e-914a7e492ea8
+            userCondition: null
+            warning: null
+            width: 100
+        name: Container
+        uid: eba5ea27-aab3-4391-b1cb-4feeb92fdf99
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-01-23T16:39:01+00:00'
+            elementCondition: null
+            fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
+            handle: paddingTop
+            includeInCards: false
+            instructions: null
+            label: 'Padding Top'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 76e23832-a776-4ecf-bbd2-965b5ab83271
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-01-23T16:39:01+00:00'
+            elementCondition: null
+            fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
+            handle: paddingBottom
+            includeInCards: false
+            instructions: null
+            label: 'Padding Bottom'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e343da8e-babc-47a9-8760-cb2654118742
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2025-01-23T19:36:52+00:00'
+            elementCondition: null
+            fieldUid: 145cfe22-19bb-4807-8e33-c8d059374c2c # Text Alignment
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 04f638be-231b-44b0-bb1e-1dba7dccf5bf
+            userCondition: null
+            warning: null
+            width: 100
+        name: Style
+        uid: 98cffb71-3062-4ccb-b6c5-04add6bf201d
+        userCondition: null
+handle: textElements
+hasTitleField: false
+icon: shapes
+name: 'Text Elements'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

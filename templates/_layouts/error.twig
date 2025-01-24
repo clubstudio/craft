@@ -1,0 +1,12 @@
+{% extends '_layouts/base' %}
+
+{% block body %}
+    <div class="leading-normal flex justify-center items-center text-center p-6 w-screen h-screen">
+        {% block error %}
+            {% include '_includes/error' with {
+                heading: 'Whoops'|t,
+                body: 'Sorry, but it looks like something has gone wrong.'|t,
+            } only %}
+        {% endblock %}
+    </div>
+{% endblock %}
