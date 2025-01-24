@@ -1,5 +1,6 @@
 {
   "name": "clubstudio/craft",
+  "license": "MIT",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
