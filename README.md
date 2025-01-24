@@ -8,36 +8,62 @@ A scaffolding package to help you hit the ground running with your next [Craft C
 
 * [Craft CMS](https://craftcms.com)
 * [Tailwind CSS](https://tailwindcss.com)
+* [DDEV](https://ddev.com/) configuration
 * A sensible directory structure
 * Commonly used Craft CMS plugins
 
 ## Getting Started
 
-Once you're happy that your server/machine meets Craft's [requirements](https://craftcms.com/docs/5.x/requirements.html), you can start your new project by running the following command in your terminal:
+Install or update [DDEV](https://ddev.com/), then follow these steps:
 
-```
-composer create-project clubstudioltd/craft
-```
+1. Create a project directory and move into it:
+   ```
+   mkdir my-craft-project && cd my-craft-project
+   ```
+2. Create DDEV configuration files:
+   ```
+   ddev config --project-type=craftcms --docroot=web
+   ```
+3. Scaffold the project from this starter project:
+   ```
+   ddev composer create -y "clubstudio/craft"
+   ```
+4. Run `ddev craft install` and answer each prompt
+5. Run `ddev launch` to view the project in your browser
 
-This will clone a copy of this repo to your machine and automatically install any Composer dependencies.
-
-Next, head over to the Craft [installation documentation](https://craftcms.com/docs/5.x/install.html) and continue the steps.
+Next, feel free to read the offical [Craft installation documentation](https://craftcms.com/docs/5.x/install.html).
 
 ## Developing
 
-After setting up Craft, you're ready to start building your new project! Before getting started you'll want to pull in all frontend dependencies by running:
+After setting up Craft, you're ready to start building your new project! Before getting started you'll want to configure Vite and pull in all frontend dependencies.
+
+First, add the following to your `.ddev/config.yaml`:
 
 ```
-npm install
+web_extra_exposed_ports:
+    - name: vite
+      container_port: 5173
+      http_port: 5172
+      https_port: 5173
+```
+
+and run `ddev restart`.
+
+Next, install frontend dependencies by running:
+
+```
+ddev npm install
 ```
 
 Once the dependencies have been installed, you can compile assets and start a watcher using:
 
 ```
-npm run dev
+ddev npm run dev
 ```
 
 That's it! Happy coding! 🎉
+
+When you've finished working, run `ddev stop` to shut down the project containers and free up resources.
 
 ## About Craft CMS
 
