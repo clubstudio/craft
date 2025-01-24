@@ -35,7 +35,7 @@ Next, feel free to read the offical [Craft installation documentation](https://c
 
 ## Developing
 
-After setting up Craft, you're ready to start building your new project! Before getting started you'll want to configure Vite and pull in all frontend dependencies.
+After setting up Craft, you're almost ready to start building your new project! Before getting started you'll want to configure Vite and pull in all frontend dependencies.
 
 First, add the following to your `.ddev/config.yaml`:
 
