@@ -1,4 +1,4 @@
-dateModified: 1738075233
+dateModified: 1738078416
 elementSources:
   craft\elements\Entry:
     -
@@ -48,10 +48,12 @@ meta:
     1b69a2ba-578a-4016-a46c-2bb3c40f8c91: 'Text Elements' # Text Elements
     1cc3e83c-680b-483a-9d51-c2d6de10221b: 'Text & Media' # Text & Media
     2b8d277c-c134-499a-bb5b-11c2bec12bb1: Basic # Basic
+    2debe9c4-8aef-459d-94e1-8490bd05cc6f: New # New
     3e21768c-5b31-4bba-be9f-8341e29cc796: Heading # Heading
     3ed91472-4973-4997-8a82-57e4ff827e6e: Link # Link
     3f23d659-bee2-453e-b674-c4f730be7e88: 'Profile URL' # Profile URL
     4c1e65ea-bd76-45a2-9b25-2e7d92a12ff0: Link # Link
+    4d109d67-14c0-415f-aca1-42cac4c6640c: Form # Form
     4e472aae-8399-4bd0-ae02-daf1b837bdfd: 'Content Blocks' # Content Blocks
     4f9a3e6f-6b6c-44af-b349-367f62ef9286: Meta # Meta
     05fe8308-3bae-4067-ba98-f1ac9bc90dd8: 'Spacer Size' # Spacer Size
@@ -60,6 +62,7 @@ meta:
     8cb7772d-559f-4262-beae-c26e872282ea: Links # Links
     84f8b614-1005-47ab-8c38-5436ca169550: 'Public Schema' # Public Schema
     145cfe22-19bb-4807-8e33-c8d059374c2c: 'Text Alignment' # Text Alignment
+    650c6872-2c55-4840-955f-de309ced444c: 'Contact Form' # Contact Form
     1414d7cb-fb98-4f48-88f2-e5b2401cf402: 'Horizontal Alignment' # Horizontal Alignment
     2257efc6-f010-4dd9-997b-95a89fa4c2d3: Divider # Divider
     3975bba4-34d1-446f-a01c-a3059f621585: 'Social Profile' # Social Profile
@@ -75,6 +78,7 @@ meta:
     b15bb767-c33c-443c-8536-0b08e9e1d3df: Padding # Padding
     c55ca0a9-4bd6-409b-afd8-c1884dafecd0: Team # Team
     d6b7a87c-df19-4865-b62e-756d2cfc9271: Simple # Simple
+    d363d288-d9a6-466d-82f0-a0fdd9530d71: Form # Form
     d14159c6-01c5-410d-b1c8-785d25b4027f: Tag # Tag
     e2c74420-bbaf-40c8-acf9-daf436a33bbd: 'Maximum Width' # Maximum Width
     e3cda67e-8c3a-4c54-b1d6-0e9468607930: Eyebrow # Eyebrow
@@ -93,6 +97,11 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 3.0.0.0
+  formie:
+    edition: standard
+    enabled: true
+    licenseKey: I89H0BFXY2CHJCDRAMI0C97I
+    schemaVersion: 3.4.8
   navigation:
     edition: standard
     enabled: true

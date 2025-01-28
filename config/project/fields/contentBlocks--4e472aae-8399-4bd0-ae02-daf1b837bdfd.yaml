@@ -37,6 +37,11 @@ settings:
         -
           - uid
           - 7d44415b-35cb-4e25-bf4f-9ef55eb90547 # Anchor
+    -
+      __assoc__:
+        -
+          - uid
+          - 4d109d67-14c0-415f-aca1-42cac4c6640c # Form
   includeTableView: false
   maxEntries: null
   minEntries: null
