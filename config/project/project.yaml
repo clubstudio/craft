@@ -1,4 +1,4 @@
-dateModified: 1738078416
+dateModified: 1738080042
 elementSources:
   craft\elements\Entry:
     -
@@ -14,6 +14,17 @@ elementSources:
         - postDate
         - expiryDate
         - authors
+        - link
+      type: native
+    -
+      defaultSort:
+        - title
+        - asc
+      defaultViewMode: ''
+      disabled: false
+      key: singles
+      tableAttributes:
+        - status
         - link
       type: native
     -
@@ -56,6 +67,7 @@ meta:
     4d109d67-14c0-415f-aca1-42cac4c6640c: Form # Form
     4e472aae-8399-4bd0-ae02-daf1b837bdfd: 'Content Blocks' # Content Blocks
     4f9a3e6f-6b6c-44af-b349-367f62ef9286: Meta # Meta
+    5c86e823-c1de-4e1e-a517-7ab40b8724a0: Home # Home
     05fe8308-3bae-4067-ba98-f1ac9bc90dd8: 'Spacer Size' # Spacer Size
     6d2baf55-d7b9-4e8f-bb2d-f91dba9a5dee: Text # Text
     7d44415b-35cb-4e25-bf4f-9ef55eb90547: Anchor # Anchor
