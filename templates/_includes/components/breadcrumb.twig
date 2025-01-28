@@ -1,0 +1,13 @@
+<nav aria-label="{{ 'Breadcrumb'|t }}">
+    <ol class="mb-6 flex space-x-2 text-sm">
+        {% for crumb in craft.navigation.breadcrumbs() %}
+            <li class="{{ not loop.last ? "after:ml-1 after:content-['/'] after:opacity-25" }}">
+                {% if loop.last %}
+                    <span aria-current="page">{{ crumb.title }}</span>
+                {% else %}
+                    <a href="{{ crumb.url }}" class="underline">{{ crumb.title }}</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+</nav>

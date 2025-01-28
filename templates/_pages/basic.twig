@@ -3,6 +3,7 @@
 {% block content %}
     <article>
         <header class="container mx-auto px-8">
+            {% include '_includes/components/breadcrumb' %}
             {% include '_includes/components/heading' with {
                 level: 'h1',
                 heading: entry.title,
