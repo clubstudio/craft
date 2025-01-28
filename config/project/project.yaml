@@ -1,4 +1,4 @@
-dateModified: 1737661012
+dateModified: 1738075233
 elementSources:
   craft\elements\Entry:
     -
@@ -50,6 +50,7 @@ meta:
     2b8d277c-c134-499a-bb5b-11c2bec12bb1: Basic # Basic
     3e21768c-5b31-4bba-be9f-8341e29cc796: Heading # Heading
     3ed91472-4973-4997-8a82-57e4ff827e6e: Link # Link
+    3f23d659-bee2-453e-b674-c4f730be7e88: 'Profile URL' # Profile URL
     4c1e65ea-bd76-45a2-9b25-2e7d92a12ff0: Link # Link
     4e472aae-8399-4bd0-ae02-daf1b837bdfd: 'Content Blocks' # Content Blocks
     4f9a3e6f-6b6c-44af-b349-367f62ef9286: Meta # Meta
@@ -61,7 +62,9 @@ meta:
     145cfe22-19bb-4807-8e33-c8d059374c2c: 'Text Alignment' # Text Alignment
     1414d7cb-fb98-4f48-88f2-e5b2401cf402: 'Horizontal Alignment' # Horizontal Alignment
     2257efc6-f010-4dd9-997b-95a89fa4c2d3: Divider # Divider
+    3975bba4-34d1-446f-a01c-a3059f621585: 'Social Profile' # Social Profile
     06995b69-1665-4491-b99a-edfe08b151fd: Links # Links
+    24905e06-d0a8-486d-b05e-2d1128c9230e: 'Social Profiles' # Social Profiles
     198475be-dc00-42d7-8ed4-b48aa2865944: Paragraph # Paragraph
     326377be-c2da-462e-bea3-4eb8ca886573: 'Tag Position' # Tag Position
     761607ea-8c75-4aea-af4a-00d367e51171: 'Heading Level' # Heading Level
@@ -75,12 +78,14 @@ meta:
     d14159c6-01c5-410d-b1c8-785d25b4027f: Tag # Tag
     e2c74420-bbaf-40c8-acf9-daf436a33bbd: 'Maximum Width' # Maximum Width
     e3cda67e-8c3a-4c54-b1d6-0e9468607930: Eyebrow # Eyebrow
+    e6b9a7b0-4786-4d98-aa93-e7de2a709e9c: 'Social Network' # Social Network
     e7c39107-95e6-401c-8be7-a07e337fb7b7: 'Rich Text' # Rich Text
     e10b1344-6730-4ebf-b792-fbc2e3a15e04: 'Media Position' # Media Position
     e14f5323-5bc2-40b2-8feb-9b811c97394c: Code # Code
     ea252716-954a-4e85-b183-4852be96df43: Tags # Tags
     ed206a6f-5783-44ef-851d-fb1166bc3102: Paragraph # Paragraph
     f01ab0c4-931a-46aa-bcec-67b6c6941e21: 'Plain Text' # Plain Text
+    f8d27ea6-bb22-45bb-b3ba-396b15079be3: 'Contact Information' # Contact Information
     f70322ae-4170-462e-b3f4-138012e301da: Pages # Pages
     fd532b74-9e46-4921-867f-79a80ef26fdf: $CRAFT_SITE_NAME # $CRAFT_SITE_NAME
 plugins:

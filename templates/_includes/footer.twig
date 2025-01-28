@@ -1,10 +1,33 @@
 <footer role="contentinfo" class="py-6">
     <div class="container mx-auto px-8 flex space-x-6 justify-between text-sm">
-        <p>&copy; {{ 'now'|date('Y') }} {{ siteName }}.</p>
-        <nav aria-label="{{ 'Footer navigation'|t }}">
-            <ul class="flex space-x-6">
-                <li><a href="{{ url('') }}">{{ 'Home'|t }}</a></li>
-            </ul>
-        </nav>
+        <div class="flex items-center space-x-6">
+            <p>&copy; {{ 'now'|date('Y') }} {{ siteName }}.</p>
+            <nav aria-label="{{ 'Footer navigation'|t }}">
+                <ul class="flex space-x-6">
+                    <li><a href="{{ url('') }}">{{ 'Home'|t }}</a></li>
+                </ul>
+            </nav>
+        </div>
+        {% set socialProfiles = contactInformation.socialProfiles.all() %}
+        {% if socialProfiles|length %}
+            <nav aria-label="{{ 'Social Networks'|t }}">
+                <div class="flex space-x-2">
+                    {% for socialProfile in socialProfiles %}
+                        <a
+                            href="{{ socialProfile.profileUrl }}"
+                            rel="{{ socialProfile.profileUrl.rel ?? 'nofollow noopener noreferrer' }}"
+                            aria-label="{{ 'Visit {profile}'|t({ 'profile': socialProfile.socialNetwork.label }) }}"
+                        >
+                            {{ svg('@svg/social/' ~ socialProfile.socialNetwork ~ '.svg')|attr({
+                                'title': socialProfile.socialNetwork.label,
+                                'class': 'size-4',
+                                'focusable': false,
+                                'aria-hidden': true,
+                            }) }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </nav>
+        {% endif %}
     </div>
 </footer>
