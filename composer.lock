@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "73b1ac95bb94369bc91846d6b45fa80d",
+    "content-hash": "192eb8809830dae861ba9a162bc3472e",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -330,15 +330,15 @@
         },
         {
             "name": "craftcms/ckeditor",
-            "version": "4.4.0",
+            "version": "4.7.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/5b219fe06b395b411df0d61137fd750e834b8022",
-                "reference": "5b219fe06b395b411df0d61137fd750e834b8022",
+                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/ff0f03429d51d8237784e5738d478e5868fc88d9",
+                "reference": "ff0f03429d51d8237784e5738d478e5868fc88d9",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^5.5.0",
+                "craftcms/cms": "^5.6.0",
                 "craftcms/html-field": "^3.1.0",
                 "nystudio107/craft-code-editor": ">=1.0.8 <=1.0.13 || ^1.0.16",
                 "php": "^8.2"
@@ -378,7 +378,7 @@
                 "docs": "https://github.com/craftcms/ckeditor/blob/master/README.md",
                 "rss": "https://github.com/craftcms/ckeditor/commits/master.atom"
             },
-            "time": "2024-11-12T17:32:39+00:00"
+            "time": "2025-04-21T23:09:09+00:00"
         },
         {
             "name": "craftcms/cms",
@@ -3039,11 +3039,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "5.0.5",
+            "version": "5.0.10",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/6034c6268725a5c4799bcd6406a6e3675e4387c2",
-                "reference": "6034c6268725a5c4799bcd6406a6e3675e4387c2",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/fe7f2d233926a8b0e134265a503004bfdd557db5",
+                "reference": "fe7f2d233926a8b0e134265a503004bfdd557db5",
                 "shasum": ""
             },
             "require": {
@@ -3087,15 +3087,15 @@
                 "issues": "https://nystudio107.com/plugins/retour/support",
                 "source": "https://github.com/nystudio107/craft-retour"
             },
-            "time": "2025-01-09T02:50:59+00:00"
+            "time": "2025-04-22T17:43:22+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "5.1.10",
+            "version": "5.1.12",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/be19dddcdba7f516fb0ba9b9ce865b3d5622ef9e",
-                "reference": "be19dddcdba7f516fb0ba9b9ce865b3d5622ef9e",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/a2f6fe4ec2fafb747735deafb72a2b929b80d60e",
+                "reference": "a2f6fe4ec2fafb747735deafb72a2b929b80d60e",
                 "shasum": ""
             },
             "require": {
@@ -3147,7 +3147,7 @@
                 "issues": "https://nystudio107.com/plugins/seomatic/support",
                 "source": "https://github.com/nystudio107/craft-seomatic"
             },
-            "time": "2025-01-16T21:26:22+00:00"
+            "time": "2025-04-04T02:36:35+00:00"
         },
         {
             "name": "nystudio107/craft-vite",
@@ -7087,11 +7087,11 @@
         },
         {
             "name": "verbb/navigation",
-            "version": "3.0.5",
+            "version": "3.0.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/navigation/zipball/97748fa6f0567b0ebc7b99391aeb47df115380c2",
-                "reference": "97748fa6f0567b0ebc7b99391aeb47df115380c2",
+                "url": "https://api.github.com/repos/verbb/navigation/zipball/9074d68f2f0ac33f22492ea5a20a3f6ca2c45b2b",
+                "reference": "9074d68f2f0ac33f22492ea5a20a3f6ca2c45b2b",
                 "shasum": ""
             },
             "require": {
@@ -7136,7 +7136,7 @@
                 "docs": "https://github.com/verbb/navigation",
                 "rss": "https://github.com/verbb/navigation/commits/v2.atom"
             },
-            "time": "2024-10-20T01:56:07+00:00"
+            "time": "2025-02-05T03:30:00+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
