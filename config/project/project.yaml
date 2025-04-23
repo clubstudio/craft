@@ -1,4 +1,4 @@
-dateModified: 1745414420
+dateModified: 1745415537
 elementSources:
   craft\elements\Entry:
     -
@@ -113,22 +113,18 @@ plugins:
   formie:
     edition: standard
     enabled: true
-    licenseKey: I89H0BFXY2CHJCDRAMI0C97I
     schemaVersion: 3.4.8
   navigation:
     edition: standard
     enabled: true
-    licenseKey: SX7RCYTZQEOZDNSAISS2QATL
     schemaVersion: 2.1.0
   retour:
     edition: standard
     enabled: true
-    licenseKey: TEQULDJKB6QJ3N4UJR8CXZIW
     schemaVersion: 3.0.12
   seomatic:
     edition: standard
     enabled: true
-    licenseKey: 6J4D1LE2U8LDFKEJDVAAG5TW
     schemaVersion: 3.0.12
   vite:
     edition: standard
