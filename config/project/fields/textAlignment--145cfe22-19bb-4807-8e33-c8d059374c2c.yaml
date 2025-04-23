@@ -5,6 +5,7 @@ name: 'Text Alignment'
 searchable: false
 settings:
   customOptions: false
+  iconsOnly: false
   options:
     -
       __assoc__:
@@ -14,6 +15,9 @@ settings:
         -
           - value
           - left
+        -
+          - icon
+          - align-left
         -
           - default
           - '1'
@@ -26,6 +30,9 @@ settings:
           - value
           - center
         -
+          - icon
+          - align-center
+        -
           - default
           - ''
     -
@@ -37,8 +44,11 @@ settings:
           - value
           - right
         -
+          - icon
+          - align-right
+        -
           - default
           - ''
 translationKeyFormat: null
 translationMethod: none
-type: craft\fields\Dropdown
+type: craft\fields\ButtonGroup

@@ -1,16 +1,19 @@
 color: null
 fieldLayouts:
   279b4d05-e17f-4be6-bc8a-906158f2c3ef:
+    cardView:
+      - 'layoutElement:665abd47-64e6-4be6-8177-836c1e488e36'
     tabs:
       -
         elementCondition: null
         elements:
           -
             dateAdded: '2025-01-23T19:27:19+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: f01ab0c4-931a-46aa-bcec-67b6c6941e21 # Plain Text
             handle: anchor
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: Anchor
             providesThumbs: false
