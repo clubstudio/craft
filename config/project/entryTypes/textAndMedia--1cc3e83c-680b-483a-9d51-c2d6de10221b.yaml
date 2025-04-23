@@ -38,7 +38,7 @@ fieldLayouts:
             uid: c2b4bf69-f738-4df9-b00b-352275c2960a
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             dateAdded: '2025-04-23T12:39:31+00:00'
             editCondition: null
@@ -55,7 +55,7 @@ fieldLayouts:
             uid: 560a8471-d090-4787-aa57-5a1097600f43
             userCondition: null
             warning: null
-            width: 100
+            width: 50
         name: Content
         uid: e5545267-423a-4364-aa58-913a6d4e8c87
         userCondition: null

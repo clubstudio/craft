@@ -5,6 +5,7 @@ name: 'Media Position'
 searchable: false
 settings:
   customOptions: false
+  iconsOnly: false
   options:
     -
       __assoc__:
@@ -14,6 +15,9 @@ settings:
         -
           - value
           - left
+        -
+          - icon
+          - caret-left
         -
           - default
           - '1'
@@ -26,8 +30,11 @@ settings:
           - value
           - right
         -
+          - icon
+          - caret-right
+        -
           - default
           - ''
 translationKeyFormat: null
 translationMethod: none
-type: craft\fields\Dropdown
+type: craft\fields\ButtonGroup
