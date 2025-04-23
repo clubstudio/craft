@@ -1,10 +1,12 @@
 {% embed '_includes/builder/section' with { block: block } only %}
     {% block content %}
         {% embed '_includes/builder/container' with { block: block } only %}
+            {% import '_includes/builder/classes' as classes %}
+
             {% block content %}
                 {% set textRight = block.mediaPosition.value == 'left' %}
 
-                <div class="grid gap-12 lg:grid-cols-2 lg:gap-24 lg:items-center">
+                <div class="grid gap-12 lg:grid-cols-2 lg:gap-24 {{ classes.verticalAlignment(block.verticalAlignment.value) }}">
                     <div class="{{ textRight ? 'lg:order-1' : 'lg:order-2' }}">
                         <figure class="aspect-square bg-black rounded-xl"></figure>
                     </div>

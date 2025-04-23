@@ -81,3 +81,11 @@
         justify: 'text-justify',
     }, preference) -}}
 {% endmacro %}
+
+{% macro verticalAlignment(preference = 'middle') %}
+    {{- attribute({
+        top: 'items-start',
+        middle: 'items-center',
+        bottom: 'items-end',
+    }, preference) -}}
+{% endmacro %}

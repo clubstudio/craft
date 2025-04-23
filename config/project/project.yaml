@@ -1,4 +1,4 @@
-dateModified: 1745410599
+dateModified: 1745411971
 elementSources:
   craft\elements\Entry:
     -
@@ -78,6 +78,7 @@ meta:
     2257efc6-f010-4dd9-997b-95a89fa4c2d3: Divider # Divider
     3975bba4-34d1-446f-a01c-a3059f621585: 'Social Profile' # Social Profile
     06995b69-1665-4491-b99a-edfe08b151fd: Links # Links
+    7397cb77-355d-47eb-83b4-30f061ca415b: 'Vertical Alignment' # Vertical Alignment
     24905e06-d0a8-486d-b05e-2d1128c9230e: 'Social Profiles' # Social Profiles
     198475be-dc00-42d7-8ed4-b48aa2865944: Paragraph # Paragraph
     326377be-c2da-462e-bea3-4eb8ca886573: 'Tag Position' # Tag Position

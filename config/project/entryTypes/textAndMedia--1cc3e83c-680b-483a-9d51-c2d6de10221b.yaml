@@ -7,6 +7,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2025-01-23T18:35:31+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
             handle: null
@@ -23,6 +24,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-01-23T19:32:02+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: e10b1344-6730-4ebf-b792-fbc2e3a15e04 # Media Position
             handle: null
@@ -37,6 +39,23 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2025-04-23T12:39:31+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 7397cb77-355d-47eb-83b4-30f061ca415b # Vertical Alignment
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 560a8471-d090-4787-aa57-5a1097600f43
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: e5545267-423a-4364-aa58-913a6d4e8c87
         userCondition: null
@@ -45,6 +64,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2025-01-23T18:35:31+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: e2c74420-bbaf-40c8-acf9-daf436a33bbd # Maximum Width
             handle: null
@@ -61,6 +81,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-01-23T18:35:31+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 1414d7cb-fb98-4f48-88f2-e5b2401cf402 # Horizontal Alignment
             handle: null
@@ -83,6 +104,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2025-01-23T18:35:31+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
             handle: paddingTop
@@ -99,6 +121,7 @@ fieldLayouts:
             width: 50
           -
             dateAdded: '2025-01-23T18:35:31+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
             handle: paddingBottom
