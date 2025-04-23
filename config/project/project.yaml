@@ -1,4 +1,4 @@
-dateModified: 1738080042
+dateModified: 1745409680
 elementSources:
   craft\elements\Entry:
     -
@@ -138,5 +138,5 @@ system:
   live: true
   name: 'Craft CMS'
   retryDuration: null
-  schemaVersion: 5.6.0.2
+  schemaVersion: 5.7.0.3
   timeZone: Europe/London
