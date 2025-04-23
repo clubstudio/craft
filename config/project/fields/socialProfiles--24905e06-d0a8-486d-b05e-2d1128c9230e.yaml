@@ -4,8 +4,9 @@ instructions: null
 name: 'Social Profiles'
 searchable: false
 settings:
-  createButtonLabel: null
+  createButtonLabel: 'New profile'
   defaultIndexViewMode: cards
+  enableVersioning: false
   entryTypes:
     -
       __assoc__:
