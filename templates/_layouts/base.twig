@@ -12,7 +12,7 @@
         {{ craft.vite.script('src/js/site.js', false) }}
 
         {% for tag in tags|filter(tag => tag.position == 'head') %}
-          {{ tag.code|raw }}
+            {{ tag.code|raw }}
         {% endfor %}
     </head>
     <body>
@@ -30,7 +30,7 @@
         {% block afterScripts '' %}
 
         {% for tag in tags|filter(tag => tag.position == 'bodyEnd') %}
-          {{ tag.code|raw }}
+            {{ tag.code|raw }}
         {% endfor %}
     </body>
 </html>

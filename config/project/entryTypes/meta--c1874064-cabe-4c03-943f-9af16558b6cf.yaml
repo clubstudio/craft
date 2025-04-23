@@ -1,11 +1,13 @@
+color: null
 fieldLayouts:
-  79a55e35-5679-4dfb-b100-2a8f337f2cf4:
+  62767917-9438-4429-a8a3-8a2938c3f86e:
     tabs:
       -
         elementCondition: null
         elements:
           -
             dateAdded: '2025-01-23T14:36:51+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: ea252716-954a-4e85-b183-4852be96df43 # Tags
             handle: null
@@ -24,5 +26,13 @@ fieldLayouts:
         uid: 6298d91d-38cb-4b99-8310-c0932d994e0f
         userCondition: null
 handle: meta
+hasTitleField: false
+icon: null
 name: Meta
-sortOrder: 1
+showSlugField: true
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
