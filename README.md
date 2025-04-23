@@ -8,7 +8,7 @@ A scaffolding package to help you hit the ground running with your next [Craft C
 
 * [Craft CMS](https://craftcms.com)
 * [Tailwind CSS](https://tailwindcss.com)
-* [DDEV](https://ddev.com/) configuration
+* [Vite](https://vite.dev/)
 * A sensible directory structure
 * Commonly used Craft CMS plugins
 
