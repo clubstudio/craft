@@ -1,11 +1,13 @@
+color: null
 fieldLayouts:
-  2f7cad08-6f13-492f-90cc-217c51232532:
+  aeae8666-7a0d-4258-a6bf-29056b62e92f:
     tabs:
       -
         elementCondition: null
         elements:
           -
             dateAdded: '2025-01-28T14:36:16+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 24905e06-d0a8-486d-b05e-2d1128c9230e # Social Profiles
             handle: null
@@ -24,5 +26,13 @@ fieldLayouts:
         uid: de9cb6b2-a53e-4c39-8653-e457997e13fa
         userCondition: null
 handle: contactInformation
+hasTitleField: false
+icon: null
 name: 'Contact Information'
-sortOrder: 2
+showSlugField: true
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

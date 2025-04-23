@@ -1,4 +1,4 @@
-dateModified: 1745410014
+dateModified: 1745410248
 elementSources:
   craft\elements\Entry:
     -
@@ -59,6 +59,7 @@ meta:
     1b69a2ba-578a-4016-a46c-2bb3c40f8c91: 'Text Elements' # Text Elements
     1cc3e83c-680b-483a-9d51-c2d6de10221b: 'Text & Media' # Text & Media
     2b8d277c-c134-499a-bb5b-11c2bec12bb1: Basic # Basic
+    2b8fdaa6-84cc-45b1-a6a9-7eefaee1a2f3: 'Contact Information' # Contact Information
     2debe9c4-8aef-459d-94e1-8490bd05cc6f: New # New
     3e21768c-5b31-4bba-be9f-8341e29cc796: Heading # Heading
     3ed91472-4973-4997-8a82-57e4ff827e6e: Link # Link
@@ -66,6 +67,7 @@ meta:
     4c1e65ea-bd76-45a2-9b25-2e7d92a12ff0: Link # Link
     4d109d67-14c0-415f-aca1-42cac4c6640c: Form # Form
     4e472aae-8399-4bd0-ae02-daf1b837bdfd: 'Content Blocks' # Content Blocks
+    05afa5c8-f34b-4272-bd47-ab20b968af58: 'Contact Information' # Contact Information
     5c86e823-c1de-4e1e-a517-7ab40b8724a0: Home # Home
     05fe8308-3bae-4067-ba98-f1ac9bc90dd8: 'Spacer Size' # Spacer Size
     6d2baf55-d7b9-4e8f-bb2d-f91dba9a5dee: Text # Text
@@ -102,7 +104,6 @@ meta:
     ea252716-954a-4e85-b183-4852be96df43: Tags # Tags
     ed206a6f-5783-44ef-851d-fb1166bc3102: Paragraph # Paragraph
     f01ab0c4-931a-46aa-bcec-67b6c6941e21: 'Plain Text' # Plain Text
-    f8d27ea6-bb22-45bb-b3ba-396b15079be3: 'Contact Information' # Contact Information
     f70322ae-4170-462e-b3f4-138012e301da: Pages # Pages
     fd532b74-9e46-4921-867f-79a80ef26fdf: $CRAFT_SITE_NAME # $CRAFT_SITE_NAME
 plugins:

@@ -1,0 +1,16 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 05afa5c8-f34b-4272-bd47-ab20b968af58 # Contact Information
+handle: contactInformation
+maxAuthors: 1
+name: 'Contact Information'
+propagationMethod: all
+siteSettings:
+  fd532b74-9e46-4921-867f-79a80ef26fdf: # $CRAFT_SITE_NAME
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: single
