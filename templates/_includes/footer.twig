@@ -1,20 +1,26 @@
 <footer role="contentinfo" class="py-6">
     <div class="container mx-auto px-8 flex space-x-6 justify-between text-sm">
         <div class="flex items-center space-x-6">
-            <p>&copy; {{ 'now'|date('Y') }} {{ siteName }}.</p>
+            {% if globals.copyrightNotice|length %}
+                <p>{{ globals.copyrightNotice|replace({
+                    ':year': 'now'|date('Y'),
+                    ':siteName': siteName,
+                }) }}</p>
+            {% endif %}
             <nav aria-label="{{ 'Footer navigation'|t }}">
                 <ul class="flex space-x-6">
                     <li><a href="{{ url('') }}">{{ 'Home'|t }}</a></li>
                 </ul>
             </nav>
         </div>
-        {% set socialProfiles = contactInformation.socialProfiles.all() %}
+        {% set socialProfiles = globals.socialProfiles.all() %}
         {% if socialProfiles|length %}
             <nav aria-label="{{ 'Social Networks'|t }}">
                 <div class="flex space-x-2">
                     {% for socialProfile in socialProfiles %}
                         <a
                             href="{{ socialProfile.profileUrl }}"
+                            {% if socialProfile.profileUrl.target %} target="{{ socialProfile.profileUrl.target }}" {% endif %}
                             rel="{{ socialProfile.profileUrl.rel ?? 'nofollow noopener noreferrer' }}"
                             aria-label="{{ 'Visit {profile}'|t({ 'profile': socialProfile.socialNetwork.label }) }}"
                         >

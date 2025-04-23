@@ -1,0 +1,84 @@
+color: null
+fieldLayouts:
+  62767917-9438-4429-a8a3-8a2938c3f86e:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-04-23T12:15:58+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 24905e06-d0a8-486d-b05e-2d1128c9230e # Social Profiles
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f43f8835-124b-43dd-b7a8-371a09d22f7d
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Contact Information'
+        uid: b4db85a8-4380-498c-ac47-13ad224010f1
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-04-23T12:15:16+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: f01ab0c4-931a-46aa-bcec-67b6c6941e21 # Plain Text
+            handle: copyrightNotice
+            includeInCards: false
+            instructions: 'Use the `:year` and `:siteName` placeholders to inject the current year and site name.'
+            label: 'Copyright Notice'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b64e7b56-9f77-4b06-bdf8-f13dc9cf2d34
+            userCondition: null
+            warning: null
+            width: 100
+        name: Footer
+        uid: 8e03d624-bb85-4e17-8295-a092043dfb23
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-01-23T14:36:51+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ea252716-954a-4e85-b183-4852be96df43 # Tags
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 54a17121-4f87-4293-8897-f48da62dcdeb
+            userCondition: null
+            warning: null
+            width: 100
+        name: Meta
+        uid: 6298d91d-38cb-4b99-8310-c0932d994e0f
+        userCondition: null
+handle: globals
+hasTitleField: false
+icon: earth-africa
+name: Globals
+showSlugField: true
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
