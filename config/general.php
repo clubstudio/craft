@@ -19,6 +19,7 @@ return GeneralConfig::create()
     ->enableGql(false)
     ->errorTemplatePrefix('_errors/')
     ->aliases([
+        '@web' => App::env('PRIMARY_SITE_URL'),
         '@webroot' => dirname(__DIR__) . '/web',
         '@svg' => dirname(__DIR__) . '/src/svg',
     ])
