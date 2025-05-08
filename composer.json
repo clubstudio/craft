@@ -5,7 +5,7 @@
   "prefer-stable": true,
   "require": {
     "craftcms/ckeditor": "^4.0.0",
-    "craftcms/cms": "^5.7.0",
+    "craftcms/cms": "^5.7.5",
     "nystudio107/craft-retour": "^5.0.0",
     "nystudio107/craft-seomatic": "^5.1.0",
     "nystudio107/craft-vite": "^5.0.0",
