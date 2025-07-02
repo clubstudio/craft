@@ -1,0 +1,16 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: a9dd8d2a-08c8-4a65-8cc3-1d29c5bb901e # FAQ
+handle: frequentlyAskedQuestions
+maxAuthors: 1
+name: 'Frequently Asked Questions'
+propagationMethod: all
+siteSettings:
+  fd532b74-9e46-4921-867f-79a80ef26fdf: # $CRAFT_SITE_NAME
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: channel

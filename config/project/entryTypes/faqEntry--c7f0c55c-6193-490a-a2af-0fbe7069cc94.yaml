@@ -1,0 +1,42 @@
+color: null
+description: null
+fieldLayouts:
+  6813d7f0-a08f-4d7e-9e59-125a134e211b:
+    cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:1d90c381-e4bb-4b22-84fb-d1f486bf2e15'
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-02T12:15:18+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 7631edb0-1fb5-477f-96bd-57ded88a1c47 # FAQ Entry
+            handle: null
+            includeInCards: true
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1d90c381-e4bb-4b22-84fb-d1f486bf2e15
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: a6b28c91-9ab5-4271-854b-b05b264c6b7a
+        userCondition: null
+handle: faqEntry
+hasTitleField: false
+icon: clipboard-question
+name: 'FAQ Entry'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

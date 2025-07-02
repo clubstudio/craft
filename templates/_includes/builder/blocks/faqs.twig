@@ -1,0 +1,49 @@
+{% set faqs = [] %}
+
+{% for faq in block.faqs.eagerly().all() %}
+    {% if faq.type == 'faqEntry' %}
+        {% set faqEntry = faq.faqEntry.eagerly().one() %}
+        {% set faqs = faqs|merge([{ question: faqEntry.title, answer: faqEntry.answer }]) %}
+    {% else %}
+        {% set faqs = faqs|merge([{ question: faq.title, answer: faq.answer }]) %}
+    {% endif %}
+{% endfor %}
+
+{% embed '_includes/builder/section' with { block: block, faqs: faqs } only %}
+    {% block content %}
+        {% embed '_includes/builder/container' with { block: block, faqs: faqs } only %}
+            {% block content %}
+                {% set textContentBlocks = block.textContent.eagerly().all() %}
+
+                {% if textContentBlocks|length %}
+                    <div class="space-y-4 mb-6">
+                        {% include '_includes/builder/builder' with { blocks: textContentBlocks } only %}
+                    </div>
+                {% endif %}
+
+                {% if faqs|length %}
+                    <div class="divide-y">
+                        {% for faq in faqs %}
+                            <details class="py-4">
+                                <summary class="font-bold">{{ faq.question }}</summary>
+                                {{ faq.answer }}
+                            </details>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+{% endembed %}
+
+{% set jsonLd = seomatic.jsonLd.create({
+    'type': 'FAQPage',
+    'mainEntity': faqs|map(faq => {
+        'type': 'Question',
+        'name': faq.question,
+        'acceptedAnswer': {
+            'type': 'Answer',
+            'text': faq.answer|striptags,
+        }
+    })
+}, true) %}
