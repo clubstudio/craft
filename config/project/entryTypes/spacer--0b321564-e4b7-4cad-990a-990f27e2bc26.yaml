@@ -1,16 +1,19 @@
 color: null
 fieldLayouts:
   e4ec0dad-9cfa-4b77-9c00-e72334b08469:
+    cardView:
+      - 'layoutElement:6c6fa2d3-8ce4-4942-8e77-69440d65d96d'
     tabs:
       -
         elementCondition: null
         elements:
           -
             dateAdded: '2025-01-23T18:51:18+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 05fe8308-3bae-4067-ba98-f1ac9bc90dd8 # Spacer Size
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
