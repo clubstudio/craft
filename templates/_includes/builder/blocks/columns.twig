@@ -1,0 +1,17 @@
+{% embed '_includes/builder/section' with { block: block } only %}
+    {% block content %}
+        {% embed '_includes/builder/container' with { block: block } only %}
+            {% block content %}
+                <div class="lg:grid lg:grid-cols-12 lg:gap-12">
+                    {% for column in block.columns.eagerly().all() %}
+                        <div class="lg:col-span-4 space-y-4">
+                            {% if column.type == 'textColumn' %}
+                                {% include '_includes/builder/builder' with { blocks: column.textContent.eagerly().all() } only %}
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+{% endembed %}

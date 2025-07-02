@@ -52,7 +52,7 @@ settings:
       __assoc__:
         -
           - uid
-          - 1cc3e83c-680b-483a-9d51-c2d6de10221b # Text & Media
+          - 274bbd5f-3859-4d8f-91c3-f68ebbb29720 # Columns
         -
           - group
           - General
@@ -61,6 +61,14 @@ settings:
         -
           - uid
           - 1b69a2ba-578a-4016-a46c-2bb3c40f8c91 # Text Elements
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 1cc3e83c-680b-483a-9d51-c2d6de10221b # Text & Media
         -
           - group
           - General
