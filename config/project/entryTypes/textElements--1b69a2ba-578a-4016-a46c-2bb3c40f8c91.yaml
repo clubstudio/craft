@@ -1,12 +1,15 @@
 color: null
+description: null
 fieldLayouts:
   c5d0c881-57d1-4854-85f2-ed2c41294fc9:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
         elements:
           -
             dateAdded: '2025-01-23T16:39:01+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
             handle: null
@@ -29,6 +32,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2025-01-23T16:39:01+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: e2c74420-bbaf-40c8-acf9-daf436a33bbd # Maximum Width
             handle: null
@@ -45,6 +49,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-01-23T16:39:01+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 1414d7cb-fb98-4f48-88f2-e5b2401cf402 # Horizontal Alignment
             handle: null
@@ -67,6 +72,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2025-01-23T16:39:01+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
             handle: paddingTop
@@ -83,6 +89,7 @@ fieldLayouts:
             width: 50
           -
             dateAdded: '2025-01-23T16:39:01+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
             handle: paddingBottom
@@ -99,6 +106,7 @@ fieldLayouts:
             width: 50
           -
             dateAdded: '2025-01-23T19:36:52+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 145cfe22-19bb-4807-8e33-c8d059374c2c # Text Alignment
             handle: null
@@ -121,7 +129,7 @@ hasTitleField: false
 icon: shapes
 name: 'Text Elements'
 showSlugField: false
-showStatusField: false
+showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
 titleFormat: null

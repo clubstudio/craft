@@ -1,6 +1,8 @@
 color: null
+description: null
 fieldLayouts:
   e4ec0dad-9cfa-4b77-9c00-e72334b08469:
+    cardThumbAlignment: end
     cardView:
       - 'layoutElement:6c6fa2d3-8ce4-4942-8e77-69440d65d96d'
     tabs:
@@ -32,7 +34,7 @@ hasTitleField: false
 icon: bars
 name: Spacer
 showSlugField: false
-showStatusField: false
+showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
 titleFormat: null

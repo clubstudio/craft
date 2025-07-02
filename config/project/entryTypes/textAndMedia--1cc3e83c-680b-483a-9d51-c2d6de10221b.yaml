@@ -223,7 +223,7 @@ hasTitleField: false
 icon: photo-film
 name: 'Text & Media'
 showSlugField: false
-showStatusField: false
+showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
 titleFormat: null

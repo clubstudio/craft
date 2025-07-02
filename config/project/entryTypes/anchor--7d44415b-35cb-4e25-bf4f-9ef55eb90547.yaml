@@ -1,6 +1,8 @@
 color: null
+description: null
 fieldLayouts:
   279b4d05-e17f-4be6-bc8a-906158f2c3ef:
+    cardThumbAlignment: end
     cardView:
       - 'layoutElement:665abd47-64e6-4be6-8177-836c1e488e36'
     tabs:
@@ -32,7 +34,7 @@ hasTitleField: false
 icon: anchor
 name: Anchor
 showSlugField: false
-showStatusField: false
+showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
 titleFormat: null

@@ -1,6 +1,8 @@
 color: null
+description: null
 fieldLayouts:
   4183031b-ab39-4c03-be64-1c884c571924:
+    cardThumbAlignment: end
     cardView:
       - 'layoutElement:3afdad75-6653-440e-973a-ca5b0300f347'
     tabs:
@@ -9,6 +11,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2025-01-23T15:53:21+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: e7c39107-95e6-401c-8be7-a07e337fb7b7 # Rich Text
             handle: null
@@ -31,6 +34,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2025-01-23T15:53:21+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: e2c74420-bbaf-40c8-acf9-daf436a33bbd # Maximum Width
             handle: null
@@ -47,6 +51,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-01-23T15:53:21+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 1414d7cb-fb98-4f48-88f2-e5b2401cf402 # Horizontal Alignment
             handle: null
@@ -69,6 +74,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2025-01-23T15:53:21+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
             handle: paddingTop
@@ -85,6 +91,7 @@ fieldLayouts:
             width: 50
           -
             dateAdded: '2025-01-23T15:53:21+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
             handle: paddingBottom
@@ -107,7 +114,7 @@ hasTitleField: false
 icon: text
 name: Text
 showSlugField: false
-showStatusField: false
+showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
 titleFormat: null

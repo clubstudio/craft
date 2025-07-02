@@ -1,6 +1,8 @@
 color: null
+description: null
 fieldLayouts:
   3558e644-2130-44f4-a3e9-d8f08ab6842c:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
@@ -12,7 +14,7 @@ hasTitleField: false
 icon: horizontal-rule
 name: Divider
 showSlugField: false
-showStatusField: false
+showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
 titleFormat: null
