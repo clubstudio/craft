@@ -1,4 +1,4 @@
-dateModified: 1751456269
+dateModified: 1751458076
 elementSources:
   craft\elements\Entry:
     -
@@ -53,6 +53,14 @@ email:
     useAuthentication: $SMTP_AUTHENTICATION
     username: $SMTP_USERNAME
   transportType: craft\mail\transportadapters\Smtp
+fs:
+  local:
+    hasUrls: true
+    name: Local
+    settings:
+      path: '@webroot/assets'
+    type: craft\fs\Local
+    url: $PRIMARY_SITE_URL/assets
 meta:
   __names__:
     0b321564-e4b7-4cad-990a-990f27e2bc26: Spacer # Spacer
@@ -69,6 +77,7 @@ meta:
     5c86e823-c1de-4e1e-a517-7ab40b8724a0: Home # Home
     05fe8308-3bae-4067-ba98-f1ac9bc90dd8: 'Spacer Size' # Spacer Size
     6d2baf55-d7b9-4e8f-bb2d-f91dba9a5dee: Text # Text
+    7b4459c4-8611-49b4-abdf-99a0f4c7a646: 'Video URL' # Video URL
     7d44415b-35cb-4e25-bf4f-9ef55eb90547: Anchor # Anchor
     8cb7772d-559f-4262-beae-c26e872282ea: Links # Links
     84f8b614-1005-47ab-8c38-5436ca169550: 'Public Schema' # Public Schema
@@ -84,6 +93,8 @@ meta:
     326377be-c2da-462e-bea3-4eb8ca886573: 'Tag Position' # Tag Position
     761607ea-8c75-4aea-af4a-00d367e51171: 'Heading Level' # Heading Level
     948057e1-04f5-43cb-8a4d-43e67384f5eb: SEO # SEO
+    a34c1736-2104-4937-99c0-00f502185b62: 'Media Type' # Media Type
+    a4855d49-a669-433d-a2f9-a410916ece9f: Files # Files
     a49385d7-d5af-4d02-a3b0-40a69c749712: Paragraph # Paragraph
     aff5ab29-35f9-43c1-bfc1-8419394f1987: 'Text Content' # Text Content
     b1d95554-25a7-42c3-822d-09155f628a4b: $CRAFT_SITE_NAME # $CRAFT_SITE_NAME
@@ -91,7 +102,9 @@ meta:
     c6ba79fe-02b0-4513-a81e-d59a8f5b89b8: Globals # Globals
     c55ca0a9-4bd6-409b-afd8-c1884dafecd0: Team # Team
     c1874064-cabe-4c03-943f-9af16558b6cf: Globals # Globals
+    d0c7900e-d61c-4839-a59e-70bb47358360: Image # Image
     d6b7a87c-df19-4865-b62e-756d2cfc9271: Simple # Simple
+    d7f2d6ab-95d8-49be-8cf1-e5e4d4a427e4: Images # Images
     d363d288-d9a6-466d-82f0-a0fdd9530d71: Form # Form
     d14159c6-01c5-410d-b1c8-785d25b4027f: Tag # Tag
     e2c74420-bbaf-40c8-acf9-daf436a33bbd: 'Maximum Width' # Maximum Width
@@ -135,5 +148,5 @@ system:
   live: true
   name: 'Craft CMS'
   retryDuration: null
-  schemaVersion: 5.7.0.3
+  schemaVersion: 5.8.0.3
   timeZone: Europe/London

@@ -3,4 +3,5 @@
 /vendor
 /node_modules
 /web/dist
+/web/assets/transforms
 .DS_Store

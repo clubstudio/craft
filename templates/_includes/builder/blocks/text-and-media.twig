@@ -8,7 +8,20 @@
 
                 <div class="grid gap-12 lg:grid-cols-2 lg:gap-24 {{ classes.verticalAlignment(block.verticalAlignment.value) }}">
                     <div class="{{ textRight ? 'lg:order-1' : 'lg:order-2' }}">
-                        <figure class="aspect-square bg-black rounded-xl"></figure>
+                        {% set mediaType = block.mediaType.value %}
+
+                        <figure class="aspect-square bg-black rounded-xl overflow-hidden">
+                            {% if mediaType == 'image' %}
+                                {% set image = block.image.eagerly().one() %}
+                                {% if image %}
+                                    <img src="{{ image.url }}" alt="{{ image.alt }}" class="w-full h-full object-cover">
+                                {% endif %}
+                            {% elseif mediaType == 'video' %}
+                                <video muted controls class="w-full h-full object-cover">
+                                    <source src="{{ block.videoUrl }}" type="video/mp4">
+                                </video>
+                            {% endif %}
+                        </figure>
                     </div>
                     <div class="{{ textRight ? 'lg:order-2' : 'lg:order-1' }} space-y-4">
                         {% include '_includes/builder/builder' with { blocks: block.textContent.all() } only %}

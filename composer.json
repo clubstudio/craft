@@ -9,7 +9,7 @@
     "nystudio107/craft-retour": "^5.0.0",
     "nystudio107/craft-seomatic": "^5.1.0",
     "nystudio107/craft-vite": "^5.0.0",
-    "verbb/formie": "3.0.26",
+    "verbb/formie": "dev-craft-5 as 3.0.30",
     "verbb/navigation": "^3.0.0",
     "vlucas/phpdotenv": "^5.4.0"
   },
