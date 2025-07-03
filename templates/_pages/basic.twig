@@ -1,16 +1,23 @@
 {% extends '_layouts/master' %}
 
+{% import '_includes/builder/classes' as classes %}
+
 {% block content %}
     <article>
-        <header class="container mx-auto px-8">
+        {# <header class="{{ classes.maxWidth('contain') }}">
             {% include '_includes/components/breadcrumb' %}
             {% include '_includes/components/heading' with {
                 level: 'h1',
                 heading: entry.title,
             } %}
-            Posted: {% include '_includes/components/date' with { date: entry.postDate } %}
-        </header>
-        {% include '_includes/builder/builder' with { blocks: entry.contentBlocks.all() } only %}
+            <div class="mt-2 text-sm">
+                Posted: {% include '_includes/components/date' with { date: entry.postDate } %}
+            </div>
+        </header> #}
+        {% include '_includes/builder/builder' with {
+            context: 'page',
+            blocks: entry.contentBlocks.all(),
+        } only %}
     </article>
 {% endblock %}
 

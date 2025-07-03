@@ -1,0 +1,15 @@
+{% set aspectRatios = {
+    'video': 'aspect-video',
+    'photo': 'aspect-[4/3]',
+    'square': 'aspect-square',
+} %}
+
+{% set aspectClass = aspectRatios[block.aspectRatio.value] %}
+
+{% if block.videoUrl %}
+    <figure class="{{ aspectClass }} bg-black overflow-hidden">
+        <video muted controls class="w-full h-full object-cover">
+            <source src="{{ block.videoUrl }}" type="video/mp4">
+        </video>
+    </figure>
+{% endif %}

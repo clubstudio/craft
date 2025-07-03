@@ -1,17 +1,28 @@
-{% embed '_includes/builder/section' with { block: block } only %}
-    {% block content %}
-        {% embed '_includes/builder/container' with { block: block } only %}
-            {% block content %}
-                <div class="lg:grid lg:grid-cols-12 lg:gap-12">
-                    {% for column in block.columns.eagerly().all() %}
-                        <div class="lg:col-span-4 space-y-4">
-                            {% if column.type == 'textColumn' %}
-                                {% include '_includes/builder/builder' with { blocks: column.textContent.eagerly().all() } only %}
-                            {% endif %}
-                        </div>
-                    {% endfor %}
-                </div>
-            {% endblock %}
-        {% endembed %}
-    {% endblock %}
-{% endembed %}
+{% set columns = block.columns.eagerly().all() %}
+{% set key = [key, 'columns', columns|length]|join(':') %}
+
+{% if columns|length %}
+    <div class="
+        flex flex-col lg:flex-row
+        gap-6 lg:gap-16 xl:gap-20 2xl:gap-32 3xl:gap-48 4xl:gap-60
+    ">
+        {% for column in columns %}
+            <div class="flex-1 flex flex-col">
+                {# <code class="text-xs text-red-500">
+                    {{ '_includes/builder/blocks/columns/' ~ columns|length ~ '/' ~ column.type|kebab }}<br>
+                    {{ '_includes/builder/blocks/columns/' ~ column.type|kebab }}<br>
+                    {{ '_includes/builder/blocks/' ~ column.type|kebab }}
+                </code> #}
+                {% include [
+                    '_includes/builder/blocks/columns/' ~ columns|length ~ '/' ~ column.type|kebab,
+                    '_includes/builder/blocks/columns/' ~ column.type|kebab,
+                    '_includes/builder/blocks/' ~ column.type|kebab,
+                 ] with {
+                    block: column,
+                    context: 'columns/' ~ columns|length,
+                    key: key,
+                } only %}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}

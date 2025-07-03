@@ -1,4 +1,4 @@
-dateModified: 1751464845
+dateModified: 1751550311
 elementSources:
   craft\elements\Entry:
     -
@@ -42,7 +42,21 @@ elementSources:
         - link
       type: native
     -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
       key: 'section:ad112b66-5fdd-4015-b741-ddda3f744de9' # Frequently Asked Questions
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - authors
+        - link
+      type: native
+    -
+      key: 'section:5748c0f6-c816-4cd6-ba8d-f497d9023f3f' # Testimonials
       type: native
 email:
   fromEmail: dev@clubstudio.co.uk
@@ -74,29 +88,41 @@ meta:
     3e21768c-5b31-4bba-be9f-8341e29cc796: Heading # Heading
     3ed91472-4973-4997-8a82-57e4ff827e6e: Link # Link
     3f23d659-bee2-453e-b674-c4f730be7e88: 'Profile URL' # Profile URL
+    4b8d35be-c136-49f9-89c5-806304d8532a: 'List Item' # List Item
     4c1e65ea-bd76-45a2-9b25-2e7d92a12ff0: Link # Link
     4d109d67-14c0-415f-aca1-42cac4c6640c: Form # Form
     4e472aae-8399-4bd0-ae02-daf1b837bdfd: 'Content Blocks' # Content Blocks
+    5b44e3df-c613-4972-be8b-ba2874a67656: Icon # Icon
     5c86e823-c1de-4e1e-a517-7ab40b8724a0: Home # Home
     5d9ae303-c301-4058-9568-90fb3db17763: 'Text Column' # Text Column
+    5fb322cb-afc6-479c-8d68-82792f5e9114: 'Accordion Item' # Accordion Item
     05fe8308-3bae-4067-ba98-f1ac9bc90dd8: 'Spacer Size' # Spacer Size
     6d2baf55-d7b9-4e8f-bb2d-f91dba9a5dee: Text # Text
+    7b2e950b-64e1-4284-a6a1-110afd340922: 'List Items' # List Items
+    7b5ca0bb-2131-4dbb-bd2b-64ddc1c33c8c: List # List
     7b4459c4-8611-49b4-abdf-99a0f4c7a646: 'Video URL' # Video URL
     7d44415b-35cb-4e25-bf4f-9ef55eb90547: Anchor # Anchor
+    7e20247b-253f-4e4b-a04f-a66573c4a529: Image # Image
     8cb7772d-559f-4262-beae-c26e872282ea: Links # Links
+    16e5b50d-e7a4-46d7-b51f-084d25a1e36b: Hero # Hero
+    51b89036-b57c-4892-aefb-56f15d5d945c: 'Accordion Items' # Accordion Items
     74e71a63-f33d-464e-af59-02d384543ac7: FAQs # FAQs
     84f8b614-1005-47ab-8c38-5436ca169550: 'Public Schema' # Public Schema
     89b0ee7b-1530-4b52-9ba3-1335bc1eaf8e: FAQs # FAQs
     145cfe22-19bb-4807-8e33-c8d059374c2c: 'Text Alignment' # Text Alignment
+    248c238c-0963-4912-a62b-ec82b667e1b4: 'Testimonial Entry' # Testimonial Entry
     274bbd5f-3859-4d8f-91c3-f68ebbb29720: Columns # Columns
     650c6872-2c55-4840-955f-de309ced444c: 'Contact Form' # Contact Form
     1414d7cb-fb98-4f48-88f2-e5b2401cf402: 'Horizontal Alignment' # Horizontal Alignment
     2257efc6-f010-4dd9-997b-95a89fa4c2d3: Divider # Divider
     3975bba4-34d1-446f-a01c-a3059f621585: 'Social Profile' # Social Profile
+    5748c0f6-c816-4cd6-ba8d-f497d9023f3f: Testimonials # Testimonials
     06995b69-1665-4491-b99a-edfe08b151fd: Links # Links
     7397cb77-355d-47eb-83b4-30f061ca415b: 'Vertical Alignment' # Vertical Alignment
     7631edb0-1fb5-477f-96bd-57ded88a1c47: 'FAQ Entry' # FAQ Entry
+    21500d84-7ee2-479d-93db-750c756557cd: Video # Video
     24905e06-d0a8-486d-b05e-2d1128c9230e: 'Social Profiles' # Social Profiles
+    62083fb6-1a8c-49b9-9782-374ce3b3a7c8: 'Rich Text (Basic)' # Rich Text (Basic)
     198475be-dc00-42d7-8ed4-b48aa2865944: Paragraph # Paragraph
     326377be-c2da-462e-bea3-4eb8ca886573: 'Tag Position' # Tag Position
     761607ea-8c75-4aea-af4a-00d367e51171: 'Heading Level' # Heading Level
@@ -106,14 +132,20 @@ meta:
     a34c1736-2104-4937-99c0-00f502185b62: 'Media Type' # Media Type
     a4855d49-a669-433d-a2f9-a410916ece9f: Files # Files
     a49385d7-d5af-4d02-a3b0-40a69c749712: Paragraph # Paragraph
+    ac23a061-b6b4-4ab7-9d91-648ecffc6c7f: 'Testimonial Entry' # Testimonial Entry
     ad112b66-5fdd-4015-b741-ddda3f744de9: 'Frequently Asked Questions' # Frequently Asked Questions
+    ad584cc9-9bc5-42a0-b6a2-fc622ac321ae: New # New
+    ae4f2361-8913-4891-ad95-3938347a1e55: 'Aspect Ratio' # Aspect Ratio
+    af72e76d-2752-456f-a86c-e9fe22eaaf71: Testimonial # Testimonial
     aff5ab29-35f9-43c1-bfc1-8419394f1987: 'Text Content' # Text Content
     b1d95554-25a7-42c3-822d-09155f628a4b: $CRAFT_SITE_NAME # $CRAFT_SITE_NAME
     b15bb767-c33c-443c-8536-0b08e9e1d3df: Padding # Padding
+    b462f6b0-2e3a-40f9-abce-64bccae77910: Accordion # Accordion
     c6ba79fe-02b0-4513-a81e-d59a8f5b89b8: Globals # Globals
     c7f0c55c-6193-490a-a2af-0fbe7069cc94: 'FAQ Entry' # FAQ Entry
     c55ca0a9-4bd6-409b-afd8-c1884dafecd0: Team # Team
     c1874064-cabe-4c03-943f-9af16558b6cf: Globals # Globals
+    cac24c58-8d46-48c3-98bd-d99f03d7c8ef: Section # Section
     d0c7900e-d61c-4839-a59e-70bb47358360: Image # Image
     d6b7a87c-df19-4865-b62e-756d2cfc9271: Simple # Simple
     d7f2d6ab-95d8-49be-8cf1-e5e4d4a427e4: Images # Images
@@ -125,8 +157,10 @@ meta:
     e7c39107-95e6-401c-8be7-a07e337fb7b7: 'Rich Text' # Rich Text
     e10b1344-6730-4ebf-b792-fbc2e3a15e04: 'Media Position' # Media Position
     e14f5323-5bc2-40b2-8feb-9b811c97394c: Code # Code
+    e913983b-447b-4aa9-bf9c-588f6ff2ca2f: 'Content Block' # Content Block
     ea252716-954a-4e85-b183-4852be96df43: Tags # Tags
     ed206a6f-5783-44ef-851d-fb1166bc3102: Paragraph # Paragraph
+    f0f0b835-5f51-4019-a20e-b3f8cc1a7453: Minimal # Minimal
     f01ab0c4-931a-46aa-bcec-67b6c6941e21: 'Plain Text' # Plain Text
     f70322ae-4170-462e-b3f4-138012e301da: Pages # Pages
     fd532b74-9e46-4921-867f-79a80ef26fdf: $CRAFT_SITE_NAME # $CRAFT_SITE_NAME

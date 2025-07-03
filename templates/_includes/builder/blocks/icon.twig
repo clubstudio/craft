@@ -1,0 +1,9 @@
+{% set icon = block.asset.eagerly().one() %}
+
+{% if icon %}
+    <div>
+        <div class="inline-block p-3 bg-gray-100 rounded-lg">
+            {{ svg(icon)|attr({ class: 'size-8' }) }}
+        </div>
+    </div>
+{% endif %}

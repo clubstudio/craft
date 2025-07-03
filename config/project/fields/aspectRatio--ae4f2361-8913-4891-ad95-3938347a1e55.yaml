@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: spacerSize
+handle: aspectRatio
 instructions: null
-name: 'Spacer Size'
+name: 'Aspect Ratio'
 searchable: false
 settings:
   customOptions: false
@@ -10,10 +10,10 @@ settings:
       __assoc__:
         -
           - label
-          - XS
+          - '1:1'
         -
           - value
-          - xs
+          - square
         -
           - icon
           - ''
@@ -27,10 +27,27 @@ settings:
       __assoc__:
         -
           - label
-          - SM
+          - '4:3'
         -
           - value
-          - sm
+          - photo
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - '16:9'
+        -
+          - value
+          - video
         -
           - icon
           - ''
@@ -44,61 +61,10 @@ settings:
       __assoc__:
         -
           - label
-          - MD
+          - Auto
         -
           - value
-          - md
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - LG
-        -
-          - value
-          - lg
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - XL
-        -
-          - value
-          - xl
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - Fill
-        -
-          - value
-          - fill
+          - auto
         -
           - icon
           - ''

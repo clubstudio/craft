@@ -1,3 +1,16 @@
+{% set context = context ?? null %}
+
 {% for block in blocks %}
-    {% include '_includes/builder/blocks/' ~ block.type|kebab with { block: block } only %}
+    {# <code class="text-xs text-blue-500">
+        {{ '_includes/builder/blocks/' ~ context ~ '/' ~ block.type|kebab }}<br>
+        {{ '_includes/builder/blocks/' ~ block.type|kebab }}
+    </code> #}
+
+    {% include [
+        '_includes/builder/blocks/' ~ context ~ '/' ~ block.type|kebab,
+        '_includes/builder/blocks/' ~ block.type|kebab,
+    ] with {
+        block: block,
+        key: key ?? block.type
+    } only %}
 {% endfor %}

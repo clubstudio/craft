@@ -1,38 +1,36 @@
 color: null
 description: null
 fieldLayouts:
-  4183031b-ab39-4c03-be64-1c884c571924:
+  bc25b190-bf51-4927-b010-63a59aa94476:
     cardThumbAlignment: end
-    cardView:
-      - 'layoutElement:3afdad75-6653-440e-973a-ca5b0300f347'
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-01-23T15:53:21+00:00'
+            dateAdded: '2025-07-03T11:11:25+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: e7c39107-95e6-401c-8be7-a07e337fb7b7 # Rich Text
+            fieldUid: 51b89036-b57c-4892-aefb-56f15d5d945c # Accordion Items
             handle: null
-            includeInCards: true
+            includeInCards: false
             instructions: null
             label: null
             providesThumbs: false
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 3afdad75-6653-440e-973a-ca5b0300f347
+            uid: cd447a2e-2628-4693-9361-08dad4567455
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: c44b07da-4fac-45e9-ac58-c0f9455b0c04
+        uid: 82334105-4a9a-48c1-9351-7e6bb0bc643f
         userCondition: null
-handle: text
+handle: accordion
 hasTitleField: false
-icon: text
-name: Text
+icon: circle-plus
+name: Accordion
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null

@@ -1,0 +1,26 @@
+columnSuffix: null
+handle: testimonialEntry
+instructions: null
+name: 'Testimonial Entry'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  defaultPlacement: end
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: 1
+  selectionLabel: null
+  showCardsInGrid: false
+  showSearchInput: false
+  showSiteMenu: true
+  showUnpermittedEntries: false
+  showUnpermittedSections: false
+  sources:
+    - 'section:5748c0f6-c816-4cd6-ba8d-f497d9023f3f' # Testimonials
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Entries

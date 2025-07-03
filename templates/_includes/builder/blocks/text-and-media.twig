@@ -1,33 +1,36 @@
-{% embed '_includes/builder/section' with { block: block } only %}
-    {% block content %}
-        {% embed '_includes/builder/container' with { block: block } only %}
-            {% import '_includes/builder/classes' as classes %}
+{% import '_includes/builder/classes' as classes %}
 
-            {% block content %}
-                {% set textRight = block.mediaPosition.value == 'left' %}
+{% set textRight = block.mediaPosition.value == 'left' %}
 
-                <div class="grid gap-12 lg:grid-cols-2 lg:gap-24 {{ classes.verticalAlignment(block.verticalAlignment.value) }}">
-                    <div class="{{ textRight ? 'lg:order-1' : 'lg:order-2' }}">
-                        {% set mediaType = block.mediaType.value %}
+{# [1fr_1.213fr] #}
+<div class="
+    grid grid-cols-1 lg:grid-cols-2
+    gap-6 lg:gap-16 xl:gap-20 2xl:gap-32 3xl:gap-48 4xl:gap-60
+    {{ classes.verticalAlignment(block.verticalAlignment.value) }}
+">
+    <div class="{{ textRight ? 'lg:order-1' : 'lg:order-2' }}">
+        {% set mediaType = block.mediaType.value %}
 
-                        <figure class="aspect-square bg-black rounded-xl overflow-hidden">
-                            {% if mediaType == 'image' %}
-                                {% set image = block.image.eagerly().one() %}
-                                {% if image %}
-                                    <img src="{{ image.url }}" alt="{{ image.alt }}" class="w-full h-full object-cover">
-                                {% endif %}
-                            {% elseif mediaType == 'video' %}
-                                <video muted controls class="w-full h-full object-cover">
-                                    <source src="{{ block.videoUrl }}" type="video/mp4">
-                                </video>
-                            {% endif %}
-                        </figure>
-                    </div>
-                    <div class="{{ textRight ? 'lg:order-2' : 'lg:order-1' }} space-y-4">
-                        {% include '_includes/builder/builder' with { blocks: block.textContent.all() } only %}
-                    </div>
-                </div>
-            {% endblock %}
-        {% endembed %}
-    {% endblock %}
-{% endembed %}
+        {% if mediaType == 'image' %}
+            {% include '_includes/builder/blocks/image' with { key: key ~ ':text-and-media' } %}
+        {% elseif mediaType == 'video' %}
+            <figure class="{{ classes.aspectRatio(block.aspectRatio.value) }} bg-black rounded-xl overflow-hidden">
+                <video muted controls class="w-full h-full object-cover">
+                    <source src="{{ block.videoUrl }}" type="video/mp4">
+                </video>
+            </figure>
+        {% endif %}
+    </div>
+
+    {% set textClassKey = key ~ ':media-' ~ block.mediaPosition.value %}
+
+    <div class="flex items-center justify-center {{ textRight ? 'lg:order-2' : 'lg:order-1' }} {{ classes.sectionTextContainer(textClassKey ?? null) }}">
+        <div class="lg:max-w-2xl space-y-6">
+            {# <code class="text-xs text-blue-500">{{ textClassKey }}</code> #}
+            {% include '_includes/builder/builder' with {
+                context: 'text-and-media',
+                blocks: block.textContent.all(),
+            } only %}
+        </div>
+    </div>
+</div>

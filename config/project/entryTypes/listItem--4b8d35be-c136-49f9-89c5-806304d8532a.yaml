@@ -1,38 +1,38 @@
 color: null
 description: null
 fieldLayouts:
-  4183031b-ab39-4c03-be64-1c884c571924:
+  d72cf046-a45a-4687-abca-f7cae02e9df3:
     cardThumbAlignment: end
     cardView:
-      - 'layoutElement:3afdad75-6653-440e-973a-ca5b0300f347'
+      - 'layoutElement:c53821eb-4f93-4cc0-bdb8-45303b8766ef'
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-01-23T15:53:21+00:00'
+            dateAdded: '2025-07-02T21:21:46+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: e7c39107-95e6-401c-8be7-a07e337fb7b7 # Rich Text
-            handle: null
+            fieldUid: 62083fb6-1a8c-49b9-9782-374ce3b3a7c8 # Rich Text (Basic)
+            handle: text
             includeInCards: true
             instructions: null
-            label: null
+            label: Text
             providesThumbs: false
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 3afdad75-6653-440e-973a-ca5b0300f347
+            uid: c53821eb-4f93-4cc0-bdb8-45303b8766ef
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: c44b07da-4fac-45e9-ac58-c0f9455b0c04
+        uid: d922cfcc-cdbf-4dc2-b3ff-42f2faadca88
         userCondition: null
-handle: text
+handle: listItem
 hasTitleField: false
-icon: text
-name: Text
+icon: circle-chevron-right
+name: 'List Item'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null

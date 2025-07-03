@@ -1,0 +1,46 @@
+{% set image = block.image.eagerly().one() %}
+
+{% set aspect = {
+    video: {
+        class: 'aspect-video',
+        ratio: 16 / 9
+    },
+    photo: {
+        class: 'aspect-[4/3]',
+        ratio: 4 / 3,
+    },
+    square: {
+        class: 'aspect-square',
+        ratio: 1 / 1,
+    },
+    auto: {
+        class: '',
+        ratio: image.width / image.height,
+    }
+} %}
+
+{% set transformInfo = attribute(craft.app.config.custom.transforms, key) ?? { width: 400 } %}
+{% set aspectInfo = aspect[block.aspectRatio.value] %}
+
+{% if image %}
+    {% set width = transformInfo.width %}
+
+    <figure class="{{ aspectInfo.class }} bg-black overflow-hidden">
+        {% do image.setTransform({
+            width: width,
+            height: width / aspectInfo.ratio
+        }) %}
+
+        {{ tag('img', {
+            src: image.url,
+            width: image.width,
+            height: image.height,
+            srcset: image.getSrcset(transformInfo.srcset ?? []),
+            sizes: transformInfo.sizes ?? '',
+            alt: image.alt,
+            loading: 'lazy',
+            class: 'w-full h-full object-cover'
+        }) }}
+    </figure>
+    {# <code class="text-xs text-blue-500">{{ key }}</code> #}
+{% endif %}

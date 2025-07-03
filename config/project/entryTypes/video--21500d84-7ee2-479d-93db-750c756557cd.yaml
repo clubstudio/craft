@@ -1,54 +1,54 @@
 color: null
 description: null
 fieldLayouts:
-  260a007a-f039-4c74-b9ef-4155610d7dd6:
+  749c84da-86da-4d20-8b97-61a267d9529a:
     cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-07-02T13:06:54+00:00'
+            dateAdded: '2025-07-02T15:30:58+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
+            fieldUid: 7b4459c4-8611-49b4-abdf-99a0f4c7a646 # Video URL
             handle: null
             includeInCards: false
             instructions: null
             label: null
             providesThumbs: false
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: d6061d24-c6f0-4714-8193-ac3231e75f7a
+            uid: e8c3c542-7379-4a54-9064-6256602ecac1
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-07-02T12:11:31+00:00'
+            dateAdded: '2025-07-02T15:30:58+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 74e71a63-f33d-464e-af59-02d384543ac7 # FAQs
+            fieldUid: ae4f2361-8913-4891-ad95-3938347a1e55 # Aspect Ratio
             handle: null
             includeInCards: false
             instructions: null
             label: null
             providesThumbs: false
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: d0360b29-2c56-4d68-ad89-a683ad065490
+            uid: 8c201747-2fc9-42d6-87a7-9a764bfc402e
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 20af3ede-25c1-4b89-a693-25c3ff9bd09d
+        uid: 5221d4e6-3a42-488b-9a97-6a7d8785ac5e
         userCondition: null
-handle: faqs
+handle: video
 hasTitleField: false
-icon: circle-question
-name: FAQs
-showSlugField: false
+icon: youtube
+name: Video
+showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

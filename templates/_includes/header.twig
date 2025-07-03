@@ -1,5 +1,7 @@
+{% import '_includes/builder/classes' as classes %}
+
 <header role="banner" class="py-6">
-    <div class="container mx-auto px-8 flex space-x-6 justify-between">
+    <div class="{{ classes.maxWidth('contain') }} flex space-x-6 justify-between">
         <a href="{{ url('/') }}" class="font-bold">{{ siteName }}</a>
         <nav aria-label="{{ 'Main navigation'|t }}">
             <ul class="flex space-x-6">

@@ -9,32 +9,32 @@
     {% endif %}
 {% endfor %}
 
-{% embed '_includes/builder/section' with { block: block, faqs: faqs } only %}
-    {% block content %}
-        {% embed '_includes/builder/container' with { block: block, faqs: faqs } only %}
-            {% block content %}
-                {% set textContentBlocks = block.textContent.eagerly().all() %}
+{% set textContentBlocks = block.textContent.eagerly().all() %}
 
-                {% if textContentBlocks|length %}
-                    <div class="space-y-4 mb-6">
-                        {% include '_includes/builder/builder' with { blocks: textContentBlocks } only %}
-                    </div>
-                {% endif %}
+<div class="
+    grid grid-cols-1 lg:grid-cols-2
+    gap-6 lg:gap-16 xl:gap-20 2xl:gap-32 3xl:gap-48 4xl:gap-60
+">
+    {% if textContentBlocks|length %}
+        <div class="space-y-4 mb-6">
+            {% include '_includes/builder/builder' with {
+                context: 'faqs',
+                blocks: textContentBlocks
+            } only %}
+        </div>
+    {% endif %}
 
-                {% if faqs|length %}
-                    <div class="divide-y">
-                        {% for faq in faqs %}
-                            <details class="py-4">
-                                <summary class="font-bold">{{ faq.question }}</summary>
-                                {{ faq.answer }}
-                            </details>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            {% endblock %}
-        {% endembed %}
-    {% endblock %}
-{% endembed %}
+    {% if faqs|length %}
+        <div class="divide-y divide-gray-300">
+            {% for faq in faqs %}
+                <details class="py-4">
+                    <summary class="font-bold">{{ faq.question }}</summary>
+                    {{ faq.answer }}
+                </details>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
 
 {% set jsonLd = seomatic.jsonLd.create({
     'type': 'FAQPage',

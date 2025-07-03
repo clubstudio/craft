@@ -1,11 +1,6 @@
-{% embed '_includes/builder/section' with { block: block } only %}
-    {% block content %}
-        {% embed '_includes/builder/container' with { block: block } only %}
-            {% block content %}
-                <div class="space-y-4">
-                    {% include '_includes/builder/builder' with { blocks: block.textContent.all() } only %}
-                </div>
-            {% endblock %}
-        {% endembed %}
-    {% endblock %}
-{% endembed %}
+<div class="space-y-6">
+    {% include '_includes/builder/builder' with {
+        context: 'text-elements',
+        blocks: block.textContent.eagerly().all()
+    } only %}
+</div>

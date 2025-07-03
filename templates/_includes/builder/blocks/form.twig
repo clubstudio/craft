@@ -1,12 +1,5 @@
-{% embed '_includes/builder/section' with { block: block } only %}
-    {% block content %}
-        {% embed '_includes/builder/container' with { block: block } only %}
-            {% block content %}
-                {% set form = block.form.one() %}
-                {% if form %}
-                    {% include '_includes/components/form' with { form: form } only %}
-                {% endif %}
-            {% endblock %}
-        {% endembed %}
-    {% endblock %}
-{% endembed %}
+{% set form = block.form.eagerly().one() %}
+
+{% if form %}
+    {% include '_includes/components/form' with { form: form } only %}
+{% endif %}

@@ -1,38 +1,36 @@
 color: null
 description: null
 fieldLayouts:
-  4183031b-ab39-4c03-be64-1c884c571924:
+  bb8c2776-09cd-4f76-9a1c-a9519af5b174:
     cardThumbAlignment: end
-    cardView:
-      - 'layoutElement:3afdad75-6653-440e-973a-ca5b0300f347'
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-01-23T15:53:21+00:00'
+            dateAdded: '2025-07-03T10:26:34+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: e7c39107-95e6-401c-8be7-a07e337fb7b7 # Rich Text
+            fieldUid: ac23a061-b6b4-4ab7-9d91-648ecffc6c7f # Testimonial Entry
             handle: null
-            includeInCards: true
+            includeInCards: false
             instructions: null
             label: null
             providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 3afdad75-6653-440e-973a-ca5b0300f347
+            uid: 10f32b11-18ae-4c74-9fa6-4717c4adc923
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: c44b07da-4fac-45e9-ac58-c0f9455b0c04
+        uid: fde65253-63fa-43f0-8171-ae6c54da520e
         userCondition: null
-handle: text
+handle: testimonialEntry
 hasTitleField: false
-icon: text
-name: Text
+icon: comment-heart
+name: 'Testimonial Entry'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null

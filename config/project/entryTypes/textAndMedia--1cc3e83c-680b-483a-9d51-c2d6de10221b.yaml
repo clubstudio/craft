@@ -10,23 +10,6 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-01-23T18:35:31+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 880eec01-7422-4f0d-8fa0-1784ea9fbec6
-            userCondition: null
-            warning: null
-            width: 100
-          -
             dateAdded: '2025-07-02T11:57:07+00:00'
             editCondition: null
             elementCondition: null
@@ -102,6 +85,23 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2025-07-02T14:32:05+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ae4f2361-8913-4891-ad95-3938347a1e55 # Aspect Ratio
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 552370c2-6ce9-4644-aa78-f1e79adb09b2
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2025-01-23T19:32:02+00:00'
             editCondition: null
             elementCondition: null
@@ -135,88 +135,25 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 50
+          -
+            dateAdded: '2025-01-23T18:35:31+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 880eec01-7422-4f0d-8fa0-1784ea9fbec6
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: e5545267-423a-4364-aa58-913a6d4e8c87
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            dateAdded: '2025-01-23T18:35:31+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: e2c74420-bbaf-40c8-acf9-daf436a33bbd # Maximum Width
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 8a5c8d92-84fe-4e01-8779-bfe381bc07d5
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-01-23T18:35:31+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 1414d7cb-fb98-4f48-88f2-e5b2401cf402 # Horizontal Alignment
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: d0b46514-808c-4550-91bb-8a710ae34c04
-            userCondition: null
-            warning: null
-            width: 100
-        name: Container
-        uid: 4059abb2-68c8-498a-97bc-180eb20a5f00
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            dateAdded: '2025-01-23T18:35:31+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
-            handle: paddingTop
-            includeInCards: false
-            instructions: null
-            label: 'Padding Top'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 3cf1c5c7-e613-4b74-a03f-d71b1d03eaa0
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2025-01-23T18:35:31+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
-            handle: paddingBottom
-            includeInCards: false
-            instructions: null
-            label: 'Padding Bottom'
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: e160684c-6698-44c7-8bdb-ce2f466cf5fc
-            userCondition: null
-            warning: null
-            width: 50
-        name: Style
-        uid: 6619d92b-2f7b-43d7-ab87-0c86d11b36dc
         userCondition: null
 handle: textAndMedia
 hasTitleField: false

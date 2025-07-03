@@ -1,38 +1,36 @@
 color: null
 description: null
 fieldLayouts:
-  4183031b-ab39-4c03-be64-1c884c571924:
+  03a16da3-968f-4382-8962-c009cdb9f72e:
     cardThumbAlignment: end
-    cardView:
-      - 'layoutElement:3afdad75-6653-440e-973a-ca5b0300f347'
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-01-23T15:53:21+00:00'
+            dateAdded: '2025-07-03T10:08:26+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: e7c39107-95e6-401c-8be7-a07e337fb7b7 # Rich Text
+            fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
             handle: null
-            includeInCards: true
+            includeInCards: false
             instructions: null
             label: null
             providesThumbs: false
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 3afdad75-6653-440e-973a-ca5b0300f347
+            uid: e799b7be-da72-41ae-b465-d5e8fb3afeac
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: c44b07da-4fac-45e9-ac58-c0f9455b0c04
+        uid: 9e1d2630-0e5d-4b17-b5b2-83cf093bd4ee
         userCondition: null
-handle: text
+handle: hero
 hasTitleField: false
-icon: text
-name: Text
+icon: star-christmas
+name: Hero
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null

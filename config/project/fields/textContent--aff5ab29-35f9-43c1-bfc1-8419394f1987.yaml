@@ -6,27 +6,96 @@ searchable: false
 settings:
   createButtonLabel: 'New block'
   defaultIndexViewMode: cards
+  enableVersioning: false
   entryTypes:
     -
       __assoc__:
         -
           - uid
           - e3cda67e-8c3a-4c54-b1d6-0e9468607930 # Eyebrow
+        -
+          - group
+          - General
     -
       __assoc__:
         -
           - uid
           - 3e21768c-5b31-4bba-be9f-8341e29cc796 # Heading
+        -
+          - group
+          - General
     -
       __assoc__:
         -
           - uid
           - a49385d7-d5af-4d02-a3b0-40a69c749712 # Paragraph
+        -
+          - group
+          - General
     -
       __assoc__:
         -
           - uid
           - 06995b69-1665-4491-b99a-edfe08b151fd # Links
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - b462f6b0-2e3a-40f9-abce-64bccae77910 # Accordion
+        -
+          - group
+          - Lists
+    -
+      __assoc__:
+        -
+          - uid
+          - 7b5ca0bb-2131-4dbb-bd2b-64ddc1c33c8c # List
+        -
+          - group
+          - Lists
+    -
+      __assoc__:
+        -
+          - uid
+          - 248c238c-0963-4912-a62b-ec82b667e1b4 # Testimonial Entry
+        -
+          - group
+          - Content
+    -
+      __assoc__:
+        -
+          - uid
+          - 4d109d67-14c0-415f-aca1-42cac4c6640c # Form
+        -
+          - group
+          - Special
+    -
+      __assoc__:
+        -
+          - uid
+          - 5b44e3df-c613-4972-be8b-ba2874a67656 # Icon
+        -
+          - group
+          - Special
+    -
+      __assoc__:
+        -
+          - uid
+          - 2257efc6-f010-4dd9-997b-95a89fa4c2d3 # Divider
+        -
+          - group
+          - Layout
+    -
+      __assoc__:
+        -
+          - uid
+          - 0b321564-e4b7-4cad-990a-990f27e2bc26 # Spacer
+        -
+          - group
+          - Layout
   includeTableView: false
   maxEntries: null
   minEntries: null

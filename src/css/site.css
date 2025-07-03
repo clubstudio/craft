@@ -32,6 +32,15 @@
     width: auto;
 }
 
+.blockquote p:first-of-type::before {
+    content: "“";
+    margin-left: -.75ch;
+}
+
+.blockquote p:last-of-type::after {
+    content: "”";
+}
+
 .body-copy {
     > * + * {
         margin-top: --spacing(6);

@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: listItems
+instructions: null
+name: 'List Items'
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 4b8d35be-c136-49f9-89c5-806304d8532a # List Item
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: null
+  minEntries: 1
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix
