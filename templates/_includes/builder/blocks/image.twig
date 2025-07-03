@@ -25,22 +25,28 @@
 {% if image %}
     {% set width = transformInfo.width %}
 
-    <figure class="{{ aspectInfo.class }} bg-black overflow-hidden">
-        {% do image.setTransform({
-            width: width,
-            height: width / aspectInfo.ratio
-        }) %}
+    <figure>
+        <div class="{{ aspectInfo.class }} bg-black overflow-hidden">
+            {% do image.setTransform({
+                width: width,
+                height: width / aspectInfo.ratio
+            }) %}
 
-        {{ tag('img', {
-            src: image.url,
-            width: image.width,
-            height: image.height,
-            srcset: image.getSrcset(transformInfo.srcset ?? []),
-            sizes: transformInfo.sizes ?? '',
-            alt: image.alt,
-            loading: 'lazy',
-            class: 'w-full h-full object-cover'
-        }) }}
+            {{ tag('img', {
+                src: image.url,
+                width: image.width,
+                height: image.height,
+                srcset: image.getSrcset(transformInfo.srcset ?? []),
+                sizes: transformInfo.sizes ?? '',
+                alt: image.alt,
+                loading: 'lazy',
+                class: 'w-full h-full object-cover'
+            }) }}
+        </div>
+
+        {% if block.caption|length %}
+            <figcaption class="mt-2 text-sm body-copy">{{ block.caption }}</figcaption>
+        {% endif %}
     </figure>
     {# <code class="text-xs text-blue-500">{{ key }}</code> #}
 {% endif %}

@@ -48,4 +48,5 @@
 
     ul { list-style: disc }
     ol { list-style: decimal }
+    p > a { text-decoration: underline; }
 }

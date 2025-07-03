@@ -9,11 +9,18 @@
                     ':siteName': siteName,
                 }) }}</p>
             {% endif %}
-            <nav aria-label="{{ 'Footer navigation'|t }}">
-                <ul class="flex space-x-6">
-                    <li><a href="{{ url('') }}">{{ 'Home'|t }}</a></li>
-                </ul>
-            </nav>
+            {% set nodes = craft.navigation.nodes().handle('legalLinks').all() %}
+            {% if nodes|length %}
+                <nav aria-label="{{ 'Footer navigation'|t }}">
+                    <ul class="flex space-x-6">
+                        {% for node in nodes %}
+                            <li>
+                                <a href="{{ node.url }}">{{ node.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            {% endif %}
         </div>
         {% set socialProfiles = globals.socialProfiles.all() %}
         {% if socialProfiles|length %}

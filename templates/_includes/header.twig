@@ -3,10 +3,17 @@
 <header role="banner" class="py-6">
     <div class="{{ classes.maxWidth('contain') }} flex space-x-6 justify-between">
         <a href="{{ url('/') }}" class="font-bold">{{ siteName }}</a>
-        <nav aria-label="{{ 'Main navigation'|t }}">
-            <ul class="flex space-x-6">
-                <li><a href="{{ url('') }}">{{ 'Home'|t }}</a></li>
-            </ul>
-        </nav>
+        {% set nodes = craft.navigation.nodes().handle('mainNavigation').all() %}
+        {% if nodes|length %}
+            <nav aria-label="{{ 'Main navigation'|t }}">
+                <ul class="flex space-x-6">
+                    {% for node in nodes %}
+                        <li>
+                            <a href="{{ node.url }}">{{ node.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        {% endif %}
     </div>
 </header>

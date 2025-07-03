@@ -72,6 +72,14 @@ settings:
         -
           - group
           - General
+    -
+      __assoc__:
+        -
+          - uid
+          - c23595e5-62be-4f04-b180-0411df260b64 # Showcase
+        -
+          - group
+          - General
   includeTableView: false
   maxEntries: 1
   minEntries: 1

@@ -21,13 +21,15 @@ settings:
           __assoc__:
             -
               - sources
-              - '*'
+              -
+                - singles
+                - 'section:f70322ae-4170-462e-b3f4-138012e301da' # Pages
             -
               - showUnpermittedSections
-              - '1'
+              - ''
             -
               - showUnpermittedEntries
-              - '1'
+              - ''
       -
         - url
         -

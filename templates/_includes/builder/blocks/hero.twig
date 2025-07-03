@@ -1,9 +1,9 @@
 {% import '_includes/builder/classes' as classes %}
 
 <section>
-    <div class="aspect-[21/9] flex items-center bg-black text-white py-24">
+    <div class="aspect-[21/9] flex items-center bg-gray-100 py-24">
         <div class="{{ classes.maxWidth('contain') }}">
-            <div class="lg:max-w-2xl space-y-6">
+            <div class="lg:max-w-xl space-y-6">
                 {% include '_includes/builder/builder' with {
                     context: 'hero',
                     blocks: block.textContent.all(),

@@ -1,0 +1,22 @@
+color: null
+description: null
+fieldLayouts:
+  695f8596-d717-4bfc-aba7-742e0e66a5e1:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        name: Content
+        uid: 2ebad613-c48b-49b8-90da-64af7fa4182b
+        userCondition: null
+handle: breadcrumb
+hasTitleField: false
+icon: ellipsis
+name: Breadcrumb
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

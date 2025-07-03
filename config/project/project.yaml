@@ -1,4 +1,4 @@
-dateModified: 1751550311
+dateModified: 1751555698
 elementSources:
   craft\elements\Entry:
     -
@@ -90,6 +90,7 @@ meta:
     3f23d659-bee2-453e-b674-c4f730be7e88: 'Profile URL' # Profile URL
     4b8d35be-c136-49f9-89c5-806304d8532a: 'List Item' # List Item
     4c1e65ea-bd76-45a2-9b25-2e7d92a12ff0: Link # Link
+    4c291e60-4cbf-4007-badf-2b3b7a7ef66f: 'Main Navigation' # Main Navigation
     4d109d67-14c0-415f-aca1-42cac4c6640c: Form # Form
     4e472aae-8399-4bd0-ae02-daf1b837bdfd: 'Content Blocks' # Content Blocks
     5b44e3df-c613-4972-be8b-ba2874a67656: Icon # Icon
@@ -104,19 +105,24 @@ meta:
     7d44415b-35cb-4e25-bf4f-9ef55eb90547: Anchor # Anchor
     7e20247b-253f-4e4b-a04f-a66573c4a529: Image # Image
     8cb7772d-559f-4262-beae-c26e872282ea: Links # Links
+    13d7090a-268d-4106-91a9-73a1f7029be0: Breadcrumb # Breadcrumb
     16e5b50d-e7a4-46d7-b51f-084d25a1e36b: Hero # Hero
     51b89036-b57c-4892-aefb-56f15d5d945c: 'Accordion Items' # Accordion Items
     74e71a63-f33d-464e-af59-02d384543ac7: FAQs # FAQs
     84f8b614-1005-47ab-8c38-5436ca169550: 'Public Schema' # Public Schema
     89b0ee7b-1530-4b52-9ba3-1335bc1eaf8e: FAQs # FAQs
+    93b17e70-d317-4251-896f-87a5a97956cb: Full # Full
     145cfe22-19bb-4807-8e33-c8d059374c2c: 'Text Alignment' # Text Alignment
     248c238c-0963-4912-a62b-ec82b667e1b4: 'Testimonial Entry' # Testimonial Entry
     274bbd5f-3859-4d8f-91c3-f68ebbb29720: Columns # Columns
+    494b1091-68c0-4f45-a25a-8f4ae90680bd: Entries # Entries
     650c6872-2c55-4840-955f-de309ced444c: 'Contact Form' # Contact Form
     1414d7cb-fb98-4f48-88f2-e5b2401cf402: 'Horizontal Alignment' # Horizontal Alignment
     2257efc6-f010-4dd9-997b-95a89fa4c2d3: Divider # Divider
     3975bba4-34d1-446f-a01c-a3059f621585: 'Social Profile' # Social Profile
+    04458eeb-f7b5-4330-ace3-277c87df1503: 'Legal Links' # Legal Links
     5748c0f6-c816-4cd6-ba8d-f497d9023f3f: Testimonials # Testimonials
+    6987f99c-8b2a-479a-a63e-51df68e0f21a: 'Rich Text (Full)' # Rich Text (Full)
     06995b69-1665-4491-b99a-edfe08b151fd: Links # Links
     7397cb77-355d-47eb-83b4-30f061ca415b: 'Vertical Alignment' # Vertical Alignment
     7631edb0-1fb5-477f-96bd-57ded88a1c47: 'FAQ Entry' # FAQ Entry
@@ -144,6 +150,7 @@ meta:
     c6ba79fe-02b0-4513-a81e-d59a8f5b89b8: Globals # Globals
     c7f0c55c-6193-490a-a2af-0fbe7069cc94: 'FAQ Entry' # FAQ Entry
     c55ca0a9-4bd6-409b-afd8-c1884dafecd0: Team # Team
+    c23595e5-62be-4f04-b180-0411df260b64: Showcase # Showcase
     c1874064-cabe-4c03-943f-9af16558b6cf: Globals # Globals
     cac24c58-8d46-48c3-98bd-d99f03d7c8ef: Section # Section
     d0c7900e-d61c-4839-a59e-70bb47358360: Image # Image

@@ -84,6 +84,14 @@ settings:
       __assoc__:
         -
           - uid
+          - 13d7090a-268d-4106-91a9-73a1f7029be0 # Breadcrumb
+        -
+          - group
+          - Special
+    -
+      __assoc__:
+        -
+          - uid
           - 2257efc6-f010-4dd9-997b-95a89fa4c2d3 # Divider
         -
           - group
