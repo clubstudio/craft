@@ -1,4 +1,4 @@
-dateModified: 1751626724
+dateModified: 1751641081
 elementSources:
   craft\elements\Entry:
     -
@@ -40,6 +40,9 @@ elementSources:
       tableAttributes:
         - status
         - link
+      type: native
+    -
+      key: 'section:d8997ae9-6156-48da-8a7e-faeae0802e23' # Articles
       type: native
     -
       heading: Library
@@ -100,6 +103,7 @@ meta:
     4c1e65ea-bd76-45a2-9b25-2e7d92a12ff0: Link # Link
     4c291e60-4cbf-4007-badf-2b3b7a7ef66f: 'Main Navigation' # Main Navigation
     4d109d67-14c0-415f-aca1-42cac4c6640c: Form # Form
+    4e4bdd9a-9db7-4578-b3ba-e7cd7a6658c6: Profile # Profile
     4e472aae-8399-4bd0-ae02-daf1b837bdfd: 'Content Blocks' # Content Blocks
     5b44e3df-c613-4972-be8b-ba2874a67656: Icon # Icon
     5c86e823-c1de-4e1e-a517-7ab40b8724a0: Home # Home
@@ -125,6 +129,7 @@ meta:
     89b0ee7b-1530-4b52-9ba3-1335bc1eaf8e: FAQs # FAQs
     93b17e70-d317-4251-896f-87a5a97956cb: Full # Full
     145cfe22-19bb-4807-8e33-c8d059374c2c: 'Text Alignment' # Text Alignment
+    223faaad-f244-41a3-bef4-0d188899acee: 'Image (Inline)' # Image (Inline)
     248c238c-0963-4912-a62b-ec82b667e1b4: 'Testimonial Entry' # Testimonial Entry
     274bbd5f-3859-4d8f-91c3-f68ebbb29720: Columns # Columns
     494b1091-68c0-4f45-a25a-8f4ae90680bd: Entries # Entries
@@ -146,6 +151,7 @@ meta:
     326377be-c2da-462e-bea3-4eb8ca886573: 'Tag Position' # Tag Position
     761607ea-8c75-4aea-af4a-00d367e51171: 'Heading Level' # Heading Level
     948057e1-04f5-43cb-8a4d-43e67384f5eb: SEO # SEO
+    09154649-593b-4c0b-aa9b-bba01d18d70e: Article # Article
     21969370-50f4-4772-bb0d-01e56f327ba8: Columns # Columns
     a9dd8d2a-08c8-4a65-8cc3-1d29c5bb901e: FAQ # FAQ
     a34c1736-2104-4937-99c0-00f502185b62: 'Media Type' # Media Type
@@ -159,6 +165,7 @@ meta:
     af72e76d-2752-456f-a86c-e9fe22eaaf71: Testimonial # Testimonial
     aff5ab29-35f9-43c1-bfc1-8419394f1987: 'Text Content' # Text Content
     b1d95554-25a7-42c3-822d-09155f628a4b: $CRAFT_SITE_NAME # $CRAFT_SITE_NAME
+    b5ab890b-067e-4b4c-9221-8311a3749f1d: User # User
     b5c0e079-285c-4a6f-a12a-2c7c44b21068: 'Link Style' # Link Style
     b15bb767-c33c-443c-8536-0b08e9e1d3df: Padding # Padding
     b462f6b0-2e3a-40f9-abce-64bccae77910: Accordion # Accordion
@@ -173,8 +180,10 @@ meta:
     d6b7a87c-df19-4865-b62e-756d2cfc9271: Simple # Simple
     d7f2d6ab-95d8-49be-8cf1-e5e4d4a427e4: Images # Images
     d363d288-d9a6-466d-82f0-a0fdd9530d71: Form # Form
+    d8997ae9-6156-48da-8a7e-faeae0802e23: Articles # Articles
     d10795ff-f335-4264-8cdb-189e8c03d30d: Statistic # Statistic
     d14159c6-01c5-410d-b1c8-785d25b4027f: Tag # Tag
+    da7038fd-c908-441e-8a14-90d1f530e8ca: Index # Index
     e2c74420-bbaf-40c8-acf9-daf436a33bbd: 'Maximum Width' # Maximum Width
     e3cda67e-8c3a-4c54-b1d6-0e9468607930: Eyebrow # Eyebrow
     e6b9a7b0-4786-4d98-aa93-e7de2a709e9c: 'Social Network' # Social Network
@@ -187,6 +196,7 @@ meta:
     ed206a6f-5783-44ef-851d-fb1166bc3102: Paragraph # Paragraph
     f0f0b835-5f51-4019-a20e-b3f8cc1a7453: Minimal # Minimal
     f01ab0c4-931a-46aa-bcec-67b6c6941e21: 'Plain Text' # Plain Text
+    f9f5b927-df42-44aa-9851-28659f875ab1: 'Entry Type' # Entry Type
     f70322ae-4170-462e-b3f4-138012e301da: Pages # Pages
     fd532b74-9e46-4921-867f-79a80ef26fdf: $CRAFT_SITE_NAME # $CRAFT_SITE_NAME
 plugins:

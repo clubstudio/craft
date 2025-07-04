@@ -13,13 +13,15 @@
 
     {% for card in cards %}
         {% set entry = card.entry.eagerly().one() %}
-        {% include [
-            '_includes/builder/blocks/content-cards/' ~ entry.type|kebab,
-            '_includes/builder/blocks/content-card',
-        ] with {
-            entry: entry,
-            context: 'content-cards',
-            key: key,
-        } only %}
+        {% if entry %}
+            {% include [
+                '_includes/builder/blocks/content-cards/' ~ entry.type|kebab,
+                '_includes/builder/blocks/content-card',
+            ] with {
+                entry: entry,
+                context: 'content-cards',
+                key: key,
+            } only %}
+        {% endif %}
     {% endfor %}
 </div>

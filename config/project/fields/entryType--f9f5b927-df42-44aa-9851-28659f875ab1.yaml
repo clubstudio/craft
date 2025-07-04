@@ -1,0 +1,26 @@
+columnSuffix: null
+handle: entryType
+instructions: null
+name: 'Entry Type'
+searchable: false
+settings:
+  customOptions: false
+  iconsOnly: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Articles
+        -
+          - value
+          - articles
+        -
+          - icon
+          - ''
+        -
+          - default
+          - '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\ButtonGroup

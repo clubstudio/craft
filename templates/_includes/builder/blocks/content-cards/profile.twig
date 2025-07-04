@@ -1,0 +1,10 @@
+{% set user = entry.user.eagerly().one() %}
+<a href="{{ entry.url }}" class="flex flex-col justify-between h-96 p-12 bg-gray-100">
+    <div class="mb-2">{{ entry.type.name }}</div>
+    <div class="mt-24">
+        <div class="text-xl font-bold">{{ entry.title }}</div>
+        {% if user %}
+            {{ user.role }}
+        {% endif %}
+    </div>
+</a>

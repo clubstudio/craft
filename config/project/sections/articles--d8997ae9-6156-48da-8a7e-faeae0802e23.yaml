@@ -2,14 +2,10 @@ defaultPlacement: end
 enableVersioning: true
 entryTypes:
   -
-    uid: 2b8d277c-c134-499a-bb5b-11c2bec12bb1 # Basic
-  -
-    uid: da7038fd-c908-441e-8a14-90d1f530e8ca # Index
-  -
-    uid: 4e4bdd9a-9db7-4578-b3ba-e7cd7a6658c6 # Profile
-handle: pages
-maxAuthors: 1
-name: Pages
+    uid: 09154649-593b-4c0b-aa9b-bba01d18d70e # Article
+handle: articles
+maxAuthors: null
+name: Articles
 previewTargets:
   -
     __assoc__:
@@ -27,9 +23,6 @@ siteSettings:
   fd532b74-9e46-4921-867f-79a80ef26fdf: # $CRAFT_SITE_NAME
     enabledByDefault: true
     hasUrls: true
-    template: _pages/entry.twig
-    uriFormat: '{parent.uri}/{slug}'
-structure:
-  maxLevels: null
-  uid: aa2499c8-42ee-4fa4-86aa-70f980ed059f
-type: structure
+    template: _pages/article.twig
+    uriFormat: 'articles/{slug}'
+type: channel

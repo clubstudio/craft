@@ -1,0 +1,53 @@
+color: null
+description: null
+fieldLayouts:
+  fe20a6fe-a338-4ea2-8ecf-4ad003f67643:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-07-04T11:28:06+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 8484dcc0-00fd-4270-b707-eab0d1c66d6d
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 000d63d7-77d2-4713-a58c-1d9777ad4cea
+        userCondition: null
+handle: article
+hasTitleField: true
+icon: newspaper
+name: Article
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -92,6 +92,22 @@ settings:
       __assoc__:
         -
           - uid
+          - 7e20247b-253f-4e4b-a04f-a66573c4a529 # Image
+        -
+          - group
+          - Special
+    -
+      __assoc__:
+        -
+          - uid
+          - 223faaad-f244-41a3-bef4-0d188899acee # Image (Inline)
+        -
+          - group
+          - Special
+    -
+      __assoc__:
+        -
+          - uid
           - 2257efc6-f010-4dd9-997b-95a89fa4c2d3 # Divider
         -
           - group

@@ -1,9 +1,10 @@
 {% set featuredEntries = block.entries.eagerly().all() %}
+{% set links = block.links.eagerly().all() %}
 {% set key = [key, 'showcase']|join(':') %}
 
 {% if featuredEntries|length %}
     <div class="
-        flex flex-col lg:flex-row
+        grid grid-cols-1 lg:grid-cols-2
         gap-6 lg:gap-16 xl:gap-20 2xl:gap-32 3xl:gap-48 4xl:gap-60
     ">
         {% for featuredEntry in featuredEntries %}
@@ -12,8 +13,8 @@
 
                 </code> #}
                 {% include [
-                    '_includes/builder/blocks/entry-previews/' ~ featuredEntry.type|kebab,
-                    '_includes/builder/blocks/entry-preview',
+                    '_includes/builder/blocks/showcase/' ~ featuredEntry.type|kebab,
+                    '_includes/builder/blocks/showcase-preview',
                  ] with {
                     entry: featuredEntry,
                     context: 'showcase',
@@ -21,8 +22,8 @@
                     aspectRatio: loop.first ? 'aspect-square' : 'aspect-[3/4]',
                 } only %}
 
-                {% if loop.first %}
-                    <div class="mt-auto">
+                {% if loop.first and links|length %}
+                    <div class="mt-auto pt-12">
                         {% include '_includes/builder/blocks/links' %}
                     </div>
                 {% endif %}

@@ -12,7 +12,7 @@
             {{ previous }}
         </a>
     {% else %}
-        {{ previous}}
+        <span>{{ previous}}</span>
     {% endif %}
 
     {% for page, url in pageInfo.getPrevUrls(5) %}
@@ -30,6 +30,6 @@
             {{ next }}
         </a>
     {% else %}
-        {{ next }}
+        <span>{{ next }}</span>
     {% endif %}
 </div>

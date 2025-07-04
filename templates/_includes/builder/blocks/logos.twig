@@ -1,6 +1,6 @@
 {% set logos = block.logos.eagerly().all() %}
 
-<div class="flex items-center justify-center flex-wrap -m-6">
+<div class="flex items-center justify-between flex-wrap -m-6">
     {% for logo in logos %}
         {% set asset = logo.image.eagerly().one() %}
         {% set link = logo.hyperlink %}

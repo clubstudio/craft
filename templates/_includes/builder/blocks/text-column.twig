@@ -2,6 +2,7 @@
     {% include '_includes/builder/builder' with {
         context: context,
         blocks: block.textContent.eagerly().all(),
+        key: key,
     } only %}
 </div>
 

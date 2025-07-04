@@ -1,0 +1,28 @@
+{% extends '_layouts/master' %}
+
+{% import '_includes/builder/classes' as classes %}
+
+{% block content %}
+    <article class="py-12 {{ classes.maxWidth('contain') }}">
+        <header>
+            {% include '_includes/components/heading' with {
+                level: 'h1',
+                heading: entry.title,
+            } %}
+        </header>
+        <div class="flex items-center mt-6">
+            <span>by</span>
+            {% for author in entry.authors %}
+                {% set photo = author.photo %}
+                <div class="inline-flex items-center px-3">
+                    <figure class="size-12 rounded-full bg-gray-100 mr-2">
+                        {% if photo %}
+                            <img src="{{ photo.url({ width: 96, height: 96 }) }}" alt="{{ photo.alt }}" class="size-12">
+                        {% endif %}
+                    </figure>
+                    {{ author.name }}
+                </div>
+            {% endfor %}
+        </div>
+    </article>
+{% endblock %}

@@ -16,6 +16,7 @@ return GeneralConfig::create()
     ->omitScriptNameInUrls()
     ->preloadSingles()
     ->preventUserEnumeration()
+    ->addTrailingSlashesToUrls()
     ->enableGql(false)
     ->errorTemplatePrefix('_errors/')
     ->aliases([

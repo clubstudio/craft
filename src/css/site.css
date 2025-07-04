@@ -43,7 +43,7 @@
 
 .body-copy {
     > * + * {
-        margin-top: --spacing(6);
+        margin-top: --spacing(4);
     }
 
     ul { list-style: disc }
