@@ -1,6 +1,27 @@
 {% import '_includes/builder/classes' as classes %}
 
+{% set callToActionText = globals.callToAction.eagerly().all() %}
+{% set newsletterForm = globals.newsletterForm.eagerly().one() %}
+
 <footer role="contentinfo" class="py-6">
+    <div class="{{ classes.maxWidth('contain') }} grid grid-cols-3 gap-12 justify-between text-sm mb-12">
+        {% if callToActionText|length %}
+            <div class="space-y-6">
+                {% include '_includes/builder/builder' with {
+                    context: 'text-elements',
+                    blocks: callToActionText,
+                } only %}
+            </div>
+        {% endif %}
+        <div>
+            {# Footer Links #}
+        </div>
+        {% if newsletterForm %}
+            <div>
+                {% include '_includes/components/form' with { form: newsletterForm } only %}
+            </div>
+        {% endif %}
+    </div>
     <div class="{{ classes.maxWidth('contain') }} flex space-x-6 justify-between text-sm">
         <div class="flex items-center space-x-6">
             {% if globals.copyrightNotice|length %}
@@ -25,7 +46,7 @@
         {% set socialProfiles = globals.socialProfiles.all() %}
         {% if socialProfiles|length %}
             <nav aria-label="{{ 'Social Networks'|t }}">
-                <div class="flex space-x-2">
+                <div class="flex space-x-4">
                     {% for socialProfile in socialProfiles %}
                         <a
                             href="{{ socialProfile.profileUrl }}"
@@ -35,7 +56,7 @@
                         >
                             {{ svg('@svg/social/' ~ socialProfile.socialNetwork ~ '.svg')|attr({
                                 'title': socialProfile.socialNetwork.label,
-                                'class': 'size-4',
+                                'class': 'h-4',
                                 'focusable': false,
                                 'aria-hidden': true,
                             }) }}

@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: entry
+instructions: null
+name: Entry
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  defaultPlacement: end
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: 1
+  selectionLabel: 'Select an entry'
+  showCardsInGrid: false
+  showSearchInput: true
+  showSiteMenu: true
+  showUnpermittedEntries: false
+  showUnpermittedSections: false
+  sources:
+    - 'section:ad112b66-5fdd-4015-b741-ddda3f744de9' # Frequently Asked Questions
+    - 'section:f70322ae-4170-462e-b3f4-138012e301da' # Pages
+    - singles
+    - 'section:5748c0f6-c816-4cd6-ba8d-f497d9023f3f' # Testimonials
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Entries

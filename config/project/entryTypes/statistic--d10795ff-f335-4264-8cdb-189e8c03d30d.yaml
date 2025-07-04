@@ -1,71 +1,84 @@
 color: null
 description: null
 fieldLayouts:
-  76f64cf0-b343-443f-8369-0cc8b1048137:
+  73709419-2e9c-447c-8dfd-e454f338816a:
     cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-07-03T16:38:40+00:00'
-            editCondition: null
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-07-04T08:47:34+00:00'
+            disabled: false
             elementCondition: null
-            fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
-            handle: null
+            id: null
             includeInCards: false
+            inputType: null
             instructions: null
             label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
             providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 9f98c11c-9d2d-4fab-8dfe-0bfcd821a7a1
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-07-02T13:43:14+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 21969370-50f4-4772-bb0d-01e56f327ba8 # Columns
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: c4ca75f7-d65d-4652-a599-b663f6badee2
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-07-03T16:11:06+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: b708e87e-9fc1-421a-9be2-104ef715362c # Column Layout
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
+            readonly: false
             required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 6d3bdae3-bc45-4eda-a8e0-35e8a107fa59
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-04T08:49:47+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: f01ab0c4-931a-46aa-bcec-67b6c6941e21 # Plain Text
+            handle: value
+            includeInCards: false
+            instructions: null
+            label: Value
+            providesThumbs: false
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 67d83d2d-71e6-4e78-919e-496a9dd5fffe
+            uid: e6d5fa1b-22d0-4144-b756-38ab9c6532f5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-04T08:49:47+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 62083fb6-1a8c-49b9-9782-374ce3b3a7c8 # Rich Text (Basic)
+            handle: body
+            includeInCards: false
+            instructions: null
+            label: Body
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6f3bb5e5-06cb-4ab3-a4aa-13b849ce4f32
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 15f8e427-91af-4446-b1d4-67d97e4c5ba5
+        uid: 9dbe8ff1-f48d-4413-9554-4802da5262b9
         userCondition: null
-handle: columns
-hasTitleField: false
-icon: line-columns
-name: Columns
-showSlugField: true
+handle: statistic
+hasTitleField: true
+icon: chart-line-up
+name: Statistic
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

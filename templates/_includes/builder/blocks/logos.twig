@@ -1,0 +1,25 @@
+{% set logos = block.logos.eagerly().all() %}
+
+<div class="flex items-center justify-center flex-wrap -m-6">
+    {% for logo in logos %}
+        {% set asset = logo.image.eagerly().one() %}
+        {% set link = logo.hyperlink %}
+
+        <figure class="p-6 flex justify-center">
+            {% set tagParams = link ? {
+                href: link,
+                target: link.target,
+                rel: link.rel,
+                'aria-label': link.ariaLabel,
+            } : { } %}
+
+            {% tag (link ? 'a' : 'div') with tagParams %}
+                {% if asset.format == 'svg' %}
+                    {{ svg(asset)|attr({ height: 36 }) }}
+                {% else %}
+                    <img src="{{ asset.url }}" alt="{{ asset.alt }}">
+                {% endif %}
+            {% endtag %}
+        </figure>
+    {% endfor %}
+</div>

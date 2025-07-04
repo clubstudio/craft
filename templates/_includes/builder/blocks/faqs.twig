@@ -12,7 +12,7 @@
 {% set textContentBlocks = block.textContent.eagerly().all() %}
 
 <div class="
-    grid grid-cols-1 lg:grid-cols-2
+    grid grid-cols-1 lg:grid-cols-[1fr_2fr]
     gap-6 lg:gap-16 xl:gap-20 2xl:gap-32 3xl:gap-48 4xl:gap-60
 ">
     {% if textContentBlocks|length %}
@@ -28,7 +28,7 @@
         <div class="divide-y divide-gray-300">
             {% for faq in faqs %}
                 <details class="py-4">
-                    <summary class="font-bold">{{ faq.question }}</summary>
+                    <summary class="font-bold md:text-xl">{{ faq.question }}</summary>
                     {{ faq.answer }}
                 </details>
             {% endfor %}

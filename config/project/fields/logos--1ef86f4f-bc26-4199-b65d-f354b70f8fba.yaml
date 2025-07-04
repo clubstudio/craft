@@ -1,10 +1,10 @@
 columnSuffix: null
-handle: links
+handle: logos
 instructions: null
-name: Links
+name: Logos
 searchable: false
 settings:
-  createButtonLabel: 'New link'
+  createButtonLabel: 'New logo'
   defaultIndexViewMode: cards
   enableVersioning: false
   entryTypes:
@@ -12,7 +12,7 @@ settings:
       __assoc__:
         -
           - uid
-          - 4c1e65ea-bd76-45a2-9b25-2e7d92a12ff0 # Link
+          - 6e93f919-5527-4324-9f1d-1603cd8513ac # Logo
         -
           - group
           - General

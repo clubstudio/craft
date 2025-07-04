@@ -1,9 +1,22 @@
+{% import '_includes/builder/classes' as classes %}
+
+{% set textContent = block.textContent.eagerly().all() %}
 {% set columns = block.columns.eagerly().all() %}
 {% set key = [key, 'columns', columns|length]|join(':') %}
 
+{% if textContent|length %}
+    <div class="space-y-6 mb-16">
+        {% include '_includes/builder/builder' with {
+            context: 'columns/header',
+            blocks: textContent,
+        } only %}
+    </div>
+{% endif %}
+
 {% if columns|length %}
     <div class="
-        flex flex-col lg:flex-row
+        {# flex flex-col lg:flex-row #}
+        grid {{ classes.columnLayout(block.columnLayout.value) }}
         gap-6 lg:gap-16 xl:gap-20 2xl:gap-32 3xl:gap-48 4xl:gap-60
     ">
         {% for column in columns %}

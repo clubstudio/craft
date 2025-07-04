@@ -6,7 +6,7 @@
         {% set nodes = craft.navigation.nodes().handle('mainNavigation').all() %}
         {% if nodes|length %}
             <nav aria-label="{{ 'Main navigation'|t }}">
-                <ul class="flex space-x-6">
+                <ul class="flex space-x-8">
                     {% for node in nodes %}
                         <li>
                             <a href="{{ node.url }}">{{ node.title }}</a>

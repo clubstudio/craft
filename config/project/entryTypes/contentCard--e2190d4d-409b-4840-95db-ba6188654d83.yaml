@@ -1,0 +1,40 @@
+color: null
+description: null
+fieldLayouts:
+  46a575b8-cb2c-40cb-a7e8-993923223b13:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-04T09:51:57+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 15bb51c2-8d53-4481-9b4b-fd94325e4b0d # Entry
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a99afa09-80eb-4edc-823a-15543f09db0d
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: c10de1d0-7628-4440-921f-212d14de57be
+        userCondition: null
+handle: contentCard
+hasTitleField: false
+icon: card-club
+name: 'Content Card'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

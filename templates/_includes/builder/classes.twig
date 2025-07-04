@@ -105,3 +105,14 @@
     }, preference) ?? null -}}
 {% endmacro %}
 
+{% macro columnLayout(preference = null) %}
+    {{- attribute({
+        111: 'lg:grid-cols-3',
+        11: 'lg:grid-cols-[1fr_1fr]',
+        12: 'lg:grid-cols-[1fr_2fr]',
+        21: 'lg:grid-cols-[2fr_1fr]',
+        13: 'lg:grid-cols-[1fr_3fr]',
+        31: 'lg:grid-cols-[3fr_1fr]',
+    }, preference ?? 11) -}}
+{% endmacro %}
+

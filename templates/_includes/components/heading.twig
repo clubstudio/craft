@@ -3,9 +3,9 @@
     heading: '',
     attributes: {},
     classMap: {
-        h1: 'text-5xl font-bold',
+        h1: 'text-6xl font-bold',
         h2: 'text-4xl font-bold',
-        h3: 'text-3xl',
+        h3: 'text-2xl font-bold',
         h4: 'text-2xl',
         h5: 'text-xl',
         h6: 'text-lg',
@@ -15,7 +15,7 @@
 {% set element = data.level %}
 
 {% tag element with {
-    class: data.classMap[data.level],
+    class: data.classMap[data.level] ~ ' text-balance',
 }|merge(data.attributes) %}
     {{ data.heading }}
 {% endtag %}

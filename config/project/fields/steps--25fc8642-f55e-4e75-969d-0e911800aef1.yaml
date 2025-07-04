@@ -1,10 +1,10 @@
 columnSuffix: null
-handle: links
+handle: steps
 instructions: null
-name: Links
+name: Steps
 searchable: false
 settings:
-  createButtonLabel: 'New link'
+  createButtonLabel: null
   defaultIndexViewMode: cards
   enableVersioning: false
   entryTypes:
@@ -12,7 +12,7 @@ settings:
       __assoc__:
         -
           - uid
-          - 4c1e65ea-bd76-45a2-9b25-2e7d92a12ff0 # Link
+          - 3f374dac-830e-4ce3-80d9-075c1d2bbe96 # Step
         -
           - group
           - General

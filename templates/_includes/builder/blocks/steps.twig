@@ -1,0 +1,31 @@
+{% import '_includes/builder/classes' as classes %}
+
+{% set steps = block.steps.eagerly().all() %}
+{% set key = [key, 'steps']|join(':') %}
+
+{% if steps|length %}
+    <div class="
+        {# flex flex-col lg:flex-row #}
+        grid grid-cols-1 lg:grid-cols-3
+        gap-6 lg:gap-16 xl:gap-20 2xl:gap-32 3xl:gap-48 4xl:gap-60
+    ">
+        {% for column in steps %}
+            <div class="col-span-1">
+                {# <code class="text-xs text-red-500">
+                    {{ '_includes/builder/blocks/steps/' ~ steps|length ~ '/' ~ column.type|kebab }}<br>
+                    {{ '_includes/builder/blocks/steps/' ~ column.type|kebab }}<br>
+                    {{ '_includes/builder/blocks/' ~ column.type|kebab }}
+                </code> #}
+                {% include [
+                    '_includes/builder/blocks/steps/' ~ steps|length ~ '/' ~ column.type|kebab,
+                    '_includes/builder/blocks/steps/' ~ column.type|kebab,
+                    '_includes/builder/blocks/' ~ column.type|kebab,
+                 ] with {
+                    block: column,
+                    context: 'steps',
+                    key: key,
+                } only %}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}

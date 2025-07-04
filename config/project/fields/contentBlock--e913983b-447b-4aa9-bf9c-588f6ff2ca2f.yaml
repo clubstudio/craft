@@ -80,6 +80,46 @@ settings:
         -
           - group
           - General
+    -
+      __assoc__:
+        -
+          - uid
+          - adf4e920-a376-49f3-8733-3733051a3f4c # CTA
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 2ee8ad4c-a735-4992-8ea3-b6e2d0930377 # Logos
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 77018bc1-5b35-451b-b35c-46a2d4e451aa # Steps
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 4d109d67-14c0-415f-aca1-42cac4c6640c # Form
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 7b04b850-94c5-4f5f-8689-a5a2c5c17e18 # Content Cards
+        -
+          - group
+          - General
   includeTableView: false
   maxEntries: 1
   minEntries: 1

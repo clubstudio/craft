@@ -1,0 +1,25 @@
+{% set textContent = block.textContent.eagerly().all() %}
+{% set cards = block.contentCards.eagerly().all() %}
+
+<div class="grid grid-cols-3 gap-6">
+    {% if textContent|length %}
+        <div class="space-y-6">
+            {% include '_includes/builder/builder' with {
+                context: 'columns/header',
+                blocks: textContent,
+            } only %}
+        </div>
+    {% endif %}
+
+    {% for card in cards %}
+        {% set entry = card.entry.eagerly().one() %}
+        {% include [
+            '_includes/builder/blocks/content-cards/' ~ entry.type|kebab,
+            '_includes/builder/blocks/content-card',
+        ] with {
+            entry: entry,
+            context: 'content-cards',
+            key: key,
+        } only %}
+    {% endfor %}
+</div>

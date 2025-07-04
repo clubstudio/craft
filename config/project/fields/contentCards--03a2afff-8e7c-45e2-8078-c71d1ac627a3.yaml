@@ -1,10 +1,10 @@
 columnSuffix: null
-handle: links
+handle: contentCards
 instructions: null
-name: Links
+name: 'Content Cards'
 searchable: false
 settings:
-  createButtonLabel: 'New link'
+  createButtonLabel: null
   defaultIndexViewMode: cards
   enableVersioning: false
   entryTypes:
@@ -12,7 +12,7 @@ settings:
       __assoc__:
         -
           - uid
-          - 4c1e65ea-bd76-45a2-9b25-2e7d92a12ff0 # Link
+          - e2190d4d-409b-4840-95db-ba6188654d83 # Content Card
         -
           - group
           - General

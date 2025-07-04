@@ -1,6 +1,8 @@
 color: null
+description: null
 fieldLayouts:
   62767917-9438-4429-a8a3-8a2938c3f86e:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
@@ -28,6 +30,40 @@ fieldLayouts:
       -
         elementCondition: null
         elements:
+          -
+            dateAdded: '2025-07-04T10:58:44+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
+            handle: callToAction
+            includeInCards: false
+            instructions: null
+            label: 'Call to Action'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4b6cba30-43c8-492d-a620-5afcef521d07
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-04T10:58:44+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: d363d288-d9a6-466d-82f0-a0fdd9530d71 # Form
+            handle: newsletterForm
+            includeInCards: false
+            instructions: null
+            label: 'Newsletter Form'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6d72ae85-717a-4b33-8b9c-d03bccd7ff81
+            userCondition: null
+            warning: null
+            width: 100
           -
             dateAdded: '2025-04-23T12:15:16+00:00'
             editCondition: null
