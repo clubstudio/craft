@@ -8,6 +8,23 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2025-07-07T11:36:11+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: d0c7900e-d61c-4839-a59e-70bb47358360 # Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dcaf88a6-895a-4486-b7b1-91e7f467a43b
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2025-07-03T10:08:26+00:00'
             editCondition: null
             elementCondition: null

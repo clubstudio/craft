@@ -17,6 +17,7 @@ settings:
   showUnpermittedEntries: false
   showUnpermittedSections: false
   sources:
+    - 'section:d8997ae9-6156-48da-8a7e-faeae0802e23'
     - 'section:ad112b66-5fdd-4015-b741-ddda3f744de9' # Frequently Asked Questions
     - 'section:f70322ae-4170-462e-b3f4-138012e301da' # Pages
     - singles

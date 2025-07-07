@@ -1,0 +1,34 @@
+{% import '_builder/classes' as classes %}
+
+{% set textRight = block.mediaPosition.value == 'left' %}
+
+<div class="
+    grid grid-cols-1 lg:grid-cols-2
+    gap-6 lg:gap-16 xl:gap-20 2xl:gap-32 3xl:gap-48 4xl:gap-60
+    {{ classes.verticalAlignment(block.verticalAlignment.value) }}
+">
+    <div class="relative {{ textRight ? 'lg:order-1' : 'lg:order-2' }}">
+        {% set mediaType = block.mediaType.value %}
+
+        {% if mediaType == 'image' %}
+            {% include '_builder/blocks/image' with { key: key ~ ':text-and-media' } %}
+        {% elseif mediaType == 'video' %}
+            <figure class="{{ classes.aspectRatio(block.aspectRatio.value) }} bg-black rounded-xl overflow-hidden">
+                <video muted controls class="w-full h-full object-cover">
+                    <source src="{{ block.videoUrl }}" type="video/mp4">
+                </video>
+            </figure>
+        {% endif %}
+    </div>
+
+    {% set textClassKey = key ~ ':media-' ~ block.mediaPosition.value %}
+
+    <div class="flex items-center justify-center {{ textRight ? 'lg:order-2' : 'lg:order-1' }} {{ classes.sectionTextContainer(textClassKey ?? null) }}">
+        <div class="lg:max-w-2xl space-y-6 py-12">
+            {% include '_builder/builder' with {
+                context: 'text-and-media',
+                blocks: block.textContent.eagerly().all(),
+            } only %}
+        </div>
+    </div>
+</div>

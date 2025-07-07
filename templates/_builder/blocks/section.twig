@@ -1,0 +1,13 @@
+{% embed '_builder/section' with { block: block, key: key } only %}
+    {% block content %}
+        {% embed '_builder/container' with { block: block, key: key } only %}
+            {% block content %}
+                {% include '_builder/builder' with {
+                    context: 'section',
+                    blocks: block.contentBlock.eagerly().all(),
+                    key: [key, block.maximumWidth.value]|join(':'),
+                } %}
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}
+{% endembed %}

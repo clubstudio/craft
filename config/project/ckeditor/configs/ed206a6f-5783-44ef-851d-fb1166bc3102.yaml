@@ -1,6 +1,20 @@
 headingLevels: false
 name: Paragraph
+options:
+  style:
+    definitions:
+      -
+        classes:
+          - text-xl
+        element: p
+        name: Large
+      -
+        classes:
+          - text-sm
+        element: p
+        name: Small
 toolbar:
+  - style
   - bold
   - italic
   - link

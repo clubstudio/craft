@@ -1,0 +1,23 @@
+{% import '_builder/classes' as classes %}
+
+{% set image = block.image.eagerly().one() %}
+
+<section class="relative border-t border-dotted border-white/10">
+    <div class="absolute inset-0 pr-8">
+        {% if image %}
+            <img src="{{ image.url }}" class="ml-auto w-1/2 h-full object-cover">
+        {% else %}
+            <div class="w-1/2 h-full bg-black ml-auto"></div>
+        {% endif %}
+    </div>
+    <div class="relative flex items-center py-20">
+        <div class="{{ classes.maxWidth('contain') }}">
+            <div class="space-y-6 md:max-w-4/5 xl:max-w-4/5">
+                {% include '_builder/builder' with {
+                    context: 'hero',
+                    blocks: block.textContent.eagerly().all(),
+                } only %}
+            </div>
+        </div>
+    </div>
+</section>

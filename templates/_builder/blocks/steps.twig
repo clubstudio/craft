@@ -1,0 +1,30 @@
+{% import '_builder/classes' as classes %}
+
+{% set steps = block.steps.eagerly().all() %}
+{% set key = [key, 'steps']|join(':') %}
+
+{% if steps|length %}
+    <div class="
+        relative z-50
+        flex flex-nowrap
+        overflow-x-scroll contain-content snap-x snap-mandatory no-scrollbar scroll-px-0
+        -mx-6
+        lg:grid lg:grid-cols-3
+        px-6
+        gap-0 lg:gap-12 2xl:gap-24 3xl:gap-40 4xl:gap-52
+    ">
+        {% for column in steps %}
+            <div class="snap-center w-[calc(100vw-1.5rem)] shrink-0 lg:col-span-1 lg:w-auto">
+                {% include [
+                    '_builder/blocks/steps/' ~ steps|length ~ '/' ~ column.type|kebab,
+                    '_builder/blocks/steps/' ~ column.type|kebab,
+                    '_builder/blocks/' ~ column.type|kebab,
+                ] with {
+                    block: column,
+                    context: 'steps',
+                    key: key,
+                } only %}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}

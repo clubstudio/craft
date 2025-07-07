@@ -1,4 +1,4 @@
-dateModified: 1751641081
+dateModified: 1761052672
 elementSources:
   craft\elements\Entry:
     -
@@ -42,7 +42,7 @@ elementSources:
         - link
       type: native
     -
-      key: 'section:d8997ae9-6156-48da-8a7e-faeae0802e23' # Articles
+      key: 'section:d8997ae9-6156-48da-8a7e-faeae0802e23'
       type: native
     -
       heading: Library
@@ -145,13 +145,13 @@ meta:
     7631edb0-1fb5-477f-96bd-57ded88a1c47: 'FAQ Entry' # FAQ Entry
     21500d84-7ee2-479d-93db-750c756557cd: Video # Video
     24905e06-d0a8-486d-b05e-2d1128c9230e: 'Social Profiles' # Social Profiles
+    49503bab-aabd-4544-81ed-930f73f2e23e: 'Article Content' # Article Content
     62083fb6-1a8c-49b9-9782-374ce3b3a7c8: 'Rich Text (Basic)' # Rich Text (Basic)
     77018bc1-5b35-451b-b35c-46a2d4e451aa: Steps # Steps
     198475be-dc00-42d7-8ed4-b48aa2865944: Paragraph # Paragraph
     326377be-c2da-462e-bea3-4eb8ca886573: 'Tag Position' # Tag Position
     761607ea-8c75-4aea-af4a-00d367e51171: 'Heading Level' # Heading Level
     948057e1-04f5-43cb-8a4d-43e67384f5eb: SEO # SEO
-    09154649-593b-4c0b-aa9b-bba01d18d70e: Article # Article
     21969370-50f4-4772-bb0d-01e56f327ba8: Columns # Columns
     a9dd8d2a-08c8-4a65-8cc3-1d29c5bb901e: FAQ # FAQ
     a34c1736-2104-4937-99c0-00f502185b62: 'Media Type' # Media Type
@@ -180,7 +180,6 @@ meta:
     d6b7a87c-df19-4865-b62e-756d2cfc9271: Simple # Simple
     d7f2d6ab-95d8-49be-8cf1-e5e4d4a427e4: Images # Images
     d363d288-d9a6-466d-82f0-a0fdd9530d71: Form # Form
-    d8997ae9-6156-48da-8a7e-faeae0802e23: Articles # Articles
     d10795ff-f335-4264-8cdb-189e8c03d30d: Statistic # Statistic
     d14159c6-01c5-410d-b1c8-785d25b4027f: Tag # Tag
     da7038fd-c908-441e-8a14-90d1f530e8ca: Index # Index
@@ -207,18 +206,22 @@ plugins:
   formie:
     edition: standard
     enabled: true
-    schemaVersion: 3.4.8
+    licenseKey: 2YQD5BT3CWJZ59WWXKF1ONZH
+    schemaVersion: 3.4.10
   navigation:
     edition: standard
     enabled: true
-    schemaVersion: 2.1.0
+    licenseKey: E8YTGLDXO007WWEW65UO44QK
+    schemaVersion: 2.1.1
   retour:
     edition: standard
     enabled: true
+    licenseKey: 3M9AV6TZYYNZ8EFRFKKDN7XK
     schemaVersion: 3.0.12
   seomatic:
     edition: standard
     enabled: true
+    licenseKey: WX9IAPZB1X6T2GIRKHKGQH4Y
     schemaVersion: 3.0.13
   vite:
     edition: standard

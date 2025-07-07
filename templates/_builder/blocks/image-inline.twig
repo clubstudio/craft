@@ -1,0 +1,13 @@
+{% set image = block.image.eagerly().one() %}
+
+{% if image %}
+    <figure class="inline-block max-w-24 -ml-2 mb-1">
+        {{ tag('img', {
+            src: image.url,
+            width: image.width,
+            height: image.height,
+            alt: image.alt,
+            loading: 'lazy',
+        }) }}
+    </figure>
+{% endif %}

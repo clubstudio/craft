@@ -1,0 +1,8 @@
+<div class="divide-y divide-gray-300">
+    {% for item in block.accordionItems.eagerly().all() %}
+        <details class="py-4">
+            <summary class="font-medium">{{ item.title }}</summary>
+            {{ item.body }}
+        </details>
+    {% endfor %}
+</div>

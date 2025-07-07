@@ -1,0 +1,43 @@
+{% set data = {
+    as: 'a',
+    url: '',
+    text: '',
+    size: 'base',
+    theme: 'primary',
+    classes: [],
+    attributes: {}
+}|merge(_context) %}
+
+{% set sizeClasses = {
+    sm: 'px-4 py-2 text-sm',
+    base: 'px-5 py-2 text-base font-medium',
+    md: 'px-6 py-3.5',
+    lg: 'px-6 py-3.5 text-lg',
+} %}
+
+{% set themeClasses = {
+    primary: 'border border-black bg-black text-white',
+    secondary: 'border border-gray-200 bg-gray-200',
+    tertiary: '!p-0',
+} %}
+
+{% set classes = [
+    'inline-block rounded-full',
+    themeClasses[data.theme]|default(),
+    sizeClasses[data.size]|default(),
+]|merge(data.classes)|join(' ') %}
+
+{% if data.as == 'a' %}
+    <span class="relative inline-flex">
+        <a href="{{ data.url }}" {{ attr(data.attributes) }} class="{{ classes }}">
+            {{ data.text }}
+        </a>
+        {% if data.theme == 'tertiary' %}
+            <span class="inline-flex items-center justify-center w-6 text-black">
+                &rarr;
+            </span>
+        {% endif %}
+    </span>
+{% else %}
+    <button {{ attr(data.attributes) }} type="button" class="{{ classes }}">{{ data.text }}</button>
+{% endif %}

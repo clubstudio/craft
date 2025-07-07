@@ -1,4 +1,4 @@
-{%- set tags = globals.tags.all() -%}
+{%- set tags = globals.tags.eagerly().all() -%}
 
 <!doctype html>
 <html lang="{{ craft.app.language|slice(0, 2) }}">
@@ -7,7 +7,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ craft.app.request.csrfToken }}">
-        <link rel="home" href="{{ url('') }}">
+        <link rel="home" href="{{ siteUrl }}">
 
         {{ craft.vite.script('src/js/site.js', false) }}
 
@@ -18,10 +18,10 @@
     <body>
         <noscript>{{ 'This website works best when you have JavaScript enabled.'|t }}</noscript>
 
-        {% include '_includes/skip-link' %}
+        {% include '_components/skip-link' %}
 
         {% if craft.app.config.general.devMode %}
-            {% include '_includes/dev/breakpoint-helper' %}
+            {% include '_components/dev/breakpoint-helper' %}
         {% endif %}
 
         {% block body '' %}

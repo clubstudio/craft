@@ -1,0 +1,11 @@
+{% set context = context ?? null %}
+
+{% for block in blocks %}
+    {% include [
+        '_builder/blocks/' ~ context ~ '/' ~ block.type|kebab,
+        '_builder/blocks/' ~ block.type|kebab,
+    ] with {
+        block: block,
+        key: key ?? block.type
+    } only %}
+{% endfor %}

@@ -1,13 +1,13 @@
 {% extends '_layouts/master' %}
 
-{% import '_includes/builder/classes' as classes %}
+{% import '_builder/classes' as classes %}
 
 {% paginate craft.entries.section(entry.entryType.value).orderBy('postDate DESC').limit(12) as pageInfo, entries %}
 
 {% block content %}
     <article class="{{ classes.maxWidth('contain') }}">
         <header>
-            {% include '_includes/components/heading' with {
+            {% include '_components/heading' with {
                 level: 'h1',
                 heading: entry.title,
             } %}
@@ -17,12 +17,13 @@
             {% if entries|length %}
                 <div class="grid grid-cols-3 gap-12">
                     {% for entry in entries %}
-                        <a href="{{ entry.url }}" class="flex flex-col justify-between h-96 p-12 bg-gray-100">
-                            <div class="text-sm text-gray-500">
-                                Create a template in <code class="text-xs">_includes/builder/blocks/cards/{{ entry.type|kebab }}</code> to output this entry.
-                            </div>
-                            <div class="mt-24 text-xl font-bold">{{ entry.title }}</div>
-                        </a>
+                        {% include [
+                            '_builder/blocks/content-cards/' ~ entry.type|kebab,
+                            '_builder/blocks/content-card',
+                        ] with {
+                            entry: entry,
+                            context: 'content-cards',
+                        } only %}
                     {% endfor %}
                 </div>
             {% else %}
@@ -31,7 +32,7 @@
 
             {% if pageInfo.totalPages > 1 %}
                 <div class="mt-12">
-                    {% include '_includes/components/pagination' with { pageInfo: pageInfo } only %}
+                    {% include '_components/pagination' with { pageInfo: pageInfo } only %}
                 </div>
             {% endif %}
         </section>

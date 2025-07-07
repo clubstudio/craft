@@ -1,0 +1,21 @@
+{% set data = {
+    level: 2,
+    heading: '',
+    attributes: {},
+    classMap: {
+        h1: 'font-bold text-5xl',
+        h2: 'font-bold text-4xl',
+        h3: 'font-bold text-3xl',
+        h4: 'text-2xl',
+        h5: 'text-xl',
+        h6: 'text-lg',
+    },
+}|merge(_context) %}
+
+{% set element = data.level %}
+
+{% tag element with {
+    class: data.classMap[data.level] ~ ' text-balance',
+}|merge(data.attributes) %}
+    {{ data.heading }}
+{% endtag %}

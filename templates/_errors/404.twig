@@ -1,7 +1,7 @@
 {% extends '_layouts/error' %}
 
 {% block error %}
-    {% include '_includes/error' with {
+    {% include '_components/error' with {
         heading: 'Page not found'|t,
         body: 'Sorry, but the page you were trying to view does not exist.'|t,
     } only %}

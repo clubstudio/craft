@@ -3,14 +3,14 @@
 @source "../../templates/**/*";
 
 @theme {
-    --color-facebook: #0866ff;
-    --color-x: #000000;
-    --color-instagram: #ff0069;
-    --color-linkedin: #0a66c2;
-    --color-youtube: #ff0000;
-    --color-vimeo: #1ab7ea;
-    --color-pinterest: #bd081c;
-    --color-tiktok: #000;
+    --color-social-facebook: #0866ff;
+    --color-social-x: #000000;
+    --color-social-instagram: #ff0069;
+    --color-social-linkedin: #0a66c2;
+    --color-social-youtube: #ff0000;
+    --color-social-vimeo: #1ab7ea;
+    --color-social-pinterest: #bd081c;
+    --color-social-tiktok: #000;
 }
 
 .skip-link {
@@ -32,15 +32,6 @@
     width: auto;
 }
 
-.blockquote p:first-of-type::before {
-    content: "“";
-    margin-left: -.75ch;
-}
-
-.blockquote p:last-of-type::after {
-    content: "”";
-}
-
 .body-copy {
     > * + * {
         margin-top: --spacing(4);
@@ -48,5 +39,12 @@
 
     ul { list-style: disc }
     ol { list-style: decimal }
-    p > a { text-decoration: underline; }
+    p > a { text-decoration: underline; text-underline-offset: 4px; }
+    strong { font-weight: 500; }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

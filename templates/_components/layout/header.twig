@@ -1,0 +1,25 @@
+{% import '_builder/classes' as classes %}
+
+<header role="banner" class="py-8">
+    <div class="{{ classes.maxWidth('contain') }} flex space-x-6 items-center justify-between">
+        <a href="{{ url('/') }}" class="font-medium">
+            {{ siteName }}
+        </a>
+        {% set nodes = craft.navigation.nodes().handle('mainNavigation').all() %}
+        {% if nodes|length %}
+            <nav aria-label="{{ 'Main navigation'|t }}" class="hidden md:block">
+                <ul class="flex space-x-8 group text-[15px]">
+                    {% for node in nodes %}
+                        <li>
+                            {# {% if loop.last %}
+                                <a href="{{ node.url }}" class="rounded-full border border-white px-4 py-1">{{ node.title }}</a>
+                            {% else %} #}
+                                <a href="{{ node.url }}" class=" {{ node.active ? 'underline underline-offset-4' }}">{{ node.title }}</a>
+                            {# {% endif %} #}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        {% endif %}
+    </div>
+</header>

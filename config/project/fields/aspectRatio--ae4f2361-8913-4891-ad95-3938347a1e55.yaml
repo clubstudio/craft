@@ -61,6 +61,23 @@ settings:
       __assoc__:
         -
           - label
+          - Pano
+        -
+          - value
+          - pano
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
           - Auto
         -
           - value

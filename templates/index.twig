@@ -9,7 +9,7 @@
                     <div class="my-6 text-gray-700">
                         <p>{{ 'You have successfully started a new Craft CMS project!'|t }}</p>
                     </div>
-                    {% include '_includes/components/button' with {
+                    {% include '_components/button' with {
                         url: siteUrl('admin'),
                         text: 'Log in to the CMS'|t,
                     } only %}

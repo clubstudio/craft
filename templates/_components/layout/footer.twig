@@ -1,0 +1,70 @@
+{% import '_builder/classes' as classes %}
+
+{% set callToActionText = globals.callToAction.eagerly().all() %}
+
+<footer role="contentinfo" class="py-6">
+    <div class="{{ classes.maxWidth('contain') }} grid grid-cols-3 gap-12 justify-between text-sm mb-12">
+        {% if callToActionText|length %}
+            <div class="space-y-6">
+                {% include '_builder/builder' with {
+                    context: 'footer',
+                    blocks: callToActionText,
+                } only %}
+            </div>
+        {% endif %}
+        <div>
+            {# Footer Links #}
+        </div>
+        {% set newsletterForm = globals.newsletterForm.eagerly().one() %}
+        {% if newsletterForm %}
+            <div>
+                {% include '_components/form' with { form: newsletterForm } only %}
+            </div>
+        {% endif %}
+    </div>
+    <div class="{{ classes.maxWidth('contain') }} flex space-x-6 justify-between text-xs">
+        <div class="flex items-center space-x-6">
+            {% if globals.copyrightNotice|length %}
+                <p>{{ globals.copyrightNotice|replace({
+                    ':year': 'now'|date('Y'),
+                    ':siteName': siteName,
+                }) }}</p>
+            {% endif %}
+            {% set nodes = craft.navigation.nodes().handle('legalLinks').all() %}
+            {% if nodes|length %}
+                <nav aria-label="{{ 'Footer navigation'|t }}">
+                    <ul class="flex space-x-6">
+                        {% for node in nodes %}
+                            <li>
+                                <a href="{{ node.url }}">{{ node.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            {% endif %}
+        </div>
+        {% set socialProfiles = globals.socialProfiles.all() %}
+        {% if socialProfiles|length %}
+            <nav aria-label="{{ 'Social Networks'|t }}">
+                <div class="flex space-x-4">
+                    {% for socialProfile in socialProfiles %}
+                        <a
+                            href="{{ socialProfile.profileUrl }}"
+                            {% if socialProfile.profileUrl.target %} target="{{ socialProfile.profileUrl.target }}" {% endif %}
+                            rel="{{ socialProfile.profileUrl.rel ?? 'nofollow noopener noreferrer' }}"
+                            aria-label="{{ 'Visit {profile}'|t({ 'profile': socialProfile.socialNetwork.label }) }}"
+                        >
+                            {{ svg('@svg/social/' ~ socialProfile.socialNetwork ~ '.svg')|attr({
+                                'title': socialProfile.socialNetwork.label,
+                                'class': 'h-4',
+                                'fill': 'currentColor',
+                                'focusable': false,
+                                'aria-hidden': true,
+                            }) }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </nav>
+        {% endif %}
+    </div>
+</footer>
