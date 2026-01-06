@@ -4,11 +4,6 @@
     "tailwindcss": "^4.1.2",
     "vite": "^6.4.1"
   },
-  "devDependencies": {
-    "@zackad/prettier-plugin-twig": "^0.16.2",
-    "prettier": "^3.4.2",
-    "prettier-plugin-tailwindcss": "^0.6.9"
-  },
   "scripts": {
     "dev": "vite",
     "build": "vite build"
