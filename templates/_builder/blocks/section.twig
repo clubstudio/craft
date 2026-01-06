@@ -9,9 +9,9 @@
   - section:contain
   - section:contain:columns:2 (when columns nested inside)
 #}
-{% import '_macros/transform' as transform %}
+{% import '_macros/transforms' as transforms %}
 
-{% set transformKey = transform.buildKey([transformKey, block.maximumWidth.value]) %}
+{% set transformKey = transforms.buildKey([transformKey, block.maximumWidth.value]) %}
 
 {% embed '_builder/section' with { block: block, transformKey: transformKey } only %}
     {% block content %}
