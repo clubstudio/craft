@@ -1,7 +1,18 @@
+{#
+  Columns Block
+  
+  Creates a multi-column layout with responsive grid.
+  Builds transform key for nested images: {parent}:columns:{count}
+  
+  Examples:
+  - section:contain:columns:2
+  - section:contain:columns:3
+#}
 {% import '_macros/classes' as classes %}
 {% import '_macros/transforms' as transforms %}
 
 {% set columns = block.columns.eagerly().all() %}
+{% set transformKey = transforms.buildKey([transformKey, 'columns', columns|length]) %}
 
 {% if columns|length %}
     <div class="
@@ -24,7 +35,7 @@
                  ] with {
                     block: column,
                     context: 'columns/' ~ columns|length,
-                    key: transforms.buildKey([key, 'columns', columns|length]),
+                    transformKey: transformKey,
                 } only %}
             </div>
         {% endfor %}

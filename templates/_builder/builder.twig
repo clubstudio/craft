@@ -1,3 +1,17 @@
+{#
+  Content Builder
+
+  Iterates through blocks and includes appropriate templates with context-aware fallbacks.
+
+  Variables:
+  - blocks: Array of content blocks to render
+  - context: Optional context for template resolution (e.g., 'page', 'hero', 'columns/2')
+  - transformKey: Key for image transform configuration (see config/custom.php)
+
+  Template Resolution Order:
+  1. _builder/blocks/{context}/{block-type}.twig (context-specific override)
+  2. _builder/blocks/{block-type}.twig (default)
+#}
 {% set context = context ?? null %}
 
 {% for block in blocks %}
@@ -6,6 +20,6 @@
         '_builder/blocks/' ~ block.type|kebab,
     ] with {
         block: block,
-        key: key ?? block.type
+        transformKey: transformKey ?? block.type
     } only %}
 {% endfor %}

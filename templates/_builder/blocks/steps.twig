@@ -1,7 +1,14 @@
+{#
+  Steps Block
+  
+  Creates a scrollable/grid layout for step-by-step content.
+  Builds transform key for nested images: {parent}:steps
+#}
 {% import '_macros/classes' as classes %}
 {% import '_macros/transforms' as transforms %}
 
 {% set steps = block.steps.eagerly().all() %}
+{% set transformKey = transforms.buildKey([transformKey, 'steps']) %}
 
 {% if steps|length %}
     <div class="
@@ -22,7 +29,7 @@
                 ] with {
                     block: column,
                     context: 'steps',
-                    key: transforms.buildKey([key, 'steps']),
+                    transformKey: transformKey,
                 } only %}
             </div>
         {% endfor %}

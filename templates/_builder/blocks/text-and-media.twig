@@ -1,6 +1,14 @@
+{#
+  Text and Media Block
+  
+  Two-column layout with text content and media (image or video).
+  Builds transform key for nested images: {parent}:text-and-media
+#}
 {% import '_macros/classes' as classes %}
+{% import '_macros/transforms' as transforms %}
 
 {% set textRight = block.mediaPosition.value == 'left' %}
+{% set transformKey = transforms.buildKey([transformKey, 'text-and-media']) %}
 
 <div class="
     grid grid-cols-1 lg:grid-cols-2
@@ -11,7 +19,7 @@
         {% set mediaType = block.mediaType.value %}
 
         {% if mediaType == 'image' %}
-            {% include '_builder/blocks/image' with { key: key ~ ':text-and-media' } %}
+            {% include '_builder/blocks/image' with { transformKey: transformKey } %}
         {% elseif mediaType == 'video' %}
             <figure class="{{ classes.aspectRatio(block.aspectRatio.value) }} bg-black rounded-xl overflow-hidden">
                 <video muted controls class="w-full h-full object-cover" aria-label="{{ block.title ?? 'Video'|t }}">

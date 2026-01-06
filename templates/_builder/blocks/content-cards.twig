@@ -1,3 +1,8 @@
+{#
+  Content Cards Block
+  
+  Grid of content cards with optional header text.
+#}
 {% set textContent = block.textContent.eagerly().all() %}
 {% set cards = block.contentCards.eagerly().all() %}
 
@@ -20,7 +25,7 @@
             ] with {
                 entry: entry,
                 context: 'content-cards',
-                key: key,
+                transformKey: transformKey,
             } only %}
         {% endif %}
     {% endfor %}

@@ -2,6 +2,11 @@
 
 return [
     'transforms' => [
+        'default' => [
+            'width' => 800,
+            'srcset' => [400, 800, 1200, 1600, 2400],
+            'sizes' => '100vw',
+        ],
         'section:none' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400, 2800],

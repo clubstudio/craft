@@ -1,7 +1,14 @@
+{#
+  Showcase Block
+  
+  Displays featured entries in a grid layout.
+  Builds transform key for nested images: {parent}:showcase
+#}
 {% import '_macros/transforms' as transforms %}
 
 {% set featuredEntries = block.entries.eagerly().all() %}
 {% set links = block.links.eagerly().all() %}
+{% set transformKey = transforms.buildKey([transformKey, 'showcase']) %}
 
 {% if featuredEntries|length %}
     <div class="
@@ -16,7 +23,7 @@
                  ] with {
                     entry: featuredEntry,
                     context: 'showcase',
-                    key: transforms.buildKey([key, 'showcase']),
+                    transformKey: transformKey,
                     aspectRatio: loop.first ? 'aspect-square' : 'aspect-[3/4]',
                 } only %}
 

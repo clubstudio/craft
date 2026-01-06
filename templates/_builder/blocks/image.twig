@@ -1,3 +1,18 @@
+{#
+  Image Block
+  
+  Renders a responsive image with aspect ratio control and contextual transforms.
+  
+  Required fields:
+  - block.image (Asset)
+  - block.aspectRatio (Dropdown: video|photo|square|pano|auto)
+  
+  Optional fields:
+  - block.caption (Text)
+  
+  Variables:
+  - transformKey (string) - Key to lookup transform config in config/custom.php
+#}
 {% set image = block.image.eagerly().one() %}
 
 {% set aspect = {
@@ -23,13 +38,17 @@
     }
 } %}
 
-{% set transformInfo = attribute(craft.app.config.custom.transforms, key) ?? { width: 400 } %}
+{% set transformKey = transformKey|default('default') %}
+{% set transformInfo = attribute(craft.app.config.custom.transforms, transformKey) ?? craft.app.config.custom.transforms.default %}
 {% set aspectInfo = aspect[block.aspectRatio.value] %}
 
 {% if image %}
     {% set width = transformInfo.width %}
 
     <figure>
+        {% if craft.app.config.general.devMode %}
+            <!-- Image Transform Key: {{ transformKey }} -->
+        {% endif %}
         <div class="{{ aspectInfo.class }} bg-black overflow-hidden">
             {% do image.setTransform({
                 width: width,
