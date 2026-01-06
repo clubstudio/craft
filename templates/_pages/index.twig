@@ -1,6 +1,6 @@
 {% extends '_layouts/master' %}
 
-{% import '_builder/classes' as classes %}
+{% import '_macros/classes' as classes %}
 
 {% paginate craft.entries.section(entry.entryType.value).orderBy('postDate DESC').limit(12) as pageInfo, entries %}
 
@@ -38,4 +38,3 @@
         </section>
     </article>
 {% endblock %}
-
