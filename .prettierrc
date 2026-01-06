@@ -1,0 +1,21 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "printWidth": 120,
+  "plugins": ["@zackad/prettier-plugin-twig", "prettier-plugin-tailwindcss"],
+  "overrides": [
+    {
+      "files": "*.json",
+      "options": {
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": "*.twig",
+      "options": {
+        "parser": "twig"
+      }
+    }
+  ]
+}

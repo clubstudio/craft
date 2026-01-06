@@ -1,0 +1,16 @@
+{
+    "preset": "laravel",
+    "rules": {
+        "concat_space": {
+            "spacing": "one"
+        }
+    },
+    "exclude": [
+        "vendor",
+        "storage",
+        "web/cpresources"
+    ],
+    "notPath": [
+        "config/license.key"
+    ]
+}
