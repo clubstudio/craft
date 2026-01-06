@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source "../../templates/**/*";
 
@@ -18,29 +18,14 @@
         margin-top: --spacing(4);
     }
 
-    ul {
-        list-style: disc;
-    }
-
-    ol {
-        list-style: decimal;
-    }
-
-    p > a {
-        text-decoration: underline;
-        text-underline-offset: 4px;
-    }
-
-    strong {
-        font-weight: 500;
-    }
+    ul { list-style: disc }
+    ol { list-style: decimal }
+    p > a { text-decoration: underline; text-underline-offset: 4px; }
+    strong { font-weight: 500; }
 }
 
-.no-scrollbar::-webkit-scrollbar {
-    display: none;
-}
-
+.no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
