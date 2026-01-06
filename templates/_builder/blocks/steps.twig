@@ -1,7 +1,7 @@
 {% import '_macros/classes' as classes %}
+{% import '_macros/transforms' as transforms %}
 
 {% set steps = block.steps.eagerly().all() %}
-{% set key = [key, 'steps']|join(':') %}
 
 {% if steps|length %}
     <div class="
@@ -22,7 +22,7 @@
                 ] with {
                     block: column,
                     context: 'steps',
-                    key: key,
+                    key: transforms.buildKey([key, 'steps']),
                 } only %}
             </div>
         {% endfor %}

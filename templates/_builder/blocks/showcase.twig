@@ -1,6 +1,7 @@
+{% import '_macros/transforms' as transforms %}
+
 {% set featuredEntries = block.entries.eagerly().all() %}
 {% set links = block.links.eagerly().all() %}
-{% set key = [key, 'showcase']|join(':') %}
 
 {% if featuredEntries|length %}
     <div class="
@@ -15,7 +16,7 @@
                  ] with {
                     entry: featuredEntry,
                     context: 'showcase',
-                    key: key,
+                    key: transforms.buildKey([key, 'showcase']),
                     aspectRatio: loop.first ? 'aspect-square' : 'aspect-[3/4]',
                 } only %}
 
