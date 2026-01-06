@@ -42,5 +42,5 @@ return [
             'srcset' => [320, 768, 1024, 1400],
             'sizes' => '(min-width: 1024px) 373px, 100vw',
         ],
-    ]
+    ],
 ];
