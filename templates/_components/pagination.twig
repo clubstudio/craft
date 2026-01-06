@@ -1,35 +1,39 @@
-{% set previous %}
-    &larr;
-{% endset %}
+<nav aria-label="{{ 'Pagination'|t }}">
+    <ul class="flex justify-center items-center space-x-12">
+        <li>
+            {% if pageInfo.prevUrl %}
+                <a href="{{ pageInfo.prevUrl }}" aria-label="{{ 'Go to previous page'|t }}">
+                    <span aria-hidden="true">&larr;</span>
+                </a>
+            {% else %}
+                <span aria-hidden="true">&larr;</span>
+            {% endif %}
+        </li>
 
-{% set next %}
-    &rarr;
-{% endset %}
+        {% for page, url in pageInfo.getPrevUrls(5) %}
+            <li>
+                <a href="{{ url }}" aria-label="{{ 'Go to page {page}'|t({ page: page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
 
-<div class="flex justify-center items-center space-x-12">
-    {% if pageInfo.prevUrl %}
-        <a href="{{ pageInfo.prevUrl }}">
-            {{ previous }}
-        </a>
-    {% else %}
-        <span>{{ previous}}</span>
-    {% endif %}
+        <li>
+            <span class="font-medium" aria-current="page" aria-label="{{ 'Page {page}'|t({ page: pageInfo.currentPage }) }}">{{ pageInfo.currentPage }}</span>
+        </li>
 
-    {% for page, url in pageInfo.getPrevUrls(5) %}
-        <a href="{{ url }}">{{ page }}</a>
-    {% endfor %}
+        {% for page, url in pageInfo.getNextUrls(5) %}
+            <li>
+                <a href="{{ url }}" aria-label="{{ 'Go to page {page}'|t({ page: page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
 
-    <span class="font-medium">{{ pageInfo.currentPage }}</span>
-
-    {% for page, url in pageInfo.getNextUrls(5) %}
-        <a href="{{ url }}">{{ page }}</a>
-    {% endfor %}
-
-    {% if pageInfo.nextUrl %}
-        <a href="{{ pageInfo.nextUrl }}">
-            {{ next }}
-        </a>
-    {% else %}
-        <span>{{ next }}</span>
-    {% endif %}
-</div>
+        <li>
+            {% if pageInfo.nextUrl %}
+                <a href="{{ pageInfo.nextUrl }}" aria-label="{{ 'Go to next page'|t }}">
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+            {% else %}
+                <span aria-hidden="true">&rarr;</span>
+            {% endif %}
+        </li>
+    </ul>
+</nav>

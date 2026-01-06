@@ -13,7 +13,7 @@
             } %}
         </header>
 
-        <section class="my-12">
+        <section class="my-12" aria-label="{{ 'Entries list'|t }}">
             {% if entries|length %}
                 <div class="grid grid-cols-3 gap-12">
                     {% for entry in entries %}
@@ -27,7 +27,7 @@
                     {% endfor %}
                 </div>
             {% else %}
-                <p>There are no entries to display.</p>
+                <p>{{ 'There are no entries to display.'|t }}</p>
             {% endif %}
 
             {% if pageInfo.totalPages > 1 %}

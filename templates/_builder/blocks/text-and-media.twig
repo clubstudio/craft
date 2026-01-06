@@ -14,8 +14,9 @@
             {% include '_builder/blocks/image' with { key: key ~ ':text-and-media' } %}
         {% elseif mediaType == 'video' %}
             <figure class="{{ classes.aspectRatio(block.aspectRatio.value) }} bg-black rounded-xl overflow-hidden">
-                <video muted controls class="w-full h-full object-cover">
+                <video muted controls class="w-full h-full object-cover" aria-label="{{ block.title ?? 'Video'|t }}">
                     <source src="{{ block.videoUrl }}" type="video/mp4">
+                    {{ 'Your browser does not support the video tag.'|t }}
                 </video>
             </figure>
         {% endif %}

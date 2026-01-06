@@ -16,7 +16,9 @@
         {% endfor %}
     </head>
     <body>
-        <noscript>{{ 'This website works best when you have JavaScript enabled.'|t }}</noscript>
+        <noscript>
+            <p>{{ 'This website works best when you have JavaScript enabled.'|t }}</p>
+        </noscript>
 
         {% include '_components/skip-link' %}
 

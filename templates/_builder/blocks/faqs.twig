@@ -27,8 +27,10 @@
     {% if faqs|length %}
         <div class="divide-y -my-6">
             {% for faq in faqs %}
-                <details class="py-6">
-                    <summary class="list-none font-medium md:text-xl cursor-pointer">{{ faq.question }}</summary>
+                <details class="py-6 group">
+                    <summary class="list-none font-medium md:text-xl cursor-pointer">
+                        {{ faq.question }}
+                    </summary>
                     <div class="pt-6 body-copy">
                         {{ faq.answer }}
                     </div>

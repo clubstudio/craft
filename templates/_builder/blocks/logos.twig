@@ -10,14 +10,14 @@
                 href: link,
                 target: link.target,
                 rel: link.rel,
-                'aria-label': link.ariaLabel,
+                'aria-label': link.ariaLabel ?? asset.alt,
             } : { } %}
 
             {% tag (link ? 'a' : 'div') with tagParams %}
                 {% if asset.format == 'svg' %}
-                    {{ svg(asset)|attr({ height: 36 }) }}
+                    {{ svg(asset)|attr({ height: 36, 'aria-hidden': link ? 'true' : 'false', 'focusable': 'false', 'role': not link ? 'img' : null, 'aria-label': not link ? asset.alt : null }) }}
                 {% else %}
-                    <img src="{{ asset.url }}" alt="{{ asset.alt }}">
+                    <img src="{{ asset.url }}" alt="{{ link ? '' : asset.alt }}" loading="lazy">
                 {% endif %}
             {% endtag %}
         </figure>

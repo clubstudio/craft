@@ -3,7 +3,7 @@
 {% if icon %}
     <div>
         <div class="inline-block p-3 bg-gray-100">
-            {{ svg(icon)|attr({ class: 'size-8' }) }}
+            {{ svg(icon)|attr({ class: 'size-8', 'aria-hidden': 'true', 'focusable': 'false' }) }}
         </div>
     </div>
 {% endif %}

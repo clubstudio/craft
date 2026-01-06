@@ -1,9 +1,9 @@
 {% extends '_layouts/base' %}
 
 {% block body %}
-    <div id="main-content">
-        {% include '_components/layout/header' %}
+    {% include '_components/layout/header' %}
+    <main id="main-content">
         {% block content '' %}
-        {% include '_components/layout/footer' %}
-    </div>
+    </main>
+    {% include '_components/layout/footer' %}
 {% endblock %}

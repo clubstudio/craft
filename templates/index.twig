@@ -5,7 +5,7 @@
         <div class="container mx-auto px-8 h-full">
             <div class="rounded-lg border border-current/10 py-8 px-6 h-full flex items-center justify-center">
                 <div>
-                    {{ svg('@svg/logo.svg')|attr({ class: 'w-16 mx-auto' }) }}
+                    {{ svg('@svg/logo.svg')|attr({ class: 'w-16 mx-auto', 'aria-hidden': 'true', 'focusable': 'false' }) }}
                     <div class="my-6 text-gray-700">
                         <p>{{ 'You have successfully started a new Craft CMS project!'|t }}</p>
                     </div>

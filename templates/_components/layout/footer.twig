@@ -2,7 +2,7 @@
 
 {% set callToActionText = globals.callToAction.eagerly().all() %}
 
-<footer role="contentinfo" class="py-6">
+<footer class="py-6">
     <div class="{{ classes.maxWidth('contain') }} grid grid-cols-3 gap-12 justify-between text-sm mb-12">
         {% if callToActionText|length %}
             <div class="space-y-6">

@@ -3,9 +3,9 @@
 {% set image = block.image.eagerly().one() %}
 
 <section class="relative border-t border-dotted border-white/10">
-    <div class="absolute inset-0 pr-8">
+    <div class="absolute inset-0 pr-8" aria-hidden="true">
         {% if image %}
-            <img src="{{ image.url }}" class="ml-auto w-1/2 h-full object-cover">
+            <img src="{{ image.url }}" alt="{{ image.alt }}" class="ml-auto w-1/2 h-full object-cover">
         {% else %}
             <div class="w-1/2 h-full bg-black ml-auto"></div>
         {% endif %}

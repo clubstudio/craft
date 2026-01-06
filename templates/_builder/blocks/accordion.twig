@@ -1,8 +1,12 @@
 <div class="divide-y divide-gray-300">
     {% for item in block.accordionItems.eagerly().all() %}
-        <details class="py-4">
-            <summary class="font-medium">{{ item.title }}</summary>
-            {{ item.body }}
+        <details class="py-4 group">
+            <summary class="font-medium cursor-pointer list-none">
+                {{ item.title }}
+            </summary>
+            <div class="pt-4">
+                {{ item.body }}
+            </div>
         </details>
     {% endfor %}
 </div>
