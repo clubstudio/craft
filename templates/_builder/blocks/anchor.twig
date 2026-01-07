@@ -1,1 +1,5 @@
-<div id="{{ block.anchor }}"></div>
+{% set safeAnchor = block.anchor|lower|replace('/[^a-z0-9-]/', '')|trim('-') %}
+
+{% if safeAnchor %}
+    <div id="{{ safeAnchor }}"></div>
+{% endif %}
