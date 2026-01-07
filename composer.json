@@ -1,10 +1,9 @@
 {
   "name": "clubstudio/craft",
   "license": "MIT",
-  "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "craftcms/ckeditor": "4.10.1",
+    "craftcms/ckeditor": "^4.10.1",
     "craftcms/cms": "^5.8.21",
     "nystudio107/craft-retour": "^5.0.12",
     "nystudio107/craft-seomatic": "^5.1.18",

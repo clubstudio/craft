@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2f4ba85ed383b06ad4098be1eaccd0d",
+    "content-hash": "318b50a81c6dc5d5dc24b078314305e9",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -368,11 +368,11 @@
         },
         {
             "name": "craftcms/ckeditor",
-            "version": "4.10.1",
+            "version": "4.11.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/6619d081de4f1fe821cfe1e7bb981286b08c02fa",
-                "reference": "6619d081de4f1fe821cfe1e7bb981286b08c02fa",
+                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/00289e6ce5f9a7c9595c5a51c2c726585aad5964",
+                "reference": "00289e6ce5f9a7c9595c5a51c2c726585aad5964",
                 "shasum": ""
             },
             "require": {
@@ -417,7 +417,7 @@
                 "docs": "https://github.com/craftcms/ckeditor/blob/master/README.md",
                 "rss": "https://github.com/craftcms/ckeditor/commits/master.atom"
             },
-            "time": "2025-08-18T17:29:45+00:00"
+            "time": "2025-11-20T01:01:30+00:00"
         },
         {
             "name": "craftcms/cms",
@@ -10186,7 +10186,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
