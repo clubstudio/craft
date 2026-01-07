@@ -9,6 +9,10 @@
         <meta name="csrf-token" content="{{ craft.app.request.csrfToken }}">
         <link rel="home" href="{{ siteUrl }}">
 
+        {% block resourceHints %}
+            {# Override or extend this block to add preconnect/dns-prefetch hints #}
+        {% endblock %}
+
         {{ craft.vite.script('src/js/site.js', false) }}
 
         {% for tag in tags|filter(tag => tag.position == 'head') %}
