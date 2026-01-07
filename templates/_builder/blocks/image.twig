@@ -1,15 +1,15 @@
 {#
   Image Block
-  
+
   Renders a responsive image with aspect ratio control and contextual transforms.
-  
+
   Required fields:
   - block.image (Asset)
   - block.aspectRatio (Dropdown: video|photo|square|pano|auto)
-  
+
   Optional fields:
   - block.caption (Text)
-  
+
   Variables:
   - transformKey (string) - Key to lookup transform config in config/custom.php
 #}
@@ -62,6 +62,7 @@
                 srcset: image.getSrcset(transformInfo.srcset ?? []),
                 sizes: transformInfo.sizes ?? '',
                 alt: image.alt,
+                decoding: 'async',
                 loading: 'lazy',
                 class: 'w-full h-full object-cover'
             }) }}
