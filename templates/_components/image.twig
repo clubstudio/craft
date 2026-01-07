@@ -1,0 +1,38 @@
+{% set data = {
+    image: null,
+    transformKey: null,
+    aspectRatio: null,
+    class: null,
+    loading: 'lazy',
+    decoding: 'async',
+    attributes: {},
+}|merge(_context) %}
+
+{% import '_macros/classes' as classes %}
+{% import '_macros/media' as media %}
+
+{% set transformInfo = attribute(craft.app.config.custom.transforms, data.transformKey) ?? { width: 800 } %}
+{% set aspectRatio = media.aspectRatio(data.aspectRatio, data.image)|t %}
+
+{% if craft.app.config.general.devMode %}
+    <!-- Image Transform Key: {{ data.transformKey }} -->
+{% endif %}
+
+<div class="{{ classes.aspectRatio(data.aspectRatio) }} overflow-hidden">
+    {% do image.setTransform({
+        width: transformInfo.width,
+        height: transformInfo.width / aspectRatio
+    }) %}
+
+    {{ tag('img', {
+        src: data.image.url,
+        width: data.image.width,
+        height: data.image.height,
+        srcset: data.image.getSrcset(transformInfo.srcset ?? []),
+        sizes: data.transformInfo.sizes ?? null,
+        alt: data.image.alt ?: data.image.title ?: null,
+        loading: data.loading,
+        decoding: data.decoding,
+        class: data.class,
+    }|merge(data.attributes)|filter) }}
+</div>

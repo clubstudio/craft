@@ -44,6 +44,23 @@ settings:
       __assoc__:
         -
           - label
+          - '3:4'
+        -
+          - value
+          - photo-portrait
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
           - '16:9'
         -
           - value

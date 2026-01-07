@@ -1,72 +1,13 @@
-{#
-  Image Block
-
-  Renders a responsive image with aspect ratio control and contextual transforms.
-
-  Required fields:
-  - block.image (Asset)
-  - block.aspectRatio (Dropdown: video|photo|square|pano|auto)
-
-  Optional fields:
-  - block.caption (Text)
-
-  Variables:
-  - transformKey (string) - Key to lookup transform config in config/custom.php
-#}
 {% set image = block.image.eagerly().one() %}
 
-{% set aspect = {
-    video: {
-        class: 'aspect-video',
-        ratio: 16 / 9
-    },
-    photo: {
-        class: 'aspect-[4/3]',
-        ratio: 4 / 3,
-    },
-    square: {
-        class: 'aspect-square',
-        ratio: 1 / 1,
-    },
-    pano: {
-        class: 'aspect-[21/9]',
-        ratio: 21 / 9,
-    },
-    auto: {
-        class: '',
-        ratio: image.width / image.height,
-    }
-} %}
-
-{% set transformKey = transformKey|default('default') %}
-{% set transformInfo = attribute(craft.app.config.custom.transforms, transformKey) ?? craft.app.config.custom.transforms.default %}
-{% set aspectInfo = aspect[block.aspectRatio.value] %}
-
 {% if image %}
-    {% set width = transformInfo.width %}
-
     <figure>
-        {% if craft.app.config.general.devMode %}
-            <!-- Image Transform Key: {{ transformKey }} -->
-        {% endif %}
-        <div class="{{ aspectInfo.class }} bg-black overflow-hidden">
-            {% do image.setTransform({
-                width: width,
-                height: width / aspectInfo.ratio
-            }) %}
-
-            {{ tag('img', {
-                src: image.url,
-                width: image.width,
-                height: image.height,
-                srcset: image.getSrcset(transformInfo.srcset ?? []),
-                sizes: transformInfo.sizes ?? '',
-                alt: image.alt,
-                decoding: 'async',
-                loading: 'lazy',
-                class: 'w-full h-full object-cover'
-            }) }}
-        </div>
+        {% include '_components/image' with {
+            image: image,
+            transformKey: transformKey,
+            aspectRatio: block.aspectRatio.value,
+            class: 'w-full h-full object-cover',
+        } only %}
 
         {% if block.caption|length %}
             <figcaption class="mt-2 text-sm body-copy">{{ block.caption }}</figcaption>

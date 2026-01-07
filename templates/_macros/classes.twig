@@ -93,8 +93,10 @@
 
 {% macro aspectRatio(preference = 'photo') %}
     {{- attribute({
+        'auto': null,
         'video': 'aspect-video',
         'photo': 'aspect-[4/3]',
+        'photo-portrait': 'aspect-[3/4]',
         'pano': 'aspect-[21/9]',
         'square': 'aspect-square',
     }, preference) -}}

@@ -3,21 +3,22 @@
 {% set image = block.image.eagerly().one() %}
 
 <section class="relative border-t border-dotted border-white/10">
-    <div class="absolute inset-0 pr-8" aria-hidden="true">
+    <div class="{{ classes.maxWidth('contain') }} relative grid gap-12 items-center lg:py-20 lg:grid-cols-2">
         {% if image %}
-            <img src="{{ image.url }}" alt="{{ image.alt }}" class="ml-auto w-1/2 h-full object-cover">
-        {% else %}
-            <div class="w-1/2 h-full bg-black ml-auto"></div>
+            <figure aria-hidden="true" class="lg:order-2">
+                {% include '_components/image' with {
+                    image: image,
+                    loading: 'sync',
+                    aspectRatio: 'photo',
+                    class: 'ml-auto w-full h-full object-cover',
+                } %}
+            </figure>
         {% endif %}
-    </div>
-    <div class="relative flex items-center py-20">
-        <div class="{{ classes.maxWidth('contain') }}">
-            <div class="space-y-6 md:max-w-4/5 xl:max-w-4/5">
-                {% include '_builder/builder' with {
-                    context: 'hero',
-                    blocks: block.textContent.eagerly().all(),
-                } only %}
-            </div>
+        <div class="space-y-6">
+            {% include '_builder/builder' with {
+                context: 'hero',
+                blocks: block.textContent.eagerly().all(),
+            } only %}
         </div>
     </div>
 </section>

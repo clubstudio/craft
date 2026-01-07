@@ -1,6 +1,6 @@
 {#
   Text and Media Block
-  
+
   Two-column layout with text content and media (image or video).
   Builds transform key for nested images: {parent}:text-and-media
 #}
@@ -17,20 +17,26 @@
 ">
     <div class="relative {{ textRight ? 'lg:order-1' : 'lg:order-2' }}">
         {% set mediaType = block.mediaType.value %}
+        {% set image = block.image.eagerly().one() %}
 
-        {% if mediaType == 'image' %}
-            {% include '_builder/blocks/image' with { transformKey: transformKey } %}
+        {% if mediaType == 'image' and image %}
+            {% include '_components/image' with {
+                image: image,
+                transformKey: transformKey,
+                aspectRatio: block.aspectRatio.value,
+                class: 'w-full h-full object-cover',
+            } only %}
         {% elseif mediaType == 'video' %}
-            <figure class="{{ classes.aspectRatio(block.aspectRatio.value) }} bg-black rounded-xl overflow-hidden">
-                <video muted controls class="w-full h-full object-cover" aria-label="{{ block.title ?? 'Video'|t }}">
-                    <source src="{{ block.videoUrl }}" type="video/mp4">
-                    {{ 'Your browser does not support the video tag.'|t }}
-                </video>
+            <figure class="{{ classes.aspectRatio(block.aspectRatio.value) }}">
+                {% include '_components/video' with {
+                    url: block.videoUrl,
+                    title: block.title,
+                } only %}
             </figure>
         {% endif %}
     </div>
 
-    {% set textClassKey = key ~ ':media-' ~ block.mediaPosition.value %}
+    {% set textClassKey = transformKey ~ ':media-' ~ block.mediaPosition.value %}
 
     <div class="flex items-center justify-center {{ textRight ? 'lg:order-2' : 'lg:order-1' }} {{ classes.sectionTextContainer(textClassKey ?? null) }}">
         <div class="lg:max-w-2xl space-y-6 py-12">
