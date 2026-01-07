@@ -27,12 +27,11 @@
                 class: 'w-full h-full object-cover',
             } only %}
         {% elseif mediaType == 'video' %}
-            <figure class="{{ classes.aspectRatio(block.aspectRatio.value) }}">
-                {% include '_components/video' with {
-                    url: block.videoUrl,
-                    title: block.title,
-                } only %}
-            </figure>
+            {% include '_components/video' with {
+                aspectRatio: block.aspectRatio.value,
+                url: block.videoUrl,
+                title: block.title,
+            } only %}
         {% endif %}
     </div>
 

@@ -1,6 +1,6 @@
 {% macro aspectRatio(preference = 'photo', image) %}
     {{- attribute({
-        'auto': image.width / image.height,
+        'auto': image ? (image.width / image.height) : (4 / 3),
         'video': 16 / 9,
         'photo': 4 / 3,
         'photo-portrait': 3 / 4,

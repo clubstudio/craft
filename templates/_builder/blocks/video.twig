@@ -1,10 +1,7 @@
-{% import '_macros/classes' as classes %}
-
 {% if block.videoUrl %}
-    <figure class="{{ classes.aspectRatio(block.aspectRatio.value) }}">
-        {% include '_components/video' with {
-            url: block.videoUrl,
-            title: block.title,
-        } only %}
-    </figure>
+    {% include '_components/video' with {
+        url: block.videoUrl,
+        aspectRatio: block.aspectRatio.value,
+        title: block.title,
+    } only %}
 {% endif %}

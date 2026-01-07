@@ -2,13 +2,21 @@
     title: null,
     url: null,
     class: 'w-full h-full object-cover',
+    aspectRatio: 'video',
     attributes: {
         muted: true,
         controls: true,
+        playsinline: true,
     }
 }|merge(_context) %}
 
-<video {{ attr(data.attributes) }} class="{{ data.class }}" aria-label="{{ data.title ?? 'Video'|t }}">
-    <source src="{{ data.url }}" type="video/mp4">
-    {{ 'Your browser does not support the video tag.'|t }}
-</video>
+{% import '_macros/classes' as classes %}
+
+{% if data.url %}
+    <figure class="{{ classes.aspectRatio(data.aspectRatio) }}">
+        <video {{ attr(data.attributes) }} class="{{ data.class }}" aria-label="{{ data.title ?? 'Video'|t }}">
+            <source src="{{ data.url }}" type="video/mp4">
+            {{ 'Your browser does not support the video tag.'|t }}
+        </video>
+    </figure>
+{% endif %}
