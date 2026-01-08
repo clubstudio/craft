@@ -9,8 +9,15 @@
         <meta name="csrf-token" content="{{ craft.app.request.csrfToken }}">
         <link rel="home" href="{{ siteUrl }}">
 
-        {% block resourceHints %}
-            {# Override or extend this block to add preconnect/dns-prefetch hints #}
+        {# Generate at https://realfavicongenerator.net -#}
+        <link rel="icon" type="image/png" href="{{ siteUrl('favicon-96x96.png') }}" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="{{ siteUrl('favicon.svg') }}" />
+        <link rel="shortcut icon" href="{{ siteUrl('favicon.ico') }}" />
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ siteUrl('apple-touch-icon.png') }}" />
+        <link rel="manifest" href="{{ siteUrl('site.webmanifest') }}" />
+
+        {%- block resourceHints %}
+            {#- Override or extend this block to add preconnect/dns-prefetch hints -#}
         {% endblock %}
 
         {{ craft.vite.script('src/js/site.js', false) }}
