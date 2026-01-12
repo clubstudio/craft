@@ -172,7 +172,7 @@ fieldLayouts:
         userCondition: null
 handle: legalLinks
 instructions: ''
-maxNodes: 1
+maxNodes: null
 name: 'Legal Links'
 permissions:
   craft\elements\Asset:
