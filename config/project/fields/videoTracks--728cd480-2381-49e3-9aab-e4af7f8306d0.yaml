@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: videoTracks
+instructions: null
+name: 'Video Tracks'
+searchable: false
+settings:
+  createButtonLabel: 'New track'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 89326ae0-829f-4d01-b5df-878778d42c99 # Video Track
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

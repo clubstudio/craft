@@ -1,4 +1,4 @@
-dateModified: 1768217090
+dateModified: 1769188330
 elementSources:
   craft\elements\Entry:
     -
@@ -134,6 +134,7 @@ meta:
     274bbd5f-3859-4d8f-91c3-f68ebbb29720: Columns # Columns
     494b1091-68c0-4f45-a25a-8f4ae90680bd: Entries # Entries
     650c6872-2c55-4840-955f-de309ced444c: 'Contact Form' # Contact Form
+    728cd480-2381-49e3-9aab-e4af7f8306d0: 'Video Tracks' # Video Tracks
     1414d7cb-fb98-4f48-88f2-e5b2401cf402: 'Horizontal Alignment' # Horizontal Alignment
     2257efc6-f010-4dd9-997b-95a89fa4c2d3: Divider # Divider
     3975bba4-34d1-446f-a01c-a3059f621585: 'Social Profile' # Social Profile
@@ -148,8 +149,10 @@ meta:
     49503bab-aabd-4544-81ed-930f73f2e23e: 'Article Content' # Article Content
     62083fb6-1a8c-49b9-9782-374ce3b3a7c8: 'Rich Text (Basic)' # Rich Text (Basic)
     77018bc1-5b35-451b-b35c-46a2d4e451aa: Steps # Steps
+    89326ae0-829f-4d01-b5df-878778d42c99: 'Video Track' # Video Track
     198475be-dc00-42d7-8ed4-b48aa2865944: Paragraph # Paragraph
     326377be-c2da-462e-bea3-4eb8ca886573: 'Tag Position' # Tag Position
+    410983d4-f274-4ba5-9e68-1c0ae40eceb9: 'VTT File' # VTT File
     761607ea-8c75-4aea-af4a-00d367e51171: 'Heading Level' # Heading Level
     948057e1-04f5-43cb-8a4d-43e67384f5eb: SEO # SEO
     21969370-50f4-4772-bb0d-01e56f327ba8: Columns # Columns

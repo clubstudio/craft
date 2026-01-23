@@ -3,19 +3,32 @@
     url: null,
     class: 'w-full h-full object-cover',
     aspectRatio: 'video',
+    tracks: [],
     attributes: {
         muted: true,
         controls: true,
         playsinline: true,
-    }
+    },
 }|merge(_context) %}
 
 {% import '_macros/classes' as classes %}
 
 {% if data.url %}
     <figure class="{{ classes.aspectRatio(data.aspectRatio) }}">
-        <video {{ attr(data.attributes) }} class="{{ data.class }}" aria-label="{{ data.title ?? 'Video'|t }}">
+        <video {{ attr(data.attributes) }} class="{{ data.class }}" aria-label="{{ data.title ?? 'Video'|t }}" preload="metadata">
             <source src="{{ data.url }}" type="video/mp4">
+            {% for track in data.tracks %}
+                {% set vttFile = track.vttFile.one() %}
+                {% if vttFile %}
+                    <track
+                        label="{{ track.title }}"
+                        kind="subtitles"
+                        srclang="en"
+                        src="{{ vttFile.url }}"
+                        {% if loop.first %} default {% endif %}
+                    />
+                {% endif %}
+            {% endfor %}
             {{ 'Your browser does not support the video tag.'|t }}
         </video>
     </figure>

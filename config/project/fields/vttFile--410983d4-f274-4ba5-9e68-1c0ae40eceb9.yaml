@@ -1,0 +1,37 @@
+columnSuffix: null
+handle: vttFile
+instructions: null
+name: 'VTT File'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowSubfolders: false
+  allowUploads: true
+  allowedKinds: null
+  branchLimit: null
+  defaultPlacement: end
+  defaultUploadLocationSource: 'volume:a4855d49-a669-433d-a2f9-a410916ece9f' # Files
+  defaultUploadLocationSubpath: vtt
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  previewMode: full
+  restrictFiles: false
+  restrictLocation: false
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:d7f2d6ab-95d8-49be-8cf1-e5e4d4a427e4' # Images
+  restrictedLocationSubpath: null
+  selectionLabel: 'Select VTT file'
+  showCardsInGrid: false
+  showSearchInput: true
+  showSiteMenu: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  sources:
+    - 'volume:a4855d49-a669-433d-a2f9-a410916ece9f' # Files
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Assets

@@ -85,6 +85,35 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2026-01-23T17:12:10+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: a34c1736-2104-4937-99c0-00f502185b62 # Media Type
+                  layoutElementUid: b8d62dbb-efd2-4060-b2f8-b3e5695598fd
+                  operator: in
+                  uid: 6d1486fc-7b99-4ef2-99d6-41dbaec3aea1
+                  values:
+                    - video
+              elementType: craft\elements\Entry
+              fieldContext: global
+            fieldUid: 728cd480-2381-49e3-9aab-e4af7f8306d0 # Video Tracks
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f287f023-e095-4168-8dfb-d137c31eb09e
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2025-07-02T14:32:05+00:00'
             editCondition: null
             elementCondition: null

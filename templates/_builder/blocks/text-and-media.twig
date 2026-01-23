@@ -31,6 +31,7 @@
                 aspectRatio: block.aspectRatio.value,
                 url: block.videoUrl,
                 title: block.title,
+                tracks: block.videoTracks.eagerly().all(),
             } only %}
         {% endif %}
     </div>

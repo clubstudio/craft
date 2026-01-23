@@ -1,0 +1,70 @@
+color: null
+description: null
+fieldLayouts:
+  90d6f031-112a-4831-ae0b-7e2bc7bd5980:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2026-01-23T17:07:25+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: Label
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 2e71b3be-b381-4fc4-9ce4-607fc2c0c815
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-01-23T17:10:36+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 410983d4-f274-4ba5-9e68-1c0ae40eceb9 # VTT File
+            handle: null
+            includeInCards: true
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: afbd9ac8-6737-4fc8-a737-eb4e3be595e6
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 1f005661-b37c-4dd1-aab4-5e7ce95386bb
+        userCondition: null
+handle: videoTrack
+hasTitleField: true
+icon: train-track
+name: 'Video Track'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
