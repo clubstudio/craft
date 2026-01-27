@@ -15,7 +15,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -24,7 +23,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             requirable: false
             size: null
@@ -39,10 +37,8 @@ fieldLayouts:
           -
             dateAdded: '2025-07-03T15:13:52+00:00'
             elementCondition: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: verbb\navigation\fieldlayoutelements\NodeTypeElements
@@ -54,12 +50,10 @@ fieldLayouts:
             dateAdded: '2025-07-03T15:13:52+00:00'
             elementCondition: null
             id: null
-            includeInCards: false
             instructions: null
             label: null
             mandatory: false
             orientation: null
-            providesThumbs: false
             requirable: true
             required: false
             tip: null
@@ -86,7 +80,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -97,7 +90,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             requirable: true
             required: false
@@ -122,7 +114,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -133,7 +124,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             requirable: true
             required: false
@@ -152,12 +142,10 @@ fieldLayouts:
             dateAdded: '2025-07-03T15:13:52+00:00'
             elementCondition: null
             id: null
-            includeInCards: false
             instructions: null
             label: null
             mandatory: false
             orientation: null
-            providesThumbs: false
             requirable: true
             required: false
             tip: null

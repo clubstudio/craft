@@ -3,6 +3,8 @@ description: null
 fieldLayouts:
   90d6f031-112a-4831-ae0b-7e2bc7bd5980:
     cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:afbd9ac8-6737-4fc8-a737-eb4e3be595e6'
     tabs:
       -
         elementCondition: null
@@ -16,7 +18,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: Label
@@ -25,7 +26,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             required: true
             size: null
@@ -43,10 +43,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 410983d4-f274-4ba5-9e68-1c0ae40eceb9 # VTT File
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

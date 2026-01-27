@@ -13,10 +13,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 7b4459c4-8611-49b4-abdf-99a0f4c7a646 # Video URL
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -30,10 +28,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 728cd480-2381-49e3-9aab-e4af7f8306d0 # Video Tracks
             handle: null
-            includeInCards: false
             instructions: null
             label: Tracks
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -47,10 +43,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: ae4f2361-8913-4891-ad95-3938347a1e55 # Aspect Ratio
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField

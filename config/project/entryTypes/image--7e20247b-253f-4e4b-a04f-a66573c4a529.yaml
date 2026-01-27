@@ -15,10 +15,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: d0c7900e-d61c-4839-a59e-70bb47358360 # Image
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -32,10 +30,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 62083fb6-1a8c-49b9-9782-374ce3b3a7c8 # Rich Text (Basic)
             handle: caption
-            includeInCards: false
             instructions: null
             label: Caption
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -49,10 +45,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: ae4f2361-8913-4891-ad95-3938347a1e55 # Aspect Ratio
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

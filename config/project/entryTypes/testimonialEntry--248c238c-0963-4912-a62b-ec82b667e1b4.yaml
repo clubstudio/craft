@@ -13,10 +13,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: ac23a061-b6b4-4ab7-9d91-648ecffc6c7f # Testimonial Entry
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField

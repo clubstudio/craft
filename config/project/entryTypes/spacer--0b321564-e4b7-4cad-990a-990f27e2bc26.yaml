@@ -15,10 +15,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 05fe8308-3bae-4067-ba98-f1ac9bc90dd8 # Spacer Size
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField

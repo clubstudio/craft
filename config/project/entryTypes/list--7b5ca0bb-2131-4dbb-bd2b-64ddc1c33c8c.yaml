@@ -13,10 +13,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 7b2e950b-64e1-4284-a6a1-110afd340922 # List Items
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

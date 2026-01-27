@@ -1,4 +1,4 @@
-dateModified: 1769188330
+dateModified: 1769540429
 elementSources:
   craft\elements\Entry:
     -
@@ -6,8 +6,9 @@ elementSources:
         - postDate
         - desc
       defaultViewMode: ''
-      disabled: false
+      disabled: true
       key: '*'
+      page: Entries
       tableAttributes:
         - status
         - section
@@ -23,6 +24,7 @@ elementSources:
       defaultViewMode: ''
       disabled: false
       key: 'section:f70322ae-4170-462e-b3f4-138012e301da' # Pages
+      page: Entries
       tableAttributes:
         - status
         - postDate
@@ -37,16 +39,15 @@ elementSources:
       defaultViewMode: ''
       disabled: false
       key: singles
+      page: Entries
       tableAttributes:
         - status
         - link
       type: native
     -
-      key: 'section:d8997ae9-6156-48da-8a7e-faeae0802e23'
-      type: native
-    -
       heading: Library
       key: 'heading:e07f3739-989c-493e-b1f0-66b688dc681f'
+      page: Entries
       type: heading
     -
       defaultSort:
@@ -55,6 +56,7 @@ elementSources:
       defaultViewMode: ''
       disabled: false
       key: 'section:ad112b66-5fdd-4015-b741-ddda3f744de9' # Frequently Asked Questions
+      page: Entries
       tableAttributes:
         - status
         - postDate
@@ -63,7 +65,19 @@ elementSources:
         - link
       type: native
     -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
       key: 'section:5748c0f6-c816-4cd6-ba8d-f497d9023f3f' # Testimonials
+      page: Entries
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - authors
+        - link
       type: native
 email:
   fromEmail: dev@clubstudio.co.uk
@@ -235,5 +249,5 @@ system:
   live: true
   name: 'Craft CMS'
   retryDuration: null
-  schemaVersion: 5.8.0.3
+  schemaVersion: 5.9.0.8
   timeZone: Europe/London

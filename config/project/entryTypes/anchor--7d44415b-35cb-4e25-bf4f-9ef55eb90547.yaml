@@ -15,10 +15,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: f01ab0c4-931a-46aa-bcec-67b6c6941e21 # Plain Text
             handle: anchor
-            includeInCards: true
             instructions: null
             label: Anchor
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField

@@ -10,10 +10,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: e14f5323-5bc2-40b2-8feb-9b811c97394c # Code
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -26,10 +24,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 326377be-c2da-462e-bea3-4eb8ca886573 # Tag Position
             handle: position
-            includeInCards: false
             instructions: null
             label: Position
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

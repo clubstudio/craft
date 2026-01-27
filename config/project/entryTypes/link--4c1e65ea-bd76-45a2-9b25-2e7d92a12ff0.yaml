@@ -15,10 +15,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 3ed91472-4973-4997-8a82-57e4ff827e6e # Link
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -32,10 +30,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: b5c0e079-285c-4a6f-a12a-2c7c44b21068 # Link Style
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField

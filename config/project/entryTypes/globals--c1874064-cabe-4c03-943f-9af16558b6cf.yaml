@@ -13,10 +13,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 24905e06-d0a8-486d-b05e-2d1128c9230e # Social Profiles
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -36,10 +34,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
             handle: callToAction
-            includeInCards: false
             instructions: null
             label: 'Call to Action'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -53,10 +49,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: d363d288-d9a6-466d-82f0-a0fdd9530d71 # Form
             handle: newsletterForm
-            includeInCards: false
             instructions: null
             label: 'Newsletter Form'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -70,10 +64,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: f01ab0c4-931a-46aa-bcec-67b6c6941e21 # Plain Text
             handle: copyrightNotice
-            includeInCards: false
             instructions: 'Use the `:year` and `:siteName` placeholders to inject the current year and site name.'
             label: 'Copyright Notice'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -93,10 +85,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: ea252716-954a-4e85-b183-4852be96df43 # Tags
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

@@ -13,10 +13,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 6987f99c-8b2a-479a-a63e-51df68e0f21a # Rich Text (Full)
             handle: body
-            includeInCards: false
             instructions: null
             label: Body
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
