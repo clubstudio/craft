@@ -3,5 +3,6 @@
 /vendor
 /node_modules
 /web/dist
+/templates/_critical-css
 /web/assets/transforms
 .DS_Store

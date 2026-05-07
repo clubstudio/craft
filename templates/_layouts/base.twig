@@ -20,7 +20,13 @@
             {#- Override or extend this block to add preconnect/dns-prefetch hints -#}
         {% endblock %}
 
-        {{ craft.vite.script('src/js/site.js', false) }}
+        {%- set useCriticalCss = (block('criticalCss')|length and not craft.app.config.general.devMode) ? true : false -%}
+
+        {% if useCriticalCss %}
+            <style>{% block criticalCss '' %}</style>
+        {% endif %}
+
+        {{ craft.vite.script('src/js/site.js', useCriticalCss) }}
 
         {% for tag in tags|filter(tag => tag.position == 'head') %}
             {{ tag.code|raw }}
