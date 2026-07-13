@@ -12,7 +12,7 @@
 
 <div class="
     grid grid-cols-1 lg:grid-cols-2
-    gap-6 lg:gap-16 xl:gap-20 2xl:gap-32 3xl:gap-48 4xl:gap-60
+    gap-6
     {{ classes.verticalAlignment(block.verticalAlignment.value) }}
 ">
     <div class="relative {{ textRight ? 'lg:order-1' : 'lg:order-2' }}">
@@ -39,7 +39,7 @@
     {% set textClassKey = transformKey ~ ':media-' ~ block.mediaPosition.value %}
 
     <div class="flex items-center justify-center {{ textRight ? 'lg:order-2' : 'lg:order-1' }} {{ classes.sectionTextContainer(textClassKey ?? null) }}">
-        <div class="lg:max-w-2xl space-y-6 py-12">
+        <div class="space-y-6">
             {% include '_builder/builder' with {
                 context: 'text-and-media',
                 blocks: block.textContent.eagerly().all(),

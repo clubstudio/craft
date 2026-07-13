@@ -1,10 +1,10 @@
-<div class="divide-y divide-gray-300">
+<div class="divide-y">
     {% for item in block.accordionItems.eagerly().all() %}
         <details class="py-4 group">
-            <summary class="font-medium cursor-pointer list-none">
+            <summary class="cursor-pointer list-none">
                 {{ item.title }}
             </summary>
-            <div class="pt-4">
+            <div class="pt-4 body-copy">
                 {{ item.body }}
             </div>
         </details>

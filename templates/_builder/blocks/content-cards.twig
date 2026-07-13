@@ -6,7 +6,7 @@
 {% set textContent = block.textContent.eagerly().all() %}
 {% set cards = block.contentCards.eagerly().all() %}
 
-<div class="grid grid-cols-3 gap-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     {% if textContent|length %}
         <div class="space-y-6">
             {% include '_builder/builder' with {

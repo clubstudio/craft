@@ -17,7 +17,7 @@
 {% if columns|length %}
     <div class="
         grid {{ classes.columnLayout(block.columnLayout.value) }}
-        gap-6 lg:gap-16 xl:gap-20 2xl:gap-32 3xl:gap-48 4xl:gap-60
+        gap-6
         {{ classes.verticalAlignment(block.verticalAlignment.value ?? 'top') }}
     ">
         {% for column in columns %}

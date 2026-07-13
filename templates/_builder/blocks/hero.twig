@@ -2,15 +2,15 @@
 
 {% set image = block.image.eagerly().one() %}
 
-<section class="relative border-t border-dotted border-white/10">
-    <div class="{{ classes.maxWidth('contain') }} relative grid gap-12 items-center lg:py-20 lg:grid-cols-2">
+<section class="relative">
+    <div class="{{ classes.maxWidth('contain') }} relative grid gap-6 items-center lg:grid-cols-2">
         {% if image %}
             <figure aria-hidden="true" class="lg:order-2">
                 {% include '_components/image' with {
                     image: image,
                     loading: 'sync',
                     aspectRatio: 'photo',
-                    class: 'ml-auto w-full h-full object-cover',
+                    class: 'w-full h-full object-cover',
                     attributes: {
                         fetchpriority: 'high',
                     },

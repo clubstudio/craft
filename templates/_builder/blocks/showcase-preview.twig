@@ -1,11 +1,11 @@
 <article>
-    <a href="{{ entry.url }}" class="flex flex-col justify-between p-12 bg-white/5" aria-labelledby="showcase-title-{{ entry.id }}">
+    <a href="{{ entry.url }}" class="flex flex-col justify-between" aria-labelledby="showcase-title-{{ entry.id }}">
         <div class="mb-2">{{ entry.type.name }}</div>
         {% if craft.app.config.general.devMode %}
             <div class="text-sm text-gray-500">
                 Create a template in <code class="text-xs">_builder/blocks/showcase/{{ entry.type|kebab }}</code> to customise this preview.
             </div>
         {% endif %}
-        <h3 id="showcase-title-{{ entry.id }}" class="mt-24 text-xl font-medium">{{ entry.title }}</h3>
+        <h3 id="showcase-title-{{ entry.id }}">{{ entry.title }}</h3>
     </a>
 </article>
