@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -11,6 +12,7 @@ fieldLayouts:
             dateAdded: '2025-07-03T11:11:25+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 51b89036-b57c-4892-aefb-56f15d5d945c # Accordion Items
             handle: null
             instructions: null
@@ -25,6 +27,7 @@ fieldLayouts:
         name: Content
         uid: 82334105-4a9a-48c1-9351-7e6bb0bc643f
         userCondition: null
+    thumbFieldKey: null
 handle: accordion
 hasTitleField: false
 icon: circle-plus
@@ -36,3 +39,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

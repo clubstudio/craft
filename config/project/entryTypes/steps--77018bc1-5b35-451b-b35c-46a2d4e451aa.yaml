@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -11,6 +12,7 @@ fieldLayouts:
             dateAdded: '2025-07-04T08:38:57+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 25fc8642-f55e-4e75-969d-0e911800aef1 # Steps
             handle: null
             instructions: null
@@ -25,6 +27,7 @@ fieldLayouts:
         name: Content
         uid: 223f4c08-b73c-4ab5-b57a-37db51f0e514
         userCondition: null
+    thumbFieldKey: null
 handle: steps
 hasTitleField: false
 icon: arrow-progress
@@ -36,3 +39,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

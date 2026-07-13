@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -11,6 +12,7 @@ fieldLayouts:
             dateAdded: '2025-01-23T16:39:01+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
             handle: null
             instructions: null
@@ -32,6 +34,7 @@ fieldLayouts:
             dateAdded: '2025-01-23T16:39:01+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: e2c74420-bbaf-40c8-acf9-daf436a33bbd # Maximum Width
             handle: null
             instructions: null
@@ -47,6 +50,7 @@ fieldLayouts:
             dateAdded: '2025-01-23T16:39:01+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 1414d7cb-fb98-4f48-88f2-e5b2401cf402 # Horizontal Alignment
             handle: null
             instructions: null
@@ -68,6 +72,7 @@ fieldLayouts:
             dateAdded: '2025-01-23T16:39:01+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
             handle: paddingTop
             instructions: null
@@ -83,6 +88,7 @@ fieldLayouts:
             dateAdded: '2025-01-23T16:39:01+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
             handle: paddingBottom
             instructions: null
@@ -98,6 +104,7 @@ fieldLayouts:
             dateAdded: '2025-01-23T19:36:52+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 145cfe22-19bb-4807-8e33-c8d059374c2c # Text Alignment
             handle: null
             instructions: null
@@ -112,6 +119,7 @@ fieldLayouts:
         name: Style
         uid: 98cffb71-3062-4ccb-b6c5-04add6bf201d
         userCondition: null
+    thumbFieldKey: null
 handle: textElements
 hasTitleField: false
 icon: shapes
@@ -123,3 +131,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

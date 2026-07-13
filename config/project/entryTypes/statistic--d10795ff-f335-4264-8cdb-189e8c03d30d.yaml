@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -39,6 +40,7 @@ fieldLayouts:
             dateAdded: '2025-07-04T08:49:47+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: f01ab0c4-931a-46aa-bcec-67b6c6941e21 # Plain Text
             handle: value
             instructions: null
@@ -54,6 +56,7 @@ fieldLayouts:
             dateAdded: '2025-07-04T08:49:47+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 62083fb6-1a8c-49b9-9782-374ce3b3a7c8 # Rich Text (Basic)
             handle: body
             instructions: null
@@ -68,6 +71,7 @@ fieldLayouts:
         name: Content
         uid: 9dbe8ff1-f48d-4413-9554-4802da5262b9
         userCondition: null
+    thumbFieldKey: null
 handle: statistic
 hasTitleField: true
 icon: chart-line-up
@@ -79,3 +83,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

@@ -7,11 +7,19 @@ settings:
   availableTransforms: ''
   availableVolumes: ''
   characterLimit: null
-  ckeConfig: ed206a6f-5783-44ef-851d-fb1166bc3102 # Paragraph
-  createButtonLabel: null
+  css: null
+  cssFile: null
   defaultTransform: null
-  expandEntryButtons: false
+  defaultUploadLocationSubpath: null
+  defaultUploadLocationVolume: null
   fullGraphqlData: false
+  headingLevels: false
+  imageEntryTypeUid: null
+  imageFieldUid: null
+  imageMode: img
+  js: null
+  jsFile: Paragraph.json
+  options: null
   parseEmbeds: false
   purifierConfig: null
   purifyHtml: true
@@ -20,6 +28,14 @@ settings:
   showWordCount: false
   sourceEditingGroups:
     - __ADMINS__
+  toolbar:
+    - style
+    - bold
+    - italic
+    - link
+    - '|'
+    - bulletedList
+    - numberedList
   wordLimit: null
 translationKeyFormat: null
 translationMethod: none

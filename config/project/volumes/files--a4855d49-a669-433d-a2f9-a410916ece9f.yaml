@@ -38,6 +38,7 @@ fieldLayouts:
         name: Content
         uid: f86ed93b-f18d-4926-80dd-cfed14bb93c2
         userCondition: null
+    thumbFieldKey: null
 fs: local
 handle: files
 name: Files

@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -11,6 +12,7 @@ fieldLayouts:
             dateAdded: '2025-07-03T10:26:34+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: ac23a061-b6b4-4ab7-9d91-648ecffc6c7f # Testimonial Entry
             handle: null
             instructions: null
@@ -25,6 +27,7 @@ fieldLayouts:
         name: Content
         uid: fde65253-63fa-43f0-8171-ae6c54da520e
         userCondition: null
+    thumbFieldKey: null
 handle: testimonialEntry
 hasTitleField: false
 icon: comment-heart
@@ -36,3 +39,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

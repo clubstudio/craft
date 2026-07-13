@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -41,6 +42,7 @@ fieldLayouts:
             dateAdded: '2025-07-02T12:10:57+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: e7c39107-95e6-401c-8be7-a07e337fb7b7 # Rich Text
             handle: answer
             instructions: null
@@ -55,6 +57,7 @@ fieldLayouts:
         name: Content
         uid: e1ed6dd6-d7cf-4baa-8c4a-2efb7d14c71d
         userCondition: null
+    thumbFieldKey: null
 handle: faq
 hasTitleField: true
 icon: comments-question
@@ -66,3 +69,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

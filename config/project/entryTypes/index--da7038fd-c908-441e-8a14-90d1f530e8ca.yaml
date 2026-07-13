@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -39,6 +40,7 @@ fieldLayouts:
             dateAdded: '2025-07-04T11:15:07+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: f9f5b927-df42-44aa-9851-28659f875ab1 # Entry Type
             handle: null
             instructions: null
@@ -60,6 +62,7 @@ fieldLayouts:
             dateAdded: '2025-07-04T11:15:07+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 948057e1-04f5-43cb-8a4d-43e67384f5eb # SEO
             handle: null
             instructions: null
@@ -74,6 +77,7 @@ fieldLayouts:
         name: Meta
         uid: 46ac4643-2eba-4088-a037-1eb0f00f21aa
         userCondition: null
+    thumbFieldKey: null
 handle: index
 hasTitleField: true
 icon: list-tree
@@ -85,3 +89,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

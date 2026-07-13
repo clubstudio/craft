@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -11,6 +12,7 @@ fieldLayouts:
             dateAdded: '2025-07-03T15:42:07+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
             handle: null
             instructions: null
@@ -25,6 +27,7 @@ fieldLayouts:
         name: Content
         uid: 251cbec6-c475-4509-a938-55518c487381
         userCondition: null
+    thumbFieldKey: null
 handle: cta
 hasTitleField: false
 icon: megaphone
@@ -36,3 +39,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

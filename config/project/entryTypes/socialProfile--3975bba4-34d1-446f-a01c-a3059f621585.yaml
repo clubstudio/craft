@@ -1,6 +1,9 @@
+allowLineBreaksInTitles: false
 color: null
+description: null
 fieldLayouts:
   d111a3b7-7d2d-4e81-93d0-f44d6e2a8492:
+    cardThumbAlignment: end
     cardView:
       - 'layoutElement:586fa40e-8126-4ea7-883a-6bc332ee4942'
       - 'layoutElement:ef8c76c3-89bd-4bef-8081-df1e10459c25'
@@ -10,7 +13,9 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2025-01-28T14:35:49+00:00'
+            editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: e6b9a7b0-4786-4d98-aa93-e7de2a709e9c # Social Network
             handle: null
             instructions: null
@@ -24,7 +29,9 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-01-28T14:37:15+00:00'
+            editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 3f23d659-bee2-453e-b674-c4f730be7e88 # Profile URL
             handle: null
             instructions: null
@@ -39,6 +46,7 @@ fieldLayouts:
         name: Content
         uid: cddfdbd9-c6f6-4801-a270-efa69090c4eb
         userCondition: null
+    thumbFieldKey: null
 handle: socialProfile
 hasTitleField: false
 icon: hashtag
@@ -50,3 +58,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

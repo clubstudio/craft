@@ -22,7 +22,6 @@ settings:
   restrictedLocationSource: 'volume:d7f2d6ab-95d8-49be-8cf1-e5e4d4a427e4' # Images
   restrictedLocationSubpath: null
   selectionLabel: 'Select VTT file'
-  showCardsInGrid: false
   showSearchInput: true
   showSiteMenu: false
   showUnpermittedFiles: false

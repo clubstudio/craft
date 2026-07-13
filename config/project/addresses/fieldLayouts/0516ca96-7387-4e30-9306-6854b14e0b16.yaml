@@ -1,3 +1,4 @@
+cardThumbAlignment: end
 cardView:
   - 'layoutElement:dfc3f840-d3e1-4b20-9382-6d452d7493e1'
 tabs:
@@ -22,7 +23,7 @@ tabs:
         orientation: null
         placeholder: null
         readonly: false
-        requirable: false
+        required: true
         size: null
         step: null
         tip: null
@@ -61,3 +62,4 @@ tabs:
     name: Content
     uid: 7aa7ecc4-26cc-4f8d-a5b6-1c7d35375162
     userCondition: null
+thumbFieldKey: null

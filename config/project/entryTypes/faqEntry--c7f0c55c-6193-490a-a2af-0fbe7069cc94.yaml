@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -13,6 +14,7 @@ fieldLayouts:
             dateAdded: '2025-07-02T12:15:18+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 7631edb0-1fb5-477f-96bd-57ded88a1c47 # FAQ Entry
             handle: null
             instructions: null
@@ -27,6 +29,7 @@ fieldLayouts:
         name: Content
         uid: a6b28c91-9ab5-4271-854b-b05b264c6b7a
         userCondition: null
+    thumbFieldKey: null
 handle: faqEntry
 hasTitleField: false
 icon: clipboard-question
@@ -38,3 +41,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -11,6 +12,7 @@ fieldLayouts:
             dateAdded: '2025-04-23T12:15:58+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 24905e06-d0a8-486d-b05e-2d1128c9230e # Social Profiles
             handle: null
             instructions: null
@@ -32,6 +34,7 @@ fieldLayouts:
             dateAdded: '2025-07-04T10:58:44+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
             handle: callToAction
             instructions: null
@@ -47,6 +50,7 @@ fieldLayouts:
             dateAdded: '2025-07-04T10:58:44+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: d363d288-d9a6-466d-82f0-a0fdd9530d71 # Form
             handle: newsletterForm
             instructions: null
@@ -62,6 +66,7 @@ fieldLayouts:
             dateAdded: '2025-04-23T12:15:16+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: f01ab0c4-931a-46aa-bcec-67b6c6941e21 # Plain Text
             handle: copyrightNotice
             instructions: 'Use the `:year` and `:siteName` placeholders to inject the current year and site name.'
@@ -83,6 +88,7 @@ fieldLayouts:
             dateAdded: '2025-01-23T14:36:51+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: ea252716-954a-4e85-b183-4852be96df43 # Tags
             handle: null
             instructions: null
@@ -97,6 +103,7 @@ fieldLayouts:
         name: Meta
         uid: 6298d91d-38cb-4b99-8310-c0932d994e0f
         userCondition: null
+    thumbFieldKey: null
 handle: globals
 hasTitleField: false
 icon: earth-africa
@@ -108,3 +115,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

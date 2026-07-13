@@ -62,6 +62,7 @@ fieldLayouts:
         name: Content
         uid: f25db068-8ac4-43b8-819b-cf8b2d077e38
         userCondition: null
+    thumbFieldKey: null
 fs: local
 handle: images
 name: Images

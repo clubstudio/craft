@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -11,6 +12,7 @@ fieldLayouts:
             dateAdded: '2025-07-04T10:01:13+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
             handle: null
             instructions: null
@@ -26,6 +28,7 @@ fieldLayouts:
             dateAdded: '2025-07-04T09:52:00+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 03a2afff-8e7c-45e2-8078-c71d1ac627a3 # Content Cards
             handle: null
             instructions: null
@@ -40,6 +43,7 @@ fieldLayouts:
         name: Content
         uid: 845fa8fc-3048-46a4-b488-595285e1a468
         userCondition: null
+    thumbFieldKey: null
 handle: contentCards
 hasTitleField: false
 icon: cards-blank
@@ -51,3 +55,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

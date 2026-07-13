@@ -7,11 +7,24 @@ settings:
   availableTransforms: ''
   availableVolumes: '*'
   characterLimit: null
-  ckeConfig: 93b17e70-d317-4251-896f-87a5a97956cb # Full
-  createButtonLabel: null
+  css: null
+  cssFile: null
   defaultTransform: null
-  expandEntryButtons: false
+  defaultUploadLocationSubpath: null
+  defaultUploadLocationVolume: null
   fullGraphqlData: false
+  headingLevels:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+  imageEntryTypeUid: null
+  imageFieldUid: null
+  imageMode: img
+  js: null
+  jsFile: null
+  options: null
   parseEmbeds: false
   purifierConfig: null
   purifyHtml: true
@@ -20,6 +33,17 @@ settings:
   showWordCount: true
   sourceEditingGroups:
     - __ADMINS__
+  toolbar:
+    - heading
+    - '|'
+    - bold
+    - italic
+    - link
+    - '|'
+    - bulletedList
+    - numberedList
+    - '|'
+    - horizontalLine
   wordLimit: null
 translationKeyFormat: null
 translationMethod: none

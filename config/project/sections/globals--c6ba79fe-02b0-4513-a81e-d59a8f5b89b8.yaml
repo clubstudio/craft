@@ -5,19 +5,13 @@ entryTypes:
     uid: c1874064-cabe-4c03-943f-9af16558b6cf # Globals
 handle: globals
 maxAuthors: 1
+minAuthors: 1
 name: Globals
 previewTargets:
   -
-    __assoc__:
-      -
-        - label
-        - Primary
-      -
-        - urlFormat
-        - /
-      -
-        - refresh
-        - '1'
+    label: Primary
+    refresh: '1'
+    urlFormat: /
 propagationMethod: all
 siteSettings:
   fd532b74-9e46-4921-867f-79a80ef26fdf: # $CRAFT_SITE_NAME

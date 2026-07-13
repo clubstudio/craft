@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -11,6 +12,7 @@ fieldLayouts:
             dateAdded: '2025-07-07T11:36:11+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: d0c7900e-d61c-4839-a59e-70bb47358360 # Image
             handle: null
             instructions: null
@@ -26,6 +28,7 @@ fieldLayouts:
             dateAdded: '2025-07-03T10:08:26+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
             handle: null
             instructions: null
@@ -40,6 +43,7 @@ fieldLayouts:
         name: Content
         uid: 9e1d2630-0e5d-4b17-b5b2-83cf093bd4ee
         userCondition: null
+    thumbFieldKey: null
 handle: hero
 hasTitleField: false
 icon: star-christmas
@@ -51,3 +55,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

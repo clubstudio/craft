@@ -158,8 +158,9 @@ fieldLayouts:
         name: Advanced
         uid: 425ce698-b3e9-4dd0-be54-dc9e5981f5a7
         userCondition: null
+    thumbFieldKey: null
 handle: mainNavigation
-instructions: ''
+instructions: null
 maxNodes: null
 name: 'Main Navigation'
 permissions:
@@ -180,6 +181,7 @@ permissions:
   verbb\navigation\nodetypes\PassiveType:
     enabled: '1'
 propagationMethod: all
+showSiteMenu: true
 siteSettings:
   fd532b74-9e46-4921-867f-79a80ef26fdf: # $CRAFT_SITE_NAME
     enabled: true

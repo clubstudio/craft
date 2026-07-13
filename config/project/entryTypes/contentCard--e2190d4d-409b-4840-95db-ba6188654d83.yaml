@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -13,6 +14,7 @@ fieldLayouts:
             dateAdded: '2025-07-04T09:51:57+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 15bb51c2-8d53-4481-9b4b-fd94325e4b0d # Entry
             handle: null
             instructions: null
@@ -27,6 +29,7 @@ fieldLayouts:
         name: Content
         uid: c10de1d0-7628-4440-921f-212d14de57be
         userCondition: null
+    thumbFieldKey: null
 handle: contentCard
 hasTitleField: false
 icon: card-club
@@ -38,3 +41,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

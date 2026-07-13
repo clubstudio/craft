@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -47,6 +48,7 @@ fieldLayouts:
             dateAdded: '2025-07-02T14:46:49+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: e913983b-447b-4aa9-bf9c-588f6ff2ca2f # Content Block
             handle: contentBlock
             instructions: null
@@ -68,6 +70,7 @@ fieldLayouts:
             dateAdded: '2025-07-02T14:43:53+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: e2c74420-bbaf-40c8-acf9-daf436a33bbd # Maximum Width
             handle: null
             instructions: null
@@ -83,6 +86,7 @@ fieldLayouts:
             dateAdded: '2025-07-02T14:43:53+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 1414d7cb-fb98-4f48-88f2-e5b2401cf402 # Horizontal Alignment
             handle: null
             instructions: null
@@ -104,6 +108,7 @@ fieldLayouts:
             dateAdded: '2025-07-02T14:43:53+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
             handle: paddingTop
             instructions: null
@@ -119,6 +124,7 @@ fieldLayouts:
             dateAdded: '2025-07-02T14:43:53+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
             handle: paddingBottom
             instructions: null
@@ -133,6 +139,7 @@ fieldLayouts:
         name: Style
         uid: d288384d-44a1-41d9-aec1-89eb69d02a0a
         userCondition: null
+    thumbFieldKey: null
 handle: section
 hasTitleField: true
 icon: block
@@ -144,3 +151,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

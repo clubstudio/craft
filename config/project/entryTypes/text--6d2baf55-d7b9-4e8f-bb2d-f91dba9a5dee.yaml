@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -11,6 +12,7 @@ fieldLayouts:
             dateAdded: '2025-07-03T13:58:26+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 6987f99c-8b2a-479a-a63e-51df68e0f21a # Rich Text (Full)
             handle: body
             instructions: null
@@ -25,6 +27,7 @@ fieldLayouts:
         name: Content
         uid: c44b07da-4fac-45e9-ac58-c0f9455b0c04
         userCondition: null
+    thumbFieldKey: null
 handle: text
 hasTitleField: false
 icon: text
@@ -36,3 +39,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

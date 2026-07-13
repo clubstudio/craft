@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -9,6 +10,7 @@ fieldLayouts:
         name: Content
         uid: 2ebad613-c48b-49b8-90da-64af7fa4182b
         userCondition: null
+    thumbFieldKey: null
 handle: breadcrumb
 hasTitleField: false
 icon: ellipsis
@@ -20,3 +22,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

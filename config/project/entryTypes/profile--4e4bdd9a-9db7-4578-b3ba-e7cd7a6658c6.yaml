@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -39,6 +40,7 @@ fieldLayouts:
             dateAdded: '2025-07-04T14:43:47+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: b5ab890b-067e-4b4c-9221-8311a3749f1d # User
             handle: null
             instructions: null
@@ -53,6 +55,7 @@ fieldLayouts:
         name: Content
         uid: 820d2f05-ef8d-4ffb-8bce-89bbde2310f6
         userCondition: null
+    thumbFieldKey: null
 handle: profile
 hasTitleField: true
 icon: id-badge
@@ -64,3 +67,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

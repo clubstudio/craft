@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -13,6 +14,7 @@ fieldLayouts:
             dateAdded: '2025-01-23T16:50:33+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 3ed91472-4973-4997-8a82-57e4ff827e6e # Link
             handle: null
             instructions: null
@@ -28,6 +30,7 @@ fieldLayouts:
             dateAdded: '2025-07-04T09:41:17+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: b5c0e079-285c-4a6f-a12a-2c7c44b21068 # Link Style
             handle: null
             instructions: null
@@ -42,6 +45,7 @@ fieldLayouts:
         name: Content
         uid: 481bcc35-db5f-4192-b2e7-45a2d22c2338
         userCondition: null
+    thumbFieldKey: null
 handle: link
 hasTitleField: false
 icon: link
@@ -53,3 +57,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

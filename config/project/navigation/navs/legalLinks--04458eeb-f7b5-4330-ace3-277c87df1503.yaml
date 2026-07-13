@@ -158,8 +158,9 @@ fieldLayouts:
         name: Advanced
         uid: f6a4a92e-7f8f-4e65-87d2-cd71e2f866ef
         userCondition: null
+    thumbFieldKey: null
 handle: legalLinks
-instructions: ''
+instructions: null
 maxNodes: null
 name: 'Legal Links'
 permissions:
@@ -180,6 +181,7 @@ permissions:
   verbb\navigation\nodetypes\PassiveType:
     enabled: '1'
 propagationMethod: all
+showSiteMenu: true
 siteSettings:
   fd532b74-9e46-4921-867f-79a80ef26fdf: # $CRAFT_SITE_NAME
     enabled: true

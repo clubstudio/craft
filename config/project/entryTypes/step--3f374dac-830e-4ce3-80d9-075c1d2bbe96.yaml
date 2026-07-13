@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -39,6 +40,7 @@ fieldLayouts:
             dateAdded: '2025-07-04T08:38:53+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
             handle: null
             instructions: null
@@ -53,6 +55,7 @@ fieldLayouts:
         name: Content
         uid: 3b444341-4728-48c5-b9e7-631f1fe9cffc
         userCondition: null
+    thumbFieldKey: null
 handle: step
 hasTitleField: true
 icon: shoe-prints
@@ -64,3 +67,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -13,6 +14,7 @@ fieldLayouts:
             dateAdded: '2025-01-23T18:51:18+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 05fe8308-3bae-4067-ba98-f1ac9bc90dd8 # Spacer Size
             handle: null
             instructions: null
@@ -27,6 +29,7 @@ fieldLayouts:
         name: Content
         uid: 8f5b22f2-c57f-49e9-811d-d8cd210c3f41
         userCondition: null
+    thumbFieldKey: null
 handle: spacer
 hasTitleField: false
 icon: bars
@@ -38,3 +41,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

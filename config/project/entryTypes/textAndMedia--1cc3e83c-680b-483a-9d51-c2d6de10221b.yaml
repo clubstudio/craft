@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -13,6 +14,7 @@ fieldLayouts:
             dateAdded: '2025-07-02T11:57:07+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: a34c1736-2104-4937-99c0-00f502185b62 # Media Type
             handle: null
             instructions: null
@@ -40,6 +42,7 @@ fieldLayouts:
                     - image
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: d0c7900e-d61c-4839-a59e-70bb47358360 # Image
             handle: null
             instructions: null
@@ -67,6 +70,7 @@ fieldLayouts:
                     - video
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 7b4459c4-8611-49b4-abdf-99a0f4c7a646 # Video URL
             handle: null
             instructions: null
@@ -94,6 +98,7 @@ fieldLayouts:
                     - video
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 728cd480-2381-49e3-9aab-e4af7f8306d0 # Video Tracks
             handle: null
             instructions: null
@@ -109,6 +114,7 @@ fieldLayouts:
             dateAdded: '2025-07-02T14:32:05+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: ae4f2361-8913-4891-ad95-3938347a1e55 # Aspect Ratio
             handle: null
             instructions: null
@@ -124,6 +130,7 @@ fieldLayouts:
             dateAdded: '2025-01-23T19:32:02+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: e10b1344-6730-4ebf-b792-fbc2e3a15e04 # Media Position
             handle: null
             instructions: null
@@ -139,6 +146,7 @@ fieldLayouts:
             dateAdded: '2025-04-23T12:39:31+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 7397cb77-355d-47eb-83b4-30f061ca415b # Vertical Alignment
             handle: null
             instructions: null
@@ -154,6 +162,7 @@ fieldLayouts:
             dateAdded: '2025-01-23T18:35:31+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
             handle: null
             instructions: null
@@ -168,6 +177,7 @@ fieldLayouts:
         name: Content
         uid: e5545267-423a-4364-aa58-913a6d4e8c87
         userCondition: null
+    thumbFieldKey: null
 handle: textAndMedia
 hasTitleField: false
 icon: photo-film
@@ -179,3 +189,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'
