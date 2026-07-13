@@ -21,6 +21,7 @@ return GeneralConfig::create()
     ->addTrailingSlashesToUrls()
     ->enableGql(false)
     ->errorTemplatePrefix('_errors/')
+    ->sendPoweredByHeader(false)
     ->aliases([
         '@web' => App::env('PRIMARY_SITE_URL'),
         '@webroot' => dirname(__DIR__) . '/web',
