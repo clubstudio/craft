@@ -22,6 +22,7 @@ return GeneralConfig::create()
     ->enableGql(false)
     ->errorTemplatePrefix('_errors/')
     ->sendPoweredByHeader(false)
+    ->timezone(App::env('CRAFT_TIMEZONE', 'Europe/London'))
     ->aliases([
         '@web' => App::env('PRIMARY_SITE_URL'),
         '@webroot' => dirname(__DIR__) . '/web',
