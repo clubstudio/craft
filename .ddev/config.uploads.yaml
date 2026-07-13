@@ -1,0 +1,16 @@
+# Directories DDEV bind-mounts and excludes from Mutagen sync, so large,
+# frequently-changing trees run at native Docker speed instead of bogging
+# down Mutagen. Paths are relative to the docroot (`web`).
+# See: https://ddev.com/blog/mutagen-functionality-issues-debugging/
+#
+#   assets          -> web/assets, Craft's Local filesystem (@webroot/assets):
+#                      user-uploaded images/files and generated transforms.
+#   ../node_modules -> project-root node_modules: a heavy build dir that the
+#                      article recommends excluding from Mutagen. Safe here
+#                      because npm only ever runs in-container (`ddev npm ...`).
+#
+# Setting this also silences DDEV's "upload_dirs not set" Mutagen warning.
+# DDEV merges every .ddev/config.*.yaml file, so this can live on its own.
+upload_dirs:
+    - assets
+    - ../node_modules

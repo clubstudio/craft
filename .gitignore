@@ -3,5 +3,6 @@
 /vendor
 /node_modules
 /web/dist
-/web/assets/transforms
+/web/assets/*
+!/web/assets/.gitkeep
 .DS_Store
