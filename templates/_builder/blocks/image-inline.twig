@@ -1,9 +1,12 @@
 {% set image = block.image.eagerly().one() %}
 
 {% if image %}
+    {% do image.setTransform({ width: 96 }) %}
+
     <figure class="inline-block max-w-24 -ml-2 mb-1">
         {{ tag('img', {
             src: image.url,
+            srcset: image.getSrcset([96, 192]),
             width: image.width,
             height: image.height,
             alt: image.alt,

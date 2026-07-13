@@ -7,6 +7,11 @@ return [
             'srcset' => [400, 800, 1200, 1600, 2400],
             'sizes' => '100vw',
         ],
+        'avatar' => [
+            'width' => 128,
+            'srcset' => [64, 128, 192],
+            'sizes' => '64px',
+        ],
         'section:none' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400, 2800],

@@ -4,8 +4,13 @@
 <figure>
     <figcaption class="flex items-center gap-6">
         {% if image %}
-            <div class="relative">
-                <img src="{{ image.getUrl({ width: 128, height: 128 }) }}" alt="{{ image.alt }}" width="64" height="64">
+            <div class="relative w-16 shrink-0">
+                {% include '_components/image' with {
+                    image: image,
+                    transformKey: 'avatar',
+                    aspectRatio: 'square',
+                    class: 'w-full h-full object-cover',
+                } only %}
             </div>
         {% endif %}
         <div class="flex flex-col">
