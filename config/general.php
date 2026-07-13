@@ -26,6 +26,7 @@ return GeneralConfig::create()
     ->autoLoginAfterAccountActivation(true)
     ->loginPath(false)
     ->timezone(App::env('CRAFT_TIMEZONE', 'Europe/London'))
+    ->enableTwigSandbox()
     ->aliases([
         '@web' => App::env('PRIMARY_SITE_URL'),
         '@webroot' => dirname(__DIR__) . '/web',
