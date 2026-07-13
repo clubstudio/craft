@@ -9,12 +9,13 @@ A scaffolding package to help you hit the ground running with your next [Craft C
 * [Craft CMS](https://craftcms.com)
 * [Tailwind CSS](https://tailwindcss.com)
 * [Vite](https://vite.dev/)
+* A flexible, accessible content builder with responsive image transforms
 * A sensible directory structure
-* Commonly used Craft CMS plugins
+* Commonly used plugins — CKEditor, Formie, Navigation, Retour and SEOmatic
 
 ## Getting Started
 
-Install or update [DDEV](https://ddev.com/), then follow these steps:
+Install or update [DDEV](https://ddev.com/) (which requires [Docker](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/)), then follow these steps:
 
 1. Create a project directory and move into it:
    ```
@@ -28,9 +29,10 @@ Install or update [DDEV](https://ddev.com/), then follow these steps:
    ```
    ddev composer create -y "clubstudio/craft"
    ```
-4. Run `ddev launch` to view the project in your browser
+4. Run `ddev launch` to view your site in the browser
+5. Log in to the Craft control panel at `/admin` (or run `ddev launch /admin`) with the admin account you created during install
 
-Next, feel free to read the offical [Craft installation documentation](https://craftcms.com/docs/5.x/install.html).
+Next, feel free to read the official [Craft installation documentation](https://craftcms.com/docs/5.x/install.html).
 
 ## Developing
 
@@ -43,15 +45,33 @@ ddev restart
 ddev npm install
 ```
 
-Once the dependencies have been installed, you can compile assets and start a watcher using:
+Once the dependencies have been installed, you can compile assets and start a watcher (with hot-module reloading) using:
 
 ```
 ddev npm run dev
 ```
 
+Leave this running while you work. When you're ready to generate optimised, production-ready assets, run:
+
+```
+ddev npm run build
+```
+
+This writes hashed, cache-busted files to `web/dist/`.
+
 That's it! Happy coding! 🎉
 
 When you've finished working, run `ddev stop` to shut down the project containers and free up resources.
+
+## Project Config
+
+Craft's [project config](https://craftcms.com/docs/5.x/system/project-config.html) is the source of truth for your site's schema — fields, entry types, sections and settings. It's stored as version-controlled YAML in `config/project/`.
+
+- After pulling changes from a teammate, sync your database with:
+  ```
+  ddev craft project-config/apply
+  ```
+- In `dev`, `CRAFT_ALLOW_ADMIN_CHANGES=true` lets you edit the schema from the control panel. Craft writes those edits back to `config/project/`, so commit the updated YAML alongside your code.
 
 ## Template System
 
@@ -72,6 +92,7 @@ templates/
 ├── _pages/            Page-specific templates
 ├── _macros/           Twig macros for utilities
 ├── _dev/              Development utilities (breakpoint helper)
+├── _critical-css/     Critical (inline) CSS partials
 └── _errors/           Error page templates
 ```
 
