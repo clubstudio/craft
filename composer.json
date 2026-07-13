@@ -25,8 +25,9 @@
     "optimize-autoloader": true
   },
   "scripts": {
-    "post-root-package-install": [
-      "@php -r \"file_exists('.env') || copy('.env.example.dev', '.env');\""
+    "post-create-project-cmd": [
+      "@php -r \"file_exists('.env') || copy('.env.example.dev', '.env');\"",
+      "@php craft install"
     ]
   },
   "repositories": [

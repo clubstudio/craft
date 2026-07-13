@@ -24,34 +24,22 @@ Install or update [DDEV](https://ddev.com/), then follow these steps:
    ```
    ddev config --project-type=craftcms --docroot=web
    ```
-3. Scaffold the project from this starter project:
+3. Scaffold the project from this starter project. Craft's installer runs automatically at the end, so answer each prompt when asked:
    ```
    ddev composer create -y "clubstudio/craft"
    ```
-4. Run `ddev craft install` and answer each prompt
-5. Run `ddev launch` to view the project in your browser
+4. Run `ddev launch` to view the project in your browser
 
 Next, feel free to read the offical [Craft installation documentation](https://craftcms.com/docs/5.x/install.html).
 
 ## Developing
 
-After setting up Craft, you're almost ready to start building your new project! Before getting started you'll want to configure Vite and pull in all frontend dependencies.
+After setting up Craft, you're almost ready to start building! This starter ships a `.ddev/config.vite.yaml` config that exposes the Vite dev server port (5173), so there's no DDEV configuration to edit by hand.
 
-First, add the following to your `.ddev/config.yaml`:
-
-```
-web_extra_exposed_ports:
-    - name: vite
-      container_port: 5173
-      http_port: 5172
-      https_port: 5173
-```
-
-and run `ddev restart`.
-
-Next, install frontend dependencies by running:
+Apply the shipped config and pull in frontend dependencies:
 
 ```
+ddev restart
 ddev npm install
 ```
 
