@@ -1,0 +1,40 @@
+{% extends '_layouts/master' %}
+
+{% import '_macros/classes' as classes %}
+
+{% paginate craft.entries.section(entry.entryType.value).orderBy('postDate DESC').limit(12) as pageInfo, entries %}
+
+{% block content %}
+    <article class="{{ classes.maxWidth('contain') }}">
+        <header>
+            {% include '_components/heading' with {
+                level: 'h1',
+                heading: entry.title,
+            } %}
+        </header>
+
+        <section class="my-12" aria-label="{{ 'Entries list'|t }}">
+            {% if entries|length %}
+                <div class="grid grid-cols-3 gap-12">
+                    {% for entry in entries %}
+                        {% include [
+                            '_builder/blocks/content-cards/' ~ entry.type|kebab,
+                            '_builder/blocks/content-card',
+                        ] with {
+                            entry: entry,
+                            context: 'content-cards',
+                        } only %}
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>{{ 'There are no entries to display.'|t }}</p>
+            {% endif %}
+
+            {% if pageInfo.totalPages > 1 %}
+                <div class="mt-12">
+                    {% include '_components/pagination' with { pageInfo: pageInfo } only %}
+                </div>
+            {% endif %}
+        </section>
+    </article>
+{% endblock %}

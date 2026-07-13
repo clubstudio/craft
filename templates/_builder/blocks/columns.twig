@@ -1,0 +1,43 @@
+{#
+  Columns Block
+  
+  Creates a multi-column layout with responsive grid.
+  Builds transform key for nested images: {parent}:columns:{count}
+  
+  Examples:
+  - section:contain:columns:2
+  - section:contain:columns:3
+#}
+{% import '_macros/classes' as classes %}
+{% import '_macros/transforms' as transforms %}
+
+{% set columns = block.columns.eagerly().all() %}
+{% set transformKey = transforms.buildKey([transformKey, 'columns', columns|length]) %}
+
+{% if columns|length %}
+    <div class="
+        grid {{ classes.columnLayout(block.columnLayout.value) }}
+        gap-6
+        {{ classes.verticalAlignment(block.verticalAlignment.value ?? 'top') }}
+    ">
+        {% for column in columns %}
+            <div class="flex-1 flex flex-col">
+                {# <code class="block mb-6 text-xs text-red-500">
+                    {{ '_builder/blocks/columns/' ~ columns|length ~ '/' ~ column.type|kebab }}<br>
+                    {{ '_builder/blocks/columns/' ~ column.type|kebab }}<br>
+                    {{ '_builder/blocks/' ~ column.type|kebab }}
+                </code> #}
+
+                {% include [
+                    '_builder/blocks/columns/' ~ columns|length ~ '/' ~ column.type|kebab,
+                    '_builder/blocks/columns/' ~ column.type|kebab,
+                    '_builder/blocks/' ~ column.type|kebab,
+                 ] with {
+                    block: column,
+                    context: 'columns/' ~ columns|length,
+                    transformKey: transformKey,
+                } only %}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}

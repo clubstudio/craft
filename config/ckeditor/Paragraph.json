@@ -1,0 +1,20 @@
+{
+  "style": {
+    "definitions": [
+      {
+        "classes": [
+          "text-xl"
+        ],
+        "element": "p",
+        "name": "Large"
+      },
+      {
+        "classes": [
+          "text-sm"
+        ],
+        "element": "p",
+        "name": "Small"
+      }
+    ]
+  }
+}

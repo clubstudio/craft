@@ -1,0 +1,5 @@
+{% set form = block.form.eagerly().one() %}
+
+{% if form %}
+    {% include '_components/form' with { form: form } only %}
+{% endif %}

@@ -1,0 +1,3 @@
+{% macro buildKey(parts) %}
+    {{- parts|filter|join(':') -}}
+{% endmacro %}

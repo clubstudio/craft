@@ -10,10 +10,33 @@ settings:
       __assoc__:
         -
           - label
+          - None
+        -
+          - value
+          - none
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
           - Small
         -
           - value
           - sm
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
@@ -26,6 +49,12 @@ settings:
           - value
           - md
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - '1'
     -
@@ -36,6 +65,12 @@ settings:
         -
           - value
           - lg
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''

@@ -1,9 +1,0 @@
-headingLevels: false
-name: Paragraph
-toolbar:
-  - bold
-  - italic
-  - link
-  - '|'
-  - bulletedList
-  - numberedList

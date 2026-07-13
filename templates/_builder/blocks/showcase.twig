@@ -1,0 +1,38 @@
+{#
+  Showcase Block
+  
+  Displays featured entries in a grid layout.
+  Builds transform key for nested images: {parent}:showcase
+#}
+{% import '_macros/transforms' as transforms %}
+
+{% set featuredEntries = block.entries.eagerly().all() %}
+{% set links = block.links.eagerly().all() %}
+{% set transformKey = transforms.buildKey([transformKey, 'showcase']) %}
+
+{% if featuredEntries|length %}
+    <div class="
+        grid grid-cols-1 lg:grid-cols-2
+        gap-6
+    ">
+        {% for featuredEntry in featuredEntries %}
+            <div class="basis-1/2 flex flex-col">
+                {% include [
+                    '_builder/blocks/showcase/' ~ featuredEntry.type|kebab,
+                    '_builder/blocks/showcase-preview',
+                 ] with {
+                    entry: featuredEntry,
+                    context: 'showcase',
+                    transformKey: transformKey,
+                    aspectRatio: loop.first ? 'aspect-square' : 'aspect-[3/4]',
+                } only %}
+
+                {% if loop.first and links|length %}
+                    <div class="mt-auto pt-12">
+                        {% include '_builder/blocks/links' %}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}

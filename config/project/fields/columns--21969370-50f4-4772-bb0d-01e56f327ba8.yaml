@@ -4,7 +4,7 @@ instructions: null
 name: Columns
 searchable: false
 settings:
-  createButtonLabel: null
+  createButtonLabel: 'New column'
   defaultIndexViewMode: cards
   enableVersioning: false
   entryTypes:
@@ -13,6 +13,38 @@ settings:
         -
           - uid
           - 5d9ae303-c301-4058-9568-90fb3db17763 # Text Column
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 7e20247b-253f-4e4b-a04f-a66573c4a529 # Image
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 21500d84-7ee2-479d-93db-750c756557cd # Video
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 248c238c-0963-4912-a62b-ec82b667e1b4 # Testimonial Entry
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - d10795ff-f335-4264-8cdb-189e8c03d30d # Statistic
         -
           - group
           - General

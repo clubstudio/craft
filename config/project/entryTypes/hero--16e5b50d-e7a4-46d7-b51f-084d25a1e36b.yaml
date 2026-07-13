@@ -1,0 +1,58 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  03a16da3-968f-4382-8962-c009cdb9f72e:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-07T11:36:11+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: d0c7900e-d61c-4839-a59e-70bb47358360 # Image
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dcaf88a6-895a-4486-b7b1-91e7f467a43b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-03T10:08:26+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e799b7be-da72-41ae-b465-d5e8fb3afeac
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 9e1d2630-0e5d-4b17-b5b2-83cf093bd4ee
+        userCondition: null
+    thumbFieldKey: null
+handle: hero
+hasTitleField: false
+icon: star-christmas
+name: Hero
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

@@ -5,6 +5,7 @@ entryTypes:
     uid: a9dd8d2a-08c8-4a65-8cc3-1d29c5bb901e # FAQ
 handle: frequentlyAskedQuestions
 maxAuthors: 1
+minAuthors: 1
 name: 'Frequently Asked Questions'
 propagationMethod: all
 siteSettings:

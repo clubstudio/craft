@@ -16,7 +16,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -25,7 +24,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             requirable: false
             size: null
@@ -37,9 +35,34 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            attribute: alt
+            class: null
+            cols: null
+            dateAdded: '2025-07-02T20:47:38+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: true
+            required: false
+            rows: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AltField
+            uid: d5b1e33c-6ff9-43c6-a79c-b568996ee99e
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: f25db068-8ac4-43b8-819b-cf8b2d077e38
         userCondition: null
+    thumbFieldKey: null
 fs: local
 handle: images
 name: Images

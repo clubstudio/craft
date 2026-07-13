@@ -1,16 +1,12 @@
 {% extends '_layouts/master' %}
 
+{% import '_macros/classes' as classes %}
+
 {% block content %}
     <article>
-        <header class="container mx-auto px-8">
-            {% include '_includes/components/breadcrumb' %}
-            {% include '_includes/components/heading' with {
-                level: 'h1',
-                heading: entry.title,
-            } %}
-            Posted: {% include '_includes/components/date' with { date: entry.postDate } %}
-        </header>
-        {% include '_includes/builder/builder' with { blocks: entry.contentBlocks.all() } only %}
+        {% include '_builder/builder' with {
+            context: 'page',
+            blocks: entry.contentBlocks.all(),
+        } only %}
     </article>
 {% endblock %}
-

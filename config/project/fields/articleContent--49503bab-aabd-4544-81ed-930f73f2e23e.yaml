@@ -1,0 +1,45 @@
+columnSuffix: null
+handle: articleContent
+instructions: null
+name: 'Article Content'
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 6d2baf55-d7b9-4e8f-bb2d-f91dba9a5dee # Text
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 7e20247b-253f-4e4b-a04f-a66573c4a529 # Image
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 21500d84-7ee2-479d-93db-750c756557cd # Video
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

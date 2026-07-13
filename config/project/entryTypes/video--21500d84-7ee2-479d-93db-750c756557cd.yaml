@@ -1,0 +1,74 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  749c84da-86da-4d20-8b97-61a267d9529a:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-02T15:30:58+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 7b4459c4-8611-49b4-abdf-99a0f4c7a646 # Video URL
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e8c3c542-7379-4a54-9064-6256602ecac1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-01-23T17:11:39+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 728cd480-2381-49e3-9aab-e4af7f8306d0 # Video Tracks
+            handle: null
+            instructions: null
+            label: Tracks
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3bb4bc3b-eff0-48b2-a457-83a1f7075124
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-02T15:30:58+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: ae4f2361-8913-4891-ad95-3938347a1e55 # Aspect Ratio
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8c201747-2fc9-42d6-87a7-9a764bfc402e
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 5221d4e6-3a42-488b-9a97-6a7d8785ac5e
+        userCondition: null
+    thumbFieldKey: null
+handle: video
+hasTitleField: false
+icon: youtube
+name: Video
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

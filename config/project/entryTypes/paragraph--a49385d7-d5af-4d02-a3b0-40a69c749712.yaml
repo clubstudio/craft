@@ -1,6 +1,9 @@
+allowLineBreaksInTitles: false
 color: null
+description: null
 fieldLayouts:
   a583cce7-75d5-4cf7-9578-612763aed5f5:
+    cardThumbAlignment: end
     cardView:
       - 'layoutElement:89ff7fcf-8c7e-48b5-8f82-7e6658064542'
     tabs:
@@ -9,13 +12,13 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2025-01-23T16:25:03+00:00'
+            editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 198475be-dc00-42d7-8ed4-b48aa2865944 # Paragraph
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -26,6 +29,7 @@ fieldLayouts:
         name: Content
         uid: e93b80f4-f139-41a9-bf8a-01ce391291ce
         userCondition: null
+    thumbFieldKey: null
 handle: paragraph
 hasTitleField: false
 icon: paragraph
@@ -37,3 +41,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

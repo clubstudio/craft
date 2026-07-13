@@ -1,6 +1,9 @@
+allowLineBreaksInTitles: false
 color: null
+description: null
 fieldLayouts:
   3810d933-6508-429b-b54a-b783f112474d:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
@@ -14,7 +17,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: Text
@@ -23,7 +25,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             required: true
             size: null
@@ -38,6 +39,7 @@ fieldLayouts:
         name: Content
         uid: a3a3400a-c646-49b8-8130-8f5f891b988b
         userCondition: null
+    thumbFieldKey: null
 handle: eyebrow
 hasTitleField: true
 icon: text
@@ -49,3 +51,4 @@ slugTranslationMethod: site
 titleFormat: '{title}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

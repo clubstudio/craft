@@ -1,0 +1,7 @@
+<ul class="list-disc pl-5 space-y-2">
+    {% for item in block.listItems.eagerly().all() %}
+        <li class="body-copy">
+            {{ item.text }}
+        </li>
+    {% endfor %}
+</ul>

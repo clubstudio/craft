@@ -15,6 +15,12 @@ settings:
           - value
           - xs
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -25,6 +31,12 @@ settings:
         -
           - value
           - sm
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
@@ -37,6 +49,12 @@ settings:
           - value
           - md
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -48,6 +66,12 @@ settings:
           - value
           - lg
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -58,6 +82,29 @@ settings:
         -
           - value
           - xl
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Fill
+        -
+          - value
+          - fill
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''

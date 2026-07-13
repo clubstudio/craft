@@ -1,0 +1,8 @@
+{% if block.videoUrl %}
+    {% include '_components/video' with {
+        url: block.videoUrl,
+        aspectRatio: block.aspectRatio.value,
+        title: block.title,
+        tracks: block.videoTracks.eagerly().all(),
+    } only %}
+{% endif %}

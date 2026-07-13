@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -11,16 +12,31 @@ fieldLayouts:
             dateAdded: '2025-07-02T13:43:14+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 21969370-50f4-4772-bb0d-01e56f327ba8 # Columns
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: c4ca75f7-d65d-4652-a599-b663f6badee2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-03T16:11:06+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: b708e87e-9fc1-421a-9be2-104ef715362c # Column Layout
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 67d83d2d-71e6-4e78-919e-496a9dd5fffe
             userCondition: null
             warning: null
             width: 100
@@ -31,82 +47,25 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-07-02T13:46:49+00:00'
+            dateAdded: '2025-07-04T13:38:21+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: e2c74420-bbaf-40c8-acf9-daf436a33bbd # Maximum Width
+            elementEditCondition: null
+            fieldUid: 7397cb77-355d-47eb-83b4-30f061ca415b # Vertical Alignment
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 2f46b065-ce8d-46c8-8657-53941e0092eb
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-07-02T13:46:49+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 1414d7cb-fb98-4f48-88f2-e5b2401cf402 # Horizontal Alignment
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: true
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 15447a90-f9b5-4c11-981e-5ea57fa640a6
-            userCondition: null
-            warning: null
-            width: 100
-        name: Container
-        uid: db20660d-7c61-4ea2-a12d-fe16d414dd93
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            dateAdded: '2025-07-02T13:46:49+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
-            handle: paddingTop
-            includeInCards: false
-            instructions: null
-            label: 'Padding Top'
-            providesThumbs: false
-            required: true
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 308f1790-4eb2-4238-a5ae-f716e8d47198
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-07-02T13:46:49+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
-            handle: paddingBottom
-            includeInCards: false
-            instructions: null
-            label: 'Padding Bottom'
-            providesThumbs: false
-            required: true
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 720ab847-c14d-45fc-a64e-e8cbc15353bd
+            uid: e0509125-c78d-4066-9816-71f333895d7a
             userCondition: null
             warning: null
             width: 100
         name: Style
-        uid: a242081c-9c88-4387-9357-61f13d555c8f
+        uid: e38704ac-702a-40d6-84c5-096d26e34270
         userCondition: null
+    thumbFieldKey: null
 handle: columns
 hasTitleField: false
 icon: line-columns
@@ -118,3 +77,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

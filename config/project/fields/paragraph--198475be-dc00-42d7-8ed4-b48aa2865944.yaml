@@ -6,15 +6,36 @@ searchable: false
 settings:
   availableTransforms: ''
   availableVolumes: ''
-  ckeConfig: ed206a6f-5783-44ef-851d-fb1166bc3102 # Paragraph
-  createButtonLabel: null
+  characterLimit: null
+  css: null
+  cssFile: null
   defaultTransform: null
-  enableSourceEditingForNonAdmins: false
+  defaultUploadLocationSubpath: null
+  defaultUploadLocationVolume: null
+  fullGraphqlData: false
+  headingLevels: false
+  imageEntryTypeUid: null
+  imageFieldUid: null
+  imageMode: img
+  js: null
+  jsFile: Paragraph.json
+  options: null
+  parseEmbeds: false
   purifierConfig: null
   purifyHtml: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
   showWordCount: false
+  sourceEditingGroups:
+    - __ADMINS__
+  toolbar:
+    - style
+    - bold
+    - italic
+    - link
+    - '|'
+    - bulletedList
+    - numberedList
   wordLimit: null
 translationKeyFormat: null
 translationMethod: none

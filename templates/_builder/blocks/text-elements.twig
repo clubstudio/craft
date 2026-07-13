@@ -1,0 +1,6 @@
+<div class="space-y-6">
+    {% include '_builder/builder' with {
+        context: 'text-elements',
+        blocks: block.textContent.eagerly().all()
+    } only %}
+</div>

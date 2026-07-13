@@ -1,0 +1,49 @@
+{#
+  Text and Media Block
+
+  Two-column layout with text content and media (image or video).
+  Builds transform key for nested images: {parent}:text-and-media
+#}
+{% import '_macros/classes' as classes %}
+{% import '_macros/transforms' as transforms %}
+
+{% set textRight = block.mediaPosition.value == 'left' %}
+{% set transformKey = transforms.buildKey([transformKey, 'text-and-media']) %}
+
+<div class="
+    grid grid-cols-1 lg:grid-cols-2
+    gap-6
+    {{ classes.verticalAlignment(block.verticalAlignment.value) }}
+">
+    <div class="relative {{ textRight ? 'lg:order-1' : 'lg:order-2' }}">
+        {% set mediaType = block.mediaType.value %}
+        {% set image = block.image.eagerly().one() %}
+
+        {% if mediaType == 'image' and image %}
+            {% include '_components/image' with {
+                image: image,
+                transformKey: transformKey,
+                aspectRatio: block.aspectRatio.value,
+                class: 'w-full h-full object-cover',
+            } only %}
+        {% elseif mediaType == 'video' %}
+            {% include '_components/video' with {
+                aspectRatio: block.aspectRatio.value,
+                url: block.videoUrl,
+                title: block.title,
+                tracks: block.videoTracks.eagerly().all(),
+            } only %}
+        {% endif %}
+    </div>
+
+    {% set textClassKey = transformKey ~ ':media-' ~ block.mediaPosition.value %}
+
+    <div class="flex items-center justify-center {{ textRight ? 'lg:order-2' : 'lg:order-1' }} {{ classes.sectionTextContainer(textClassKey ?? null) }}">
+        <div class="space-y-6">
+            {% include '_builder/builder' with {
+                context: 'text-and-media',
+                blocks: block.textContent.eagerly().all(),
+            } only %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="space-y-4 flex flex-col h-full">
+    {% include '_builder/builder' with {
+        context: context,
+        blocks: block.textContent.eagerly().all(),
+    } only %}
+</div>
+

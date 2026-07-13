@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -6,9 +7,27 @@ fieldLayouts:
     tabs:
       -
         elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-03T13:44:44+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 3de9b592-b05e-4632-99a7-369fe0685101
+            handle: width
+            instructions: null
+            label: Width
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7ed2ae6b-c1dc-4aa0-9ed3-d5ff19495aaa
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: c9879d8c-69c3-45f7-834c-e54a42b1ba78
         userCondition: null
+    thumbFieldKey: null
 handle: divider
 hasTitleField: false
 icon: horizontal-rule
@@ -20,3 +39,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

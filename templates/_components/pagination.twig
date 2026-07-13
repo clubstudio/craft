@@ -1,0 +1,39 @@
+<nav aria-label="{{ 'Pagination'|t }}">
+    <ul class="flex justify-center items-center space-x-2">
+        <li>
+            {% if pageInfo.prevUrl %}
+                <a href="{{ pageInfo.prevUrl }}" aria-label="{{ 'Go to previous page'|t }}">
+                    <span aria-hidden="true">&larr;</span>
+                </a>
+            {% else %}
+                <span aria-hidden="true">&larr;</span>
+            {% endif %}
+        </li>
+
+        {% for page, url in pageInfo.getPrevUrls(5) %}
+            <li>
+                <a href="{{ url }}" aria-label="{{ 'Go to page {page}'|t({ page: page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        <li>
+            <span class="font-medium" aria-current="page" aria-label="{{ 'Page {page}'|t({ page: pageInfo.currentPage }) }}">{{ pageInfo.currentPage }}</span>
+        </li>
+
+        {% for page, url in pageInfo.getNextUrls(5) %}
+            <li>
+                <a href="{{ url }}" aria-label="{{ 'Go to page {page}'|t({ page: page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        <li>
+            {% if pageInfo.nextUrl %}
+                <a href="{{ pageInfo.nextUrl }}" aria-label="{{ 'Go to next page'|t }}">
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+            {% else %}
+                <span aria-hidden="true">&rarr;</span>
+            {% endif %}
+        </li>
+    </ul>
+</nav>

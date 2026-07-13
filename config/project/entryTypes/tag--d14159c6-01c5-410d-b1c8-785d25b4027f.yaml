@@ -1,19 +1,22 @@
+allowLineBreaksInTitles: false
 color: null
+description: null
 fieldLayouts:
   c5156aac-ffda-4eb1-96aa-cb171dccf5a1:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
         elements:
           -
             dateAdded: '2025-01-23T14:09:08+00:00'
+            editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: e14f5323-5bc2-40b2-8feb-9b811c97394c # Code
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -23,13 +26,13 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2025-01-23T14:09:08+00:00'
+            editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 326377be-c2da-462e-bea3-4eb8ca886573 # Tag Position
             handle: position
-            includeInCards: false
             instructions: null
             label: Position
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -40,6 +43,7 @@ fieldLayouts:
         name: Content
         uid: 8e5639de-8837-47f8-b9fb-0f31f1c78a80
         userCondition: null
+    thumbFieldKey: null
 handle: tag
 hasTitleField: false
 icon: code
@@ -51,3 +55,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

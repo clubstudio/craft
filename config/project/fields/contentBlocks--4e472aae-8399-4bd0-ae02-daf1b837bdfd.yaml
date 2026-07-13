@@ -4,7 +4,7 @@ instructions: null
 name: 'Content Blocks'
 searchable: false
 settings:
-  createButtonLabel: 'New block'
+  createButtonLabel: 'New content block'
   defaultIndexViewMode: cards
   enableVersioning: false
   entryTypes:
@@ -12,63 +12,23 @@ settings:
       __assoc__:
         -
           - uid
+          - 16e5b50d-e7a4-46d7-b51f-084d25a1e36b # Hero
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - cac24c58-8d46-48c3-98bd-d99f03d7c8ef # Section
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
           - 7d44415b-35cb-4e25-bf4f-9ef55eb90547 # Anchor
-        -
-          - group
-          - General
-    -
-      __assoc__:
-        -
-          - uid
-          - 2257efc6-f010-4dd9-997b-95a89fa4c2d3 # Divider
-        -
-          - group
-          - General
-    -
-      __assoc__:
-        -
-          - uid
-          - 89b0ee7b-1530-4b52-9ba3-1335bc1eaf8e # FAQs
-        -
-          - group
-          - General
-    -
-      __assoc__:
-        -
-          - uid
-          - 4d109d67-14c0-415f-aca1-42cac4c6640c # Form
-        -
-          - group
-          - General
-    -
-      __assoc__:
-        -
-          - uid
-          - 6d2baf55-d7b9-4e8f-bb2d-f91dba9a5dee # Text
-        -
-          - group
-          - General
-    -
-      __assoc__:
-        -
-          - uid
-          - 274bbd5f-3859-4d8f-91c3-f68ebbb29720 # Columns
-        -
-          - group
-          - General
-    -
-      __assoc__:
-        -
-          - uid
-          - 1b69a2ba-578a-4016-a46c-2bb3c40f8c91 # Text Elements
-        -
-          - group
-          - General
-    -
-      __assoc__:
-        -
-          - uid
-          - 1cc3e83c-680b-483a-9d51-c2d6de10221b # Text & Media
         -
           - group
           - General

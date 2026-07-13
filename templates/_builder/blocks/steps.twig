@@ -1,0 +1,35 @@
+{#
+  Steps Block
+  
+  Creates a scrollable/grid layout for step-by-step content.
+  Builds transform key for nested images: {parent}:steps
+#}
+{% import '_macros/classes' as classes %}
+{% import '_macros/transforms' as transforms %}
+
+{% set steps = block.steps.eagerly().all() %}
+{% set transformKey = transforms.buildKey([transformKey, 'steps']) %}
+
+{% if steps|length %}
+    <div class="
+        relative
+        flex flex-nowrap
+        overflow-x-scroll snap-x snap-mandatory no-scrollbar
+        lg:grid lg:grid-cols-3
+        gap-6
+    ">
+        {% for column in steps %}
+            <div class="snap-center w-[calc(100vw-1.5rem)] shrink-0 lg:col-span-1 lg:w-auto">
+                {% include [
+                    '_builder/blocks/steps/' ~ steps|length ~ '/' ~ column.type|kebab,
+                    '_builder/blocks/steps/' ~ column.type|kebab,
+                    '_builder/blocks/' ~ column.type|kebab,
+                ] with {
+                    block: column,
+                    context: 'steps',
+                    transformKey: transformKey,
+                } only %}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}

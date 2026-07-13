@@ -1,0 +1,16 @@
+{% set image = block.image.eagerly().one() %}
+
+{% if image %}
+    <figure>
+        {% include '_components/image' with {
+            image: image,
+            transformKey: transformKey,
+            aspectRatio: block.aspectRatio.value,
+            class: 'w-full h-full object-cover',
+        } only %}
+
+        {% if block.caption|length %}
+            <figcaption class="mt-2 body-copy">{{ block.caption }}</figcaption>
+        {% endif %}
+    </figure>
+{% endif %}

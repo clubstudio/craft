@@ -1,0 +1,42 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  bb8c2776-09cd-4f76-9a1c-a9519af5b174:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-07-03T10:26:34+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: ac23a061-b6b4-4ab7-9d91-648ecffc6c7f # Testimonial Entry
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 10f32b11-18ae-4c74-9fa6-4717c4adc923
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: fde65253-63fa-43f0-8171-ae6c54da520e
+        userCondition: null
+    thumbFieldKey: null
+handle: testimonialEntry
+hasTitleField: false
+icon: comment-heart
+name: 'Testimonial Entry'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

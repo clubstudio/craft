@@ -1,0 +1,24 @@
+{% set testimonial = block.testimonialEntry.eagerly().one() %}
+{% set image = testimonial.image.eagerly().one() %}
+
+<figure>
+    <figcaption class="flex items-center gap-6">
+        {% if image %}
+            <div class="relative w-16 shrink-0">
+                {% include '_components/image' with {
+                    image: image,
+                    transformKey: 'avatar',
+                    aspectRatio: 'square',
+                    class: 'w-full h-full object-cover',
+                } only %}
+            </div>
+        {% endif %}
+        <div class="flex flex-col">
+            <strong>{{ testimonial.person }}</strong>
+            <small>{{ testimonial.company }}</small>
+        </div>
+    </figcaption>
+    <blockquote class="mt-3 blockquote">
+        {{ testimonial.testimonial }}
+    </blockquote>
+</figure>

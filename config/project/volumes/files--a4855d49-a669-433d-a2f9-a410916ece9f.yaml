@@ -16,7 +16,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -25,7 +24,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             requirable: false
             size: null
@@ -40,6 +38,7 @@ fieldLayouts:
         name: Content
         uid: f86ed93b-f18d-4926-80dd-cfed14bb93c2
         userCondition: null
+    thumbFieldKey: null
 fs: local
 handle: files
 name: Files

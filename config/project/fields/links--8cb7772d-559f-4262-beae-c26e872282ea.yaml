@@ -6,12 +6,16 @@ searchable: false
 settings:
   createButtonLabel: 'New link'
   defaultIndexViewMode: cards
+  enableVersioning: false
   entryTypes:
     -
       __assoc__:
         -
           - uid
           - 4c1e65ea-bd76-45a2-9b25-2e7d92a12ff0 # Link
+        -
+          - group
+          - General
   includeTableView: false
   maxEntries: null
   minEntries: null

@@ -1,0 +1,27 @@
+{% import '_macros/classes' as classes %}
+
+{% set image = block.image.eagerly().one() %}
+
+<section class="relative">
+    <div class="{{ classes.maxWidth('contain') }} relative grid gap-6 items-center lg:grid-cols-2">
+        {% if image %}
+            <figure aria-hidden="true" class="lg:order-2">
+                {% include '_components/image' with {
+                    image: image,
+                    loading: 'sync',
+                    aspectRatio: 'photo',
+                    class: 'w-full h-full object-cover',
+                    attributes: {
+                        fetchpriority: 'high',
+                    },
+                } only %}
+            </figure>
+        {% endif %}
+        <div class="space-y-6">
+            {% include '_builder/builder' with {
+                context: 'hero',
+                blocks: block.textContent.eagerly().all(),
+            } only %}
+        </div>
+    </div>
+</section>

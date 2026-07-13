@@ -6,6 +6,7 @@ searchable: false
 settings:
   createButtonLabel: 'Add Tag'
   defaultIndexViewMode: cards
+  enableVersioning: false
   entryTypes:
     -
       __assoc__:
