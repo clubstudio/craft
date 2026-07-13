@@ -23,6 +23,7 @@ return GeneralConfig::create()
     ->errorTemplatePrefix('_errors/')
     ->sendPoweredByHeader(false)
     ->useEmailAsUsername(true)
+    ->autoLoginAfterAccountActivation(true)
     ->timezone(App::env('CRAFT_TIMEZONE', 'Europe/London'))
     ->aliases([
         '@web' => App::env('PRIMARY_SITE_URL'),
