@@ -1,3 +1,5 @@
+{% import '_macros/svg' as svgs %}
+
 {% set logos = block.logos.eagerly().all() %}
 
 <div class="flex items-center justify-between flex-wrap -m-6">
@@ -15,7 +17,7 @@
 
             {% tag (link ? 'a' : 'div') with tagParams %}
                 {% if asset.format == 'svg' %}
-                    {{ svg(asset)|attr({ height: 36, 'aria-hidden': link ? 'true' : 'false', 'focusable': 'false', 'role': not link ? 'img' : null, 'aria-label': not link ? asset.alt : null }) }}
+                    {{ svgs.asset(asset, { height: 36, 'aria-hidden': link ? 'true' : 'false', 'focusable': 'false', 'role': not link ? 'img' : null, 'aria-label': not link ? asset.alt : null }) }}
                 {% else %}
                     <img src="{{ asset.url }}" alt="{{ link ? '' : asset.alt }}" loading="lazy">
                 {% endif %}

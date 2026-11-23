@@ -1,0 +1,25 @@
+{#
+ # SVG assets: inline an SVG asset's markup without fetching the file from storage on every request.
+ #
+ # svg(asset) reads the file from the asset's filesystem each time it renders, which is a network round trip when
+ # the volume is remote. This caches the markup globally, keyed by the asset's UID and modified date, so
+ # replacing the file in the CP busts it. Attributes are added after the cache, so one cached copy serves every
+ # size or class it's drawn at.
+ #
+ # `namespace` is passed to svg(). With it on, Craft prefixes the SVG's IDs so two copies on a page don't clash,
+ # but the prefix is cached too, so the same asset drawn twice on one page shares its IDs. Use false for SVGs
+ # whose IDs don't matter, so their markup stays as uploaded.
+ #
+ # Usage: {{ svgs.asset(logo, { class: 'h-12 w-auto' }, namespace=false) }}
+ #}
+{% macro asset(asset, attrs = {}, namespace = true) %}
+    {%- if asset -%}
+        {%- set markup -%}
+            {%- cache globally using key 'svg:' ~ asset.uid ~ ':' ~ asset.dateModified|date('U') ~ (namespace ? '' : ':raw') -%}
+                {{- svg(asset, namespace=namespace) -}}
+            {%- endcache -%}
+        {%- endset -%}
+
+        {{- attrs|length and markup|trim|length ? markup|attr(attrs) : markup -}}
+    {%- endif -%}
+{% endmacro %}

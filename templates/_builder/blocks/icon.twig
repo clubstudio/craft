@@ -1,7 +1,9 @@
+{% import '_macros/svg' as svgs %}
+
 {% set icon = block.asset.eagerly().one() %}
 
 {% if icon %}
     <div>
-        {{ svg(icon)|attr({ class: 'size-8', 'aria-hidden': 'true', 'focusable': 'false' }) }}
+        {{ svgs.asset(icon, { class: 'size-8', 'aria-hidden': 'true', 'focusable': 'false' }) }}
     </div>
 {% endif %}
