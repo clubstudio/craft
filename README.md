@@ -25,12 +25,16 @@ Install or update [DDEV](https://ddev.com/) (which requires [Docker](https://dde
    ```
    ddev config --project-type=craftcms --docroot=web
    ```
-3. Scaffold the project from this starter project. Craft's installer runs automatically at the end, so answer each prompt when asked:
+3. Scaffold the project from this starter project:
    ```
-   ddev composer create -y "clubstudio/craft"
+   ddev composer create-project "clubstudio/craft"
    ```
-4. Run `ddev launch` to view your site in the browser
-5. Log in to the Craft control panel at `/admin` (or run `ddev launch /admin`) with the admin account you created during install
+4. Run Craft's installer, answering each prompt as it's asked:
+   ```
+   ddev craft install
+   ```
+5. Run `ddev launch` to view your site in the browser
+6. Log in to the Craft control panel at `/admin` (or run `ddev launch /admin`) with the admin account you created during install
 
 Next, feel free to read the official [Craft installation documentation](https://craftcms.com/docs/5.x/install.html).
 
