@@ -1,0 +1,5 @@
+# Generates the OAuth signing keys Craft's MCP server needs, once Composer
+# dependencies are installed. Keys live in storage/ and are git-ignored.
+hooks:
+  post-start:
+    - exec: "[ ! -f vendor/autoload.php ] || [ -f storage/oauth-private.key ] || php craft oauth/generate-keys"

@@ -77,6 +77,17 @@ Craft's [project config](https://craftcms.com/docs/5.x/system/project-config.htm
   ```
 - In `dev`, `CRAFT_ALLOW_ADMIN_CHANGES=true` lets you edit the schema from the control panel. Craft writes those edits back to `config/project/`, so commit the updated YAML alongside your code.
 
+## MCP
+
+Craft's built-in [MCP server](https://github.com/craftcms/cms/blob/5.x/docs/mcp.md) lets AI assistants like Claude Code read and manage your content and schema. It's set up for local development out of the box:
+
+- **Enabled in project config.** The authenticated server is turned on under **Settings → MCP**, at `/admin/mcp`. The public server stays off.
+- **Dev only.** `config/app.web.php` switches the server off unless `CRAFT_ENVIRONMENT=dev`, so on staging and production its endpoints return a 404.
+- **OAuth keys.** The `.ddev/config.mcp.yaml` hook generates signing keys in `storage/` the first time DDEV starts with Composer dependencies installed (the `ddev restart` step above). The keys are git-ignored. To generate them by hand, run `ddev craft oauth/generate-keys`.
+- **Claude Code.** `composer create-project` writes a `.mcp.json` pointing at your DDEV site. Commit it so your team shares it. In Claude Code, run `/mcp`, choose `craft`, sign in to Craft and approve the request. Access is read-only by default, and admins can grant full access.
+
+Other MCP clients can connect to `https://<project>.ddev.site/admin/mcp/auth`. To skip OAuth for a local client, use stdio: `ddev craft mcp/serve --user=<email>` runs as that user.
+
 ## Template System
 
 This boilerplate uses a flexible content builder pattern with reusable components and macros.

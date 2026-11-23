@@ -1,4 +1,4 @@
-dateModified: 1795454456
+dateModified: 1795465904
 elementSources:
   craft\elements\Entry:
     -
@@ -99,6 +99,15 @@ fs:
       path: '@webroot/assets'
     type: craft\fs\Local
     url: $PRIMARY_SITE_URL/assets
+mcp:
+  authorizationRoute: /admin/mcp/auth
+  enabled: true
+  publicAllowDrafts: false
+  publicAllowInactive: false
+  publicAllowRevisions: false
+  publicEnabled: false
+  publicRoute: /mcp
+  route: /admin/mcp
 meta:
   __names__:
     0b321564-e4b7-4cad-990a-990f27e2bc26: Spacer # Spacer
@@ -219,22 +228,22 @@ plugins:
   formie:
     edition: standard
     enabled: true
-    licenseKey:
+    licenseKey: null
     schemaVersion: 3.4.14
   navigation:
     edition: standard
     enabled: true
-    licenseKey:
+    licenseKey: null
     schemaVersion: 2.1.2
   retour:
     edition: standard
     enabled: true
-    licenseKey:
+    licenseKey: null
     schemaVersion: 3.0.12
   seomatic:
     edition: standard
     enabled: true
-    licenseKey:
+    licenseKey: null
     schemaVersion: 3.0.13
   vite:
     edition: standard
