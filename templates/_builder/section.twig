@@ -1,6 +1,7 @@
 {% import '_macros/classes' as classes %}
 
 <section {{ attr({
+    id: block.anchor ? block.anchor|kebab : false,
     class: [
         classes.paddingTop(block.paddingTop.value),
         classes.paddingBottom(block.paddingBottom.value),

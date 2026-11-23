@@ -45,6 +45,22 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2026-11-23T22:30:08+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: f01ab0c4-931a-46aa-bcec-67b6c6941e21 # Plain Text
+            handle: anchor
+            instructions: 'Optional. Lets you link straight to this section, e.g. "pricing" for /page#pricing. Spaces and capitals are converted for you.'
+            label: Anchor
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9b5660e3-e6b1-4bf5-b9f7-54878b86e042
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2025-07-02T14:46:49+00:00'
             editCondition: null
             elementCondition: null

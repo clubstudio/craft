@@ -1,4 +1,4 @@
-dateModified: 1795465904
+dateModified: 1795473008
 elementSources:
   craft\elements\Entry:
     -
@@ -139,7 +139,6 @@ meta:
     7b2e950b-64e1-4284-a6a1-110afd340922: 'List Items' # List Items
     7b5ca0bb-2131-4dbb-bd2b-64ddc1c33c8c: List # List
     7b4459c4-8611-49b4-abdf-99a0f4c7a646: 'Video URL' # Video URL
-    7d44415b-35cb-4e25-bf4f-9ef55eb90547: Anchor # Anchor
     7e20247b-253f-4e4b-a04f-a66573c4a529: Image # Image
     8cb7772d-559f-4262-beae-c26e872282ea: Links # Links
     13d7090a-268d-4106-91a9-73a1f7029be0: Breadcrumb # Breadcrumb

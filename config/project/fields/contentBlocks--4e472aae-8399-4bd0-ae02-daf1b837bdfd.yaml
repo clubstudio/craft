@@ -28,14 +28,6 @@ settings:
       __assoc__:
         -
           - uid
-          - 7d44415b-35cb-4e25-bf4f-9ef55eb90547 # Anchor
-        -
-          - group
-          - General
-    -
-      __assoc__:
-        -
-          - uid
           - 0b321564-e4b7-4cad-990a-990f27e2bc26 # Spacer
         -
           - group
