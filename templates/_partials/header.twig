@@ -1,12 +1,15 @@
-<header class="py-8">
+<header class="relative py-8">
     <div class="px-gutter flex space-x-6 items-center justify-between">
         <a href="{{ url('/') }}" class="font-medium">
             {{ siteName }}
         </a>
         {% set nodes = craft.navigation.nodes().handle('mainNavigation').all() %}
         {% if nodes|length %}
-            <nav aria-label="{{ 'Main navigation'|t }}" class="hidden md:block">
-                <ul class="flex space-x-8 group text-[15px]">
+            <nav aria-label="{{ 'Main navigation'|t }}">
+                <button type="button" class="peer -m-2 p-2 font-medium md:hidden" aria-expanded="false" aria-controls="main-navigation" data-nav-toggle>
+                    {{ 'Menu'|t }}
+                </button>
+                <ul id="main-navigation" class="hidden peer-aria-expanded:flex absolute inset-x-0 top-full z-10 flex-col gap-4 px-gutter py-6 bg-white text-[15px] md:static md:flex md:flex-row md:gap-8 md:p-0 md:bg-transparent">
                     {% for node in nodes %}
                         <li>
                             {% set tag = node.getTag() %}
