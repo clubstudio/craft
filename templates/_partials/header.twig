@@ -11,11 +11,7 @@
                 <ul class="flex space-x-8 group text-[15px]">
                     {% for node in nodes %}
                         <li>
-                            {# {% if loop.last %}
-                                <a href="{{ node.url }}" class="rounded-full border border-white px-4 py-1">{{ node.title }}</a>
-                            {% else %} #}
-                                <a href="{{ node.url }}" class="{{ node.active ? 'underline underline-offset-4' }}"{% if node.active %} aria-current="page"{% endif %}>{{ node.title }}</a>
-                            {# {% endif %} #}
+                            <a href="{{ node.url }}" class="{{ node.active ? 'underline underline-offset-4' }}"{% if node.active %} aria-current="page"{% endif %}>{{ node.title }}</a>
                         </li>
                     {% endfor %}
                 </ul>
