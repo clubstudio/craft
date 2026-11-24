@@ -69,38 +69,6 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-01-23T16:39:01+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
-            handle: paddingTop
-            instructions: null
-            label: 'Padding Top'
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 76e23832-a776-4ecf-bbd2-965b5ab83271
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2025-01-23T16:39:01+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: b15bb767-c33c-443c-8536-0b08e9e1d3df # Padding
-            handle: paddingBottom
-            instructions: null
-            label: 'Padding Bottom'
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: e343da8e-babc-47a9-8760-cb2654118742
-            userCondition: null
-            warning: null
-            width: 50
-          -
             dateAdded: '2025-01-23T19:36:52+00:00'
             editCondition: null
             elementCondition: null
