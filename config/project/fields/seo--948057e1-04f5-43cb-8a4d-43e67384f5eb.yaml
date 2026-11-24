@@ -11,11 +11,15 @@ settings:
     - seoTitle
     - seoDescription
     - seoImage
+    - robots
+    - canonicalUrl
   generalTabEnabled: '1'
   sitemapEnabledFields: ''
   sitemapTabEnabled: ''
   twitterEnabledFields: ''
   twitterTabEnabled: ''
+tip: null
 translationKeyFormat: null
 translationMethod: none
 type: nystudio107\seomatic\fields\SeoSettings
+warning: null
