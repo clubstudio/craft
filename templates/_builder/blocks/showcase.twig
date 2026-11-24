@@ -29,7 +29,7 @@
 
                 {% if loop.first and links|length %}
                     <div class="mt-auto pt-12">
-                        {% include '_builder/blocks/links' %}
+                        {% include '_components/links' with { links: links } only %}
                     </div>
                 {% endif %}
             </div>

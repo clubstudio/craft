@@ -1,24 +1,4 @@
-{% set links = block.links.all() %}
-
-{% if links|length %}
-    <ul>
-        {% for link in links %}
-            {% set hyperlink = link.hyperlink %}
-            <li class="inline-block">
-                {% include '_components/button' with {
-                    theme: link.linkStyle.value ?? 'primary',
-                    url: hyperlink.url,
-                    text: hyperlink.label,
-                    classes: [
-                        not loop.last ? 'mr-2' : '',
-                    ],
-                    attributes: {
-                        target: hyperlink.target,
-                        rel: hyperlink.rel,
-                        'aria-label': hyperlink.ariaLabel,
-                    },
-                } %}
-            </li>
-        {% endfor %}
-    </ul>
-{% endif %}
+{# Links: a row of buttons, each styled by the editor's choice. #}
+{% include '_components/links' with {
+    links: block.links.eagerly().all(),
+} only %}

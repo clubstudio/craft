@@ -1,0 +1,26 @@
+{% set data = {
+    links: [],
+}|merge(_context) %}
+
+{% if data.links|length %}
+    <ul>
+        {% for link in data.links %}
+            {% set hyperlink = link.hyperlink %}
+            <li class="inline-block">
+                {% include '_components/button' with {
+                    theme: link.linkStyle.value ?? 'primary',
+                    url: hyperlink.url,
+                    text: hyperlink.label,
+                    classes: [
+                        not loop.last ? 'mr-2' : '',
+                    ],
+                    attributes: {
+                        target: hyperlink.target,
+                        rel: hyperlink.rel,
+                        'aria-label': hyperlink.ariaLabel,
+                    },
+                } only %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
