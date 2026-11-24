@@ -1,3 +1,4 @@
+{# Content Card: the default card for an entry in Content Cards; override per entry type in content-cards/. #}
 <article>
     <a href="{{ entry.url }}" class="flex flex-col justify-between h-full" aria-labelledby="card-title-{{ entry.id }}">
         <div class="mb-2">{{ entry.type.name }}</div>
@@ -6,6 +7,6 @@
                 Create a template in <code class="text-xs">_builder/blocks/content-cards/{{ entry.type|kebab }}</code> to customise this card.
             </div>
         {% endif %}
-        <h3 id="card-title-{{ entry.id }}">{{ entry.title }}</h3>
+        {% tag headingLevel ?? 'h3' with { id: 'card-title-' ~ entry.id } %}{{ entry.title }}{% endtag %}
     </a>
 </article>

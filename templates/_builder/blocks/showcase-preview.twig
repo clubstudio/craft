@@ -1,3 +1,4 @@
+{# Showcase Preview: the default preview for an entry in Showcase; override per entry type in showcase/. #}
 <article>
     <a href="{{ entry.url }}" class="flex flex-col justify-between" aria-labelledby="showcase-title-{{ entry.id }}">
         <div class="mb-2">{{ entry.type.name }}</div>
@@ -6,6 +7,6 @@
                 Create a template in <code class="text-xs">_builder/blocks/showcase/{{ entry.type|kebab }}</code> to customise this preview.
             </div>
         {% endif %}
-        <h3 id="showcase-title-{{ entry.id }}">{{ entry.title }}</h3>
+        {% tag headingLevel ?? 'h3' with { id: 'showcase-title-' ~ entry.id } %}{{ entry.title }}{% endtag %}
     </a>
 </article>

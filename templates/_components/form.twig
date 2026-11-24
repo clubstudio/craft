@@ -1,4 +1,8 @@
-{{ craft.formie.renderForm(form, {
+{% set data = {
+    form: null,
+}|merge(_context) %}
+
+{{ craft.formie.renderForm(data.form, {
     themeConfig: {
         resetClasses: true,
 
@@ -94,7 +98,7 @@
                 class: [
                     'whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm',
                     "{{ (page.id == currentPage.id) ? 'border-black text-black' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' }}",
-                    "{{ page.getFieldErrors(submission) ? 'text-red-500' : false }}",
+                    "{{ page.getFieldErrors(submission) ? 'text-red-700' : false }}",
                 ],
             },
         },
@@ -171,7 +175,7 @@
         fieldInput: {
             attributes: {
                 class: [
-                    'border p-3 shadow-sm focus:ring-black focus:border-black block w-full sm:text-sm border-gray-300 rounded-md',
+                    'border p-3 shadow-sm focus:ring-black focus:border-black block w-full sm:text-sm border-gray-500 rounded-md',
                     "{{ (submission.getErrors(field.handle) ?? null) ? 'border-red-300' }}",
                 ],
             },
@@ -179,7 +183,7 @@
 
         fieldError: {
             attributes: {
-                class: 'text-red-500 text-sm mt-1',
+                class: 'text-red-700 text-sm mt-1',
             },
         },
 
@@ -218,7 +222,7 @@
                 resetClass: true,
 
                 attributes: {
-                    class: 'focus:ring-black h-4 w-4 text-black border-gray-300 rounded',
+                    class: 'focus:ring-black h-4 w-4 text-black border-gray-500 rounded',
                 },
             },
         },
@@ -242,7 +246,7 @@
                 resetClass: true,
 
                 attributes: {
-                    class: 'focus:ring-black h-4 w-4 text-black border-gray-300 rounded',
+                    class: 'focus:ring-black h-4 w-4 text-black border-gray-500 rounded',
                 },
             },
         },
@@ -252,7 +256,7 @@
                 resetClass: true,
 
                 attributes: {
-                    class: 'shadow-sm focus:ring-black focus:border-black block w-full sm:text-sm border-gray-300 rounded-md',
+                    class: 'shadow-sm focus:ring-black focus:border-black block w-full sm:text-sm border-gray-500 rounded-md',
                 },
             },
         },
@@ -296,7 +300,7 @@
                 resetClass: true,
 
                 attributes: {
-                    class: 'focus:ring-black h-4 w-4 text-black border-gray-300',
+                    class: 'focus:ring-black h-4 w-4 text-black border-gray-500',
                 },
             },
         },

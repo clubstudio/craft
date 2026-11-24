@@ -1,8 +1,14 @@
+{% set data = {
+    pageInfo: null,
+}|merge(_context) %}
+
+{% set pageInfo = data.pageInfo %}
+
 <nav aria-label="{{ 'Pagination'|t }}">
     <ul class="flex justify-center items-center space-x-2">
         <li>
             {% if pageInfo.prevUrl %}
-                <a href="{{ pageInfo.prevUrl }}" aria-label="{{ 'Go to previous page'|t }}">
+                <a class="inline-flex min-w-6 min-h-6 items-center justify-center" href="{{ pageInfo.prevUrl }}" aria-label="{{ 'Go to previous page'|t }}">
                     <span aria-hidden="true">&larr;</span>
                 </a>
             {% else %}
@@ -12,23 +18,23 @@
 
         {% for page, url in pageInfo.getPrevUrls(5) %}
             <li>
-                <a href="{{ url }}" aria-label="{{ 'Go to page {page}'|t({ page: page }) }}">{{ page }}</a>
+                <a class="inline-flex min-w-6 min-h-6 items-center justify-center" href="{{ url }}" aria-label="{{ 'Go to page {page}'|t({ page: page }) }}">{{ page }}</a>
             </li>
         {% endfor %}
 
         <li>
-            <span class="font-medium" aria-current="page" aria-label="{{ 'Page {page}'|t({ page: pageInfo.currentPage }) }}">{{ pageInfo.currentPage }}</span>
+            <span class="inline-flex min-w-6 min-h-6 items-center justify-center font-medium" aria-current="page"><span class="sr-only">{{ 'Page'|t }} </span>{{ pageInfo.currentPage }}</span>
         </li>
 
         {% for page, url in pageInfo.getNextUrls(5) %}
             <li>
-                <a href="{{ url }}" aria-label="{{ 'Go to page {page}'|t({ page: page }) }}">{{ page }}</a>
+                <a class="inline-flex min-w-6 min-h-6 items-center justify-center" href="{{ url }}" aria-label="{{ 'Go to page {page}'|t({ page: page }) }}">{{ page }}</a>
             </li>
         {% endfor %}
 
         <li>
             {% if pageInfo.nextUrl %}
-                <a href="{{ pageInfo.nextUrl }}" aria-label="{{ 'Go to next page'|t }}">
+                <a class="inline-flex min-w-6 min-h-6 items-center justify-center" href="{{ pageInfo.nextUrl }}" aria-label="{{ 'Go to next page'|t }}">
                     <span aria-hidden="true">&rarr;</span>
                 </a>
             {% else %}

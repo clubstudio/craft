@@ -18,12 +18,12 @@
         <video {{ attr(data.attributes) }} class="{{ data.class }}" aria-label="{{ data.title ?? 'Video'|t }}" preload="metadata">
             <source src="{{ data.url }}" type="video/mp4">
             {% for track in data.tracks %}
-                {% set vttFile = track.vttFile.one() %}
+                {% set vttFile = track.vttFile.eagerly().one() %}
                 {% if vttFile %}
                     <track
                         label="{{ track.title }}"
-                        kind="subtitles"
-                        srclang="en"
+                        kind="captions"
+                        srclang="{{ craft.app.language|slice(0, 2) }}"
                         src="{{ vttFile.url }}"
                         {% if loop.first %} default {% endif %}
                     />

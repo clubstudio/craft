@@ -8,6 +8,17 @@
     attributes: {}
 }|merge(_context) %}
 
+{% set newTab = (data.attributes.target ?? null) == '_blank' %}
+{% set newTabText = '(opens in a new tab)'|t %}
+{% set attributes = data.attributes %}
+
+{% if newTab %}
+    {% set attributes = attributes|merge({
+        rel: (attributes.rel ?? null) ?: 'noopener',
+        'aria-label': (attributes['aria-label'] ?? null) ? attributes['aria-label'] ~ ' ' ~ newTabText : null,
+    }) %}
+{% endif %}
+
 {% set sizeClasses = {
     sm: 'px-4 py-2 text-sm',
     base: 'px-5 py-2 text-base font-medium',
@@ -29,8 +40,9 @@
 
 {% if data.as == 'a' %}
     <span class="relative inline-flex">
-        <a href="{{ data.url }}" {{ attr(data.attributes) }} class="{{ classes }}">
+        <a href="{{ data.url }}" {{ attr(attributes) }} class="{{ classes }}">
             {{ data.text }}
+            {%- if newTab %}<span class="sr-only"> {{ newTabText }}</span>{% endif %}
         </a>
         {% if data.theme == 'tertiary' %}
             <span class="inline-flex items-center justify-center w-6 text-black">
@@ -39,5 +51,5 @@
         {% endif %}
     </span>
 {% else %}
-    <button {{ attr(data.attributes) }} type="button" class="{{ classes }}">{{ data.text }}</button>
+    <button {{ attr(attributes) }} type="button" class="{{ classes }}">{{ data.text }}</button>
 {% endif %}

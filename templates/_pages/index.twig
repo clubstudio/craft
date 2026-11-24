@@ -10,12 +10,12 @@
             {% include '_components/heading' with {
                 level: 'h1',
                 heading: entry.title,
-            } %}
+            } only %}
         </header>
 
         <section class="my-12" aria-label="{{ 'Entries list'|t }}">
             {% if entries|length %}
-                <div class="grid grid-cols-3 gap-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                     {% for entry in entries %}
                         {% include [
                             '_builder/blocks/content-cards/' ~ entry.type|kebab,
@@ -23,6 +23,7 @@
                         ] with {
                             entry: entry,
                             context: 'content-cards',
+                            headingLevel: 'h2',
                         } only %}
                     {% endfor %}
                 </div>
