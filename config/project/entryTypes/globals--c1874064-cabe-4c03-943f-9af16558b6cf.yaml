@@ -108,7 +108,7 @@ handle: globals
 hasTitleField: false
 icon: earth-africa
 name: Globals
-showSlugField: true
+showSlugField: false
 showStatusField: false
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: videoUrl
-instructions: null
+instructions: 'A link to an MP4 file. YouTube and Vimeo links won’t play.'
 name: 'Video URL'
 searchable: false
 settings:

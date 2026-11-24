@@ -32,7 +32,7 @@ handle: list
 hasTitleField: false
 icon: list
 name: List
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

@@ -27,7 +27,7 @@ fieldLayouts:
             id: null
             inputType: null
             instructions: 'Only used within the content management system to help identify blocks.'
-            label: null
+            label: Label
             max: null
             min: null
             name: null

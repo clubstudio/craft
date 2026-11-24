@@ -34,7 +34,7 @@ handle: faqEntry
 hasTitleField: false
 icon: clipboard-question
 name: 'FAQ Entry'
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

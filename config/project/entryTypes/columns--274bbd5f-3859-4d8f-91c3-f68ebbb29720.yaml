@@ -62,7 +62,7 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: Style
+        name: Appearance
         uid: e38704ac-702a-40d6-84c5-096d26e34270
         userCondition: null
     thumbFieldKey: null
@@ -70,7 +70,7 @@ handle: columns
 hasTitleField: false
 icon: line-columns
 name: Columns
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

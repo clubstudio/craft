@@ -18,15 +18,15 @@ fieldLayouts:
             elementCondition: null
             id: null
             inputType: null
-            instructions: null
-            label: null
+            instructions: 'Only used within the content management system to help identify blocks.'
+            label: Label
             max: null
             min: null
             name: null
             orientation: null
             placeholder: null
             readonly: false
-            required: true
+            required: false
             size: null
             step: null
             tip: null

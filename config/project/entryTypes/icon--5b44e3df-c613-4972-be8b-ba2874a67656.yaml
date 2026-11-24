@@ -32,7 +32,7 @@ handle: icon
 hasTitleField: false
 icon: square-i
 name: Icon
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

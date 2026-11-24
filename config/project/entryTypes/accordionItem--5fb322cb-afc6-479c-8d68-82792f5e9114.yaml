@@ -60,7 +60,7 @@ handle: accordionItem
 hasTitleField: true
 icon: plus
 name: 'Accordion Item'
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

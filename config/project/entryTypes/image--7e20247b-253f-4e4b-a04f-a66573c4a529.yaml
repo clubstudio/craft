@@ -66,7 +66,7 @@ handle: image
 hasTitleField: false
 icon: image
 name: Image
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

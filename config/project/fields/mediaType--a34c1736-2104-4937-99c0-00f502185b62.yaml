@@ -20,7 +20,7 @@ settings:
           - image
         -
           - default
-          - ''
+          - '1'
     -
       __assoc__:
         -

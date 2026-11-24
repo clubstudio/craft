@@ -115,57 +115,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2025-07-02T14:32:05+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: ae4f2361-8913-4891-ad95-3938347a1e55 # Aspect Ratio
-            handle: null
-            instructions: null
-            label: null
-            oldFieldUid: null
-            required: true
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 552370c2-6ce9-4644-aa78-f1e79adb09b2
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-01-23T19:32:02+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: e10b1344-6730-4ebf-b792-fbc2e3a15e04 # Media Position
-            handle: null
-            instructions: null
-            label: null
-            oldFieldUid: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: c2b4bf69-f738-4df9-b00b-352275c2960a
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2025-04-23T12:39:31+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 7397cb77-355d-47eb-83b4-30f061ca415b # Vertical Alignment
-            handle: null
-            instructions: null
-            label: null
-            oldFieldUid: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 560a8471-d090-4787-aa57-5a1097600f43
-            userCondition: null
-            warning: null
-            width: 100
-          -
             dateAdded: '2026-11-24T15:01:47+00:00'
             elementCondition: null
             type: craft\fieldlayoutelements\HorizontalRule
@@ -190,6 +139,63 @@ fieldLayouts:
             width: 100
         name: Content
         uid: e5545267-423a-4364-aa58-913a6d4e8c87
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-01-23T19:32:02+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: e10b1344-6730-4ebf-b792-fbc2e3a15e04 # Media Position
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c2b4bf69-f738-4df9-b00b-352275c2960a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-07-02T14:32:05+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: ae4f2361-8913-4891-ad95-3938347a1e55 # Aspect Ratio
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 552370c2-6ce9-4644-aa78-f1e79adb09b2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-04-23T12:39:31+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 7397cb77-355d-47eb-83b4-30f061ca415b # Vertical Alignment
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 560a8471-d090-4787-aa57-5a1097600f43
+            userCondition: null
+            warning: null
+            width: 100
+        name: Appearance
+        uid: 8e3dcc8b-3e17-4755-9962-9aca39584b55
         userCondition: null
     thumbFieldKey: null
 handle: contentAndMedia

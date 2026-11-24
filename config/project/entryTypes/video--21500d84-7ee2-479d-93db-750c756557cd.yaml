@@ -62,9 +62,9 @@ fieldLayouts:
     thumbFieldKey: null
 handle: video
 hasTitleField: false
-icon: youtube
+icon: film
 name: Video
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
