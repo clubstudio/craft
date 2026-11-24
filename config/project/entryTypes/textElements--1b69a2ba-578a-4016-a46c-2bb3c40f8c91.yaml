@@ -27,6 +27,28 @@ fieldLayouts:
         name: Content
         uid: c37f2056-387c-41d2-838d-dda40aa16724
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-11-24T14:28:47+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 145cfe22-19bb-4807-8e33-c8d059374c2c # Text Alignment
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: eecc36e3-e825-41ce-974c-7e8dd00704fb
+            userCondition: null
+            warning: null
+            width: 100
+        name: Appearance
+        uid: 86a31a13-5c1f-4d28-bde1-cdc0b3d89e0a
+        userCondition: null
     thumbFieldKey: null
 handle: textElements
 hasTitleField: false

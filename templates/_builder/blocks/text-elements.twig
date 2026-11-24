@@ -1,5 +1,7 @@
-{# Text Elements: a group of text elements rendered in order. #}
-<div class="space-y-6">
+{# Text Elements: a group of text elements rendered in order, aligned left, centre or right. #}
+{% import '_macros/classes' as classes %}
+
+<div class="space-y-6 {{ classes.textAlignment(block.textAlignment.value ?? 'left') }}">
     {% include '_builder/builder' with {
         context: 'text-elements',
         blocks: block.textContent.eagerly().all(),
