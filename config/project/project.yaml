@@ -1,4 +1,4 @@
-dateModified: 1795555337
+dateModified: 1795556008
 elementSources:
   craft\elements\Entry:
     -
@@ -183,10 +183,10 @@ meta:
     b15bb767-c33c-443c-8536-0b08e9e1d3df: Padding # Padding
     b462f6b0-2e3a-40f9-abce-64bccae77910: Accordion # Accordion
     b708e87e-9fc1-421a-9be2-104ef715362c: 'Column Layout' # Column Layout
-    c6ba79fe-02b0-4513-a81e-d59a8f5b89b8: Globals # Globals
+    c6ba79fe-02b0-4513-a81e-d59a8f5b89b8: 'Site Settings' # Site Settings
     c7f0c55c-6193-490a-a2af-0fbe7069cc94: 'FAQ Entry' # FAQ Entry
     c55ca0a9-4bd6-409b-afd8-c1884dafecd0: Team # Team
-    c1874064-cabe-4c03-943f-9af16558b6cf: Globals # Globals
+    c1874064-cabe-4c03-943f-9af16558b6cf: 'Site Settings' # Site Settings
     cac24c58-8d46-48c3-98bd-d99f03d7c8ef: Section # Section
     d0c7900e-d61c-4839-a59e-70bb47358360: Image # Image
     d1a5c8b9-8cd0-4f2c-9fce-b9b30b08de00: Draft # Draft

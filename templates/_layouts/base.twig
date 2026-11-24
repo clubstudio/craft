@@ -1,4 +1,4 @@
-{%- set tags = globals.tags.eagerly().all() -%}
+{%- set tags = siteSettings.tags.eagerly().all() -%}
 
 <!doctype html>
 <html lang="{{ craft.app.language|slice(0, 2) }}">

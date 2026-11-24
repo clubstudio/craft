@@ -100,14 +100,22 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: Meta
+        name: 'Tracking & Scripts'
         uid: 6298d91d-38cb-4b99-8310-c0932d994e0f
-        userCondition: null
+        userCondition:
+          class: craft\elements\conditions\users\UserCondition
+          conditionRules:
+            -
+              class: craft\elements\conditions\users\AdminConditionRule
+              uid: 4c3ad8f9-66a6-410a-9bd0-db6ca4abb11e
+              value: true
+          elementType: craft\elements\User
+          fieldContext: global
     thumbFieldKey: null
-handle: globals
+handle: siteSettings
 hasTitleField: false
 icon: earth-africa
-name: Globals
+name: 'Site Settings'
 showSlugField: false
 showStatusField: false
 slugTranslationKeyFormat: null

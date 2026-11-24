@@ -1,4 +1,4 @@
-{% set callToActionText = globals.callToAction.eagerly().all() %}
+{% set callToActionText = siteSettings.callToAction.eagerly().all() %}
 
 <footer class="py-6">
     <div class="px-gutter grid grid-cols-1 md:grid-cols-3 gap-12 justify-between text-sm mb-12">
@@ -13,7 +13,7 @@
         <div>
             {# Footer Links #}
         </div>
-        {% set newsletterForm = globals.newsletterForm.eagerly().one() %}
+        {% set newsletterForm = siteSettings.newsletterForm.eagerly().one() %}
         {% if newsletterForm %}
             <div>
                 {% include '_components/form' with { form: newsletterForm } only %}
@@ -22,8 +22,8 @@
     </div>
     <div class="px-gutter flex flex-wrap gap-6 justify-between text-xs">
         <div class="flex flex-wrap items-center gap-6">
-            {% if globals.copyrightNotice|length %}
-                <p>{{ globals.copyrightNotice|replace({
+            {% if siteSettings.copyrightNotice|length %}
+                <p>{{ siteSettings.copyrightNotice|replace({
                     ':year': 'now'|date('Y'),
                     ':siteName': siteName,
                 }) }}</p>
@@ -48,7 +48,7 @@
                 </nav>
             {% endif %}
         </div>
-        {% set socialProfiles = globals.socialProfiles.eagerly().all() %}
+        {% set socialProfiles = siteSettings.socialProfiles.eagerly().all() %}
         {% if socialProfiles|length %}
             <nav aria-label="{{ 'Social Networks'|t }}">
                 <div class="flex gap-4">

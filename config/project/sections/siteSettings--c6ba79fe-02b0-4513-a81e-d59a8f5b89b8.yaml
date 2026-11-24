@@ -2,11 +2,11 @@ defaultPlacement: end
 enableVersioning: true
 entryTypes:
   -
-    uid: c1874064-cabe-4c03-943f-9af16558b6cf # Globals
-handle: globals
+    uid: c1874064-cabe-4c03-943f-9af16558b6cf # Site Settings
+handle: siteSettings
 maxAuthors: 1
 minAuthors: 1
-name: Globals
+name: 'Site Settings'
 previewTargets:
   -
     label: Primary
