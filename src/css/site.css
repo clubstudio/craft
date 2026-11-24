@@ -2,6 +2,9 @@
 
 @source "../../templates/**/*";
 
+/* Styles for when JavaScript hasn't run; base.twig adds the js class to <html>. */
+@custom-variant no-js (html:not(.js) &);
+
 @theme {
     /* Brand colours for the social networks in Site Settings, e.g. text-social-linkedin. */
     --color-social-bluesky: #1185fe;
@@ -47,6 +50,14 @@
     gap: var(--block-gap);
 }
 
+/* A visible focus outline for everything keyboard users can reach. */
+@layer base {
+    :focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+    }
+}
+
 /* Heading styles, used by _components/heading and by headings in .body-copy. */
 @utility heading-1 { @apply font-bold text-5xl; }
 @utility heading-2 { @apply font-bold text-4xl; }
@@ -70,14 +81,9 @@
     h5 { @apply heading-5; }
     h6 { @apply heading-6; }
 
-    ul { list-style: disc }
-    ol { list-style: decimal }
-    p > a { text-decoration: underline; text-underline-offset: 4px; }
-    strong { font-weight: 500; }
-}
-
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+    ul, ol { padding-left: 1.25rem; }
+    ul { list-style: disc; }
+    ol { list-style: decimal; }
+    a { text-decoration: underline; text-underline-offset: 4px; }
+    strong { font-weight: 600; }
 }

@@ -1,11 +1,11 @@
 {%- set tags = siteSettings.tags.eagerly().all() -%}
 
 <!doctype html>
-<html lang="{{ craft.app.language|slice(0, 2) }}">
+<html lang="{{ craft.app.language }}">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>document.documentElement.classList.add('js')</script>
         <meta name="csrf-token" content="{{ craft.app.request.csrfToken }}">
         <link rel="home" href="{{ siteUrl }}">
 
@@ -27,10 +27,6 @@
         {% endfor %}
     </head>
     <body>
-        <noscript>
-            <p>{{ 'This website works best when you have JavaScript enabled.'|t }}</p>
-        </noscript>
-
         {% include '_partials/skip-link' %}
 
         {% if craft.app.config.general.devMode %}

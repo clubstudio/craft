@@ -3,12 +3,10 @@
     body: '',
 }|merge(_context) %}
 
-<div class="max-w-sm h-screen flex justify-center items-center">
-    <div>
-        <h1>{{ data.heading }}</h1>
-        <p class="my-6">{{ data.body }}</p>
-        <a href="{{ url() }}">
-            <span aria-hidden="true">&larr;</span> {{ 'Go home'|t }}
-        </a>
-    </div>
+<div class="max-w-sm">
+    {% include '_components/heading' with { level: 'h1', appearance: 'h2', heading: data.heading } only %}
+    <p class="my-6">{{ data.body }}</p>
+    <a href="{{ url() }}" class="underline underline-offset-4">
+        <span aria-hidden="true">&larr;</span> {{ 'Go home'|t }}
+    </a>
 </div>

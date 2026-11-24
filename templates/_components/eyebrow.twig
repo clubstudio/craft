@@ -6,5 +6,5 @@
 {% import '_macros/classes' as classes %}
 
 {% if data.text|length %}
-    <p {{ attr({ class: classes.combine(null, data.class)|string ?: false }) }}>{{ data.text }}</p>
+    <p class="{{ classes.combine('text-sm font-medium uppercase tracking-wide', data.class) }}">{{ data.text }}</p>
 {% endif %}

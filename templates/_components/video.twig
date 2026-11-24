@@ -21,7 +21,7 @@
                 <track
                     label="{{ track.label ?? '' }}"
                     kind="captions"
-                    srclang="{{ craft.app.language|slice(0, 2) }}"
+                    srclang="{{ craft.app.language }}"
                     src="{{ track.src }}"
                     {% if loop.first %} default {% endif %}
                 />

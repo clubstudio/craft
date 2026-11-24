@@ -6,16 +6,13 @@
 {% set links = data.links|filter(link => link.url ?? null) %}
 
 {% if links|length %}
-    <ul>
+    <ul class="flex flex-wrap gap-2">
         {% for link in links %}
-            <li class="inline-block">
+            <li>
                 {% include '_components/button' with {
                     theme: link.theme ?? 'primary',
                     url: link.url,
                     text: link.text ?? '',
-                    class: [
-                        not loop.last ? 'mr-2',
-                    ],
                     attributes: {
                         target: link.target ?? null,
                         rel: link.rel ?? null,

@@ -16,9 +16,10 @@
 {% if data.items|length %}
     <div class="{{ classes.combine(['divide-y', sizeClasses.list], data.class) }}">
         {% for item in data.items %}
-            <details class="{{ sizeClasses.item }}">
-                <summary class="cursor-pointer list-none">
+            <details class="group {{ sizeClasses.item }}">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
                     {{ item.title }}
+                    <span aria-hidden="true" class="shrink-0 text-xl leading-none transition-transform group-open:rotate-45 motion-reduce:transition-none">+</span>
                 </summary>
                 {% include '_components/rich-text' with {
                     body: item.body,

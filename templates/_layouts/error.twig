@@ -1,7 +1,7 @@
 {% extends '_layouts/base' %}
 
 {% block body %}
-    <main id="main-content" class="leading-normal flex justify-center items-center text-center p-6 w-screen h-screen">
+    <main id="main-content" class="leading-normal flex justify-center items-center text-center p-6 min-h-screen">
         {% block error %}
             {% include '_components/error' with {
                 heading: 'Whoops'|t,

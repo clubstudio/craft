@@ -8,7 +8,7 @@
 {% import '_macros/classes' as classes %}
 
 <div {{ attr({ class: classes.combine(null, data.class)|string ?: false }) }}>
-    <div class="pb-3 mb-2">{{ data.value }}</div>
+    <div class="heading-2 pb-3 mb-2">{{ data.value }}</div>
     <div class="my-3">{{ data.title }}</div>
     {% include '_components/rich-text' with { body: data.body } only %}
 </div>

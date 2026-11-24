@@ -29,13 +29,13 @@
 } %}
 
 {% set themeClasses = {
-    primary: 'border border-black bg-black text-white',
-    secondary: 'border border-gray-200 bg-gray-200',
-    tertiary: '!p-0',
+    primary: 'border border-black bg-black text-white hover:opacity-80',
+    secondary: 'border border-gray-200 bg-gray-200 hover:opacity-80',
+    tertiary: 'p-0! hover:underline',
 } %}
 
 {% set classList = classes.combine([
-    'inline-block rounded-full',
+    'inline-block rounded-full transition-opacity motion-reduce:transition-none',
     themeClasses[data.theme]|default(),
     sizeClasses[data.size]|default(),
 ], data.class) %}
@@ -47,7 +47,7 @@
             {%- if newTab %}<span class="sr-only"> {{ newTabText }}</span>{% endif %}
         </a>
         {% if data.theme == 'tertiary' %}
-            <span class="inline-flex items-center justify-center w-6 text-black">
+            <span aria-hidden="true" class="inline-flex items-center justify-center w-6 text-black">
                 &rarr;
             </span>
         {% endif %}
