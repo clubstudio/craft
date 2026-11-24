@@ -198,16 +198,17 @@ All templates follow WCAG 2.1 AA standards:
 Utility macros are available in `_macros/`:
 
 **Classes (`_macros/classes.twig`):**
-- `paddingTop(preference)` - Responsive top padding
-- `paddingBottom(preference)` - Responsive bottom padding
-- `maxWidth(preference)` - Maximum width with horizontal padding
+- `combine(base, extra)` - Joins a component's classes with a caller's `class` input
+- `paddingTop(preference)` / `paddingBottom(preference)` - Responsive section padding
+- `contentMaxWidth(preference)` - The cap for Medium and Narrow content widths
 - `horizontalAlignment(preference)` - Horizontal alignment classes
 - `verticalAlignment(preference)` - Flexbox vertical alignment
 - `backgroundColor(preference)` - Background color utilities
 - `textAlignment(preference)` - Text alignment classes
+- `fontSize(preference)` - Font size classes
 - `aspectRatio(preference)` - Aspect ratio for media
-- `spacer(preference)` - Vertical spacing utilities
 - `columnLayout(preference)` - Grid column layouts
+- `sectionTextContainer(preference)` - Gutter for text beside full bleed media
 
 **Transforms (`_macros/transforms.twig`):**
 - `buildKey(segments)` - Builds transform keys from array of segments

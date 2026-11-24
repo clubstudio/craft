@@ -112,14 +112,6 @@ settings:
         -
           - group
           - Layout
-    -
-      __assoc__:
-        -
-          - uid
-          - 0b321564-e4b7-4cad-990a-990f27e2bc26 # Spacer
-        -
-          - group
-          - Layout
   includeTableView: false
   maxEntries: null
   minEntries: null

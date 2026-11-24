@@ -47,17 +47,6 @@
     }, preference) -}}
 {% endmacro %}
 
-{% macro spacer(preference = 'xs') %}
-    {{- attribute({
-        xs: 'h-3',
-        sm: 'h-4',
-        md: 'h-5',
-        lg: 'h-6',
-        xl: 'h-12',
-        fill: 'flex-1',
-    }, preference) -}}
-{% endmacro %}
-
 {% macro fontSize(preference = 'none') %}
     {{- attribute({
         'xs': 'text-xs lg:text-sm',
