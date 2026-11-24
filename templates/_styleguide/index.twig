@@ -1,0 +1,142 @@
+{% extends '_layouts/master' %}
+
+{% import '_macros/classes' as classes %}
+
+{% set sampleImage = craft.assets.kind('image').one() %}
+{% set sampleForm = craft.formie.forms().one() %}
+
+{% block content %}
+    <div class="px-gutter py-12 flex flex-col gap-block">
+        {% include '_components/heading' with { level: 'h1', heading: 'Style guide' } only %}
+
+        <section class="flex flex-col gap-6">
+            {% include '_components/heading' with { heading: 'Headings' } only %}
+            {% for level in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] %}
+                {% include '_components/heading' with {
+                    level: level,
+                    heading: level|upper ~ ': The quick brown fox jumps over the lazy dog',
+                    attributes: { role: 'presentation' },
+                } only %}
+            {% endfor %}
+        </section>
+
+        <section class="flex flex-col gap-6">
+            {% include '_components/heading' with { heading: 'Body copy' } only %}
+            <div class="body-copy max-w-narrow">
+                <p>A paragraph of body copy with <a href="#">a link</a> and <strong>some strong text</strong>. It runs long enough to wrap onto a second line so you can check the line height and measure.</p>
+                <ul>
+                    <li>A bulleted list item</li>
+                    <li>Another bulleted list item</li>
+                </ul>
+                <ol>
+                    <li>A numbered list item</li>
+                    <li>Another numbered list item</li>
+                </ol>
+                <h2>A heading in rich text</h2>
+                <p>Headings in Rich Text use the same styles as the heading component.</p>
+                <h3>A third-level heading</h3>
+                <p>Another paragraph to show the space below a heading.</p>
+                <h4>A fourth-level heading</h4>
+                <p>And one more.</p>
+            </div>
+        </section>
+
+        <section class="flex flex-col gap-6">
+            {% include '_components/heading' with { heading: 'Buttons' } only %}
+            {% for theme in ['primary', 'secondary', 'tertiary'] %}
+                <div class="flex flex-wrap items-center gap-4">
+                    {% for size in ['sm', 'base', 'md', 'lg'] %}
+                        {% include '_components/button' with {
+                            url: '#',
+                            text: theme|capitalize ~ ' ' ~ size,
+                            theme: theme,
+                            size: size,
+                        } only %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            <div class="flex flex-wrap items-center gap-4">
+                {% include '_components/button' with { as: 'button', text: 'Button element' } only %}
+                {% include '_components/button' with {
+                    url: 'https://example.com',
+                    text: 'Opens in a new tab',
+                    attributes: { target: '_blank' },
+                } only %}
+            </div>
+        </section>
+
+        <section class="flex flex-col gap-6">
+            {% include '_components/heading' with { heading: 'Links' } only %}
+            {% include '_components/links' with {
+                links: [
+                    { url: '#', text: 'Primary link' },
+                    { url: '#', text: 'Secondary link', theme: 'secondary' },
+                    { url: '#', text: 'Tertiary link', theme: 'tertiary' },
+                ],
+            } only %}
+        </section>
+
+        <section class="flex flex-col gap-6">
+            {% include '_components/heading' with { heading: 'Content cards' } only %}
+            <div class="grid gap-6 md:grid-cols-3">
+                {% for i in 1..3 %}
+                    {% include '_components/cards/content' with {
+                        url: '#',
+                        title: 'Card title ' ~ i,
+                        eyebrow: 'Eyebrow',
+                        summary: 'A short summary of the entry the card links to.',
+                        image: i == 1 ? null : sampleImage,
+                    } only %}
+                {% endfor %}
+            </div>
+        </section>
+
+        {% if sampleImage %}
+            <section class="flex flex-col gap-6">
+                {% include '_components/heading' with { heading: 'Images' } only %}
+                <div class="grid gap-6 md:grid-cols-3">
+                    {% for ratio in ['photo', 'photo-portrait', 'square', 'video', 'pano', 'auto'] %}
+                        <figure>
+                            {% include '_components/image' with {
+                                image: sampleImage,
+                                alt: '',
+                                aspectRatio: ratio,
+                                class: 'w-full h-full object-cover',
+                            } only %}
+                            <figcaption class="mt-2 text-sm">{{ ratio }}</figcaption>
+                        </figure>
+                    {% endfor %}
+                </div>
+            </section>
+        {% endif %}
+
+        <section class="flex flex-col gap-6">
+            {% include '_components/heading' with { heading: 'Dates' } only %}
+            <p>{% include '_components/date' with { date: date('-2 days') } only %}</p>
+            <p>{% include '_components/date' with { date: date('-1 year') } only %}</p>
+        </section>
+
+        <section class="flex flex-col gap-6">
+            {% include '_components/heading' with { heading: 'Breadcrumb' } only %}
+            {% include '_components/breadcrumb' only %}
+        </section>
+
+        {% if sampleForm %}
+            <section class="flex flex-col gap-6 max-w-narrow">
+                {% include '_components/heading' with { heading: 'Form' } only %}
+                {% include '_components/form' with { form: sampleForm } only %}
+            </section>
+        {% endif %}
+    </div>
+
+    <section class="py-12 flex flex-col gap-6 bg-gray-100">
+        <div class="px-gutter">
+            {% include '_components/heading' with { heading: 'Content widths' } only %}
+        </div>
+        {% for width in ['full-bleed', 'full-width', 'medium', 'narrow'] %}
+            <div{% if width != 'full-bleed' %} class="px-gutter"{% endif %}>
+                <div class="bg-white p-4 text-sm {{ classes.contentMaxWidth(width) }} {{ width in ['medium', 'narrow'] ? 'mx-auto' }}">{{ width }}</div>
+            </div>
+        {% endfor %}
+    </section>
+{% endblock %}

@@ -42,10 +42,28 @@
     gap: var(--block-gap);
 }
 
+/* Heading styles, used by _components/heading and by headings in .body-copy. */
+@utility heading-1 { @apply font-bold text-5xl; }
+@utility heading-2 { @apply font-bold text-4xl; }
+@utility heading-3 { @apply font-bold text-3xl; }
+@utility heading-4 { @apply text-2xl; }
+@utility heading-5 { @apply text-xl; }
+@utility heading-6 { @apply text-lg; }
+
 .body-copy {
     > * + * {
         margin-top: --spacing(4);
     }
+
+    > * + :is(h2, h3, h4, h5, h6) {
+        margin-top: --spacing(8);
+    }
+
+    h2 { @apply heading-2; }
+    h3 { @apply heading-3; }
+    h4 { @apply heading-4; }
+    h5 { @apply heading-5; }
+    h6 { @apply heading-6; }
 
     ul { list-style: disc }
     ol { list-style: decimal }
