@@ -3,14 +3,19 @@
 @source "../../templates/**/*";
 
 @theme {
+    /* Brand colours for the social networks in Site Settings, e.g. text-social-linkedin. */
+    --color-social-bluesky: #1185fe;
     --color-social-facebook: #0866ff;
-    --color-social-x: #000000;
     --color-social-instagram: #ff0069;
     --color-social-linkedin: #0a66c2;
-    --color-social-youtube: #ff0000;
-    --color-social-vimeo: #1ab7ea;
     --color-social-pinterest: #bd081c;
-    --color-social-tiktok: #000;
+    --color-social-threads: #000000;
+    --color-social-tiktok: #000000;
+    --color-social-twitch: #9146ff;
+    --color-social-vimeo: #1ab7ea;
+    --color-social-whatsapp: #25d366;
+    --color-social-x: #000000;
+    --color-social-youtube: #ff0000;
 
     /* Content widths: max-w-medium and max-w-narrow. */
     --container-medium: 64rem;
