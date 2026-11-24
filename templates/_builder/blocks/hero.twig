@@ -23,6 +23,7 @@
             {% include '_builder/builder' with {
                 context: 'hero',
                 blocks: block.textContent.eagerly().all(),
+                transformKey: 'hero',
             } only %}
         </div>
     </div>

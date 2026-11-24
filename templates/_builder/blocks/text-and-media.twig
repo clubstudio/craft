@@ -46,6 +46,7 @@
             {% include '_builder/builder' with {
                 context: 'text-and-media',
                 blocks: block.textContent.eagerly().all(),
+                transformKey: transformKey,
             } only %}
         </div>
     </div>

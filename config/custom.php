@@ -77,6 +77,16 @@ return [
             'srcset' => [320, 768, 1024, 1400],
             'sizes' => '(min-width: 1280px) 584px, (min-width: 1024px) 45vw, 100vw',
         ],
+        'section:none:faqs' => [
+            'width' => 320,
+            'srcset' => [320, 768, 1024, 1400],
+            'sizes' => '(min-width: 1024px) 33vw, 100vw',
+        ],
+        'section:contain:faqs' => [
+            'width' => 320,
+            'srcset' => [320, 768, 1024, 1400],
+            'sizes' => '(min-width: 1280px) 397px, (min-width: 1024px) 312px, 100vw',
+        ],
         'hero' => [
             'width' => 640,
             'srcset' => [640, 960, 1280, 1920, 2560],

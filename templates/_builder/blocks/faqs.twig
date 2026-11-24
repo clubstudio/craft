@@ -1,4 +1,6 @@
 {# FAQs: questions and answers, picked from the FAQs channel or written in place, with FAQPage schema. #}
+{% import '_macros/transforms' as transforms %}
+
 {% set faqs = [] %}
 
 {% for faq in block.faqs.eagerly().all() %}
@@ -20,7 +22,8 @@
         <div class="space-y-4 mb-6 flex flex-col h-full">
             {% include '_builder/builder' with {
                 context: 'faqs',
-                blocks: textContentBlocks
+                blocks: textContentBlocks,
+                transformKey: transforms.buildKey([transformKey, 'faqs']),
             } only %}
         </div>
     {% endif %}

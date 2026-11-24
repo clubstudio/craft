@@ -15,6 +15,7 @@
             {% include '_builder/builder' with {
                 context: 'columns/header',
                 blocks: textContent,
+                transformKey: transformKey,
             } only %}
         </div>
     {% endif %}
