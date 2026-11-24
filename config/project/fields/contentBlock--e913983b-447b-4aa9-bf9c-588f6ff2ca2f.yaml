@@ -121,13 +121,15 @@ settings:
           - group
           - General
   includeTableView: false
-  maxEntries: 1
+  maxEntries: null
   minEntries: 1
   pageSize: null
   propagationKeyFormat: null
   propagationMethod: all
   showCardsInGrid: false
   viewMode: blocks
+tip: null
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Matrix
+warning: null
