@@ -1,4 +1,4 @@
-dateModified: 1795556748
+dateModified: 1795557170
 elementSources:
   craft\elements\Entry:
     -
@@ -29,7 +29,6 @@ elementSources:
         - status
         - postDate
         - expiryDate
-        - authors
         - link
       type: native
     -
@@ -61,7 +60,6 @@ elementSources:
         - status
         - postDate
         - expiryDate
-        - authors
         - link
       type: native
     -
@@ -76,7 +74,6 @@ elementSources:
         - status
         - postDate
         - expiryDate
-        - authors
         - link
       type: native
 email:
