@@ -1,5 +1,5 @@
+{# Heading: a heading at the level the editor chooses. #}
 {% include '_components/heading' with {
     heading: block.title,
     level: block.headingLevel.value,
-    attributes: { },
-} %}
+} only %}
