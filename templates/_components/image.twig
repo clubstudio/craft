@@ -1,6 +1,7 @@
 {% set data = {
     image: null,
     alt: null,
+    caption: null,
     transformKey: null,
     aspectRatio: null,
     class: null,
@@ -31,6 +32,8 @@
         <!-- Image Transform Key: {{ requestedKey }}{{ transformKey != requestedKey ? ' (not in config/custom.php, using ' ~ transformKey ~ ')' }} -->
     {% endif %}
 
+    {% if data.caption|length %}<figure>{% endif %}
+
     <div class="{{ classes.aspectRatio(data.aspectRatio) }} overflow-hidden">
         {% do data.image.setTransform({
             width: transformInfo.width,
@@ -51,4 +54,9 @@
             alt: data.alt ?? data.image.alt ?? '',
         })|merge(data.attributes)) }}
     </div>
+
+    {% if data.caption|length %}
+        <figcaption class="mt-2 body-copy">{{ data.caption }}</figcaption>
+    </figure>
+    {% endif %}
 {% endif %}

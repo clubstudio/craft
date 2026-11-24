@@ -77,14 +77,15 @@
 {% endmacro %}
 
 {% macro aspectRatio(preference = 'photo') %}
-    {{- attribute({
+    {%- set ratios = {
         'auto': null,
         'video': 'aspect-video',
         'photo': 'aspect-[4/3]',
         'photo-portrait': 'aspect-[3/4]',
         'pano': 'aspect-[21/9]',
         'square': 'aspect-square',
-    }, preference) -}}
+    } -%}
+    {{- (preference ?: 'photo') in ratios|keys ? ratios[preference ?: 'photo'] : ratios.photo -}}
 {% endmacro %}
 
 {# In a Full bleed Content & Media block, the text keeps the gutter on its outer side only. #}

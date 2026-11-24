@@ -1,0 +1,7 @@
+{% set data = {
+    class: null,
+}|merge(_context) %}
+
+{% import '_macros/classes' as classes %}
+
+<hr {{ attr({ class: classes.combine(null, data.class)|string ?: false }) }}>

@@ -1,4 +1,2 @@
-{# Paragraph: rich text styled with body-copy. #}
-<div class="body-copy">
-    {{ block.paragraph }}
-</div>
+{# Paragraph: short rich text among other Content. #}
+{% include '_components/rich-text' with { body: block.paragraph } only %}

@@ -1,0 +1,51 @@
+{# A row of logos. Each logo is { image, url, target, rel, ariaLabel }; the link fields are optional. #}
+{% set data = {
+    logos: [],
+    class: null,
+}|merge(_context) %}
+
+{% import '_macros/classes' as classes %}
+{% import '_macros/svg' as svgs %}
+
+{% set logos = data.logos|filter(logo => logo.image ?? null) %}
+
+{% if logos|length %}
+    <div class="{{ classes.combine('flex items-center justify-between flex-wrap -m-6', data.class) }}">
+        {% for logo in logos %}
+            {% set asset = logo.image %}
+            {% set url = logo.url ?? null %}
+            {% set newTab = url and (logo.target ?? null) == '_blank' %}
+            {% set label = (logo.ariaLabel ?? null) ?: asset.alt %}
+
+            <figure class="p-6 flex justify-center">
+                {% tag (url ? 'a' : 'div') with url ? {
+                    href: url,
+                    target: logo.target ?? null,
+                    rel: newTab ? ((logo.rel ?? null) ?: 'noopener') : (logo.rel ?? null),
+                    'aria-label': label ? label ~ (newTab ? ' ' ~ '(opens in a new tab)'|t) : null,
+                } : {} %}
+                    {% if asset.format == 'svg' %}
+                        {{ svgs.asset(asset, url ? {
+                            height: 36,
+                            'aria-hidden': 'true',
+                            focusable: 'false',
+                        } : {
+                            height: 36,
+                            role: 'img',
+                            'aria-label': asset.alt,
+                            focusable: 'false',
+                        }) }}
+                    {% else %}
+                        {% include '_components/image' with {
+                            image: asset,
+                            alt: url ? '' : null,
+                            transformKey: 'logo',
+                            aspectRatio: 'auto',
+                            class: 'h-9 w-auto',
+                        } only %}
+                    {% endif %}
+                {% endtag %}
+            </figure>
+        {% endfor %}
+    </div>
+{% endif %}

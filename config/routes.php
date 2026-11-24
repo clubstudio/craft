@@ -10,4 +10,9 @@
  * @link https://craftcms.com/docs/5.x/system/routing.html
  */
 
-return [];
+use craft\helpers\App;
+
+return App::devMode() ? [
+    // The style guide renders each component with sample values. It's only routed in dev mode.
+    'styleguide' => ['template' => '_styleguide/index'],
+] : [];

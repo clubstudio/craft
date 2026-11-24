@@ -1,2 +1,2 @@
 {# Eyebrow: a short label shown above a heading. #}
-<p>{{ block.title }}</p>
+{% include '_components/eyebrow' with { text: block.title } only %}

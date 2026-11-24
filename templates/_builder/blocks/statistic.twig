@@ -1,8 +1,6 @@
 {# Statistic: a figure with a title and supporting text, used in Columns. #}
-<div>
-    <div class="pb-3 mb-2">{{ block.value }}</div>
-    <div class="my-3">{{ block.title }}</div>
-    <div class="body-copy">
-        {{ block.body }}
-    </div>
-</div>
+{% include '_components/statistic' with {
+    value: block.value,
+    title: block.title,
+    body: block.body,
+} only %}

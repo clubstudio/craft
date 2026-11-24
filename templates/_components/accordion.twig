@@ -1,0 +1,30 @@
+{# Expandable items using native <details>. Each item is { title, body }. #}
+{% set data = {
+    items: [],
+    size: 'base',
+    class: null,
+}|merge(_context) %}
+
+{% import '_macros/classes' as classes %}
+
+{% set sizes = {
+    base: { list: '', item: 'py-4', body: 'pt-4' },
+    lg: { list: '-my-6', item: 'py-6', body: 'pt-6' },
+} %}
+{% set sizeClasses = sizes[data.size] ?? sizes.base %}
+
+{% if data.items|length %}
+    <div class="{{ classes.combine(['divide-y', sizeClasses.list], data.class) }}">
+        {% for item in data.items %}
+            <details class="{{ sizeClasses.item }}">
+                <summary class="cursor-pointer list-none">
+                    {{ item.title }}
+                </summary>
+                {% include '_components/rich-text' with {
+                    body: item.body,
+                    class: sizeClasses.body,
+                } only %}
+            </details>
+        {% endfor %}
+    </div>
+{% endif %}

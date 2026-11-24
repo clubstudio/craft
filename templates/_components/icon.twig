@@ -1,0 +1,13 @@
+{# A decorative SVG icon from an uploaded asset. #}
+{% set data = {
+    icon: null,
+    class: 'size-8',
+}|merge(_context) %}
+
+{% import '_macros/svg' as svgs %}
+
+{% if data.icon %}
+    <div>
+        {{ svgs.asset(data.icon, { class: data.class, 'aria-hidden': 'true', focusable: 'false' }) }}
+    </div>
+{% endif %}

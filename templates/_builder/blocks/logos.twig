@@ -1,47 +1,10 @@
 {# Logos: a row of client or partner logos, each optionally linked. #}
-{% import '_macros/svg' as svgs %}
-
-{% set logos = block.logos.eagerly().all() %}
-
-<div class="flex items-center justify-between flex-wrap -m-6">
-    {% for logo in logos %}
-        {% set asset = logo.image.eagerly().one() %}
-        {% set link = logo.hyperlink %}
-
-        {% if asset %}
-            <figure class="p-6 flex justify-center">
-                {% set newTab = link and link.target == '_blank' %}
-                {% set label = (link.ariaLabel ?? null) ?: asset.alt %}
-                {% set tagParams = link ? {
-                    href: link.url,
-                    target: link.target,
-                    rel: newTab ? (link.rel ?: 'noopener') : link.rel,
-                    'aria-label': label ? label ~ (newTab ? ' ' ~ '(opens in a new tab)'|t) : null,
-                } : { } %}
-
-                {% tag (link ? 'a' : 'div') with tagParams %}
-                    {% if asset.format == 'svg' %}
-                        {{ svgs.asset(asset, link ? {
-                            height: 36,
-                            'aria-hidden': 'true',
-                            focusable: 'false',
-                        } : {
-                            height: 36,
-                            role: 'img',
-                            'aria-label': asset.alt,
-                            focusable: 'false',
-                        }) }}
-                    {% else %}
-                        {% include '_components/image' with {
-                            image: asset,
-                            alt: link ? '' : null,
-                            transformKey: 'logo',
-                            aspectRatio: 'auto',
-                            class: 'h-9 w-auto',
-                        } only %}
-                    {% endif %}
-                {% endtag %}
-            </figure>
-        {% endif %}
-    {% endfor %}
-</div>
+{% include '_components/logos' with {
+    logos: block.logos.eagerly().all()|map(logo => {
+        image: logo.image.eagerly().one(),
+        url: logo.hyperlink.url ?? null,
+        target: logo.hyperlink.target ?? null,
+        rel: logo.hyperlink.rel ?? null,
+        ariaLabel: logo.hyperlink.ariaLabel ?? null,
+    }),
+} only %}

@@ -1,0 +1,13 @@
+{# Rich text from a CKEditor field, styled with body-copy. #}
+{% set data = {
+    body: null,
+    class: null,
+}|merge(_context) %}
+
+{% import '_macros/classes' as classes %}
+
+{% if data.body|length %}
+    <div class="{{ classes.combine('body-copy', data.class) }}">
+        {{ data.body }}
+    </div>
+{% endif %}

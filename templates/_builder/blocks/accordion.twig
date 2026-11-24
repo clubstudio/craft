@@ -1,13 +1,7 @@
-{# Accordion: expandable items, each a title and a body, using native <details>. #}
-<div class="divide-y">
-    {% for item in block.accordionItems.eagerly().all() %}
-        <details class="py-4 group">
-            <summary class="cursor-pointer list-none">
-                {{ item.title }}
-            </summary>
-            <div class="pt-4 body-copy">
-                {{ item.body }}
-            </div>
-        </details>
-    {% endfor %}
-</div>
+{# Accordion: expandable items, each a title and a body. #}
+{% include '_components/accordion' with {
+    items: block.accordionItems.eagerly().all()|map(item => {
+        title: item.title,
+        body: item.body,
+    }),
+} only %}

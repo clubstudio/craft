@@ -1,10 +1,2 @@
 {# Icon: an uploaded SVG icon, shown as decoration. #}
-{% import '_macros/svg' as svgs %}
-
-{% set icon = block.asset.eagerly().one() %}
-
-{% if icon %}
-    <div>
-        {{ svgs.asset(icon, { class: 'size-8', 'aria-hidden': 'true', 'focusable': 'false' }) }}
-    </div>
-{% endif %}
+{% include '_components/icon' with { icon: block.asset.eagerly().one() } only %}

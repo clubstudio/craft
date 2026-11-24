@@ -2,7 +2,10 @@
 
 {% import '_macros/classes' as classes %}
 
+{% do seomatic.meta.seoTitle('Style guide') %}
+
 {% set sampleImage = craft.assets.kind('image').one() %}
+{% set sampleSvg = craft.assets.kind('image').filename('*.svg').one() %}
 {% set sampleForm = craft.formie.forms().one() %}
 
 {% block content %}
@@ -21,8 +24,13 @@
         </section>
 
         <section class="flex flex-col gap-6">
-            {% include '_components/heading' with { heading: 'Body copy' } only %}
-            <div class="body-copy max-w-narrow">
+            {% include '_components/heading' with { heading: 'Eyebrow' } only %}
+            {% include '_components/eyebrow' with { text: 'An eyebrow above a heading' } only %}
+        </section>
+
+        <section class="flex flex-col gap-6">
+            {% include '_components/heading' with { heading: 'Rich text' } only %}
+            {% set sampleRichText %}
                 <p>A paragraph of body copy with <a href="#">a link</a> and <strong>some strong text</strong>. It runs long enough to wrap onto a second line so you can check the line height and measure.</p>
                 <ul>
                     <li>A bulleted list item</li>
@@ -38,7 +46,53 @@
                 <p>Another paragraph to show the space below a heading.</p>
                 <h4>A fourth-level heading</h4>
                 <p>And one more.</p>
+            {% endset %}
+            {% include '_components/rich-text' with { body: sampleRichText, class: 'max-w-narrow' } only %}
+        </section>
+
+        <section class="flex flex-col gap-6">
+            {% include '_components/heading' with { heading: 'List' } only %}
+            {% include '_components/list' with {
+                items: ['A short list item', 'Another short list item', 'A third, slightly longer list item'],
+            } only %}
+        </section>
+
+        <section class="flex flex-col gap-6">
+            {% include '_components/heading' with { heading: 'Statistics' } only %}
+            <div class="grid gap-6 md:grid-cols-3">
+                {% for value in ['98%', '12k', '24/7'] %}
+                    {% include '_components/statistic' with {
+                        value: value,
+                        title: 'Statistic title',
+                        body: 'Supporting text that explains the figure.',
+                    } only %}
+                {% endfor %}
             </div>
+        </section>
+
+        <section class="flex flex-col gap-6">
+            {% include '_components/heading' with { heading: 'Accordion' } only %}
+            {% set sampleItems = [
+                { title: 'The first question', body: 'The answer to the first question.' },
+                { title: 'A second question', body: 'The answer to the second question.' },
+                { title: 'A third question', body: 'The answer to the third question.' },
+            ] %}
+            {% include '_components/accordion' with { items: sampleItems } only %}
+            <p class="text-sm">Size lg, as in FAQs:</p>
+            <div class="py-6">
+                {% include '_components/accordion' with { items: sampleItems, size: 'lg' } only %}
+            </div>
+        </section>
+
+        <section class="flex flex-col gap-6">
+            {% include '_components/heading' with { heading: 'Testimonial' } only %}
+            {% include '_components/testimonial' with {
+                quote: 'A short quote from a happy client about working with the team.',
+                person: 'Person Name',
+                company: 'Company',
+                image: sampleImage,
+                class: 'max-w-narrow',
+            } only %}
         </section>
 
         <section class="flex flex-col gap-6">
@@ -92,8 +146,37 @@
                         </figure>
                     {% endfor %}
                 </div>
+                {% include '_components/image' with {
+                    image: sampleImage,
+                    alt: '',
+                    caption: 'An image with a caption.',
+                    class: 'w-full h-full object-cover max-w-narrow',
+                } only %}
+            </section>
+
+            <section class="flex flex-col gap-6">
+                {% include '_components/heading' with { heading: 'Logos' } only %}
+                {% include '_components/logos' with {
+                    logos: [
+                        { image: sampleSvg ?? sampleImage },
+                        { image: sampleImage, url: '#', ariaLabel: 'A linked logo' },
+                        { image: sampleSvg ?? sampleImage },
+                    ],
+                } only %}
             </section>
         {% endif %}
+
+        {% if sampleSvg %}
+            <section class="flex flex-col gap-6">
+                {% include '_components/heading' with { heading: 'Icon' } only %}
+                {% include '_components/icon' with { icon: sampleSvg } only %}
+            </section>
+        {% endif %}
+
+        <section class="flex flex-col gap-6">
+            {% include '_components/heading' with { heading: 'Divider' } only %}
+            {% include '_components/divider' only %}
+        </section>
 
         <section class="flex flex-col gap-6">
             {% include '_components/heading' with { heading: 'Dates' } only %}

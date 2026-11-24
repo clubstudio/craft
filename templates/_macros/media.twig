@@ -1,10 +1,11 @@
 {% macro aspectRatio(preference = 'photo', image) %}
-    {{- attribute({
+    {%- set ratios = {
         'auto': image ? (image.width / image.height) : (4 / 3),
         'video': 16 / 9,
         'photo': 4 / 3,
         'photo-portrait': 3 / 4,
         'pano': 21 / 9,
         'square': 1 / 1,
-    }, preference) -}}
+    } -%}
+    {{- ratios[preference ?: 'photo'] ?? ratios.photo -}}
 {% endmacro %}

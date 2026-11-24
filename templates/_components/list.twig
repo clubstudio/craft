@@ -1,0 +1,15 @@
+{# A bulleted list. Each item is text or rich text. #}
+{% set data = {
+    items: [],
+    class: null,
+}|merge(_context) %}
+
+{% import '_macros/classes' as classes %}
+
+{% if data.items|length %}
+    <ul class="{{ classes.combine('list-disc pl-5 space-y-2', data.class) }}">
+        {% for item in data.items %}
+            <li class="body-copy">{{ item }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
