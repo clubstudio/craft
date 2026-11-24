@@ -12,47 +12,7 @@ settings:
       __assoc__:
         -
           - uid
-          - 274bbd5f-3859-4d8f-91c3-f68ebbb29720 # Columns
-        -
-          - group
-          - General
-    -
-      __assoc__:
-        -
-          - uid
-          - 2257efc6-f010-4dd9-997b-95a89fa4c2d3 # Divider
-        -
-          - group
-          - General
-    -
-      __assoc__:
-        -
-          - uid
-          - 89b0ee7b-1530-4b52-9ba3-1335bc1eaf8e # FAQs
-        -
-          - group
-          - General
-    -
-      __assoc__:
-        -
-          - uid
-          - 7e20247b-253f-4e4b-a04f-a66573c4a529 # Image
-        -
-          - group
-          - General
-    -
-      __assoc__:
-        -
-          - uid
-          - 6d2baf55-d7b9-4e8f-bb2d-f91dba9a5dee # Text
-        -
-          - group
-          - General
-    -
-      __assoc__:
-        -
-          - uid
-          - 1b69a2ba-578a-4016-a46c-2bb3c40f8c91 # Text Elements
+          - 1b69a2ba-578a-4016-a46c-2bb3c40f8c91 # Content Group
         -
           - group
           - General
@@ -68,6 +28,22 @@ settings:
       __assoc__:
         -
           - uid
+          - 274bbd5f-3859-4d8f-91c3-f68ebbb29720 # Columns
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 7e20247b-253f-4e4b-a04f-a66573c4a529 # Image
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
           - 21500d84-7ee2-479d-93db-750c756557cd # Video
         -
           - group
@@ -76,7 +52,23 @@ settings:
       __assoc__:
         -
           - uid
-          - adf4e920-a376-49f3-8733-3733051a3f4c # CTA
+          - 6d2baf55-d7b9-4e8f-bb2d-f91dba9a5dee # Rich Text
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 7b04b850-94c5-4f5f-8689-a5a2c5c17e18 # Content Cards
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 89b0ee7b-1530-4b52-9ba3-1335bc1eaf8e # FAQs
         -
           - group
           - General
@@ -100,7 +92,15 @@ settings:
       __assoc__:
         -
           - uid
-          - 7b04b850-94c5-4f5f-8689-a5a2c5c17e18 # Content Cards
+          - adf4e920-a376-49f3-8733-3733051a3f4c # CTA
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 2257efc6-f010-4dd9-997b-95a89fa4c2d3 # Divider
         -
           - group
           - General

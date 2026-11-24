@@ -20,7 +20,7 @@
         <div class="space-y-6">
             {% include '_builder/builder' with {
                 context: 'hero',
-                blocks: block.textContent.eagerly().all(),
+                blocks: block.content.eagerly().all(),
                 transformKey: 'hero',
             } only %}
         </div>

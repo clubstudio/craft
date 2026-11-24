@@ -1,4 +1,4 @@
-dateModified: 1795530527
+dateModified: 1795531656
 elementSources:
   craft\elements\Entry:
     -
@@ -110,7 +110,7 @@ mcp:
   route: /admin/mcp
 meta:
   __names__:
-    1b69a2ba-578a-4016-a46c-2bb3c40f8c91: 'Text Elements' # Text Elements
+    1b69a2ba-578a-4016-a46c-2bb3c40f8c91: 'Content Group' # Content Group
     1cc3e83c-680b-483a-9d51-c2d6de10221b: 'Text & Media' # Text & Media
     1ef86f4f-bc26-4199-b65d-f354b70f8fba: Logos # Logos
     2b8d277c-c134-499a-bb5b-11c2bec12bb1: Builder # Builder
@@ -129,7 +129,7 @@ meta:
     5c86e823-c1de-4e1e-a517-7ab40b8724a0: Home # Home
     5d9ae303-c301-4058-9568-90fb3db17763: 'Text Column' # Text Column
     5fb322cb-afc6-479c-8d68-82792f5e9114: 'Accordion Item' # Accordion Item
-    6d2baf55-d7b9-4e8f-bb2d-f91dba9a5dee: Text # Text
+    6d2baf55-d7b9-4e8f-bb2d-f91dba9a5dee: 'Rich Text' # Rich Text
     6e93f919-5527-4324-9f1d-1603cd8513ac: Logo # Logo
     7b04b850-94c5-4f5f-8689-a5a2c5c17e18: 'Content Cards' # Content Cards
     7b2e950b-64e1-4284-a6a1-110afd340922: 'List Items' # List Items
@@ -180,7 +180,7 @@ meta:
     adf4e920-a376-49f3-8733-3733051a3f4c: CTA # CTA
     ae4f2361-8913-4891-ad95-3938347a1e55: 'Aspect Ratio' # Aspect Ratio
     af72e76d-2752-456f-a86c-e9fe22eaaf71: Testimonial # Testimonial
-    aff5ab29-35f9-43c1-bfc1-8419394f1987: 'Text Content' # Text Content
+    aff5ab29-35f9-43c1-bfc1-8419394f1987: Content # Content
     b1d95554-25a7-42c3-822d-09155f628a4b: $CRAFT_SITE_NAME # $CRAFT_SITE_NAME
     b5c0e079-285c-4a6f-a12a-2c7c44b21068: 'Link Style' # Link Style
     b15bb767-c33c-443c-8536-0b08e9e1d3df: Padding # Padding

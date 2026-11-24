@@ -1,8 +1,8 @@
 {# CTA: text elements that ask the visitor to act, usually a heading and links. #}
 <div class="space-y-6">
     {% include '_builder/builder' with {
-        context: 'text-elements',
-        blocks: block.textContent.eagerly().all(),
+        context: 'cta',
+        blocks: block.content.eagerly().all(),
         transformKey: transformKey,
     } only %}
 </div>

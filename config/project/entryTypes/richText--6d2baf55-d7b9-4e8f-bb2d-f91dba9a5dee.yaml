@@ -28,10 +28,10 @@ fieldLayouts:
         uid: c44b07da-4fac-45e9-ac58-c0f9455b0c04
         userCondition: null
     thumbFieldKey: null
-handle: text
+handle: richText
 hasTitleField: false
 icon: text
-name: Text
+name: 'Rich Text'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null

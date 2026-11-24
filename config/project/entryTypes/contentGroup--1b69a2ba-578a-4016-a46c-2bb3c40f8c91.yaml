@@ -13,7 +13,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Text Content
+            fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Content
             handle: null
             instructions: null
             label: null
@@ -50,10 +50,10 @@ fieldLayouts:
         uid: 86a31a13-5c1f-4d28-bde1-cdc0b3d89e0a
         userCondition: null
     thumbFieldKey: null
-handle: textElements
+handle: contentGroup
 hasTitleField: false
 icon: shapes
-name: 'Text Elements'
+name: 'Content Group'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null

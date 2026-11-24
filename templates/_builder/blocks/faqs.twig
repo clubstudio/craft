@@ -12,17 +12,17 @@
     {% endif %}
 {% endfor %}
 
-{% set textContentBlocks = block.textContent.eagerly().all() %}
+{% set content = block.content.eagerly().all() %}
 
 <div class="
     grid grid-cols-1 lg:grid-cols-[1fr_2fr]
     gap-6
 ">
-    {% if textContentBlocks|length %}
+    {% if content|length %}
         <div class="space-y-4 mb-6 flex flex-col h-full">
             {% include '_builder/builder' with {
                 context: 'faqs',
-                blocks: textContentBlocks,
+                blocks: content,
                 transformKey: transforms.buildKey([transformKey, 'faqs']),
             } only %}
         </div>

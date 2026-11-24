@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: textContent
+handle: content
 instructions: null
-name: 'Text Content'
+name: Content
 searchable: false
 settings:
   createButtonLabel: 'New block'

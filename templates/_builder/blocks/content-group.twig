@@ -1,10 +1,10 @@
-{# Text Elements: a group of text elements rendered in order, aligned left, centre or right. #}
+{# Content Group: a stack of small blocks (eyebrow, heading, paragraph, links and more), aligned left, centre or right. #}
 {% import '_macros/classes' as classes %}
 
 <div class="space-y-6 {{ classes.textAlignment(block.textAlignment.value ?? 'left') }}">
     {% include '_builder/builder' with {
-        context: 'text-elements',
-        blocks: block.textContent.eagerly().all(),
+        context: 'content-group',
+        blocks: block.content.eagerly().all(),
         transformKey: transformKey,
     } only %}
 </div>

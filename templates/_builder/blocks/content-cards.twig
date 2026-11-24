@@ -6,15 +6,15 @@
 {% import '_macros/transforms' as transforms %}
 
 {% set transformKey = transforms.buildKey([transformKey, 'content-cards']) %}
-{% set textContent = block.textContent.eagerly().all() %}
+{% set content = block.content.eagerly().all() %}
 {% set cards = block.contentCards.eagerly().all() %}
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    {% if textContent|length %}
+    {% if content|length %}
         <div class="space-y-6">
             {% include '_builder/builder' with {
                 context: 'columns/header',
-                blocks: textContent,
+                blocks: content,
                 transformKey: transformKey,
             } only %}
         </div>
