@@ -3,21 +3,22 @@
     {{- ((base is iterable ? base : [base])|merge(extra is iterable ? extra : [extra]))|filter|join(' ') -}}
 {% endmacro %}
 
+{# Padding Top and Padding Bottom share one scale: change both together. #}
 {% macro paddingTop(preference = 'none') %}
     {{- attribute({
         none: 'pt-0',
-        sm: 'pt-2 md:pt-3',
-        md: 'pt-6 md:pt-10 lg:pt-16',
-        lg: 'pt-8 md:pt-12 lg:pt-20'
+        sm: 'pt-4 md:pt-6 lg:pt-8',
+        md: 'pt-8 md:pt-12 lg:pt-16',
+        lg: 'pt-12 md:pt-16 lg:pt-24',
     }, preference) -}}
 {% endmacro %}
 
 {% macro paddingBottom(preference = 'none') %}
     {{- attribute({
         none: 'pb-0',
-        sm: 'pb-2 md:pb-3',
-        md: 'pb-8 md:pb-10 lg:pb-16',
-        lg: 'pb-6 md:pb-12 lg:pb-20'
+        sm: 'pb-4 md:pb-6 lg:pb-8',
+        md: 'pb-8 md:pb-12 lg:pb-16',
+        lg: 'pb-12 md:pb-16 lg:pb-24',
     }, preference) -}}
 {% endmacro %}
 
