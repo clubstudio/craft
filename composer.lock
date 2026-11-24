@@ -1625,16 +1625,16 @@
         },
         {
             "name": "embed/embed",
-            "version": "v4.6.3",
+            "version": "v4.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-embed/Embed.git",
-                "reference": "6370f77c4ea4e7bce755127a1283ea632e2f7ecb"
+                "reference": "82f62ff26bc1a2f5f2a370aa5fd0f31febbbcf92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-embed/Embed/zipball/6370f77c4ea4e7bce755127a1283ea632e2f7ecb",
-                "reference": "6370f77c4ea4e7bce755127a1283ea632e2f7ecb",
+                "url": "https://api.github.com/repos/php-embed/Embed/zipball/82f62ff26bc1a2f5f2a370aa5fd0f31febbbcf92",
+                "reference": "82f62ff26bc1a2f5f2a370aa5fd0f31febbbcf92",
                 "shasum": ""
             },
             "require": {
@@ -1713,8 +1713,8 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2026-11-21T00:48:42+00:00",
-            "published-time": "2026-11-21T00:48:46+00:00"
+            "time": "2026-11-23T21:30:01+00:00",
+            "published-time": "2026-11-23T21:32:32+00:00"
         },
         {
             "name": "enshrined/svg-sanitize",
@@ -4190,27 +4190,26 @@
         },
         {
             "name": "moneyphp/money",
-            "version": "v4.9.0",
+            "version": "v4.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/moneyphp/money.git",
-                "reference": "d49ee625c6ba79b9d7a228ce153b02fc1032152b"
+                "reference": "8b7d0557d5583999f656cce22f0a177d3d040039"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moneyphp/money/zipball/d49ee625c6ba79b9d7a228ce153b02fc1032152b",
-                "reference": "d49ee625c6ba79b9d7a228ce153b02fc1032152b",
+                "url": "https://api.github.com/repos/moneyphp/money/zipball/8b7d0557d5583999f656cce22f0a177d3d040039",
+                "reference": "8b7d0557d5583999f656cce22f0a177d3d040039",
                 "shasum": ""
             },
             "require": {
                 "ext-bcmath": "*",
                 "ext-filter": "*",
-                "ext-json": "*",
-                "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0"
+                "php": "~8.3.0 || ~8.4.0 || ~8.5.0 || ~8.6.0"
             },
             "require-dev": {
                 "cache/taggable-cache": "^1.1.0",
-                "doctrine/coding-standard": "^12.0",
+                "doctrine/coding-standard": "^14.0",
                 "doctrine/instantiator": "^1.5.0 || ^2.0",
                 "ext-gmp": "*",
                 "ext-intl": "*",
@@ -4221,9 +4220,9 @@
                 "php-http/message": "^1.16.0",
                 "php-http/mock-client": "^1.6.0",
                 "phpbench/phpbench": "^1.2.5",
-                "phpstan/extension-installer": "^1.4",
-                "phpstan/phpstan": "^2.1.9",
-                "phpstan/phpstan-phpunit": "^2.0",
+                "phpstan/extension-installer": "^1.4.3",
+                "phpstan/phpstan": "^2.3.7",
+                "phpstan/phpstan-phpunit": "^2.1.2",
                 "phpunit/phpunit": "^10.5.9",
                 "psr/cache": "^1.0.1 || ^2.0 || ^3.0",
                 "ticketswap/phpstan-error-formatter": "^1.1"
@@ -4274,10 +4273,10 @@
             ],
             "support": {
                 "issues": "https://github.com/moneyphp/money/issues",
-                "source": "https://github.com/moneyphp/money/tree/v4.9.0"
+                "source": "https://github.com/moneyphp/money/tree/v4.10.0"
             },
-            "time": "2026-05-04T20:23:15+00:00",
-            "published-time": "2026-05-04T20:25:20+00:00"
+            "time": "2026-11-23T19:18:31+00:00",
+            "published-time": "2026-11-23T19:19:11+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -4655,11 +4654,11 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "5.1.22",
+            "version": "5.1.24",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/cab0fe84ec5317172fd5627999b5b5b5067ab38d",
-                "reference": "cab0fe84ec5317172fd5627999b5b5b5067ab38d",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/e57efa597ec058b71cbe959a3b96c78d4bbc7c84",
+                "reference": "e57efa597ec058b71cbe959a3b96c78d4bbc7c84",
                 "shasum": ""
             },
             "require": {
@@ -4712,7 +4711,7 @@
                 "issues": "https://nystudio107.com/plugins/seomatic/support",
                 "source": "https://github.com/nystudio107/craft-seomatic"
             },
-            "time": "2026-07-30T19:56:33+00:00"
+            "time": "2026-11-24T05:54:35+00:00"
         },
         {
             "name": "nystudio107/craft-twig-sandbox",
@@ -10456,16 +10455,16 @@
         },
         {
             "name": "verbb/auth",
-            "version": "2.0.61",
+            "version": "2.0.62",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/auth.git",
-                "reference": "b73ee4fe7d32a3c629b39800f1e4db33e67d1874"
+                "reference": "81bb069858253c0885f229dd3ac05683e10aa338"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/auth/zipball/b73ee4fe7d32a3c629b39800f1e4db33e67d1874",
-                "reference": "b73ee4fe7d32a3c629b39800f1e4db33e67d1874",
+                "url": "https://api.github.com/repos/verbb/auth/zipball/81bb069858253c0885f229dd3ac05683e10aa338",
+                "reference": "81bb069858253c0885f229dd3ac05683e10aa338",
                 "shasum": ""
             },
             "require": {
@@ -10510,8 +10509,8 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-11-21T10:24:30+00:00",
-            "published-time": "2026-11-21T10:24:36+00:00"
+            "time": "2026-11-24T11:11:48+00:00",
+            "published-time": "2026-11-24T11:11:54+00:00"
         },
         {
             "name": "verbb/base",
@@ -10566,11 +10565,11 @@
         },
         {
             "name": "verbb/formie",
-            "version": "3.1.52",
+            "version": "3.1.53",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/formie/zipball/72c64783b32b888d56da73e22dc638e7f9c2c9cf",
-                "reference": "72c64783b32b888d56da73e22dc638e7f9c2c9cf",
+                "url": "https://api.github.com/repos/verbb/formie/zipball/793e8ea53d815f71a3837d3f5a2d3491156db91b",
+                "reference": "793e8ea53d815f71a3837d3f5a2d3491156db91b",
                 "shasum": ""
             },
             "require": {
@@ -10627,7 +10626,7 @@
                 "docs": "https://github.com/verbb/formie",
                 "rss": "https://github.com/verbb/formie/commits/v2.atom"
             },
-            "time": "2026-11-21T10:23:33+00:00"
+            "time": "2026-11-24T11:22:39+00:00"
         },
         {
             "name": "verbb/navigation",
@@ -10920,16 +10919,16 @@
         },
         {
             "name": "web-auth/webauthn-lib",
-            "version": "5.3.15",
+            "version": "5.3.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/web-auth/webauthn-lib.git",
-                "reference": "768fb8cf7bebaad8a08b3015e206dda95e3320fa"
+                "reference": "7f38dbcf07cd22ec104fa6eb720df22eb4196b47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/web-auth/webauthn-lib/zipball/768fb8cf7bebaad8a08b3015e206dda95e3320fa",
-                "reference": "768fb8cf7bebaad8a08b3015e206dda95e3320fa",
+                "url": "https://api.github.com/repos/web-auth/webauthn-lib/zipball/7f38dbcf07cd22ec104fa6eb720df22eb4196b47",
+                "reference": "7f38dbcf07cd22ec104fa6eb720df22eb4196b47",
                 "shasum": ""
             },
             "require": {
@@ -10990,7 +10989,7 @@
                 "webauthn"
             ],
             "support": {
-                "source": "https://github.com/web-auth/webauthn-lib/tree/5.3.15"
+                "source": "https://github.com/web-auth/webauthn-lib/tree/5.3.17"
             },
             "funding": [
                 {
@@ -11002,8 +11001,8 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2026-11-18T16:46:55+00:00",
-            "published-time": "2026-11-19T11:40:19+00:00"
+            "time": "2026-11-23T18:46:47+00:00",
+            "published-time": "2026-11-24T07:58:53+00:00"
         },
         {
             "name": "webmozart/assert",
