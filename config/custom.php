@@ -47,16 +47,6 @@ return [
             'srcset' => [320, 768, 1024, 1400],
             'sizes' => '(min-width: 1024px) 373px, 100vw',
         ],
-        'section:none:steps' => [
-            'width' => 320,
-            'srcset' => [320, 768, 1024, 1400],
-            'sizes' => '(min-width: 1024px) 33vw, 100vw',
-        ],
-        'section:contain:steps' => [
-            'width' => 320,
-            'srcset' => [320, 768, 1024, 1400],
-            'sizes' => '(min-width: 1280px) 389px, (min-width: 1024px) 304px, 100vw',
-        ],
         'section:none:content-cards' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
@@ -66,16 +56,6 @@ return [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
             'sizes' => '(min-width: 1280px) 389px, (min-width: 768px) 30vw, 100vw',
-        ],
-        'section:none:showcase' => [
-            'width' => 320,
-            'srcset' => [320, 768, 1024, 1400],
-            'sizes' => '(min-width: 1024px) 50vw, 100vw',
-        ],
-        'section:contain:showcase' => [
-            'width' => 320,
-            'srcset' => [320, 768, 1024, 1400],
-            'sizes' => '(min-width: 1280px) 584px, (min-width: 1024px) 45vw, 100vw',
         ],
         'section:none:faqs' => [
             'width' => 320,

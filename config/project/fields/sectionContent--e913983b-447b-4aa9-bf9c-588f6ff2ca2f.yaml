@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: contentBlock
+handle: sectionContent
 instructions: null
-name: 'Content Block'
+name: 'Section Content'
 searchable: false
 settings:
   createButtonLabel: 'New content block'
@@ -76,14 +76,6 @@ settings:
       __assoc__:
         -
           - uid
-          - c23595e5-62be-4f04-b180-0411df260b64 # Showcase
-        -
-          - group
-          - General
-    -
-      __assoc__:
-        -
-          - uid
           - adf4e920-a376-49f3-8733-3733051a3f4c # CTA
         -
           - group
@@ -93,14 +85,6 @@ settings:
         -
           - uid
           - 2ee8ad4c-a735-4992-8ea3-b6e2d0930377 # Logos
-        -
-          - group
-          - General
-    -
-      __assoc__:
-        -
-          - uid
-          - 77018bc1-5b35-451b-b35c-46a2d4e451aa # Steps
         -
           - group
           - General

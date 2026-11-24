@@ -100,7 +100,7 @@ templates/
 ├── _layouts/          Base HTML layouts
 ├── _partials/         Layout partials (header, footer, skip-link)
 ├── _components/       Reusable UI components; they take the values they show
-│   └── cards/         One card per kind (content, showcase)
+│   └── cards/         One card per kind (content)
 ├── _builder/          Reads CMS content and passes it to components
 │   ├── blocks/        One template per content block
 │   ├── cards/         Reads an entry for its card (default.twig, or one per entry type)

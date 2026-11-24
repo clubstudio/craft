@@ -19,7 +19,7 @@
             {% block content %}
                 {% include '_builder/builder' with {
                     context: 'section',
-                    blocks: block.contentBlock.eagerly().all(),
+                    blocks: block.sectionContent.eagerly().all(),
                     transformKey: transformKey,
                 } only %}
             {% endblock %}

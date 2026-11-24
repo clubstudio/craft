@@ -10,7 +10,7 @@ fieldLayouts:
       -
         handle: contentType
         name: 'Content Type'
-        template: "{{ contentBlock.one.type.name ?? 'Unknown' }}"
+        template: "{{ sectionContent.all()|map(b => b.type.name)|join(', ') ?: 'Empty' }}"
         uid: 0a237c9c-4735-459e-b3e3-24aa3d16102a
     tabs:
       -
@@ -65,10 +65,10 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: e913983b-447b-4aa9-bf9c-588f6ff2ca2f # Content Block
-            handle: contentBlock
+            fieldUid: e913983b-447b-4aa9-bf9c-588f6ff2ca2f # Section Content
+            handle: null
             instructions: null
-            label: 'Content Block'
+            label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
