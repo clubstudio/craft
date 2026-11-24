@@ -2,11 +2,7 @@ defaultPlacement: end
 enableVersioning: true
 entryTypes:
   -
-    uid: 2b8d277c-c134-499a-bb5b-11c2bec12bb1 # Basic
-  -
-    uid: da7038fd-c908-441e-8a14-90d1f530e8ca # Index
-  -
-    uid: 4e4bdd9a-9db7-4578-b3ba-e7cd7a6658c6 # Profile
+    uid: 2b8d277c-c134-499a-bb5b-11c2bec12bb1 # Builder
 handle: pages
 maxAuthors: 1
 minAuthors: 1

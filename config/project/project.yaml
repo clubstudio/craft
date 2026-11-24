@@ -1,4 +1,4 @@
-dateModified: 1795526579
+dateModified: 1795526975
 elementSources:
   craft\elements\Entry:
     -
@@ -114,7 +114,7 @@ meta:
     1b69a2ba-578a-4016-a46c-2bb3c40f8c91: 'Text Elements' # Text Elements
     1cc3e83c-680b-483a-9d51-c2d6de10221b: 'Text & Media' # Text & Media
     1ef86f4f-bc26-4199-b65d-f354b70f8fba: Logos # Logos
-    2b8d277c-c134-499a-bb5b-11c2bec12bb1: Basic # Basic
+    2b8d277c-c134-499a-bb5b-11c2bec12bb1: Builder # Builder
     2debe9c4-8aef-459d-94e1-8490bd05cc6f: New # New
     2ee8ad4c-a735-4992-8ea3-b6e2d0930377: Logos # Logos
     03a2afff-8e7c-45e2-8078-c71d1ac627a3: 'Content Cards' # Content Cards
@@ -125,7 +125,6 @@ meta:
     4c1e65ea-bd76-45a2-9b25-2e7d92a12ff0: Link # Link
     4c291e60-4cbf-4007-badf-2b3b7a7ef66f: 'Main Navigation' # Main Navigation
     4d109d67-14c0-415f-aca1-42cac4c6640c: Form # Form
-    4e4bdd9a-9db7-4578-b3ba-e7cd7a6658c6: Profile # Profile
     4e472aae-8399-4bd0-ae02-daf1b837bdfd: 'Content Blocks' # Content Blocks
     5b44e3df-c613-4972-be8b-ba2874a67656: Icon # Icon
     5c86e823-c1de-4e1e-a517-7ab40b8724a0: Home # Home
@@ -184,7 +183,6 @@ meta:
     af72e76d-2752-456f-a86c-e9fe22eaaf71: Testimonial # Testimonial
     aff5ab29-35f9-43c1-bfc1-8419394f1987: 'Text Content' # Text Content
     b1d95554-25a7-42c3-822d-09155f628a4b: $CRAFT_SITE_NAME # $CRAFT_SITE_NAME
-    b5ab890b-067e-4b4c-9221-8311a3749f1d: User # User
     b5c0e079-285c-4a6f-a12a-2c7c44b21068: 'Link Style' # Link Style
     b15bb767-c33c-443c-8536-0b08e9e1d3df: Padding # Padding
     b462f6b0-2e3a-40f9-abce-64bccae77910: Accordion # Accordion
@@ -199,7 +197,6 @@ meta:
     d363d288-d9a6-466d-82f0-a0fdd9530d71: Form # Form
     d10795ff-f335-4264-8cdb-189e8c03d30d: Statistic # Statistic
     d14159c6-01c5-410d-b1c8-785d25b4027f: Tag # Tag
-    da7038fd-c908-441e-8a14-90d1f530e8ca: Index # Index
     e2c74420-bbaf-40c8-acf9-daf436a33bbd: 'Maximum Width' # Maximum Width
     e3cda67e-8c3a-4c54-b1d6-0e9468607930: Eyebrow # Eyebrow
     e6b9a7b0-4786-4d98-aa93-e7de2a709e9c: 'Social Network' # Social Network
@@ -210,7 +207,6 @@ meta:
     e913983b-447b-4aa9-bf9c-588f6ff2ca2f: 'Section Content' # Section Content
     ea252716-954a-4e85-b183-4852be96df43: Tags # Tags
     f01ab0c4-931a-46aa-bcec-67b6c6941e21: 'Plain Text' # Plain Text
-    f9f5b927-df42-44aa-9851-28659f875ab1: 'Entry Type' # Entry Type
     f70322ae-4170-462e-b3f4-138012e301da: Pages # Pages
     fd532b74-9e46-4921-867f-79a80ef26fdf: $CRAFT_SITE_NAME # $CRAFT_SITE_NAME
 plugins:

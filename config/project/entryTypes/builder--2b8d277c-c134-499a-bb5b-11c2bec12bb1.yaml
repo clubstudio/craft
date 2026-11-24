@@ -2,7 +2,7 @@ allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
-  55cd85aa-776e-41de-94d9-7a638999c4e0:
+  43c5fa8f-583b-44e1-a926-fa0719ab5c7f:
     cardThumbAlignment: end
     tabs:
       -
@@ -13,7 +13,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2025-07-04T14:41:04+00:00'
+            dateAdded: '2025-01-23T14:01:48+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -32,34 +32,56 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 614bcd84-1e16-4a19-afda-c288708420cb
+            uid: 9263a32d-681e-4211-bbca-ea3099d8fccc
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-07-04T14:43:47+00:00'
+            dateAdded: '2025-01-23T15:53:33+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: b5ab890b-067e-4b4c-9221-8311a3749f1d # User
+            fieldUid: 4e472aae-8399-4bd0-ae02-daf1b837bdfd # Content Blocks
+            handle: contentBlocks
+            instructions: null
+            label: 'Content Blocks'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d4ebf333-fbe2-4298-a294-5b85b5c07001
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 91b07da5-ae7e-4129-8767-862fb11c1c89
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-01-23T14:45:05+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 948057e1-04f5-43cb-8a4d-43e67384f5eb # SEO
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 0a773646-0ed9-43e9-8c6a-b68c3a3aa2e8
+            uid: 3f7516d0-f458-4d97-a379-fc44d57d5715
             userCondition: null
             warning: null
             width: 100
-        name: Content
-        uid: 820d2f05-ef8d-4ffb-8bce-89bbde2310f6
+        name: Meta
+        uid: bdaa36a0-07ad-4053-818f-b8325f887335
         userCondition: null
     thumbFieldKey: null
-handle: profile
+handle: builder
 hasTitleField: true
-icon: id-badge
-name: Profile
+icon: page
+name: Builder
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null

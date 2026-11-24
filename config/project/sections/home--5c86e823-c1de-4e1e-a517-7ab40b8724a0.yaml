@@ -2,7 +2,7 @@ defaultPlacement: end
 enableVersioning: true
 entryTypes:
   -
-    uid: 2b8d277c-c134-499a-bb5b-11c2bec12bb1 # Basic
+    uid: 2b8d277c-c134-499a-bb5b-11c2bec12bb1 # Builder
 handle: home
 maxAuthors: 1
 minAuthors: 1
