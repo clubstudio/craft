@@ -54,6 +54,28 @@ settings:
       __assoc__:
         -
           - label
+          - Pinterest
+        -
+          - value
+          - pinterest
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Threads
+        -
+          - value
+          - threads
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
           - TikTok
         -
           - value
@@ -69,6 +91,17 @@ settings:
         -
           - value
           - twitch
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Vimeo
+        -
+          - value
+          - vimeo
         -
           - default
           - ''
