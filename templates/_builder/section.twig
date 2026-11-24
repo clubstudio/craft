@@ -5,8 +5,6 @@
     class: [
         classes.paddingTop(block.paddingTop.value),
         classes.paddingBottom(block.paddingBottom.value),
-        classes.backgroundColor(block.backgroundColor.value ?? 'none'),
-        classes.textAlignment(block.textAlignment.value ?? 'left')
     ]|join(' '),
 }) }}>
     {% block content %}
