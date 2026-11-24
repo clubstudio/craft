@@ -1,4 +1,4 @@
-dateModified: 1795526127
+dateModified: 1795526579
 elementSources:
   craft\elements\Entry:
     -
@@ -164,7 +164,6 @@ meta:
     7631edb0-1fb5-477f-96bd-57ded88a1c47: 'FAQ Entry' # FAQ Entry
     21500d84-7ee2-479d-93db-750c756557cd: Video # Video
     24905e06-d0a8-486d-b05e-2d1128c9230e: 'Social Profiles' # Social Profiles
-    49503bab-aabd-4544-81ed-930f73f2e23e: 'Article Content' # Article Content
     62083fb6-1a8c-49b9-9782-374ce3b3a7c8: 'Rich Text (Basic)' # Rich Text (Basic)
     89326ae0-829f-4d01-b5df-878778d42c99: 'Video Track' # Video Track
     198475be-dc00-42d7-8ed4-b48aa2865944: Paragraph # Paragraph
