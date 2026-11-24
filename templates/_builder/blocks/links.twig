@@ -7,5 +7,7 @@
         target: link.hyperlink.target ?? null,
         rel: link.hyperlink.rel ?? null,
         ariaLabel: link.hyperlink.ariaLabel ?? null,
+        download: (link.hyperlink.download ?? false) ? (link.hyperlink.filename ?: true) : null,
+        id: link.hyperlink.id ?? null,
     }),
 } only %}

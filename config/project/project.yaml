@@ -1,4 +1,4 @@
-dateModified: 1795558155
+dateModified: 1795558815
 elementSources:
   craft\elements\Entry:
     -
@@ -34,7 +34,7 @@ elementSources:
         - asc
       defaultViewMode: ''
       key: 'custom:df961f47-2162-40b0-9469-6ba0b892cacb'
-      label: 'Home'
+      label: Home
       page: Entries
       tableAttributes:
         - status

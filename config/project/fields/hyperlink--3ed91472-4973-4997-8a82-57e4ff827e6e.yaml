@@ -10,6 +10,7 @@ settings:
     - rel
     - ariaLabel
     - download
+    - id
   fullGraphqlData: false
   maxLength: 255
   showLabelField: true
@@ -22,7 +23,7 @@ settings:
             -
               - sources
               -
-                - singles
+                - 'custom:df961f47-2162-40b0-9469-6ba0b892cacb'
                 - 'section:f70322ae-4170-462e-b3f4-138012e301da' # Pages
             -
               - showUnpermittedSections
@@ -39,16 +40,17 @@ settings:
               - ''
             -
               - allowAnchors
-              - ''
+              - '1'
             -
               - allowCustomSchemes
               - ''
   types:
     - entry
     - url
-    - category
     - email
     - tel
+tip: null
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Link
+warning: null

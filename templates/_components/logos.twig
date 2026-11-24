@@ -1,4 +1,4 @@
-{# A row of logos. Each logo is { image, url, target, rel, ariaLabel }; the link fields are optional. #}
+{# A row of logos. Each logo is { image, url, target, rel, ariaLabel, download, id }; the link fields are optional. #}
 {% set data = {
     logos: [],
     class: null,
@@ -23,6 +23,8 @@
                     target: logo.target ?? null,
                     rel: newTab ? ((logo.rel ?? null) ?: 'noopener') : (logo.rel ?? null),
                     'aria-label': label ? label ~ (newTab ? ' ' ~ '(opens in a new tab)'|t) : null,
+                    download: logo.download ?? null,
+                    id: logo.id ?? null,
                 } : {} %}
                     {% if asset.format == 'svg' %}
                         {{ svgs.asset(asset, url ? {

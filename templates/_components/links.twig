@@ -1,4 +1,4 @@
-{# A row of buttons. Each link is { url, text, theme, target, rel, ariaLabel }. #}
+{# A row of buttons. Each link is { url, text, theme, target, rel, ariaLabel, download, id }. #}
 {% set data = {
     links: [],
 }|merge(_context) %}
@@ -20,6 +20,8 @@
                         target: link.target ?? null,
                         rel: link.rel ?? null,
                         'aria-label': link.ariaLabel ?? null,
+                        download: link.download ?? null,
+                        id: link.id ?? null,
                     },
                 } only %}
             </li>

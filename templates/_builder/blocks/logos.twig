@@ -6,5 +6,7 @@
         target: logo.hyperlink.target ?? null,
         rel: logo.hyperlink.rel ?? null,
         ariaLabel: logo.hyperlink.ariaLabel ?? null,
+        download: (logo.hyperlink.download ?? false) ? (logo.hyperlink.filename ?: true) : null,
+        id: logo.hyperlink.id ?? null,
     }),
 } only %}
