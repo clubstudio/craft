@@ -22,22 +22,12 @@
     }, preference) -}}
 {% endmacro %}
 
-{% macro maxWidth(preference = 'none') %}
+{# Caps the content of a Medium or Narrow section; Full width and Full bleed have no cap. #}
+{% macro contentMaxWidth(preference = null) %}
     {{- attribute({
-        none: 'max-w-none',
-        contain: 'px-6 md:px-8 lg:px-16 xl:px-20 2xl:px-32 3xl:px-48 4xl:px-60',
-        xs: 'md:max-w-xs',
-        sm: 'max-w-sm',
-        md: 'max-w-md',
-        lg: 'max-w-lg',
-        xl: 'max-w-xl',
-        '2xl': 'max-w-2xl',
-        '3xl': 'max-w-3xl',
-        '4xl': 'max-w-4xl',
-        '5xl': 'max-w-5xl',
-        '6xl': 'max-w-6xl',
-        '7xl': 'max-w-7xl',
-    }, preference) -}}
+        medium: 'max-w-medium',
+        narrow: 'max-w-narrow',
+    }, preference) ?? '' -}}
 {% endmacro %}
 
 {% macro horizontalAlignment(preference = 'none') %}
@@ -108,9 +98,11 @@
     }, preference) -}}
 {% endmacro %}
 
+{# In a Full bleed Text and Media block, the text keeps the gutter on its outer side only. #}
 {% macro sectionTextContainer(preference = null) %}
     {{- attribute({
-        'section:none:media-right': 'px-6 md:px-8 lg:pr-0 lg:pl-16 xl:pl-20 2xl:pl-32 3xl:pl-48 4xl:pl-60',
+        'section:full-bleed:text-and-media:media-right': 'px-gutter lg:pr-0',
+        'section:full-bleed:text-and-media:media-left': 'px-gutter lg:pl-0',
     }, preference) ?? null -}}
 {% endmacro %}
 

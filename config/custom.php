@@ -12,60 +12,70 @@ return [
             'srcset' => [64, 128, 192],
             'sizes' => '64px',
         ],
-        'section:none' => [
+        'section:full-bleed' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400, 2800],
             'sizes' => '100vw',
         ],
-        'section:none:columns:2' => [
+        'section:full-bleed:columns:2' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
             'sizes' => '(min-width: 1280px) 742px, (min-width: 1024px) 384px, 100vw',
         ],
-        'section:none:text-and-media' => [
+        'section:full-bleed:text-and-media' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
             'sizes' => '(min-width: 1280px) 742px, (min-width: 1024px) 384px, 100vw',
         ],
-        'section:contain:text-and-media' => [
+        'section:full-width:text-and-media' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
             'sizes' => '(min-width: 1280px) 584px, (min-width: 1024px) 296px, 100vw',
         ],
-        'section:contain' => [
+        'section:full-width' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400, 2800],
             'sizes' => '(min-width: 1280px) 1216px, (min-width: 1024px) 960px, 100vw',
         ],
-        'section:contain:columns:2' => [
+        'section:full-width:columns:2' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
             'sizes' => '(min-width: 1280px) 584px, (min-width: 1024px) 584px, 100vw',
         ],
-        'section:contain:columns:3' => [
+        'section:full-width:columns:3' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
             'sizes' => '(min-width: 1024px) 373px, 100vw',
         ],
-        'section:none:content-cards' => [
+        'section:full-bleed:content-cards' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
             'sizes' => '(min-width: 768px) 33vw, 100vw',
         ],
-        'section:contain:content-cards' => [
+        'section:full-width:content-cards' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
             'sizes' => '(min-width: 1280px) 389px, (min-width: 768px) 30vw, 100vw',
         ],
-        'section:none:faqs' => [
+        'section:full-bleed:faqs' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
             'sizes' => '(min-width: 1024px) 33vw, 100vw',
         ],
-        'section:contain:faqs' => [
+        'section:full-width:faqs' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
             'sizes' => '(min-width: 1280px) 397px, (min-width: 1024px) 312px, 100vw',
+        ],
+        'section:medium' => [
+            'width' => 320,
+            'srcset' => [320, 768, 1024, 1400, 2048],
+            'sizes' => '(min-width: 1088px) 1024px, 100vw',
+        ],
+        'section:narrow' => [
+            'width' => 320,
+            'srcset' => [320, 720, 1024, 1440],
+            'sizes' => '(min-width: 784px) 720px, 100vw',
         ],
         'hero' => [
             'width' => 640,

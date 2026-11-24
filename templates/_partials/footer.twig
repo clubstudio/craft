@@ -1,9 +1,7 @@
-{% import '_macros/classes' as classes %}
-
 {% set callToActionText = globals.callToAction.eagerly().all() %}
 
 <footer class="py-6">
-    <div class="{{ classes.maxWidth('contain') }} grid grid-cols-1 md:grid-cols-3 gap-12 justify-between text-sm mb-12">
+    <div class="px-gutter grid grid-cols-1 md:grid-cols-3 gap-12 justify-between text-sm mb-12">
         {% if callToActionText|length %}
             <div class="space-y-6">
                 {% include '_builder/builder' with {
@@ -22,7 +20,7 @@
             </div>
         {% endif %}
     </div>
-    <div class="{{ classes.maxWidth('contain') }} flex flex-wrap gap-6 justify-between text-xs">
+    <div class="px-gutter flex flex-wrap gap-6 justify-between text-xs">
         <div class="flex flex-wrap items-center gap-6">
             {% if globals.copyrightNotice|length %}
                 <p>{{ globals.copyrightNotice|replace({

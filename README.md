@@ -130,7 +130,6 @@ The builder system allows content editors to compose pages using reusable blocks
 {% include '_builder/builder' with {
     context: 'page',
     blocks: entry.contentBlocks.all(),
-    transformKey: 'section:contain'
 } only %}
 ```
 
@@ -140,7 +139,7 @@ The builder system allows content editors to compose pages using reusable blocks
 - Supports nested blocks for complex layouts
 
 **Template Resolution Order:**
-1. `_builder/blocks/{context}/{block-type}.twig` (context-specific override)
+1. `_builder/blocks/{context}/{block-type}.twig` (context-specific override, for each context in turn)
 2. `_builder/blocks/{block-type}.twig` (default)
 
 **Example contexts:** `page`, `hero`, `footer`, `columns/2`, `text-and-media`
@@ -151,10 +150,13 @@ Images use contextual transforms defined in `config/custom.php` for optimal resp
 
 **Transform Key Pattern:**
 Keys are built hierarchically as blocks nest:
-- `section:none` - Full-width section
-- `section:contain` - Constrained section
-- `section:contain:columns:2` - 2-column layout in constrained section
-- `section:contain:text-and-media` - Text + media block
+- `section:full-bleed` - Full bleed section (edge to edge)
+- `section:full-width` - Full width section (inside the site's gutters)
+- `section:medium`, `section:narrow` - Capped content widths
+- `section:full-width:columns:2` - 2-column layout in a full width section
+- `section:full-width:text-and-media` - Text + media block
+
+A key that isn't in `config/custom.php` falls back to its nearest parent that is (`section:narrow:columns:2` uses `section:narrow`), then to `default`.
 
 **Building Transform Keys:**
 ```twig
@@ -168,11 +170,15 @@ Keys are built hierarchically as blocks nest:
 3. Match the hierarchical key pattern
 
 **Debug Mode:**
-In development mode, HTML comments show the transform key used for each image.
+In development mode, HTML comments show the transform key used for each image, and the key it fell back to.
+
+### Content Width and Gutters
+
+A Section's **Content Width** sets how wide its content is: Full bleed (edge to edge), Full width (inside the gutters, the default), Medium or Narrow. The gutter is one CSS variable, `--gutter` in `src/css/site.css`, used through the `px-gutter` class by sections, the header, footer and hero. The Medium and Narrow widths are `--container-medium` and `--container-narrow` in the same file.
 
 ### Template Conventions
 
-- Block templates receive `block` and `transformKey` variables
+- Block templates receive `block`, `context` and `transformKey` variables
 - Use `block.fieldName.eagerly().one()` or `.all()` for related content
 - Use `{{ 'Text'|t }}` for all user-facing strings (translation support)
 - Include SVGs with `{{ svg('@svg/path.svg')|attr({...}) }}`

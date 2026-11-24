@@ -1,4 +1,4 @@
-dateModified: 1795526975
+dateModified: 1795528781
 elementSources:
   craft\elements\Entry:
     -
@@ -150,6 +150,7 @@ meta:
     223faaad-f244-41a3-bef4-0d188899acee: 'Image (Inline)' # Image (Inline)
     248c238c-0963-4912-a62b-ec82b667e1b4: 'Testimonial Entry' # Testimonial Entry
     274bbd5f-3859-4d8f-91c3-f68ebbb29720: Columns # Columns
+    564b3fcc-e728-4b24-ba12-1da690fe2e3f: 'Content Width' # Content Width
     650c6872-2c55-4840-955f-de309ced444c: 'Contact Form' # Contact Form
     728cd480-2381-49e3-9aab-e4af7f8306d0: 'Video Tracks' # Video Tracks
     1414d7cb-fb98-4f48-88f2-e5b2401cf402: 'Horizontal Alignment' # Horizontal Alignment
@@ -197,7 +198,6 @@ meta:
     d363d288-d9a6-466d-82f0-a0fdd9530d71: Form # Form
     d10795ff-f335-4264-8cdb-189e8c03d30d: Statistic # Statistic
     d14159c6-01c5-410d-b1c8-785d25b4027f: Tag # Tag
-    e2c74420-bbaf-40c8-acf9-daf436a33bbd: 'Maximum Width' # Maximum Width
     e3cda67e-8c3a-4c54-b1d6-0e9468607930: Eyebrow # Eyebrow
     e6b9a7b0-4786-4d98-aa93-e7de2a709e9c: 'Social Network' # Social Network
     e7c39107-95e6-401c-8be7-a07e337fb7b7: 'Rich Text' # Rich Text

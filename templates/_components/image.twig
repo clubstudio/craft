@@ -13,14 +13,22 @@
 {% import '_macros/media' as media %}
 
 {% set transforms = craft.app.config.custom.transforms %}
-{% set transformKey = data.transformKey ?? 'default' %}
-{% set transformFound = attribute(transforms, transformKey) is defined %}
-{% set transformInfo = transformFound ? attribute(transforms, transformKey) : transforms.default %}
+{# Use the key, or the nearest parent key that exists (section:narrow:columns:2 → section:narrow:columns → section:narrow), then default. #}
+{% set requestedKey = data.transformKey ?? 'default' %}
+{% set parts = requestedKey|split(':') %}
+{% set transformKey = 'default' %}
+{% for length in parts|length..1 %}
+    {% set candidate = parts|slice(0, length)|join(':') %}
+    {% if transformKey == 'default' and attribute(transforms, candidate) is defined %}
+        {% set transformKey = candidate %}
+    {% endif %}
+{% endfor %}
+{% set transformInfo = attribute(transforms, transformKey) %}
 {% set aspectRatio = media.aspectRatio(data.aspectRatio, data.image)|string|float ?: 4 / 3 %}
 
 {% if data.image %}
     {% if craft.app.config.general.devMode %}
-        <!-- Image Transform Key: {{ transformKey }}{{ not transformFound ? ' (not in config/custom.php, using default)' }} -->
+        <!-- Image Transform Key: {{ requestedKey }}{{ transformKey != requestedKey ? ' (not in config/custom.php, using ' ~ transformKey ~ ')' }} -->
     {% endif %}
 
     <div class="{{ classes.aspectRatio(data.aspectRatio) }} overflow-hidden">

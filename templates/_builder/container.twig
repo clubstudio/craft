@@ -1,12 +1,12 @@
 {% import '_macros/classes' as classes %}
 
-<div {{ attr({
-    class: [
-        classes.maxWidth(block.maximumWidth.value),
-        classes.horizontalAlignment(block.horizontalAlignment.value),
-    ]|join(' ')
-}) }}>
-    {% block content %}
-        <p>Default Container Content</p>
-    {% endblock %}
+{% set width = block.contentWidth.value ?? 'full-width' %}
+{% set capped = width in ['medium', 'narrow'] %}
+
+<div{% if width != 'full-bleed' %} class="px-gutter"{% endif %}>
+    <div{% if capped %} class="{{ classes.contentMaxWidth(width) }} {{ classes.horizontalAlignment(block.horizontalAlignment.value ?? 'center') }}"{% endif %}>
+        {% block content %}
+            <p>Default Container Content</p>
+        {% endblock %}
+    </div>
 </div>

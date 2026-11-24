@@ -1,17 +1,17 @@
 {#
   Section Block
   
-  Wraps content in a section with padding and width controls.
-  Builds transform key for nested images: section:{maxWidth}
-  
+  Wraps content in a section with padding and a content width.
+  Builds transform key for nested images: section:{contentWidth}
+
   Examples:
-  - section:none
-  - section:contain
-  - section:contain:columns:2 (when columns nested inside)
+  - section:full-width
+  - section:narrow
+  - section:full-width:columns:2 (when columns nested inside)
 #}
 {% import '_macros/transforms' as transforms %}
 
-{% set transformKey = transforms.buildKey([transformKey, 'section', block.maximumWidth.value]) %}
+{% set transformKey = transforms.buildKey([transformKey, 'section', block.contentWidth.value ?? 'full-width']) %}
 
 {% embed '_builder/section' with { block: block, transformKey: transformKey } only %}
     {% block content %}

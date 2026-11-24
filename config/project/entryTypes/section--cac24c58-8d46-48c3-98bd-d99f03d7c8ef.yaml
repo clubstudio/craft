@@ -8,8 +8,8 @@ fieldLayouts:
       - 'generatedField:0a237c9c-4735-459e-b3e3-24aa3d16102a'
     generatedFields:
       -
-        handle: contentType
-        name: 'Content Type'
+        handle: contentSummary
+        name: 'Content Summary'
         template: "{{ sectionContent.all()|map(b => b.type.name)|join(', ') ?: 'Empty' }}"
         uid: 0a237c9c-4735-459e-b3e3-24aa3d16102a
     tabs:
@@ -53,6 +53,7 @@ fieldLayouts:
             handle: anchor
             instructions: 'Optional. Lets you link straight to this section, e.g. "pricing" for /page#pricing. Spaces and capitals are converted for you.'
             label: Anchor
+            oldFieldUid: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -69,6 +70,7 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
+            oldFieldUid: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -83,30 +85,45 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-07-02T14:43:53+00:00'
+            dateAdded: '2026-11-24T13:54:51+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: e2c74420-bbaf-40c8-acf9-daf436a33bbd # Maximum Width
+            fieldUid: 564b3fcc-e728-4b24-ba12-1da690fe2e3f # Content Width
             handle: null
-            instructions: null
+            instructions: "How wide the content is. Full bleed runs edge to edge; the others keep the site's side padding."
             label: null
+            oldFieldUid: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 30c819fc-3882-450c-a605-f29fa4739c31
+            uid: 3eeea290-ed9d-49a2-863b-febd9870b818
             userCondition: null
             warning: null
             width: 100
           -
             dateAdded: '2025-07-02T14:43:53+00:00'
             editCondition: null
-            elementCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 564b3fcc-e728-4b24-ba12-1da690fe2e3f # Content Width
+                  layoutElementUid: 3eeea290-ed9d-49a2-863b-febd9870b818
+                  operator: in
+                  uid: 481951af-c0a9-4147-8a5a-a2873f7ed3ce
+                  values:
+                    - medium
+                    - narrow
+              elementType: craft\elements\Entry
+              fieldContext: global
             elementEditCondition: null
             fieldUid: 1414d7cb-fb98-4f48-88f2-e5b2401cf402 # Horizontal Alignment
             handle: null
-            instructions: null
+            instructions: 'Where Medium or Narrow content sits.'
             label: null
+            oldFieldUid: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -114,7 +131,7 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: Container
+        name: Layout
         uid: ca33b0b3-fcc2-4d78-b449-32aa57add704
         userCondition: null
       -
@@ -129,6 +146,7 @@ fieldLayouts:
             handle: paddingTop
             instructions: null
             label: 'Padding Top'
+            oldFieldUid: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -145,6 +163,7 @@ fieldLayouts:
             handle: paddingBottom
             instructions: null
             label: 'Padding Bottom'
+            oldFieldUid: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
