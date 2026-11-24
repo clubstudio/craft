@@ -1,4 +1,4 @@
-dateModified: 1795556575
+dateModified: 1795556748
 elementSources:
   craft\elements\Entry:
     -
@@ -55,7 +55,7 @@ elementSources:
         - desc
       defaultViewMode: ''
       disabled: false
-      key: 'section:ad112b66-5fdd-4015-b741-ddda3f744de9' # Frequently Asked Questions
+      key: 'section:ad112b66-5fdd-4015-b741-ddda3f744de9' # FAQs
       page: Entries
       tableAttributes:
         - status
@@ -172,7 +172,7 @@ meta:
     a4855d49-a669-433d-a2f9-a410916ece9f: Files # Files
     a49385d7-d5af-4d02-a3b0-40a69c749712: Paragraph # Paragraph
     ac23a061-b6b4-4ab7-9d91-648ecffc6c7f: 'Testimonial Entry' # Testimonial Entry
-    ad112b66-5fdd-4015-b741-ddda3f744de9: 'Frequently Asked Questions' # Frequently Asked Questions
+    ad112b66-5fdd-4015-b741-ddda3f744de9: FAQs # FAQs
     ad584cc9-9bc5-42a0-b6a2-fc622ac321ae: New # New
     adf4e920-a376-49f3-8733-3733051a3f4c: CTA # CTA
     ae4f2361-8913-4891-ad95-3938347a1e55: 'Aspect Ratio' # Aspect Ratio
