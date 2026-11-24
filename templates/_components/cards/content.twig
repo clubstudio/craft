@@ -16,7 +16,7 @@
 {# A random suffix keeps the id unique when the same entry appears twice on a page. #}
 {% set titleId = 'content-card-title-' ~ random() %}
 
-<article {{ attr({ class: classes.combine(null, data.class)|trim ?: false }) }}>
+<article {{ attr({ class: classes.combine(null, data.class)|string ?: false }) }}>
     <a href="{{ data.url }}" class="flex flex-col justify-between h-full" aria-labelledby="{{ titleId }}">
         {% if data.image %}
             {% include '_components/image' with {

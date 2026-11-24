@@ -16,7 +16,7 @@
 {% set transformKey = data.transformKey ?? 'default' %}
 {% set transformFound = attribute(transforms, transformKey) is defined %}
 {% set transformInfo = transformFound ? attribute(transforms, transformKey) : transforms.default %}
-{% set aspectRatio = media.aspectRatio(data.aspectRatio, data.image) %}
+{% set aspectRatio = media.aspectRatio(data.aspectRatio, data.image)|string|float ?: 4 / 3 %}
 
 {% if data.image %}
     {% if craft.app.config.general.devMode %}
@@ -38,7 +38,7 @@
             sizes: transformInfo.sizes ?? null,
             loading: data.loading,
             decoding: data.decoding,
-            class: classes.combine(null, data.class)|trim,
+            class: classes.combine(null, data.class)|string,
         }|filter|merge({
             alt: data.alt ?? data.image.alt ?? '',
         })|merge(data.attributes)) }}

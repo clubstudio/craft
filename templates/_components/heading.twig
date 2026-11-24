@@ -18,7 +18,7 @@
 {% set element = data.level %}
 
 {% tag element with {
-    class: classes.combine([data.classMap[data.level], 'text-balance'], data.class),
+    class: classes.combine([data.classMap[data.level], 'text-balance'], data.class)|string,
 }|merge(data.attributes) %}
     {{ data.heading }}
 {% endtag %}
