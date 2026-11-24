@@ -4,9 +4,11 @@
     text: '',
     size: 'base',
     theme: 'primary',
-    classes: [],
+    class: null,
     attributes: {}
 }|merge(_context) %}
+
+{% import '_macros/classes' as classes %}
 
 {% set newTab = (data.attributes.target ?? null) == '_blank' %}
 {% set newTabText = '(opens in a new tab)'|t %}
@@ -32,15 +34,15 @@
     tertiary: '!p-0',
 } %}
 
-{% set classes = [
+{% set classList = classes.combine([
     'inline-block rounded-full',
     themeClasses[data.theme]|default(),
     sizeClasses[data.size]|default(),
-]|merge(data.classes)|join(' ') %}
+], data.class) %}
 
 {% if data.as == 'a' %}
     <span class="relative inline-flex">
-        <a href="{{ data.url }}" {{ attr(attributes) }} class="{{ classes }}">
+        <a href="{{ data.url }}" {{ attr(attributes) }} class="{{ classList }}">
             {{ data.text }}
             {%- if newTab %}<span class="sr-only"> {{ newTabText }}</span>{% endif %}
         </a>
@@ -51,5 +53,5 @@
         {% endif %}
     </span>
 {% else %}
-    <button {{ attr(attributes) }} type="button" class="{{ classes }}">{{ data.text }}</button>
+    <button {{ attr(attributes) }} type="button" class="{{ classList }}">{{ data.text }}</button>
 {% endif %}

@@ -1,7 +1,7 @@
 {% set data = {
     title: null,
     url: null,
-    class: 'w-full h-full object-cover',
+    class: null,
     aspectRatio: 'video',
     tracks: [],
     attributes: {
@@ -15,7 +15,7 @@
 
 {% if data.url %}
     <figure class="{{ classes.aspectRatio(data.aspectRatio) }}">
-        <video {{ attr(data.attributes) }} class="{{ data.class }}" aria-label="{{ data.title ?? 'Video'|t }}" preload="metadata">
+        <video {{ attr(data.attributes) }} class="{{ classes.combine('w-full h-full object-cover', data.class) }}" aria-label="{{ data.title ?? 'Video'|t }}" preload="metadata">
             <source src="{{ data.url }}" type="video/mp4">
             {% for track in data.tracks %}
                 {% set vttFile = track.vttFile.eagerly().one() %}

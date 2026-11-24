@@ -1,6 +1,7 @@
 {% set data = {
     level: 'h2',
     heading: '',
+    class: null,
     attributes: {},
     classMap: {
         h1: 'font-bold text-5xl',
@@ -12,10 +13,12 @@
     },
 }|merge(_context) %}
 
+{% import '_macros/classes' as classes %}
+
 {% set element = data.level %}
 
 {% tag element with {
-    class: data.classMap[data.level] ~ ' text-balance',
+    class: classes.combine([data.classMap[data.level], 'text-balance'], data.class),
 }|merge(data.attributes) %}
     {{ data.heading }}
 {% endtag %}

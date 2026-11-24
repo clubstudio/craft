@@ -1,3 +1,8 @@
+{# Joins a component's own classes with a caller's `class` input. Either may be a string, an array or null. #}
+{% macro combine(base, extra = null) %}
+    {{- ((base is iterable ? base : [base])|merge(extra is iterable ? extra : [extra]))|filter|join(' ') -}}
+{% endmacro %}
+
 {% macro paddingTop(preference = 'none') %}
     {{- attribute({
         none: 'pt-0',
