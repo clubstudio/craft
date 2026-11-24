@@ -1,4 +1,4 @@
-dateModified: 1795531656
+dateModified: 1795531872
 elementSources:
   craft\elements\Entry:
     -
@@ -111,7 +111,7 @@ mcp:
 meta:
   __names__:
     1b69a2ba-578a-4016-a46c-2bb3c40f8c91: 'Content Group' # Content Group
-    1cc3e83c-680b-483a-9d51-c2d6de10221b: 'Text & Media' # Text & Media
+    1cc3e83c-680b-483a-9d51-c2d6de10221b: 'Content & Media' # Content & Media
     1ef86f4f-bc26-4199-b65d-f354b70f8fba: Logos # Logos
     2b8d277c-c134-499a-bb5b-11c2bec12bb1: Builder # Builder
     2debe9c4-8aef-459d-94e1-8490bd05cc6f: New # New

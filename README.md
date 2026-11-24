@@ -142,7 +142,7 @@ The builder system allows content editors to compose pages using reusable blocks
 1. `_builder/blocks/{context}/{block-type}.twig` (context-specific override, for each context in turn)
 2. `_builder/blocks/{block-type}.twig` (default)
 
-**Example contexts:** `page`, `hero`, `footer`, `columns/2`, `text-and-media`
+**Example contexts:** `page`, `hero`, `footer`, `columns/2`, `content-and-media`
 
 ### Image Transform System
 
@@ -154,7 +154,7 @@ Keys are built hierarchically as blocks nest:
 - `section:full-width` - Full width section (inside the site's gutters)
 - `section:medium`, `section:narrow` - Capped content widths
 - `section:full-width:columns:2` - 2-column layout in a full width section
-- `section:full-width:text-and-media` - Text + media block
+- `section:full-width:content-and-media` - Content & Media block
 
 A key that isn't in `config/custom.php` falls back to its nearest parent that is (`section:narrow:columns:2` uses `section:narrow`), then to `default`.
 

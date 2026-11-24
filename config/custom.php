@@ -22,12 +22,12 @@ return [
             'srcset' => [320, 768, 1024, 1400],
             'sizes' => '(min-width: 1280px) 742px, (min-width: 1024px) 384px, 100vw',
         ],
-        'section:full-bleed:text-and-media' => [
+        'section:full-bleed:content-and-media' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
             'sizes' => '(min-width: 1280px) 742px, (min-width: 1024px) 384px, 100vw',
         ],
-        'section:full-width:text-and-media' => [
+        'section:full-width:content-and-media' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
             'sizes' => '(min-width: 1280px) 584px, (min-width: 1024px) 296px, 100vw',

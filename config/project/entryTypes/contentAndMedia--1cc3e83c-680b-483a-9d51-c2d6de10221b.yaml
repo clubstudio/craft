@@ -178,10 +178,10 @@ fieldLayouts:
         uid: e5545267-423a-4364-aa58-913a6d4e8c87
         userCondition: null
     thumbFieldKey: null
-handle: textAndMedia
+handle: contentAndMedia
 hasTitleField: false
 icon: photo-film
-name: 'Text & Media'
+name: 'Content & Media'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null

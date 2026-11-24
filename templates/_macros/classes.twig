@@ -87,11 +87,11 @@
     }, preference) -}}
 {% endmacro %}
 
-{# In a Full bleed Text and Media block, the text keeps the gutter on its outer side only. #}
+{# In a Full bleed Content & Media block, the text keeps the gutter on its outer side only. #}
 {% macro sectionTextContainer(preference = null) %}
     {{- attribute({
-        'section:full-bleed:text-and-media:media-right': 'px-gutter lg:pr-0',
-        'section:full-bleed:text-and-media:media-left': 'px-gutter lg:pl-0',
+        'section:full-bleed:content-and-media:media-right': 'px-gutter lg:pr-0',
+        'section:full-bleed:content-and-media:media-left': 'px-gutter lg:pl-0',
     }, preference) ?? null -}}
 {% endmacro %}
 

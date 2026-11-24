@@ -20,7 +20,7 @@ settings:
       __assoc__:
         -
           - uid
-          - 1cc3e83c-680b-483a-9d51-c2d6de10221b # Text & Media
+          - 1cc3e83c-680b-483a-9d51-c2d6de10221b # Content & Media
         -
           - group
           - General

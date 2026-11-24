@@ -1,14 +1,14 @@
 {#
-  Text and Media Block
+  Content & Media Block
 
-  Two-column layout with text content and media (image or video).
-  Builds transform key for nested images: {parent}:text-and-media
+  Two-column layout: a stack of Content beside media (image or video).
+  Builds transform key for nested images: {parent}:content-and-media
 #}
 {% import '_macros/classes' as classes %}
 {% import '_macros/transforms' as transforms %}
 
 {% set textRight = block.mediaPosition.value == 'left' %}
-{% set transformKey = transforms.buildKey([transformKey, 'text-and-media']) %}
+{% set transformKey = transforms.buildKey([transformKey, 'content-and-media']) %}
 
 <div class="
     grid grid-cols-1 lg:grid-cols-2
@@ -44,7 +44,7 @@
     <div class="flex items-center justify-center {{ textRight ? 'lg:order-2' : 'lg:order-1' }} {{ classes.sectionTextContainer(textClassKey ?? null) }}">
         <div class="space-y-6">
             {% include '_builder/builder' with {
-                context: 'text-and-media',
+                context: 'content-and-media',
                 blocks: block.content.eagerly().all(),
                 transformKey: transformKey,
             } only %}
