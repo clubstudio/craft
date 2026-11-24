@@ -6,3 +6,7 @@
 /web/assets/*
 !/web/assets/.gitkeep
 .DS_Store
+
+# Claude Code (personal, per machine)
+/.claude/settings.local.json
+/CLAUDE.local.md
