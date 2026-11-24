@@ -33,15 +33,15 @@
                 <nav aria-label="{{ 'Footer navigation'|t }}">
                     <ul class="flex flex-wrap gap-6">
                         {% for node in nodes %}
-                            <li class="{% if node.classes | length %}{{ node.classes }}{% endif %}">
-                                {% if node.url %}
-                                    <a href="{{ node.url }}" class="{% if node.active %}is-active{% endif %}"{% if node.active %} aria-current="page"{% endif %}{% if node.newWindow %} target="_blank" rel="noopener"{% endif %} {% for attribute in node.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %}>
-                                        {{- node.title -}}
-                                        {%- if node.newWindow %}<span class="sr-only"> {{ '(opens in a new tab)'|t }}</span>{% endif -%}
-                                    </a>
-                                {% else %}
-                                    <span>{{ node.title }}</span>
-                                {% endif %}
+                            <li>
+                                {% set tag = node.getTag() %}
+                                <{{ tag }} {{ node.getLinkAttributes({
+                                    class: node.active ? ['is-active'] : [],
+                                    'aria-current': node.active and tag == 'a' ? 'page' : null,
+                                }) }}>
+                                    {{- node.title -}}
+                                    {%- if node.newWindow %}<span class="sr-only"> {{ '(opens in a new tab)'|t }}</span>{% endif -%}
+                                </{{ tag }}>
                             </li>
                         {% endfor %}
                     </ul>

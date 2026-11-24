@@ -19,6 +19,7 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
+            oldFieldUid: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -47,7 +48,8 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
-            required: false
+            oldFieldUid: null
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 81c15d28-c414-4db2-a526-a4db15cd017b
@@ -75,6 +77,7 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
+            oldFieldUid: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -103,6 +106,7 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
+            oldFieldUid: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -119,6 +123,7 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
+            oldFieldUid: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -135,13 +140,14 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
+            oldFieldUid: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: c2b4bf69-f738-4df9-b00b-352275c2960a
             userCondition: null
             warning: null
-            width: 50
+            width: 100
           -
             dateAdded: '2025-04-23T12:39:31+00:00'
             editCondition: null
@@ -151,13 +157,20 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
+            oldFieldUid: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 560a8471-d090-4787-aa57-5a1097600f43
             userCondition: null
             warning: null
-            width: 50
+            width: 100
+          -
+            dateAdded: '2026-11-24T15:01:47+00:00'
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: e655b79f-cf44-40d8-a73c-72c89d09fb39
+            userCondition: null
           -
             dateAdded: '2025-01-23T18:35:31+00:00'
             editCondition: null
@@ -167,6 +180,7 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
+            oldFieldUid: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

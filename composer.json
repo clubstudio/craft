@@ -8,8 +8,8 @@
     "nystudio107/craft-retour": "^5.0.12",
     "nystudio107/craft-seomatic": "^5.1.18",
     "nystudio107/craft-vite": "^5.0.0",
-    "verbb/formie": "^3.1.4",
-    "verbb/navigation": "^3.0.13",
+    "verbb/formie": "^4.1.0",
+    "verbb/navigation": "^4.1.1",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {

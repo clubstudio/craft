@@ -9,7 +9,14 @@
                 <ul class="flex space-x-8 group text-[15px]">
                     {% for node in nodes %}
                         <li>
-                            <a href="{{ node.url }}" class="{{ node.active ? 'underline underline-offset-4' }}"{% if node.active %} aria-current="page"{% endif %}>{{ node.title }}</a>
+                            {% set tag = node.getTag() %}
+                            <{{ tag }} {{ node.getLinkAttributes({
+                                class: node.active ? ['underline', 'underline-offset-4'] : [],
+                                'aria-current': node.active and tag == 'a' ? 'page' : null,
+                            }) }}>
+                                {{- node.title -}}
+                                {%- if node.newWindow %}<span class="sr-only"> {{ '(opens in a new tab)'|t }}</span>{% endif -%}
+                            </{{ tag }}>
                         </li>
                     {% endfor %}
                 </ul>
