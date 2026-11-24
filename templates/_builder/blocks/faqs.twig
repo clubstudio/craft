@@ -44,14 +44,20 @@
     {% endif %}
 </div>
 
-{% set jsonLd = seomatic.jsonLd.create({
-    'type': 'FAQPage',
-    'mainEntity': faqs|map(faq => {
+{# A page gets one FAQPage, so each FAQs block adds its questions to the one already there. #}
+{% if faqs|length %}
+    {% set questions = faqs|map(faq => {
         'type': 'Question',
         'name': faq.question,
         'acceptedAnswer': {
             'type': 'Answer',
             'text': faq.answer|striptags,
-        }
-    })
-}, true) %}
+        },
+    }) %}
+
+    {% do seomatic.jsonLd.create({
+        'type': 'FAQPage',
+        'key': 'faqPage',
+        'mainEntity': (seomatic.jsonLd.get('faqPage').mainEntity ?? [])|merge(questions),
+    }) %}
+{% endif %}
