@@ -174,7 +174,7 @@ In development mode, HTML comments show the transform key used for each image, a
 
 ### Content Width and Gutters
 
-A Section's **Content Width** sets how wide its content is: Full bleed (edge to edge), Full width (inside the gutters, the default), Medium or Narrow. The gutter is one CSS variable, `--gutter` in `src/css/site.css`, used through the `px-gutter` class by sections, the header, footer and hero. The Medium and Narrow widths are `--container-medium` and `--container-narrow` in the same file.
+A Section's **Content Width** sets how wide its content is: Full bleed (edge to edge), Full width (inside the gutters, the default), Medium or Narrow. The gutter is one CSS variable, `--gutter` in `src/css/site.css`, used through the `px-gutter` class by sections, the header, footer and hero. The Medium and Narrow widths are `--container-medium` and `--container-narrow` in the same file, and the space between blocks in a Section is `--block-gap`, used through `gap-block`.
 
 ### Template Conventions
 

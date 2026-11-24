@@ -4,7 +4,7 @@
 {% set capped = width in ['medium', 'narrow'] %}
 
 <div{% if width != 'full-bleed' %} class="px-gutter"{% endif %}>
-    <div{% if capped %} class="{{ classes.contentMaxWidth(width) }} {{ classes.horizontalAlignment(block.horizontalAlignment.value ?? 'center') }}"{% endif %}>
+    <div class="flex flex-col gap-block{% if capped %} {{ classes.contentMaxWidth(width) }} {{ classes.horizontalAlignment(block.horizontalAlignment.value ?? 'center') }}{% endif %}">
         {% block content %}
             <p>Default Container Content</p>
         {% endblock %}
