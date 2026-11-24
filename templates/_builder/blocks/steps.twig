@@ -1,35 +1,28 @@
 {#
   Steps Block
-  
-  Creates a scrollable/grid layout for step-by-step content.
+
+  A numbered list of steps: a snap scroller on small screens, a grid from lg.
   Builds transform key for nested images: {parent}:steps
 #}
-{% import '_macros/classes' as classes %}
 {% import '_macros/transforms' as transforms %}
 
 {% set steps = block.steps.eagerly().all() %}
 {% set transformKey = transforms.buildKey([transformKey, 'steps']) %}
 
 {% if steps|length %}
-    <div class="
+    {# role="list" keeps list semantics in Safari, which drops them when list styles are removed. #}
+    <ol role="list" class="
         relative
         flex flex-nowrap
         overflow-x-scroll snap-x snap-mandatory no-scrollbar
         lg:grid lg:grid-cols-3
         gap-6
+        *:snap-center *:shrink-0 *:w-[calc(100vw-1.5rem)] lg:*:w-auto
     ">
-        {% for column in steps %}
-            <div class="snap-center w-[calc(100vw-1.5rem)] shrink-0 lg:col-span-1 lg:w-auto">
-                {% include [
-                    '_builder/blocks/steps/' ~ steps|length ~ '/' ~ column.type|kebab,
-                    '_builder/blocks/steps/' ~ column.type|kebab,
-                    '_builder/blocks/' ~ column.type|kebab,
-                ] with {
-                    block: column,
-                    context: 'steps',
-                    transformKey: transformKey,
-                } only %}
-            </div>
-        {% endfor %}
-    </div>
+        {% include '_builder/builder' with {
+            blocks: steps,
+            context: ['steps/' ~ steps|length, 'steps'],
+            transformKey: transformKey,
+        } only %}
+    </ol>
 {% endif %}

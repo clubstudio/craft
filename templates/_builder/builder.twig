@@ -1,25 +1,28 @@
 {#
   Content Builder
 
-  Iterates through blocks and includes appropriate templates with context-aware fallbacks.
+  Renders a list of blocks, choosing each one's template by context.
 
   Variables:
-  - blocks: Array of content blocks to render
-  - context: Optional context for template resolution (e.g., 'page', 'hero', 'columns/2')
-  - transformKey: Key for image transform configuration (see config/custom.php)
+  - blocks: the blocks to render
+  - context: optional, a name or a list of names tried in order (e.g. ['columns/2', 'columns'])
+  - transformKey: optional, the image transform key so far (see config/custom.php)
 
-  Template Resolution Order:
-  1. _builder/blocks/{context}/{block-type}.twig (context-specific override)
-  2. _builder/blocks/{block-type}.twig (default)
+  Template resolution, for each context in turn, then the default:
+  1. _builder/blocks/{context}/{block-type}.twig
+  2. _builder/blocks/{block-type}.twig
+
+  Each block receives block, context (as a list) and transformKey.
 #}
-{% set context = context ?? null %}
+{% set contexts = (context ?? null) is iterable ? context : [context ?? null] %}
+{% set contexts = contexts|filter %}
 
 {% for block in blocks %}
-    {% include [
-        '_builder/blocks/' ~ context ~ '/' ~ block.type|kebab,
-        '_builder/blocks/' ~ block.type|kebab,
-    ] with {
+    {% set type = block.type|kebab %}
+
+    {% include contexts|map(name => '_builder/blocks/' ~ name ~ '/' ~ type)|merge(['_builder/blocks/' ~ type]) with {
         block: block,
-        transformKey: transformKey ?? block.type
+        context: contexts,
+        transformKey: transformKey ?? null,
     } only %}
 {% endfor %}

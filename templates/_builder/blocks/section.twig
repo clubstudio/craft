@@ -11,7 +11,7 @@
 #}
 {% import '_macros/transforms' as transforms %}
 
-{% set transformKey = transforms.buildKey([transformKey, block.maximumWidth.value]) %}
+{% set transformKey = transforms.buildKey([transformKey, 'section', block.maximumWidth.value]) %}
 
 {% embed '_builder/section' with { block: block, transformKey: transformKey } only %}
     {% block content %}
