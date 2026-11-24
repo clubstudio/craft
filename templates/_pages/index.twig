@@ -18,12 +18,13 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                     {% for entry in entries %}
                         {% include [
-                            '_builder/blocks/content-cards/' ~ entry.type|kebab,
-                            '_builder/blocks/content-card',
+                            '_builder/cards/' ~ entry.type|kebab,
+                            '_builder/cards/default',
                         ] with {
                             entry: entry,
-                            context: 'content-cards',
+                            kind: 'content',
                             headingLevel: 'h2',
+                            transformKey: 'section:contain:content-cards',
                         } only %}
                     {% endfor %}
                 </div>

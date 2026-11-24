@@ -1,0 +1,38 @@
+{# A card for an entry in a Showcase block. It takes the values it shows; _builder/cards/ reads them from the entry. #}
+{% set data = {
+    url: null,
+    title: '',
+    eyebrow: null,
+    image: null,
+    summary: null,
+    headingLevel: 'h3',
+    transformKey: null,
+    aspectRatio: 'square',
+    class: null,
+}|merge(_context) %}
+
+{% import '_macros/classes' as classes %}
+
+{# A random suffix keeps the id unique when the same entry appears twice on a page. #}
+{% set titleId = 'showcase-card-title-' ~ random() %}
+
+<article {{ attr({ class: classes.combine(null, data.class)|trim ?: false }) }}>
+    <a href="{{ data.url }}" class="flex flex-col justify-between" aria-labelledby="{{ titleId }}">
+        {% if data.image %}
+            {% include '_components/image' with {
+                image: data.image,
+                alt: '',
+                transformKey: data.transformKey,
+                aspectRatio: data.aspectRatio ?: 'square',
+                class: 'w-full h-full object-cover',
+            } only %}
+        {% endif %}
+        {% if data.eyebrow %}
+            <div class="mb-2">{{ data.eyebrow }}</div>
+        {% endif %}
+        {% tag data.headingLevel ?: 'h3' with { id: titleId } %}{{ data.title }}{% endtag %}
+        {% if data.summary %}
+            <p class="mt-2 body-copy">{{ data.summary }}</p>
+        {% endif %}
+    </a>
+</article>

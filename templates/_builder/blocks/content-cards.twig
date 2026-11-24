@@ -3,6 +3,9 @@
   
   Grid of content cards with optional header text.
 #}
+{% import '_macros/transforms' as transforms %}
+
+{% set transformKey = transforms.buildKey([transformKey, 'content-cards']) %}
 {% set textContent = block.textContent.eagerly().all() %}
 {% set cards = block.contentCards.eagerly().all() %}
 
@@ -20,11 +23,11 @@
         {% set entry = card.entry.eagerly().one() %}
         {% if entry %}
             {% include [
-                '_builder/blocks/content-cards/' ~ entry.type|kebab,
-                '_builder/blocks/content-card',
+                '_builder/cards/' ~ entry.type|kebab,
+                '_builder/cards/default',
             ] with {
                 entry: entry,
-                context: 'content-cards',
+                kind: 'content',
                 transformKey: transformKey,
             } only %}
         {% endif %}

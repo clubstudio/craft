@@ -7,7 +7,14 @@
 {% import '_macros/transforms' as transforms %}
 
 {% set featuredEntries = block.entries.eagerly().all() %}
-{% set links = block.links.eagerly().all() %}
+{% set links = block.links.eagerly().all()|map(link => {
+    url: link.hyperlink.url ?? null,
+    text: link.hyperlink.label ?? null,
+    theme: link.linkStyle.value ?? 'primary',
+    target: link.hyperlink.target ?? null,
+    rel: link.hyperlink.rel ?? null,
+    ariaLabel: link.hyperlink.ariaLabel ?? null,
+}) %}
 {% set transformKey = transforms.buildKey([transformKey, 'showcase']) %}
 
 {% if featuredEntries|length %}
@@ -18,13 +25,13 @@
         {% for featuredEntry in featuredEntries %}
             <div class="basis-1/2 flex flex-col">
                 {% include [
-                    '_builder/blocks/showcase/' ~ featuredEntry.type|kebab,
-                    '_builder/blocks/showcase-preview',
-                 ] with {
+                    '_builder/cards/' ~ featuredEntry.type|kebab,
+                    '_builder/cards/default',
+                ] with {
                     entry: featuredEntry,
-                    context: 'showcase',
+                    kind: 'showcase',
                     transformKey: transformKey,
-                    aspectRatio: loop.first ? 'aspect-square' : 'aspect-[3/4]',
+                    aspectRatio: loop.first ? 'square' : 'photo-portrait',
                 } only %}
 
                 {% if loop.first and links|length %}

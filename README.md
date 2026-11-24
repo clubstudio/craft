@@ -98,9 +98,11 @@ This boilerplate uses a flexible content builder pattern with reusable component
 templates/
 ├── _layouts/          Base HTML layouts
 ├── _partials/         Layout partials (header, footer, skip-link)
-├── _components/       Reusable UI components
-├── _builder/          Content builder system
-│   ├── blocks/        Individual content blocks
+├── _components/       Reusable UI components; they take the values they show
+│   └── cards/         One card per kind (content, showcase)
+├── _builder/          Reads CMS content and passes it to components
+│   ├── blocks/        One template per content block
+│   ├── cards/         Reads an entry for its card (default.twig, or one per entry type)
 │   ├── builder.twig   Block renderer
 │   ├── section.twig   Section wrapper
 │   └── container.twig Container wrapper
@@ -140,7 +142,7 @@ The builder system allows content editors to compose pages using reusable blocks
 1. `_builder/blocks/{context}/{block-type}.twig` (context-specific override)
 2. `_builder/blocks/{block-type}.twig` (default)
 
-**Example contexts:** `page`, `hero`, `footer`, `columns/2`, `content-cards`
+**Example contexts:** `page`, `hero`, `footer`, `columns/2`, `text-and-media`
 
 ### Image Transform System
 
