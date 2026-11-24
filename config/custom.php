@@ -20,67 +20,57 @@ return [
         'section:full-bleed:columns:2' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
-            'sizes' => '(min-width: 1280px) 742px, (min-width: 1024px) 384px, 100vw',
+            'sizes' => '(min-width: 1024px) calc((100vw - 1.5rem) / 2), 100vw',
         ],
         'section:full-bleed:content-and-media' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
-            'sizes' => '(min-width: 1280px) 742px, (min-width: 1024px) 384px, 100vw',
+            'sizes' => '(min-width: 1024px) calc((100vw - 1.5rem) / 2), 100vw',
         ],
         'section:full-width:content-and-media' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
-            'sizes' => '(min-width: 1280px) 584px, (min-width: 1024px) 296px, 100vw',
+            'sizes' => '(min-width: 1536px) calc((100vw - 17.5rem) / 2), (min-width: 1280px) calc((100vw - 11.5rem) / 2), (min-width: 1024px) calc((100vw - 9.5rem) / 2), (min-width: 768px) calc(100vw - 4rem), calc(100vw - 3rem)',
         ],
         'section:full-width' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400, 2800],
-            'sizes' => '(min-width: 1280px) 1216px, (min-width: 1024px) 960px, 100vw',
+            'sizes' => '(min-width: 1536px) calc(100vw - 16rem), (min-width: 1280px) calc(100vw - 10rem), (min-width: 1024px) calc(100vw - 8rem), (min-width: 768px) calc(100vw - 4rem), calc(100vw - 3rem)',
         ],
         'section:full-width:columns:2' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
-            'sizes' => '(min-width: 1280px) 584px, (min-width: 1024px) 584px, 100vw',
+            'sizes' => '(min-width: 1536px) calc((100vw - 17.5rem) / 2), (min-width: 1280px) calc((100vw - 11.5rem) / 2), (min-width: 1024px) calc((100vw - 9.5rem) / 2), (min-width: 768px) calc(100vw - 4rem), calc(100vw - 3rem)',
         ],
         'section:full-width:columns:3' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
-            'sizes' => '(min-width: 1024px) 373px, 100vw',
-        ],
-        'section:full-bleed:content-cards' => [
-            'width' => 320,
-            'srcset' => [320, 768, 1024, 1400],
-            'sizes' => '(min-width: 768px) 33vw, 100vw',
-        ],
-        'section:full-width:content-cards' => [
-            'width' => 320,
-            'srcset' => [320, 768, 1024, 1400],
-            'sizes' => '(min-width: 1280px) 389px, (min-width: 768px) 30vw, 100vw',
+            'sizes' => '(min-width: 1536px) calc((100vw - 19rem) / 3), (min-width: 1280px) calc((100vw - 13rem) / 3), (min-width: 1024px) calc((100vw - 11rem) / 3), (min-width: 768px) calc(100vw - 4rem), calc(100vw - 3rem)',
         ],
         'section:full-bleed:faqs' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
-            'sizes' => '(min-width: 1024px) 33vw, 100vw',
+            'sizes' => '(min-width: 1024px) calc((100vw - 1.5rem) / 3), 100vw',
         ],
         'section:full-width:faqs' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
-            'sizes' => '(min-width: 1280px) 397px, (min-width: 1024px) 312px, 100vw',
+            'sizes' => '(min-width: 1536px) calc((100vw - 17.5rem) / 3), (min-width: 1280px) calc((100vw - 11.5rem) / 3), (min-width: 1024px) calc((100vw - 9.5rem) / 3), (min-width: 768px) calc(100vw - 4rem), calc(100vw - 3rem)',
         ],
         'section:medium' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400, 2048],
-            'sizes' => '(min-width: 1088px) 1024px, 100vw',
+            'sizes' => '(min-width: 1152px) 1024px, (min-width: 1024px) calc(100vw - 8rem), (min-width: 768px) calc(100vw - 4rem), calc(100vw - 3rem)',
         ],
         'section:narrow' => [
             'width' => 320,
             'srcset' => [320, 720, 1024, 1440],
-            'sizes' => '(min-width: 784px) 720px, 100vw',
+            'sizes' => '(min-width: 784px) 720px, (min-width: 768px) calc(100vw - 4rem), calc(100vw - 3rem)',
         ],
         'hero' => [
             'width' => 640,
             'srcset' => [640, 960, 1280, 1920, 2560],
-            'sizes' => '(min-width: 1024px) 50vw, 100vw',
+            'sizes' => '(min-width: 1536px) calc((100vw - 17.5rem) / 2), (min-width: 1280px) calc((100vw - 11.5rem) / 2), (min-width: 1024px) calc((100vw - 9.5rem) / 2), (min-width: 768px) calc(100vw - 4rem), calc(100vw - 3rem)',
         ],
         'image-inline' => [
             'width' => 96,
