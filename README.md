@@ -29,6 +29,7 @@ Install or update [DDEV](https://ddev.com/) (which requires [Docker](https://dde
    ```
    ddev composer create-project "clubstudio/craft"
    ```
+   This replaces this README with one for your project, from `README.md.default`, and removes the starter's own `AGENTS.md`.
 4. Run Craft's installer, answering each prompt as it's asked:
    ```
    ddev craft install

@@ -1,0 +1,72 @@
+# Site name
+
+<!-- Replace the heading with the site's name, and add a line on what the site is and who it's for. -->
+
+A Craft CMS 5 site, built on Club Studio's [`clubstudio/craft`](https://github.com/clubstudio/craft) starter. It runs locally in [DDEV](https://ddev.com/), bundles assets with [Vite](https://vite.dev/) and styles with [Tailwind CSS](https://tailwindcss.com).
+
+## Getting started
+
+Install or update [DDEV](https://ddev.com/) (which needs Docker), then, from the project folder:
+
+```
+ddev start
+ddev composer install
+ddev npm install
+cp .env.example.dev .env
+ddev craft setup/keys
+```
+
+Then either import a copy of the database:
+
+```
+ddev import-db --file=path/to/dump.sql.gz
+ddev craft up
+```
+
+or install Craft from scratch with `ddev craft install`.
+
+Run `ddev launch` to open the site, and `ddev launch /admin` for the control panel.
+
+## Developing
+
+Start the Vite dev server, with hot reloading, and leave it running while you work:
+
+```
+ddev npm run dev
+```
+
+Pages render without styles unless it's running. To build optimised, cache-busted assets into `web/dist/`:
+
+```
+ddev npm run build
+```
+
+Run `ddev stop` when you've finished.
+
+## Project config
+
+The site's schema (fields, entry types, sections and settings) lives in `config/project/` as YAML, under version control.
+
+- After pulling changes, sync your database with `ddev craft project-config/apply`.
+- In `dev`, schema changes made in the control panel are written back to `config/project/`. Commit the YAML with the templates that use it.
+
+## Templates
+
+```
+templates/
+├── _layouts/      Document layouts
+├── _partials/     Header, footer, skip link
+├── _pages/        One template per page entry type
+├── _builder/      Reads CMS content and passes it to components
+│   ├── blocks/    One template per content block
+│   └── cards/     Reads an entry for its card
+├── _components/   Reusable UI; components take the values they show
+│   └── cards/     One card per kind
+└── _macros/       Class maps, transform keys, SVG assets
+```
+
+Pages are composed by editors from blocks in the page builder. Image sizes for each layout are set by transform keys in `config/custom.php`.
+
+## MCP
+
+Craft's built-in MCP server lets AI assistants read and manage the site's content and schema in local development only. It answers at `/admin/mcp` when `CRAFT_ENVIRONMENT=dev`, and is switched off everywhere else. In Claude Code, run `/mcp`, choose `craft`, sign in to Craft and approve the request.
