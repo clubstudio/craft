@@ -18,7 +18,7 @@ fieldLayouts:
             elementCondition: null
             id: null
             inputType: null
-            instructions: null
+            instructions: 'What the figure measures, such as “Clients”.'
             label: null
             max: null
             min: null
@@ -43,7 +43,7 @@ fieldLayouts:
             elementEditCondition: null
             fieldUid: f01ab0c4-931a-46aa-bcec-67b6c6941e21 # Plain Text
             handle: value
-            instructions: null
+            instructions: 'The figure, such as 98% or 12k.'
             label: Value
             required: false
             tip: null

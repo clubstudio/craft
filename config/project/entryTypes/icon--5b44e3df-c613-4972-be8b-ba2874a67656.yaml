@@ -15,7 +15,7 @@ fieldLayouts:
             elementEditCondition: null
             fieldUid: d0c7900e-d61c-4839-a59e-70bb47358360 # Image
             handle: asset
-            instructions: null
+            instructions: 'An SVG. It’s decorative, so screen readers skip it.'
             label: Icon
             required: false
             tip: null

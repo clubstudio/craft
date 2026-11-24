@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: videoTracks
-instructions: null
+instructions: 'Captions as WebVTT (.vtt) files. Add them to any video with speech.'
 name: 'Video Tracks'
 searchable: false
 settings:

@@ -37,7 +37,7 @@ fieldLayouts:
             elementEditCondition: null
             fieldUid: aff5ab29-35f9-43c1-bfc1-8419394f1987 # Content
             handle: callToAction
-            instructions: null
+            instructions: 'Shown in the footer of every page.'
             label: 'Call to Action'
             required: false
             tip: null
@@ -53,7 +53,7 @@ fieldLayouts:
             elementEditCondition: null
             fieldUid: d363d288-d9a6-466d-82f0-a0fdd9530d71 # Form
             handle: newsletterForm
-            instructions: null
+            instructions: 'Shown in the footer of every page.'
             label: 'Newsletter Form'
             required: false
             tip: null

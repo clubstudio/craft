@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: headingLevel
-instructions: null
+instructions: 'Use H2 for most headings, and H3 for headings within them. Use H1 only for the page’s main heading, once per page.'
 name: 'Heading Level'
 searchable: false
 settings:

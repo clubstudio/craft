@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: aspectRatio
-instructions: null
+instructions: 'The shape the image is cropped to. Auto keeps the image’s own shape.'
 name: 'Aspect Ratio'
 searchable: false
 settings:

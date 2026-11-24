@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: mediaPosition
-instructions: null
+instructions: 'Which side the media sits on, on larger screens. On mobiles, it’s shown above the content.'
 name: 'Media Position'
 searchable: false
 settings:

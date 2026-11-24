@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: faqs
-instructions: null
+instructions: 'Write a question here, or add an FAQ Entry to reuse one from the FAQs section.'
 name: FAQs
 searchable: false
 settings:

@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: code
-instructions: null
+instructions: 'The tag’s full code, including its <script> tags.'
 name: Code
 searchable: false
 settings:

@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: verticalAlignment
-instructions: null
+instructions: 'How side-by-side content of different heights lines up.'
 name: 'Vertical Alignment'
 searchable: false
 settings:

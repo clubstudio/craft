@@ -20,7 +20,7 @@ fieldLayouts:
             elementCondition: null
             id: null
             inputType: null
-            instructions: null
+            instructions: 'The name shown in the player’s captions menu, such as English.'
             label: Label
             max: null
             min: null

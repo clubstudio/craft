@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: columnLayout
-instructions: null
+instructions: 'The width of each column on larger screens, from left to right. On mobiles, columns stack.'
 name: 'Column Layout'
 searchable: false
 settings:

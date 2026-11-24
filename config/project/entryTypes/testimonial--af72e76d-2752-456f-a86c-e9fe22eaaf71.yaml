@@ -43,7 +43,7 @@ fieldLayouts:
             elementEditCondition: null
             fieldUid: d0c7900e-d61c-4839-a59e-70bb47358360 # Image
             handle: null
-            instructions: null
+            instructions: 'A headshot, shown small beside the person’s name.'
             label: null
             required: false
             tip: null

@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: testimonialEntry
-instructions: null
+instructions: 'Pick a testimonial from the Testimonials section.'
 name: 'Testimonial Entry'
 searchable: false
 settings:

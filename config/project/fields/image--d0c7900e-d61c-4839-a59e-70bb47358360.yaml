@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: image
-instructions: null
+instructions: 'Give the image alt text in Assets, unless it’s purely decorative.'
 name: Image
 searchable: false
 settings:

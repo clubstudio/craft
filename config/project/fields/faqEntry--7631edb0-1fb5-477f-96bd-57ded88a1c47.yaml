@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: faqEntry
-instructions: null
+instructions: 'Pick a question from the FAQs section.'
 name: 'FAQ Entry'
 searchable: false
 settings:

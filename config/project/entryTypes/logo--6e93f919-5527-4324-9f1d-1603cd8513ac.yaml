@@ -18,7 +18,7 @@ fieldLayouts:
             elementCondition: null
             id: null
             inputType: null
-            instructions: null
+            instructions: 'The organisation’s name. Only used within the content management system.'
             label: null
             max: null
             min: null
@@ -43,7 +43,7 @@ fieldLayouts:
             elementEditCondition: null
             fieldUid: d0c7900e-d61c-4839-a59e-70bb47358360 # Image
             handle: null
-            instructions: null
+            instructions: 'Use an SVG where possible, and give it alt text in Assets: usually the organisation’s name.'
             label: null
             required: true
             tip: null

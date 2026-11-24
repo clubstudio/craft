@@ -18,7 +18,7 @@ fieldLayouts:
             elementCondition: null
             id: null
             inputType: null
-            instructions: null
+            instructions: 'A short label above a heading, such as a category.'
             label: Text
             max: null
             min: null

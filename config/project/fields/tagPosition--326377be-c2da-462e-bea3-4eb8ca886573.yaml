@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: tagPosition
-instructions: null
+instructions: 'Head for tags that must load first, such as site verification. Body End for everything else.'
 name: 'Tag Position'
 searchable: false
 settings:
