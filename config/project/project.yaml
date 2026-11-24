@@ -1,4 +1,4 @@
-dateModified: 1795557170
+dateModified: 1795557951
 elementSources:
   craft\elements\Entry:
     -
@@ -18,6 +18,30 @@ elementSources:
         - link
       type: native
     -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\elements\conditions\entries\SectionConditionRule
+            operator: in
+            uid: df5d7009-8333-42b8-a4a0-42ed51b82755
+            values:
+              - 5c86e823-c1de-4e1e-a517-7ab40b8724a0 # Home
+        elementType: craft\elements\Entry
+        fieldContext: global
+      defaultSort:
+        - title
+        - asc
+      defaultViewMode: ''
+      key: 'custom:df961f47-2162-40b0-9469-6ba0b892cacb'
+      label: 'Home'
+      page: Entries
+      tableAttributes:
+        - status
+        - dateUpdated
+        - link
+      type: custom
+    -
       defaultSort:
         - structure
         - asc
@@ -27,20 +51,7 @@ elementSources:
       page: Entries
       tableAttributes:
         - status
-        - postDate
-        - expiryDate
-        - link
-      type: native
-    -
-      defaultSort:
-        - title
-        - asc
-      defaultViewMode: ''
-      disabled: false
-      key: singles
-      page: Entries
-      tableAttributes:
-        - status
+        - dateUpdated
         - link
       type: native
     -
@@ -58,22 +69,57 @@ elementSources:
       page: Entries
       tableAttributes:
         - status
-        - postDate
-        - expiryDate
-        - link
+        - dateUpdated
       type: native
     -
       defaultSort:
-        - postDate
-        - desc
+        - title
+        - asc
       defaultViewMode: ''
       disabled: false
       key: 'section:5748c0f6-c816-4cd6-ba8d-f497d9023f3f' # Testimonials
       page: Entries
       tableAttributes:
         - status
-        - postDate
-        - expiryDate
+        - dateUpdated
+      type: native
+    -
+      heading: Settings
+      key: 'heading:2eb6d058-9892-4621-b407-1c10906d9906'
+      page: Entries
+      type: heading
+    -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\elements\conditions\entries\SectionConditionRule
+            operator: in
+            uid: d389df5b-ac8a-4963-ac16-d86755e5acd7
+            values:
+              - c6ba79fe-02b0-4513-a81e-d59a8f5b89b8 # Site Settings
+        elementType: craft\elements\Entry
+        fieldContext: global
+      defaultSort:
+        - title
+        - asc
+      defaultViewMode: ''
+      key: 'custom:e2a2d658-4e98-40f0-8a3d-a8d22a401fe4'
+      label: 'Site Settings'
+      page: Entries
+      tableAttributes:
+        - dateUpdated
+      type: custom
+    -
+      defaultSort:
+        - title
+        - asc
+      defaultViewMode: ''
+      disabled: true
+      key: singles
+      page: Entries
+      tableAttributes:
+        - status
         - link
       type: native
 email:
