@@ -1,4 +1,11 @@
 {# Links: a row of buttons, each styled by the editor's choice. #}
 {% include '_components/links' with {
-    links: block.links.eagerly().all(),
+    links: block.links.eagerly().all()|map(link => {
+        url: link.hyperlink.url ?? null,
+        text: link.hyperlink.label ?? null,
+        theme: link.linkStyle.value ?? 'primary',
+        target: link.hyperlink.target ?? null,
+        rel: link.hyperlink.rel ?? null,
+        ariaLabel: link.hyperlink.ariaLabel ?? null,
+    }),
 } only %}

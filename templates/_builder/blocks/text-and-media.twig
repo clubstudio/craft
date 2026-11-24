@@ -31,7 +31,10 @@
                 aspectRatio: block.aspectRatio.value,
                 url: block.videoUrl,
                 title: block.title,
-                tracks: block.videoTracks.eagerly().all(),
+                tracks: block.videoTracks.eagerly().all()|map(track => {
+                    label: track.title,
+                    src: track.vttFile.eagerly().one().url ?? null,
+                }),
             } only %}
         {% endif %}
     </div>

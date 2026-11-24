@@ -4,6 +4,9 @@
         url: block.videoUrl,
         aspectRatio: block.aspectRatio.value,
         title: block.title,
-        tracks: block.videoTracks.eagerly().all(),
+        tracks: block.videoTracks.eagerly().all()|map(track => {
+            label: track.title,
+            src: track.vttFile.eagerly().one().url ?? null,
+        }),
     } only %}
 {% endif %}

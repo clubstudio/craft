@@ -17,17 +17,14 @@
     <figure class="{{ classes.aspectRatio(data.aspectRatio) }}">
         <video {{ attr(data.attributes) }} class="{{ classes.combine('w-full h-full object-cover', data.class) }}" aria-label="{{ data.title ?? 'Video'|t }}" preload="metadata">
             <source src="{{ data.url }}" type="video/mp4">
-            {% for track in data.tracks %}
-                {% set vttFile = track.vttFile.eagerly().one() %}
-                {% if vttFile %}
-                    <track
-                        label="{{ track.title }}"
-                        kind="captions"
-                        srclang="{{ craft.app.language|slice(0, 2) }}"
-                        src="{{ vttFile.url }}"
-                        {% if loop.first %} default {% endif %}
-                    />
-                {% endif %}
+            {% for track in data.tracks|filter(track => track.src ?? null) %}
+                <track
+                    label="{{ track.label ?? '' }}"
+                    kind="captions"
+                    srclang="{{ craft.app.language|slice(0, 2) }}"
+                    src="{{ track.src }}"
+                    {% if loop.first %} default {% endif %}
+                />
             {% endfor %}
             {{ 'Your browser does not support the video tag.'|t }}
         </video>
