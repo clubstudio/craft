@@ -52,7 +52,7 @@ fieldLayouts:
     thumbFieldKey: null
 handle: contentGroup
 hasTitleField: false
-icon: shapes
+icon: bars-staggered
 name: 'Content Group'
 showSlugField: false
 showStatusField: true
