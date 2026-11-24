@@ -1,3 +1,4 @@
+{# Accordion: expandable items, each a title and a body, using native <details>. #}
 <div class="divide-y">
     {% for item in block.accordionItems.eagerly().all() %}
         <details class="py-4 group">
