@@ -60,14 +60,6 @@ settings:
       __assoc__:
         -
           - uid
-          - 7b04b850-94c5-4f5f-8689-a5a2c5c17e18 # Content Cards
-        -
-          - group
-          - General
-    -
-      __assoc__:
-        -
-          - uid
           - 89b0ee7b-1530-4b52-9ba3-1335bc1eaf8e # FAQs
         -
           - group

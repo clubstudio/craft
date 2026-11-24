@@ -76,21 +76,6 @@
             } only %}
         </section>
 
-        <section class="flex flex-col gap-6">
-            {% include '_components/heading' with { heading: 'Content cards' } only %}
-            <div class="grid gap-6 md:grid-cols-3">
-                {% for i in 1..3 %}
-                    {% include '_components/cards/content' with {
-                        url: '#',
-                        title: 'Card title ' ~ i,
-                        eyebrow: 'Eyebrow',
-                        summary: 'A short summary of the entry the card links to.',
-                        image: i == 1 ? null : sampleImage,
-                    } only %}
-                {% endfor %}
-            </div>
-        </section>
-
         {% if sampleImage %}
             <section class="flex flex-col gap-6">
                 {% include '_components/heading' with { heading: 'Images' } only %}

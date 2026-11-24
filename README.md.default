@@ -58,10 +58,9 @@ templates/
 ├── _partials/     Header, footer, skip link
 ├── _pages/        One template per page entry type
 ├── _builder/      Reads CMS content and passes it to components
-│   ├── blocks/    One template per content block
-│   └── cards/     Reads an entry for its card
+│   └── blocks/    One template per content block
 ├── _components/   Reusable UI; components take the values they show
-│   └── cards/     One card per kind
+├── _styleguide/   Each component with sample values, at /styleguide in dev mode
 └── _macros/       Class maps, transform keys, SVG assets
 ```
 
