@@ -1,3 +1,4 @@
+{# Hero: the opening text elements beside an optional image, which uses the hero transform key. #}
 {% import '_macros/classes' as classes %}
 
 {% set image = block.image.eagerly().one() %}
@@ -8,7 +9,8 @@
             <figure aria-hidden="true" class="lg:order-2">
                 {% include '_components/image' with {
                     image: image,
-                    loading: 'sync',
+                    transformKey: 'hero',
+                    loading: 'eager',
                     aspectRatio: 'photo',
                     class: 'w-full h-full object-cover',
                     attributes: {

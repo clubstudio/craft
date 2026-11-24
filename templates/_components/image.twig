@@ -1,5 +1,6 @@
 {% set data = {
     image: null,
+    alt: null,
     transformKey: null,
     aspectRatio: null,
     class: null,
@@ -11,12 +12,15 @@
 {% import '_macros/classes' as classes %}
 {% import '_macros/media' as media %}
 
-{% set transformInfo = attribute(craft.app.config.custom.transforms, data.transformKey) ?? { width: 800 } %}
-{% set aspectRatio = media.aspectRatio(data.aspectRatio, data.image)|t %}
+{% set transforms = craft.app.config.custom.transforms %}
+{% set transformKey = data.transformKey ?? 'default' %}
+{% set transformFound = attribute(transforms, transformKey) is defined %}
+{% set transformInfo = transformFound ? attribute(transforms, transformKey) : transforms.default %}
+{% set aspectRatio = media.aspectRatio(data.aspectRatio, data.image) %}
 
 {% if data.image %}
     {% if craft.app.config.general.devMode %}
-        <!-- Image Transform Key: {{ data.transformKey }} -->
+        <!-- Image Transform Key: {{ transformKey }}{{ not transformFound ? ' (not in config/custom.php, using default)' }} -->
     {% endif %}
 
     <div class="{{ classes.aspectRatio(data.aspectRatio) }} overflow-hidden">
@@ -25,16 +29,18 @@
             height: transformInfo.width / aspectRatio
         }) %}
 
+        {# alt is set after the filter, so an empty value still renders alt="" for decorative images. #}
         {{ tag('img', {
             src: data.image.url,
             width: data.image.width,
             height: data.image.height,
             srcset: data.image.getSrcset(transformInfo.srcset ?? []),
             sizes: transformInfo.sizes ?? null,
-            alt: data.image.alt ?: data.image.title ?: null,
             loading: data.loading,
             decoding: data.decoding,
             class: data.class,
-        }|merge(data.attributes)|filter) }}
+        }|filter|merge({
+            alt: data.alt ?? data.image.alt ?? '',
+        })|merge(data.attributes)) }}
     </div>
 {% endif %}
