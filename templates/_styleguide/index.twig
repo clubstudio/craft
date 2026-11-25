@@ -173,6 +173,10 @@
                         {% endfor %}
                     </ul>
                 </div>
+                <div class="flex flex-col gap-4">
+                    {{ guide.label('Site logo') }}
+                    {% include '_components/site-logo' only %}
+                </div>
                 {% if sampleSvg %}
                     <div class="flex flex-col gap-4">
                         {{ guide.label('Icon block') }}

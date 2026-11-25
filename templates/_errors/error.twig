@@ -1,0 +1,8 @@
+{% extends '_layouts/error' %}
+
+{% block error %}
+    {% include '_components/error' with {
+        heading: 'Something went wrong'|t,
+        body: 'Sorry, there was a problem loading this page. Please try again in a few minutes.'|t,
+    } only %}
+{% endblock %}

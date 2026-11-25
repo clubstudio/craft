@@ -1,0 +1,15 @@
+{# The site logo from src/svg/logo.svg, linked to the homepage. Its accessible name is the site name. #}
+{% set data = {
+    url: url('/'),
+    label: siteName,
+    class: 'h-10 w-auto',
+}|merge(_context) %}
+
+<a href="{{ data.url }}" class="inline-flex shrink-0">
+    {{ svg('@svg/logo.svg')|attr({
+        class: data.class,
+        'aria-hidden': 'true',
+        focusable: 'false',
+    }) }}
+    <span class="sr-only">{{ data.label }}</span>
+</a>
