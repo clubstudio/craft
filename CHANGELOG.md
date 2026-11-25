@@ -4,7 +4,7 @@ Notable changes to the `clubstudio/craft` starter. The major version follows Cra
 
 Projects get their own copy of the starter when they're created, without this file, so nothing here reaches an existing site until it's ported.
 
-## 5.3.0 - Unreleased
+## 5.3.0 - 2026-11-25
 
 A review of the starter's content model, templates and accessibility, so it's a simpler base for editors and a more consistent one for developers.
 
