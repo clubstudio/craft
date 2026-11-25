@@ -1,5 +1,5 @@
 <nav aria-label="{{ 'Breadcrumb'|t }}">
-    <ol class="mb-6 flex flex-wrap gap-x-2">
+    <ol class="mb-6 flex flex-wrap gap-x-2 in-[.text-center]:justify-center in-[.text-right]:justify-end">
         {% for crumb in craft.navigation.urlBreadcrumbs() %}
             <li class="whitespace-nowrap">
                 {% if loop.last %}

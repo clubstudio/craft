@@ -9,7 +9,7 @@
 {% import '_macros/classes' as classes %}
 
 <figure {{ attr({ class: classes.combine(null, data.class)|string ?: false }) }}>
-    <figcaption class="flex items-center gap-6">
+    <figcaption class="flex items-center gap-6 in-[.text-center]:justify-center in-[.text-right]:justify-end">
         {% if data.image %}
             <div class="relative w-16 shrink-0">
                 {% include '_components/image' with {
