@@ -1,0 +1,11 @@
+{# A type specimen in the style guide: the sample, then its name, measured spec and source. #}
+<div data-specimen class="flex flex-col gap-3">
+    <div data-specimen-sample>
+        {% block sample '' %}
+    </div>
+    <p class="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs text-gray-500">
+        <span class="font-medium uppercase tracking-wider">{{ name }}</span>
+        <span data-specimen-spec class="font-mono"></span>
+        <span class="font-mono">{{ source }}</span>
+    </p>
+</div>
