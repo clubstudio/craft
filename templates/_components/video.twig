@@ -1,11 +1,12 @@
+{# A video with a custom play button. Without JavaScript the native controls show instead. #}
 {% set data = {
     title: null,
     url: null,
+    poster: null,
     class: null,
     aspectRatio: 'video',
     tracks: [],
     attributes: {
-        muted: true,
         controls: true,
         playsinline: true,
     },
@@ -14,8 +15,8 @@
 {% import '_macros/classes' as classes %}
 
 {% if data.url %}
-    <figure class="{{ classes.aspectRatio(data.aspectRatio) }}">
-        <video {{ attr(data.attributes) }} class="{{ classes.combine('w-full h-full object-cover', data.class) }}" aria-label="{{ data.title ?? 'Video'|t }}" preload="metadata">
+    <figure data-video class="relative overflow-hidden bg-black {{ classes.aspectRatio(data.aspectRatio) }}">
+        <video {{ attr(data.attributes|merge({ poster: data.poster ?: null })) }} class="{{ classes.combine('w-full h-full object-cover', data.class) }}" aria-label="{{ data.title ?? 'Video'|t }}" preload="metadata">
             <source src="{{ data.url }}" type="video/mp4">
             {% for track in data.tracks|filter(track => track.src ?? null) %}
                 <track
@@ -28,5 +29,10 @@
             {% endfor %}
             {{ 'Your browser does not support the video tag.'|t }}
         </video>
+        <button type="button" data-video-play hidden class="group absolute inset-0 flex items-center justify-center" aria-label="{{ data.title ? 'Play video: {title}'|t({ title: data.title }) : 'Play video'|t }}">
+            <span class="flex size-16 items-center justify-center rounded-full bg-black/70 text-white ring-1 ring-white/20 transition-transform group-hover:scale-110 motion-reduce:transition-none md:size-20">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" class="size-7 md:size-8"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.6-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14Z"/></svg>
+            </span>
+        </button>
     </figure>
 {% endif %}

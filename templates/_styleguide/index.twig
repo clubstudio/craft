@@ -1,210 +1,450 @@
 {% extends '_layouts/master' %}
 
 {% import '_macros/classes' as classes %}
+{% import _self as guide %}
 
 {% do seomatic.meta.seoTitle('Style guide') %}
 
 {% set sampleImage = craft.assets.kind('image').one() %}
 {% set sampleSvg = craft.assets.kind('image').filename('*.svg').one() %}
+{% set sampleVideo = craft.assets.kind('video').one() %}
 {% set sampleForm = craft.formie.forms().one() %}
+{% set socialNetworks = craft.app.fields.getFieldByHandle('socialNetwork').options ?? [] %}
+
+{# Class names are written out in full so Tailwind generates them. #}
+{% set colours = [
+    { name: 'Black', class: 'bg-black', token: '--color-black' },
+    { name: 'White', class: 'bg-white', token: '--color-white' },
+    { name: 'Gray 100', class: 'bg-gray-100', token: '--color-gray-100' },
+    { name: 'Gray 200', class: 'bg-gray-200', token: '--color-gray-200' },
+    { name: 'Gray 500', class: 'bg-gray-500', token: '--color-gray-500' },
+    { name: 'Red 700', class: 'bg-red-700', token: '--color-red-700', note: 'Errors' },
+    { name: 'Green 700', class: 'bg-green-700', token: '--color-green-700', note: 'Success' },
+] %}
+
+{% set socialColours = [
+    { name: 'Bluesky', class: 'bg-social-bluesky', token: '--color-social-bluesky' },
+    { name: 'Facebook', class: 'bg-social-facebook', token: '--color-social-facebook' },
+    { name: 'Instagram', class: 'bg-social-instagram', token: '--color-social-instagram' },
+    { name: 'LinkedIn', class: 'bg-social-linkedin', token: '--color-social-linkedin' },
+    { name: 'Pinterest', class: 'bg-social-pinterest', token: '--color-social-pinterest' },
+    { name: 'Threads', class: 'bg-social-threads', token: '--color-social-threads' },
+    { name: 'TikTok', class: 'bg-social-tiktok', token: '--color-social-tiktok' },
+    { name: 'Twitch', class: 'bg-social-twitch', token: '--color-social-twitch' },
+    { name: 'Vimeo', class: 'bg-social-vimeo', token: '--color-social-vimeo' },
+    { name: 'WhatsApp', class: 'bg-social-whatsapp', token: '--color-social-whatsapp' },
+    { name: 'X', class: 'bg-social-x', token: '--color-social-x' },
+    { name: 'YouTube', class: 'bg-social-youtube', token: '--color-social-youtube' },
+] %}
+
+{% set sampleItems = [
+    { title: 'The first question', body: 'The answer to the first question.' },
+    { title: 'A second question', body: 'The answer to the second question.' },
+    { title: 'A third question', body: 'The answer to the third question.' },
+] %}
 
 {% block content %}
-    <div class="px-gutter py-12 flex flex-col gap-block">
-        {% include '_components/heading' with { level: 'h1', heading: 'Style guide' } only %}
+    <div class="px-gutter">
+        <header class="flex flex-col gap-2 py-12">
+            <p class="text-xs font-medium uppercase tracking-wider text-gray-500">{{ siteName }}</p>
+            <h1 class="text-3xl font-medium">Style guide</h1>
+            <p class="max-w-narrow text-gray-500">Every component with sample values. Colours and type specs are read from the page, so they always match the CSS.</p>
+        </header>
 
-        <section class="flex flex-col gap-6">
-            {% include '_components/heading' with { heading: 'Headings' } only %}
-            {% for level in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] %}
-                {% include '_components/heading' with {
-                    level: level,
-                    heading: level|upper ~ ': The quick brown fox jumps over the lazy dog',
-                    attributes: { role: 'presentation' },
-                } only %}
-            {% endfor %}
-        </section>
-
-        <section class="flex flex-col gap-6">
-            {% include '_components/heading' with { heading: 'Eyebrow' } only %}
-            {% include '_components/eyebrow' with { text: 'An eyebrow above a heading' } only %}
-        </section>
-
-        <section class="flex flex-col gap-6">
-            {% include '_components/heading' with { heading: 'Rich text' } only %}
-            {% set sampleRichText %}
-                <p>A paragraph of body copy with <a href="#">a link</a> and <strong>some strong text</strong>. It runs long enough to wrap onto a second line so you can check the line height and measure.</p>
-                <ul>
-                    <li>A bulleted list item</li>
-                    <li>Another bulleted list item</li>
-                </ul>
-                <ol>
-                    <li>A numbered list item</li>
-                    <li>Another numbered list item</li>
-                </ol>
-                <h2>A heading in rich text</h2>
-                <p>Headings in Rich Text use the same styles as the heading component.</p>
-                <h3>A third-level heading</h3>
-                <p>Another paragraph to show the space below a heading.</p>
-                <h4>A fourth-level heading</h4>
-                <p>And one more.</p>
-            {% endset %}
-            {% include '_components/rich-text' with { body: sampleRichText, class: 'max-w-narrow' } only %}
-        </section>
-
-        <section class="flex flex-col gap-6">
-            {% include '_components/heading' with { heading: 'List' } only %}
-            {% include '_components/list' with {
-                items: ['A short list item', 'Another short list item', 'A third, slightly longer list item'],
-            } only %}
-        </section>
-
-        <section class="flex flex-col gap-6">
-            {% include '_components/heading' with { heading: 'Statistics' } only %}
-            <div class="grid gap-6 md:grid-cols-3">
-                {% for value in ['98%', '12k', '24/7'] %}
-                    {% include '_components/statistic' with {
-                        value: value,
-                        title: 'Statistic title',
-                        body: 'Supporting text that explains the figure.',
-                    } only %}
+        <section class="grid gap-8 border-t border-gray-200 py-12 lg:grid-cols-12">
+            {{ guide.heading('01', 'Colour') }}
+            <div class="flex flex-col gap-10 lg:col-span-9">
+                {% for group in [{ label: 'Interface', swatches: colours }, { label: 'Social networks', swatches: socialColours }] %}
+                    <div class="flex flex-col gap-4">
+                        {{ guide.label(group.label) }}
+                        <ul class="grid grid-cols-2 gap-6 sm:grid-cols-4 xl:grid-cols-6">
+                            {% for colour in group.swatches %}
+                                <li class="flex items-center gap-3">
+                                    <span data-swatch class="size-10 shrink-0 rounded-full ring-1 ring-black/10 {{ colour.class }}"></span>
+                                    <span class="flex flex-col text-xs leading-snug">
+                                        <span class="font-medium">{{ colour.name }}</span>
+                                        <span data-swatch-value class="font-mono text-gray-500 uppercase"></span>
+                                        {% if colour.note ?? null %}<span class="text-gray-500">{{ colour.note }}</span>{% endif %}
+                                    </span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 {% endfor %}
             </div>
         </section>
 
-        <section class="flex flex-col gap-6">
-            {% include '_components/heading' with { heading: 'Accordion' } only %}
-            {% set sampleItems = [
-                { title: 'The first question', body: 'The answer to the first question.' },
-                { title: 'A second question', body: 'The answer to the second question.' },
-                { title: 'A third question', body: 'The answer to the third question.' },
-            ] %}
-            {% include '_components/accordion' with { items: sampleItems } only %}
-            <p class="text-sm">Size lg, as in FAQs:</p>
-            <div class="py-6">
-                {% include '_components/accordion' with { items: sampleItems, size: 'lg' } only %}
-            </div>
-        </section>
-
-        <section class="flex flex-col gap-6">
-            {% include '_components/heading' with { heading: 'Testimonial' } only %}
-            {% include '_components/testimonial' with {
-                quote: 'A short quote from a happy client about working with the team.',
-                person: 'Person Name',
-                company: 'Company',
-                image: sampleImage,
-                class: 'max-w-narrow',
-            } only %}
-        </section>
-
-        <section class="flex flex-col gap-6">
-            {% include '_components/heading' with { heading: 'Buttons' } only %}
-            {% for theme in ['primary', 'secondary', 'tertiary'] %}
-                <div class="flex flex-wrap items-center gap-4">
-                    {% for size in ['sm', 'base', 'md', 'lg'] %}
-                        {% include '_components/button' with {
-                            url: '#',
-                            text: theme|capitalize ~ ' ' ~ size,
-                            theme: theme,
-                            size: size,
-                        } only %}
-                    {% endfor %}
-                </div>
-            {% endfor %}
-            <div class="flex flex-wrap items-center gap-4">
-                {% include '_components/button' with { as: 'button', text: 'Button element' } only %}
-                {% include '_components/button' with {
-                    url: 'https://example.com',
-                    text: 'Opens in a new tab',
-                    attributes: { target: '_blank' },
-                } only %}
-            </div>
-        </section>
-
-        <section class="flex flex-col gap-6">
-            {% include '_components/heading' with { heading: 'Links' } only %}
-            {% include '_components/links' with {
-                links: [
-                    { url: '#', text: 'Primary link' },
-                    { url: '#', text: 'Secondary link', theme: 'secondary' },
-                    { url: '#', text: 'Tertiary link', theme: 'tertiary' },
-                ],
-            } only %}
-        </section>
-
-        {% if sampleImage %}
-            <section class="flex flex-col gap-6">
-                {% include '_components/heading' with { heading: 'Images' } only %}
-                <div class="grid gap-6 md:grid-cols-3">
-                    {% for ratio in ['photo', 'photo-portrait', 'square', 'video', 'pano', 'auto'] %}
-                        <figure>
-                            {% include '_components/image' with {
-                                image: sampleImage,
-                                alt: '',
-                                aspectRatio: ratio,
-                                class: 'w-full h-full object-cover',
+        <section class="grid gap-8 border-t border-gray-200 py-12 lg:grid-cols-12">
+            {{ guide.heading('02', 'Typography') }}
+            <div class="flex flex-col gap-8 lg:col-span-9">
+                {% for level in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] %}
+                    {% embed '_styleguide/specimen' with { name: 'Heading ' ~ level|last, source: 'heading-' ~ level|last, level: level } only %}
+                        {% block sample %}
+                            {% include '_components/heading' with {
+                                level: level,
+                                heading: 'The quick brown fox jumps over the lazy dog',
+                                attributes: { role: 'presentation' },
                             } only %}
-                            <figcaption class="mt-2 text-sm">{{ ratio }}</figcaption>
-                        </figure>
-                    {% endfor %}
+                        {% endblock %}
+                    {% endembed %}
+                {% endfor %}
+
+                {% embed '_styleguide/specimen' with { name: 'Eyebrow', source: '_components/eyebrow' } only %}
+                    {% block sample %}
+                        {% include '_components/eyebrow' with { text: 'The quick brown fox jumps over the lazy dog' } only %}
+                    {% endblock %}
+                {% endembed %}
+
+                {% embed '_styleguide/specimen' with { name: 'Body', source: '.body-copy' } only %}
+                    {% block sample %}
+                        {% set body %}<p>The quick brown fox jumps over the lazy dog. A second sentence runs long enough to wrap, so you can check the line height and measure.</p>{% endset %}
+                        {% include '_components/rich-text' with { body: body, class: 'max-w-narrow' } only %}
+                    {% endblock %}
+                {% endembed %}
+            </div>
+        </section>
+
+        <section class="grid gap-8 border-t border-gray-200 py-12 lg:grid-cols-12">
+            {{ guide.heading('03', 'Buttons & links') }}
+            <div class="flex flex-col gap-10 lg:col-span-9">
+                {% for theme in ['primary', 'secondary', 'tertiary'] %}
+                    <div class="flex flex-col gap-4">
+                        {{ guide.label(theme ~ ' button') }}
+                        <div class="flex flex-wrap items-end gap-x-8 gap-y-6">
+                            {% for size in ['sm', 'base', 'md', 'lg'] %}
+                                <div class="flex flex-col items-start gap-2">
+                                    {% include '_components/button' with {
+                                        url: '#',
+                                        text: 'Button',
+                                        theme: theme,
+                                        size: size,
+                                    } only %}
+                                    <span class="font-mono text-xs text-gray-500">{{ size }}</span>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <div class="grid gap-10 md:grid-cols-2">
+                    <div class="flex flex-col items-start gap-4">
+                        {{ guide.label('Button element') }}
+                        {% include '_components/button' with { as: 'button', text: 'Button' } only %}
+                    </div>
+                    <div class="flex flex-col items-start gap-4">
+                        {{ guide.label('Opens in a new tab') }}
+                        {% include '_components/button' with {
+                            url: 'https://example.com',
+                            text: 'External link',
+                            attributes: { target: '_blank' },
+                        } only %}
+                    </div>
                 </div>
-                {% include '_components/image' with {
-                    image: sampleImage,
-                    alt: '',
-                    caption: 'An image with a caption.',
-                    class: 'w-full h-full object-cover max-w-narrow',
-                } only %}
-            </section>
 
-            <section class="flex flex-col gap-6">
-                {% include '_components/heading' with { heading: 'Logos' } only %}
-                {% include '_components/logos' with {
-                    logos: [
-                        { image: sampleSvg ?? sampleImage },
-                        { image: sampleImage, url: '#', ariaLabel: 'A linked logo' },
-                        { image: sampleSvg ?? sampleImage },
-                    ],
-                } only %}
-            </section>
-        {% endif %}
-
-        {% if sampleSvg %}
-            <section class="flex flex-col gap-6">
-                {% include '_components/heading' with { heading: 'Icon' } only %}
-                {% include '_components/icon' with { icon: sampleSvg } only %}
-            </section>
-        {% endif %}
-
-        <section class="flex flex-col gap-6">
-            {% include '_components/heading' with { heading: 'Divider' } only %}
-            {% include '_components/divider' only %}
+                <div class="flex flex-col gap-4">
+                    {{ guide.label('Links') }}
+                    {% include '_components/links' with {
+                        links: [
+                            { url: '#', text: 'Primary link' },
+                            { url: '#', text: 'Secondary link', theme: 'secondary' },
+                            { url: '#', text: 'Tertiary link', theme: 'tertiary' },
+                        ],
+                    } only %}
+                </div>
+            </div>
         </section>
 
-        <section class="flex flex-col gap-6">
-            {% include '_components/heading' with { heading: 'Dates' } only %}
-            <p>{% include '_components/date' with { date: date('-2 days') } only %}</p>
-            <p>{% include '_components/date' with { date: date('-1 year') } only %}</p>
-        </section>
-
-        <section class="flex flex-col gap-6">
-            {% include '_components/heading' with { heading: 'Breadcrumb' } only %}
-            {% include '_components/breadcrumb' only %}
+        <section class="grid gap-8 border-t border-gray-200 py-12 lg:grid-cols-12">
+            {{ guide.heading('04', 'Iconography') }}
+            <div class="grid gap-10 md:grid-cols-2 lg:col-span-9">
+                <div class="flex flex-col gap-4">
+                    {{ guide.label('Social networks') }}
+                    <ul class="grid grid-cols-4 gap-6 sm:grid-cols-6">
+                        {% for network in socialNetworks %}
+                            <li class="flex flex-col items-center gap-2 text-center">
+                                {{ svg('@svg/social/' ~ network.value ~ '.svg')|attr({
+                                    class: 'size-5',
+                                    fill: 'currentColor',
+                                    'aria-hidden': 'true',
+                                    focusable: 'false',
+                                }) }}
+                                <span class="text-xs text-gray-500">{{ network.label }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% if sampleSvg %}
+                    <div class="flex flex-col gap-4">
+                        {{ guide.label('Icon block') }}
+                        {% include '_components/icon' with { icon: sampleSvg } only %}
+                    </div>
+                {% endif %}
+            </div>
         </section>
 
         {% if sampleForm %}
-            <section class="flex flex-col gap-6 max-w-narrow">
-                {% include '_components/heading' with { heading: 'Form' } only %}
-                {% include '_components/form' with { form: sampleForm } only %}
+            <section class="grid gap-8 border-t border-gray-200 py-12 lg:grid-cols-12">
+                {{ guide.heading('05', 'Forms') }}
+                <div class="flex flex-col gap-4 lg:col-span-9">
+                    {{ guide.label(sampleForm.title) }}
+                    <div class="max-w-narrow">
+                        {% include '_components/form' with { form: sampleForm } only %}
+                    </div>
+                </div>
             </section>
         {% endif %}
+
+        <section class="grid gap-8 border-t border-gray-200 py-12 lg:grid-cols-12">
+            {{ guide.heading('06', 'Content') }}
+            <div class="flex flex-col gap-12 lg:col-span-9">
+                <div class="flex flex-col gap-4">
+                    {{ guide.label('Rich text') }}
+                    {% set sampleRichText %}
+                        <p>A paragraph of body copy with <a href="#">a link</a> and <strong>some strong text</strong>. It runs long enough to wrap onto a second line so you can check the line height and measure.</p>
+                        <ul>
+                            <li>A bulleted list item with <a href="#">a link</a></li>
+                            <li>Another bulleted list item</li>
+                        </ul>
+                        <ol>
+                            <li>A numbered list item</li>
+                            <li>Another numbered list item</li>
+                        </ol>
+                        <h2>A heading in rich text</h2>
+                        <p>Headings in Rich Text use the same styles as the heading component.</p>
+                        <h3>A third-level heading</h3>
+                        <p>Another paragraph to show the space below a heading.</p>
+                    {% endset %}
+                    {% include '_components/rich-text' with { body: sampleRichText, class: 'max-w-narrow' } only %}
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    {{ guide.label('List') }}
+                    {% include '_components/list' with {
+                        items: ['A short list item', 'Another short list item', 'A third, slightly longer list item'],
+                    } only %}
+                </div>
+                <div class="flex flex-col gap-4">
+                    {{ guide.label('Testimonial') }}
+                    {% include '_components/testimonial' with {
+                        quote: 'A short quote from a happy client about working with the team.',
+                        person: 'Person Name',
+                        company: 'Company',
+                        image: sampleImage,
+                    } only %}
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    {{ guide.label('Statistics') }}
+                    <div class="grid gap-6 md:grid-cols-3">
+                        {% for value in ['98%', '12k', '24/7'] %}
+                            {% include '_components/statistic' with {
+                                value: value,
+                                title: 'Statistic title',
+                                body: 'Supporting text that explains the figure.',
+                            } only %}
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    {{ guide.label('Accordion') }}
+                    {% include '_components/accordion' with { items: sampleItems } only %}
+                </div>
+                <div class="flex flex-col gap-4">
+                    {{ guide.label('Accordion, lg (FAQs)') }}
+                    <div class="py-6">
+                        {% include '_components/accordion' with { items: sampleItems, size: 'lg' } only %}
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    {{ guide.label('Dates') }}
+                    <p>{% include '_components/date' with { date: date('-2 days') } only %}</p>
+                    <p>{% include '_components/date' with { date: date('-1 year') } only %}</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    {{ guide.label('Divider') }}
+                    {% include '_components/divider' only %}
+                </div>
+            </div>
+        </section>
+
+        <section class="grid gap-8 border-t border-gray-200 py-12 lg:grid-cols-12">
+            {{ guide.heading('07', 'Media') }}
+            <div class="flex flex-col gap-12 lg:col-span-9">
+                <div class="flex flex-col gap-4">
+                    {{ guide.label('Video') }}
+                    {% include '_components/video' with {
+                        url: sampleVideo.url ?? url('samples/sample-video.mp4'),
+                        title: sampleVideo.title ?? 'Sample video',
+                        poster: sampleVideo ? (sampleImage.url ?? null) : url('samples/sample-poster.jpg'),
+                    } only %}
+                </div>
+
+                {% if sampleImage %}
+                    <div class="flex flex-col gap-4">
+                        {{ guide.label('Aspect ratios') }}
+                        <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+                            {% for ratio in ['photo', 'photo-portrait', 'square', 'video', 'pano', 'auto'] %}
+                                <div class="flex flex-col gap-2">
+                                    {% include '_components/image' with {
+                                        image: sampleImage,
+                                        alt: '',
+                                        aspectRatio: ratio,
+                                        class: 'w-full h-full object-cover',
+                                    } only %}
+                                    <span class="font-mono text-xs text-gray-500">{{ ratio }}</span>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-4">
+                        {{ guide.label('Image with a caption') }}
+                        {% include '_components/image' with {
+                            image: sampleImage,
+                            alt: '',
+                            caption: 'An image with a caption.',
+                            class: 'w-full h-full object-cover',
+                        } only %}
+                    </div>
+
+                    <div class="flex flex-col gap-4">
+                        {{ guide.label('Logos') }}
+                        {% include '_components/logos' with {
+                            logos: [
+                                { image: sampleSvg ?? sampleImage },
+                                { image: sampleImage, url: '#', ariaLabel: 'A linked logo' },
+                                { image: sampleSvg ?? sampleImage },
+                            ],
+                        } only %}
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+
+        <section class="grid gap-8 border-t border-gray-200 py-12 lg:grid-cols-12">
+            {{ guide.heading('08', 'Navigation') }}
+            <div class="flex flex-col gap-4 lg:col-span-9">
+                {{ guide.label('Breadcrumb') }}
+                {% include '_components/breadcrumb' only %}
+            </div>
+        </section>
+
     </div>
 
-    <section class="py-12 flex flex-col gap-6 bg-gray-100">
+    {# Diagram colours: hatching is space (gutter, block gap), blue is content. #}
+    {% set space = '[--pattern-fg:color-mix(in_oklab,var(--color-black)_8%,transparent)] bg-[image:repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed' %}
+    {% set content = 'bg-sky-50 ring-1 ring-inset ring-sky-300 text-sky-700' %}
+    {% set widths = [
+        { value: 'full-bleed', name: 'Full bleed', description: 'Edge to edge, with no gutter. For images and coloured bands.' },
+        { value: 'full-width', name: 'Full width', description: 'The page width minus the gutter. The default.' },
+        { value: 'medium', name: 'Medium', description: 'Capped at max-w-medium, then centred or aligned left or right.' },
+        { value: 'narrow', name: 'Narrow', description: 'Capped at max-w-narrow. For text that should keep a readable line length.' },
+    ] %}
+
+    <section class="flex flex-col gap-10 pb-16">
         <div class="px-gutter">
-            {% include '_components/heading' with { heading: 'Content widths' } only %}
+            <div class="grid gap-8 border-t border-gray-200 pt-12 lg:grid-cols-12">
+                {{ guide.heading('09', 'Layout') }}
+                <div class="flex flex-col gap-4 lg:col-span-9">
+                    <p class="max-w-narrow text-sm">Every Section block sits inside the gutter. Its Content Width sets how wide the content can be, and the blocks inside it are spaced by the block gap. Sizes are measured at the current window width, so resize to see them change.</p>
+                    <ul class="flex flex-wrap gap-x-6 gap-y-2 text-xs text-gray-500">
+                        <li class="flex items-center gap-2"><span class="size-4 ring-1 ring-black/10 {{ space }}"></span> Space: gutter and block gap</li>
+                        <li class="flex items-center gap-2"><span class="size-4 bg-gray-50 ring-1 ring-black/10"></span> Available width</li>
+                        <li class="flex items-center gap-2"><span class="size-4 {{ content }}"></span> Content</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        {% for width in ['full-bleed', 'full-width', 'medium', 'narrow'] %}
-            <div{% if width != 'full-bleed' %} class="px-gutter"{% endif %}>
-                <div class="bg-white p-4 text-sm {{ classes.contentMaxWidth(width) }} {{ width in ['medium', 'narrow'] ? 'mx-auto' }}">{{ width }}</div>
+
+        {% for width in widths %}
+            <div data-layout-row class="flex flex-col gap-3">
+                <div class="px-gutter flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                    <p class="text-sm"><span class="font-medium">{{ width.name }}</span> <span class="text-gray-500">{{ width.description }}</span></p>
+                    <p class="font-mono text-xs text-gray-500">content <span data-layout-content></span> · gutter <span data-layout-gutter></span></p>
+                </div>
+                <div data-layout-gutter-source class="{{ width.value != 'full-bleed' ? 'px-gutter' }} {{ space }}">
+                    <div class="border-x border-(--pattern-fg) bg-gray-50 py-4">
+                        <div class="flex flex-col gap-2 {{ classes.contentMaxWidth(width.value) }} {{ width.value in ['medium', 'narrow'] ? 'mx-auto' }}">
+                            <div data-layout-box class="flex h-12 items-center justify-center font-mono text-xs {{ content }}">{{ width.value }}</div>
+                            {{ guide.dimension() }}
+                        </div>
+                    </div>
+                </div>
             </div>
         {% endfor %}
+
+        <div data-layout-gap-row class="flex flex-col gap-3">
+            <div class="px-gutter flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                <p class="text-sm"><span class="font-medium">Block gap</span> <span class="text-gray-500">The space between blocks in a Section, set by gap-block.</span></p>
+                <p class="font-mono text-xs text-gray-500">gap <span data-layout-gap></span></p>
+            </div>
+            <div class="px-gutter {{ space }}">
+                <div data-layout-gap-source class="flex flex-col gap-block border-x border-(--pattern-fg) {{ space }}">
+                    {% for i in 1..2 %}
+                        <div class="flex h-20 items-center justify-center font-mono text-xs {{ content }}">Block {{ i }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </section>
 {% endblock %}
+
+{% block afterScripts %}
+    <script>
+        // Measured after the CSS has loaded (Vite injects it in development), and again on resize, since sizes change at breakpoints.
+        const pixel = document.createElement('canvas').getContext('2d', { willReadFrequently: true })
+
+        const measure = () => {
+            document.querySelectorAll('[data-swatch]').forEach((swatch) => {
+                pixel.clearRect(0, 0, 1, 1)
+                pixel.fillStyle = getComputedStyle(swatch).backgroundColor
+                pixel.fillRect(0, 0, 1, 1)
+                const [r, g, b] = pixel.getImageData(0, 0, 1, 1).data
+                swatch.nextElementSibling.querySelector('[data-swatch-value]').textContent = '#' + [r, g, b].map((v) => v.toString(16).padStart(2, '0')).join('')
+            })
+
+            document.querySelectorAll('[data-specimen]').forEach((specimen) => {
+                const style = getComputedStyle(specimen.querySelector('[data-specimen-sample] :is(h1, h2, h3, h4, h5, h6, p)'))
+                const lineHeight = style.lineHeight === 'normal' ? 'normal' : `${parseFloat(style.lineHeight)}px`
+                specimen.querySelector('[data-specimen-spec]').textContent = `${parseFloat(style.fontSize)}px / ${lineHeight} · ${style.fontWeight}`
+            })
+
+            document.querySelectorAll('[data-layout-row]').forEach((row) => {
+                const content = `${Math.round(row.querySelector('[data-layout-box]').getBoundingClientRect().width)}px`
+                row.querySelector('[data-layout-content]').textContent = content
+                row.querySelector('[data-layout-dimension]').textContent = content
+                row.querySelector('[data-layout-gutter]').textContent = `${parseFloat(getComputedStyle(row.querySelector('[data-layout-gutter-source]')).paddingLeft)}px`
+            })
+
+            document.querySelectorAll('[data-layout-gap-row]').forEach((row) => {
+                row.querySelector('[data-layout-gap]').textContent = `${parseFloat(getComputedStyle(row.querySelector('[data-layout-gap-source]')).rowGap)}px`
+            })
+        }
+
+        window.addEventListener('load', measure)
+        window.addEventListener('resize', measure)
+    </script>
+{% endblock %}
+
+{% macro heading(number, title) %}
+    <h2 class="flex items-baseline gap-3 text-lg font-medium lg:col-span-3">
+        <span class="font-mono text-sm text-gray-500">{{ number }}</span>
+        {{ title }}
+    </h2>
+{% endmacro %}
+
+{% macro dimension() %}
+    <div class="flex w-full items-center" aria-hidden="true">
+        <span class="h-2.5 w-px bg-sky-500"></span>
+        <span class="h-px flex-1 bg-sky-500"></span>
+        <span data-layout-dimension class="px-2 font-mono text-xs text-sky-700"></span>
+        <span class="h-px flex-1 bg-sky-500"></span>
+        <span class="h-2.5 w-px bg-sky-500"></span>
+    </div>
+{% endmacro %}
+
+{% macro label(text) %}
+    <p class="text-xs font-medium uppercase tracking-wider text-gray-500">{{ text }}</p>
+{% endmacro %}
