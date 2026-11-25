@@ -11,11 +11,14 @@ Everything in the repository is copied into a new project, then `post-create-pro
 
 - `composer.json.default` becomes the project's `composer.json`.
 - `README.md.default` becomes the project's `README.md`.
-- This file is removed.
+- This file and `CHANGELOG.md` are removed.
 
 Keep templates, config and project config generic: no client names, content or credentials.
 Instructions and coding rules for projects are added to each project separately, so don't add
 project-level guidance here. How the templates are structured is described in `README.md`.
+
+Record each change under the next release in `CHANGELOG.md`, with an upgrade note when an existing
+site would have to make it by hand.
 
 ## Commands
 
@@ -40,4 +43,5 @@ ddev composer create-project "clubstudio/craft:dev-<branch>"
 ddev craft install
 ```
 
-Check that the `.default` files were swapped in, this file is gone, and the site renders.
+Check that the `.default` files were swapped in, this file and `CHANGELOG.md` are gone, and the
+site renders.

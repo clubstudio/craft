@@ -33,7 +33,8 @@
       "@php -r \"rename('composer.json.default', 'composer.json');\"",
       "@php -r \"unlink('README.md');\"",
       "@php -r \"rename('README.md.default', 'README.md');\"",
-      "@php -r \"file_exists('AGENTS.md') && unlink('AGENTS.md');\""
+      "@php -r \"file_exists('AGENTS.md') && unlink('AGENTS.md');\"",
+      "@php -r \"file_exists('CHANGELOG.md') && unlink('CHANGELOG.md');\""
     ]
   },
   "repositories": [
