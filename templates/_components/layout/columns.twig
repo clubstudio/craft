@@ -1,0 +1,15 @@
+{#
+  A grid of columns, stacked on mobiles. Embed it and fill the content block with one element per column.
+  layout: 11, 12, 21, 13, 31 or 111, the relative width of each column.
+#}
+{% set data = {
+    layout: '11',
+    verticalAlignment: 'top',
+    class: null,
+}|merge(_context) %}
+
+{% import '_macros/classes' as classes %}
+
+<div class="{{ classes.combine(['grid gap-6', classes.columnLayout(data.layout ?: '11'), classes.verticalAlignment(data.verticalAlignment ?: 'top')], data.class) }}">
+    {% block content '' %}
+</div>

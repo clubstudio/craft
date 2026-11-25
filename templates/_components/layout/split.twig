@@ -1,0 +1,23 @@
+{#
+  Media beside content, stacked on mobiles. Embed it and fill the media and content blocks.
+  fullBleed keeps the gutter on the content's outer edge when the Section has none.
+#}
+{% set data = {
+    mediaPosition: 'left',
+    verticalAlignment: 'middle',
+    fullBleed: false,
+    class: null,
+}|merge(_context) %}
+
+{% import '_macros/classes' as classes %}
+
+{% set mediaLeft = data.mediaPosition != 'right' %}
+
+<div class="{{ classes.combine(['grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-x-16', classes.verticalAlignment(data.verticalAlignment ?: 'middle')], data.class) }}">
+    <div class="relative {{ mediaLeft ? 'lg:order-1' : 'lg:order-2' }}">
+        {% block media '' %}
+    </div>
+    <div class="{{ mediaLeft ? 'lg:order-2' : 'lg:order-1' }}{% if data.fullBleed %} {{ mediaLeft ? 'px-gutter lg:pl-0' : 'px-gutter lg:pr-0' }}{% endif %}">
+        {% block content '' %}
+    </div>
+</div>

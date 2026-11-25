@@ -1,0 +1,19 @@
+{#
+  The gutter and content width of a Section. Embed it and fill the content block.
+  width: full-bleed, full-width, medium or narrow. alignment: left, center or right, for medium and narrow.
+#}
+{% set data = {
+    width: 'full-width',
+    alignment: 'center',
+    class: null,
+}|merge(_context) %}
+
+{% import '_macros/classes' as classes %}
+
+{% set capped = data.width in ['medium', 'narrow'] %}
+
+<div {{ attr({ class: classes.combine(data.width != 'full-bleed' ? 'px-gutter', data.class)|string ?: false }) }}>
+    <div class="flex flex-col gap-block{% if capped %} {{ classes.contentMaxWidth(data.width) }} {{ classes.horizontalAlignment(data.alignment ?: 'center') }}{% endif %}">
+        {% block content '' %}
+    </div>
+</div>

@@ -8,22 +8,24 @@
   - section:full-width:columns:2
   - section:narrow:columns:2
 #}
-{% import '_macros/classes' as classes %}
 {% import '_macros/transforms' as transforms %}
 
 {% set columns = block.columns.eagerly().all() %}
 {% set transformKey = transforms.buildKey([transformKey, 'columns', columns|length]) %}
 
 {% if columns|length %}
-    <div class="
-        grid {{ classes.columnLayout(block.columnLayout.value) }}
-        gap-6
-        {{ classes.verticalAlignment(block.verticalAlignment.value ?? 'top') }}
-    ">
-        {% include '_builder/builder' with {
-            blocks: columns,
-            context: ['columns/' ~ columns|length, 'columns'],
-            transformKey: transformKey,
-        } only %}
-    </div>
+    {% embed '_components/layout/columns' with {
+        layout: block.columnLayout.value ?? '11',
+        verticalAlignment: block.verticalAlignment.value ?? 'top',
+        columns: columns,
+        transformKey: transformKey,
+    } only %}
+        {% block content %}
+            {% include '_builder/builder' with {
+                blocks: columns,
+                context: ['columns/' ~ columns|length, 'columns'],
+                transformKey: transformKey,
+            } only %}
+        {% endblock %}
+    {% endembed %}
 {% endif %}

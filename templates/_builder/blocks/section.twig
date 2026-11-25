@@ -15,7 +15,12 @@
 
 {% embed '_builder/section' with { block: block, transformKey: transformKey } only %}
     {% block content %}
-        {% embed '_builder/container' with { block: block, transformKey: transformKey } only %}
+        {% embed '_components/layout/container' with {
+            width: block.contentWidth.value ?? 'full-width',
+            alignment: block.horizontalAlignment.value ?? 'center',
+            block: block,
+            transformKey: transformKey,
+        } only %}
             {% block content %}
                 {% include '_builder/builder' with {
                     context: 'section',

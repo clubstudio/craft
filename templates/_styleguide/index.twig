@@ -1,7 +1,7 @@
 {% extends '_layouts/master' %}
 
 {% import '_macros/classes' as classes %}
-{% import _self as guide %}
+{% import '_styleguide/macros' as guide %}
 
 {% do seomatic.meta.seoTitle('Style guide') %}
 
@@ -336,62 +336,7 @@
 
     </div>
 
-    {# Diagram colours: hatching is space (gutter, block gap), blue is content. #}
-    {% set space = '[--pattern-fg:color-mix(in_oklab,var(--color-black)_8%,transparent)] bg-[image:repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed' %}
-    {% set content = 'bg-sky-50 ring-1 ring-inset ring-sky-300 text-sky-700' %}
-    {% set widths = [
-        { value: 'full-bleed', name: 'Full bleed', description: 'Edge to edge, with no gutter. For images and coloured bands.' },
-        { value: 'full-width', name: 'Full width', description: 'The page width minus the gutter. The default.' },
-        { value: 'medium', name: 'Medium', description: 'Capped at max-w-medium, then centred or aligned left or right.' },
-        { value: 'narrow', name: 'Narrow', description: 'Capped at max-w-narrow. For text that should keep a readable line length.' },
-    ] %}
-
-    <section class="flex flex-col gap-10 pb-16">
-        <div class="px-gutter">
-            <div class="grid gap-8 border-t border-gray-200 pt-12 lg:grid-cols-12">
-                {{ guide.heading('09', 'Layout') }}
-                <div class="flex flex-col gap-4 lg:col-span-9">
-                    <p class="max-w-narrow text-sm">Every Section block sits inside the gutter. Its Content Width sets how wide the content can be, and the blocks inside it are spaced by the block gap. Sizes are measured at the current window width, so resize to see them change.</p>
-                    <ul class="flex flex-wrap gap-x-6 gap-y-2 text-xs text-gray-500">
-                        <li class="flex items-center gap-2"><span class="size-4 ring-1 ring-black/10 {{ space }}"></span> Space: gutter and block gap</li>
-                        <li class="flex items-center gap-2"><span class="size-4 bg-gray-50 ring-1 ring-black/10"></span> Available width</li>
-                        <li class="flex items-center gap-2"><span class="size-4 {{ content }}"></span> Content</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        {% for width in widths %}
-            <div data-layout-row class="flex flex-col gap-3">
-                <div class="px-gutter flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-                    <p class="text-sm"><span class="font-medium">{{ width.name }}</span> <span class="text-gray-500">{{ width.description }}</span></p>
-                    <p class="font-mono text-xs text-gray-500">content <span data-layout-content></span> · gutter <span data-layout-gutter></span></p>
-                </div>
-                <div data-layout-gutter-source class="{{ width.value != 'full-bleed' ? 'px-gutter' }} {{ space }}">
-                    <div class="border-x border-(--pattern-fg) bg-gray-50 py-4">
-                        <div class="flex flex-col gap-2 {{ classes.contentMaxWidth(width.value) }} {{ width.value in ['medium', 'narrow'] ? 'mx-auto' }}">
-                            <div data-layout-box class="flex h-12 items-center justify-center font-mono text-xs {{ content }}">{{ width.value }}</div>
-                            {{ guide.dimension() }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
-
-        <div data-layout-gap-row class="flex flex-col gap-3">
-            <div class="px-gutter flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-                <p class="text-sm"><span class="font-medium">Block gap</span> <span class="text-gray-500">The space between blocks in a Section, set by gap-block.</span></p>
-                <p class="font-mono text-xs text-gray-500">gap <span data-layout-gap></span></p>
-            </div>
-            <div class="px-gutter {{ space }}">
-                <div data-layout-gap-source class="flex flex-col gap-block border-x border-(--pattern-fg) {{ space }}">
-                    {% for i in 1..2 %}
-                        <div class="flex h-20 items-center justify-center font-mono text-xs {{ content }}">Block {{ i }}</div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </section>
+    {% include '_styleguide/layout' only %}
 {% endblock %}
 
 {% block afterScripts %}
@@ -414,15 +359,27 @@
                 specimen.querySelector('[data-specimen-spec]').textContent = `${parseFloat(style.fontSize)}px / ${lineHeight} · ${style.fontWeight}`
             })
 
-            document.querySelectorAll('[data-layout-row]').forEach((row) => {
-                const content = `${Math.round(row.querySelector('[data-layout-box]').getBoundingClientRect().width)}px`
-                row.querySelector('[data-layout-content]').textContent = content
-                row.querySelector('[data-layout-dimension]').textContent = content
-                row.querySelector('[data-layout-gutter]').textContent = `${parseFloat(getComputedStyle(row.querySelector('[data-layout-gutter-source]')).paddingLeft)}px`
+            document.querySelectorAll('[data-measure-self]').forEach((element) => {
+                element.querySelector('[data-measure="self"]').textContent = `${Math.round(element.getBoundingClientRect().width)}px`
             })
 
-            document.querySelectorAll('[data-layout-gap-row]').forEach((row) => {
-                row.querySelector('[data-layout-gap]').textContent = `${parseFloat(getComputedStyle(row.querySelector('[data-layout-gap-source]')).rowGap)}px`
+            // In a layout row: content width, the gutter around it, and the gap between its blocks or columns.
+            document.querySelectorAll('[data-measure-row]').forEach((row) => {
+                const content = row.querySelector('[data-measure-content]')
+                const gap = row.querySelector('[data-measure-gap]')
+                const write = (name, value) => row.querySelectorAll(`[data-measure="${name}"]`).forEach((output) => output.textContent = value)
+
+                if (content) {
+                    write('content', `${Math.round(content.getBoundingClientRect().width)}px`)
+                    write('gutter', `${parseFloat(getComputedStyle(content.parentElement.parentElement).paddingLeft)}px`)
+                }
+
+                if (gap) {
+                    const property = gap.dataset.measureGap === 'row' ? 'rowGap' : 'columnGap'
+                    let parent = gap.parentElement
+                    while (parent && !(parseFloat(getComputedStyle(parent)[property]) > 0)) parent = parent.parentElement
+                    write('gap', `${parent ? parseFloat(getComputedStyle(parent)[property]) : 0}px`)
+                }
             })
         }
 
@@ -430,24 +387,3 @@
         window.addEventListener('resize', measure)
     </script>
 {% endblock %}
-
-{% macro heading(number, title) %}
-    <h2 class="flex items-baseline gap-3 text-lg font-medium lg:col-span-3">
-        <span class="font-mono text-sm text-gray-500">{{ number }}</span>
-        {{ title }}
-    </h2>
-{% endmacro %}
-
-{% macro dimension() %}
-    <div class="flex w-full items-center" aria-hidden="true">
-        <span class="h-2.5 w-px bg-sky-500"></span>
-        <span class="h-px flex-1 bg-sky-500"></span>
-        <span data-layout-dimension class="px-2 font-mono text-xs text-sky-700"></span>
-        <span class="h-px flex-1 bg-sky-500"></span>
-        <span class="h-2.5 w-px bg-sky-500"></span>
-    </div>
-{% endmacro %}
-
-{% macro label(text) %}
-    <p class="text-xs font-medium uppercase tracking-wider text-gray-500">{{ text }}</p>
-{% endmacro %}

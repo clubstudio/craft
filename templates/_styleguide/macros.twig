@@ -1,0 +1,21 @@
+{# Macros for the style guide's own headings, labels and diagrams. #}
+{% macro heading(number, title) %}
+    <h2 class="flex items-baseline gap-3 text-lg font-medium lg:col-span-3">
+        <span class="font-mono text-sm text-gray-500">{{ number }}</span>
+        {{ title }}
+    </h2>
+{% endmacro %}
+
+{% macro dimension() %}
+    <div class="flex w-full items-center" aria-hidden="true">
+        <span class="h-2.5 w-px bg-sky-500"></span>
+        <span class="h-px flex-1 bg-sky-500"></span>
+        <span data-measure="content" class="px-2 font-mono text-xs text-sky-700"></span>
+        <span class="h-px flex-1 bg-sky-500"></span>
+        <span class="h-2.5 w-px bg-sky-500"></span>
+    </div>
+{% endmacro %}
+
+{% macro label(text) %}
+    <p class="text-xs font-medium uppercase tracking-wider text-gray-500">{{ text }}</p>
+{% endmacro %}

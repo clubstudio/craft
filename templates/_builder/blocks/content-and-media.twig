@@ -4,29 +4,28 @@
   Two-column layout: a stack of Content beside media (image or video).
   Builds transform key for nested images: {parent}:content-and-media
 #}
-{% import '_macros/classes' as classes %}
 {% import '_macros/transforms' as transforms %}
 
-{% set textRight = block.mediaPosition.value == 'left' %}
 {% set transformKey = transforms.buildKey([transformKey, 'content-and-media']) %}
 
-<div class="
-    grid grid-cols-1 lg:grid-cols-2
-    gap-6 lg:gap-x-16
-    {{ classes.verticalAlignment(block.verticalAlignment.value) }}
-">
-    <div class="relative {{ textRight ? 'lg:order-1' : 'lg:order-2' }}">
-        {% set mediaType = block.mediaType.value %}
+{% embed '_components/layout/split' with {
+    mediaPosition: block.mediaPosition.value ?? 'left',
+    verticalAlignment: block.verticalAlignment.value ?? 'middle',
+    fullBleed: 'full-bleed' in transformKey|split(':'),
+    block: block,
+    transformKey: transformKey,
+} only %}
+    {% block media %}
         {% set image = block.image.eagerly().one() %}
 
-        {% if mediaType == 'image' and image %}
+        {% if block.mediaType.value == 'image' and image %}
             {% include '_components/image' with {
                 image: image,
                 transformKey: transformKey,
                 aspectRatio: block.aspectRatio.value,
                 class: 'w-full h-full object-cover',
             } only %}
-        {% elseif mediaType == 'video' %}
+        {% elseif block.mediaType.value == 'video' %}
             {% include '_components/video' with {
                 aspectRatio: block.aspectRatio.value,
                 url: block.videoUrl,
@@ -37,11 +36,9 @@
                 }),
             } only %}
         {% endif %}
-    </div>
+    {% endblock %}
 
-    {% set textClassKey = transformKey ~ ':media-' ~ block.mediaPosition.value %}
-
-    <div class="{{ textRight ? 'lg:order-2' : 'lg:order-1' }} {{ classes.sectionTextContainer(textClassKey ?? null) }}">
+    {% block content %}
         <div class="space-y-6">
             {% include '_builder/builder' with {
                 context: 'content-and-media',
@@ -49,5 +46,5 @@
                 transformKey: transformKey,
             } only %}
         </div>
-    </div>
-</div>
+    {% endblock %}
+{% endembed %}
