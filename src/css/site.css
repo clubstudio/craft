@@ -20,6 +20,9 @@
     --color-social-x: #000000;
     --color-social-youtube: #ff0000;
 
+    /* Section backgrounds, chosen by editors: bg-shade. Change or add colours for each site. */
+    --color-shade: oklch(96.7% 0.003 264.542);
+
     /* Content widths: max-w-medium and max-w-narrow. */
     --container-medium: 64rem;
     --container-narrow: 45rem;

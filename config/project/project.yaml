@@ -1,4 +1,4 @@
-dateModified: 1795604435
+dateModified: 1795604919
 elementSources:
   craft\elements\Entry:
     -
@@ -158,6 +158,7 @@ meta:
     1cc3e83c-680b-483a-9d51-c2d6de10221b: 'Content & Media' # Content & Media
     1ef86f4f-bc26-4199-b65d-f354b70f8fba: Logos # Logos
     2b8d277c-c134-499a-bb5b-11c2bec12bb1: Builder # Builder
+    3d5fe214-055a-4ed7-9192-978210f40884: Background # Background
     2debe9c4-8aef-459d-94e1-8490bd05cc6f: New # New
     2ee8ad4c-a735-4992-8ea3-b6e2d0930377: Logos # Logos
     3e21768c-5b31-4bba-be9f-8341e29cc796: Heading # Heading

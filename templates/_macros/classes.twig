@@ -39,12 +39,13 @@
     }, preference) -}}
 {% endmacro %}
 
+{# Section backgrounds. Each option has a colour token in site.css. #}
 {% macro backgroundColor(preference = 'none') %}
-    {{- attribute({
-        'none': 'bg-none',
-        'black': 'bg-black',
-        'white': 'bg-white',
-    }, preference) -}}
+    {%- set colours = {
+        none: '',
+        shade: 'bg-shade',
+    } -%}
+    {{- colours[preference ?: 'none'] ?? '' -}}
 {% endmacro %}
 
 {% macro fontSize(preference = 'none') %}

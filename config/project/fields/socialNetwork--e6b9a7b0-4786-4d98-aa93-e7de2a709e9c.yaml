@@ -15,6 +15,12 @@ settings:
           - value
           - bluesky
         -
+          - icon
+          - bluesky
+        -
+          - color
+          - '#1185fe'
+        -
           - default
           - ''
     -
@@ -25,6 +31,12 @@ settings:
         -
           - value
           - facebook
+        -
+          - icon
+          - facebook
+        -
+          - color
+          - '#0866ff'
         -
           - default
           - ''
@@ -37,6 +49,12 @@ settings:
           - value
           - instagram
         -
+          - icon
+          - instagram
+        -
+          - color
+          - '#ff0069'
+        -
           - default
           - ''
     -
@@ -47,6 +65,12 @@ settings:
         -
           - value
           - linkedin
+        -
+          - icon
+          - linkedin
+        -
+          - color
+          - '#0a66c2'
         -
           - default
           - ''
@@ -59,6 +83,12 @@ settings:
           - value
           - pinterest
         -
+          - icon
+          - pinterest
+        -
+          - color
+          - '#bd081c'
+        -
           - default
           - ''
     -
@@ -69,6 +99,12 @@ settings:
         -
           - value
           - threads
+        -
+          - icon
+          - threads
+        -
+          - color
+          - '#000000'
         -
           - default
           - ''
@@ -81,6 +117,12 @@ settings:
           - value
           - tiktok
         -
+          - icon
+          - tiktok
+        -
+          - color
+          - '#000000'
+        -
           - default
           - ''
     -
@@ -91,6 +133,12 @@ settings:
         -
           - value
           - twitch
+        -
+          - icon
+          - twitch
+        -
+          - color
+          - '#9146ff'
         -
           - default
           - ''
@@ -103,6 +151,12 @@ settings:
           - value
           - vimeo
         -
+          - icon
+          - vimeo-v
+        -
+          - color
+          - '#1ab7ea'
+        -
           - default
           - ''
     -
@@ -113,6 +167,12 @@ settings:
         -
           - value
           - whatsapp
+        -
+          - icon
+          - whatsapp
+        -
+          - color
+          - '#25d366'
         -
           - default
           - ''
@@ -125,6 +185,12 @@ settings:
           - value
           - x
         -
+          - icon
+          - x-twitter
+        -
+          - color
+          - '#000000'
+        -
           - default
           - ''
     -
@@ -135,6 +201,12 @@ settings:
         -
           - value
           - youtube
+        -
+          - icon
+          - youtube
+        -
+          - color
+          - '#ff0000'
         -
           - default
           - ''

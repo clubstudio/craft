@@ -1,0 +1,45 @@
+columnSuffix: null
+handle: backgroundColor
+instructions: null
+name: Background
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - none
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Shade
+        -
+          - value
+          - shade
+        -
+          - icon
+          - ''
+        -
+          - color
+          - '#f3f4f6'
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

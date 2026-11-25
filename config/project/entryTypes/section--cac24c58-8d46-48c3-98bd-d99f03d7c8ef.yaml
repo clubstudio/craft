@@ -138,6 +138,29 @@ fieldLayouts:
             uid: 8ddce7c3-4842-44d4-9cd2-9132e4145da0
             userCondition: null
           -
+            dateAdded: '2026-11-25T11:06:07+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 3d5fe214-055a-4ed7-9192-978210f40884 # Background
+            handle: null
+            instructions: null
+            label: null
+            oldFieldUid: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e1465c45-6003-45bf-bda1-f5c39d4b0829
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-11-25T11:06:07+00:00'
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 00cb89f8-382a-4e72-a604-036c101d89ad
+            userCondition: null
+          -
             dateAdded: '2025-07-02T14:43:53+00:00'
             editCondition: null
             elementCondition: null

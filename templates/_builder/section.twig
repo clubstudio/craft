@@ -3,6 +3,7 @@
 <section {{ attr({
     id: block.anchor ? block.anchor|kebab : false,
     class: [
+        classes.backgroundColor(block.backgroundColor.value ?? 'none'),
         classes.paddingTop(block.paddingTop.value),
         classes.paddingBottom(block.paddingBottom.value),
     ]|join(' '),
