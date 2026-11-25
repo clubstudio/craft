@@ -32,6 +32,20 @@ settings:
               - showUnpermittedEntries
               - ''
       -
+        - asset
+        -
+          __assoc__:
+            0:
+              - sources
+              -
+                - 'volume:a4855d49-a669-433d-a2f9-a410916ece9f' # Files
+            2:
+              - showUnpermittedVolumes
+              - ''
+            3:
+              - showUnpermittedFiles
+              - ''
+      -
         - url
         -
           __assoc__:
@@ -46,6 +60,7 @@ settings:
               - ''
   types:
     - entry
+    - asset
     - url
     - email
     - tel

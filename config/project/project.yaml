@@ -1,4 +1,4 @@
-dateModified: 1795603938
+dateModified: 1795604435
 elementSources:
   craft\elements\Entry:
     -
@@ -257,7 +257,7 @@ plugins:
   formie:
     edition: standard
     enabled: true
-    licenseKey: null
+    licenseKey: 3RH7RB3C6L7G7MS83FZX9VH3
     schemaVersion: 4.0.116
     settings:
       ajaxTimeout: 10
@@ -366,17 +366,17 @@ plugins:
   navigation:
     edition: standard
     enabled: true
-    licenseKey: null
+    licenseKey: 2FDSID4HVNSHRV509ER4B0VD
     schemaVersion: 4.0.10
   retour:
     edition: standard
     enabled: true
-    licenseKey: null
+    licenseKey: 0VX0TPS95DIZHTITEPOZ67SH
     schemaVersion: 3.0.12
   seomatic:
     edition: standard
     enabled: true
-    licenseKey: null
+    licenseKey: 8DHEBML0547CWNZ6Y4GRGASN
     schemaVersion: 3.0.13
   vite:
     edition: standard
