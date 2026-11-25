@@ -25,12 +25,12 @@ return [
         'section:full-bleed:content-and-media' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
-            'sizes' => '(min-width: 1024px) calc((100vw - 1.5rem) / 2), 100vw',
+            'sizes' => '(min-width: 1024px) calc((100vw - 4rem) / 2), 100vw',
         ],
         'section:full-width:content-and-media' => [
             'width' => 320,
             'srcset' => [320, 768, 1024, 1400],
-            'sizes' => '(min-width: 1536px) calc((100vw - 17.5rem) / 2), (min-width: 1280px) calc((100vw - 11.5rem) / 2), (min-width: 1024px) calc((100vw - 9.5rem) / 2), (min-width: 768px) calc(100vw - 4rem), calc(100vw - 3rem)',
+            'sizes' => '(min-width: 1536px) calc((100vw - 20rem) / 2), (min-width: 1280px) calc((100vw - 14rem) / 2), (min-width: 1024px) calc((100vw - 12rem) / 2), (min-width: 768px) calc(100vw - 4rem), calc(100vw - 3rem)',
         ],
         'section:full-width' => [
             'width' => 320,
