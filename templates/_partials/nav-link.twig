@@ -1,0 +1,9 @@
+{# A Navigation node as a link, or a span for passive and group nodes. activeClass styles the current page's link. #}
+{% set tag = node.getTag() %}
+<{{ tag }} {{ node.getLinkAttributes({
+    class: node.active ? (activeClass ?? []) : [],
+    'aria-current': node.active and tag == 'a' ? 'page' : null,
+}) }}>
+    {{- node.title -}}
+    {%- if node.newWindow %}<span class="sr-only"> {{ '(opens in a new tab)'|t }}</span>{% endif -%}
+</{{ tag }}>

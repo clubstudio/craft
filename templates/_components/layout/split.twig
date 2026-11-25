@@ -13,10 +13,16 @@
 
 {% set mediaLeft = data.mediaPosition != 'right' %}
 
+{# Defined here without printing; the media column only renders when the block has content. #}
+{% if false %}{% block media '' %}{% endif %}
+
 <div class="{{ classes.combine(['grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-x-16', classes.verticalAlignment(data.verticalAlignment ?: 'middle')], data.class) }}">
-    <div class="relative {{ mediaLeft ? 'lg:order-1' : 'lg:order-2' }}">
-        {% block media '' %}
-    </div>
+    {% set media = block('media')|trim %}
+    {% if media %}
+        <div class="relative {{ mediaLeft ? 'lg:order-1' : 'lg:order-2' }}">
+            {{ media|raw }}
+        </div>
+    {% endif %}
     <div class="{{ mediaLeft ? 'lg:order-2' : 'lg:order-1' }}{% if data.fullBleed %} {{ mediaLeft ? 'px-gutter lg:pl-0' : 'px-gutter lg:pr-0' }}{% endif %}">
         {% block content '' %}
     </div>

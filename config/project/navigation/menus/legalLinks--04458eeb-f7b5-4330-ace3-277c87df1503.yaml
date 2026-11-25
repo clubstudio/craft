@@ -191,4 +191,5 @@ sortOrder: 3
 structure:
   maxLevels: 1
   uid: 06ff144a-2b5c-43b5-bf23-a117b2ec9bef
+titleTranslationKeyFormat: null
 titleTranslationMethod: site

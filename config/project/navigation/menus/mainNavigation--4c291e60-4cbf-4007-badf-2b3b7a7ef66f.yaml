@@ -187,8 +187,9 @@ showSiteMenu: true
 siteSettings:
   fd532b74-9e46-4921-867f-79a80ef26fdf: # $CRAFT_SITE_NAME
     enabled: true
-sortOrder: 2
+sortOrder: 1
 structure:
   maxLevels: 1
   uid: f54b6777-7aed-4930-98de-39dfbd3c6cd8
+titleTranslationKeyFormat: null
 titleTranslationMethod: site

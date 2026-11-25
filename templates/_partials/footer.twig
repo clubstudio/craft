@@ -10,9 +10,30 @@
                 } only %}
             </div>
         {% endif %}
-        <div>
-            {# Footer Links #}
-        </div>
+        {% set footerNodes = craft.navigation.nodes().handle('footerNavigation').level(1).with(['children']).all() %}
+        {% if footerNodes|length %}
+            {# Each Group / Column is a column with its links beneath; top-level links share a column of their own. #}
+            {% set looseLinks = footerNodes|filter(node => not node.isGroupColumn()) %}
+            <nav aria-label="{{ 'Footer navigation'|t }}" class="grid grid-cols-2 gap-8 sm:grid-cols-3">
+                {% if looseLinks|length %}
+                    <ul class="flex flex-col gap-2">
+                        {% for node in looseLinks %}
+                            <li>{% include '_partials/nav-link' with { node: node, activeClass: ['underline', 'underline-offset-4'] } only %}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% for group in footerNodes|filter(node => node.isGroupColumn()) %}
+                    <div class="flex flex-col gap-3">
+                        <h2 class="font-medium">{{ group.title }}</h2>
+                        <ul class="flex flex-col gap-2">
+                            {% for node in group.children.all() %}
+                                <li>{% include '_partials/nav-link' with { node: node, activeClass: ['underline', 'underline-offset-4'] } only %}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+            </nav>
+        {% endif %}
         {% set newsletterForm = siteSettings.newsletterForm.eagerly().one() %}
         {% if newsletterForm %}
             <div>
@@ -30,18 +51,11 @@
             {% endif %}
             {% set nodes = craft.navigation.nodes().handle('legalLinks').all() %}
             {% if nodes|length %}
-                <nav aria-label="{{ 'Footer navigation'|t }}">
+                <nav aria-label="{{ 'Legal'|t }}">
                     <ul class="flex flex-wrap gap-6">
                         {% for node in nodes %}
                             <li>
-                                {% set tag = node.getTag() %}
-                                <{{ tag }} {{ node.getLinkAttributes({
-                                    class: node.active ? ['is-active'] : [],
-                                    'aria-current': node.active and tag == 'a' ? 'page' : null,
-                                }) }}>
-                                    {{- node.title -}}
-                                    {%- if node.newWindow %}<span class="sr-only"> {{ '(opens in a new tab)'|t }}</span>{% endif -%}
-                                </{{ tag }}>
+                                {% include '_partials/nav-link' with { node: node, activeClass: ['underline', 'underline-offset-4'] } only %}
                             </li>
                         {% endfor %}
                     </ul>
@@ -50,7 +64,7 @@
         </div>
         {% set socialProfiles = siteSettings.socialProfiles.eagerly().all() %}
         {% if socialProfiles|length %}
-            <nav aria-label="{{ 'Social Networks'|t }}">
+            <nav aria-label="{{ 'Social networks'|t }}">
                 <div class="flex gap-4">
                     {% for socialProfile in socialProfiles %}
                         <a

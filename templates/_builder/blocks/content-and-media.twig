@@ -29,6 +29,7 @@
             {% include '_components/video' with {
                 aspectRatio: block.aspectRatio.value,
                 url: block.videoUrl,
+                poster: image ? image.getUrl({ width: 1600 }) : null,
                 title: block.title,
                 tracks: block.videoTracks.eagerly().all()|map(track => {
                     label: track.title,

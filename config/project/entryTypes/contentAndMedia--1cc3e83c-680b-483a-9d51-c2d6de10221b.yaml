@@ -30,23 +30,11 @@ fieldLayouts:
           -
             dateAdded: '2025-07-02T11:57:07+00:00'
             editCondition: null
-            elementCondition:
-              class: craft\elements\conditions\entries\EntryCondition
-              conditionRules:
-                -
-                  class: craft\fields\conditions\OptionsFieldConditionRule
-                  fieldUid: a34c1736-2104-4937-99c0-00f502185b62 # Media Type
-                  layoutElementUid: b8d62dbb-efd2-4060-b2f8-b3e5695598fd
-                  operator: in
-                  uid: ce529da1-4903-4f92-9430-0fda9038f963
-                  values:
-                    - image
-              elementType: craft\elements\Entry
-              fieldContext: global
+            elementCondition: null
             elementEditCondition: null
             fieldUid: d0c7900e-d61c-4839-a59e-70bb47358360 # Image
             handle: null
-            instructions: null
+            instructions: 'For a video, this is the poster shown before it plays.'
             label: null
             oldFieldUid: null
             required: true

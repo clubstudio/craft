@@ -1,7 +1,10 @@
 {# Video: a video file with optional caption tracks. #}
+{% set poster = block.poster.eagerly().one() %}
+
 {% if block.videoUrl %}
     {% include '_components/video' with {
         url: block.videoUrl,
+        poster: poster ? poster.getUrl({ width: 1600 }) : null,
         aspectRatio: block.aspectRatio.value,
         title: block.title,
         tracks: block.videoTracks.eagerly().all()|map(track => {

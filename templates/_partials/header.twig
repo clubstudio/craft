@@ -10,14 +10,7 @@
                 <ul class="flex flex-col gap-4 pt-6 text-[15px] md:flex-row md:gap-8 md:pt-0">
                     {% for node in nodes %}
                         <li>
-                            {% set tag = node.getTag() %}
-                            <{{ tag }} {{ node.getLinkAttributes({
-                                class: node.active ? ['underline', 'underline-offset-4'] : [],
-                                'aria-current': node.active and tag == 'a' ? 'page' : null,
-                            }) }}>
-                                {{- node.title -}}
-                                {%- if node.newWindow %}<span class="sr-only"> {{ '(opens in a new tab)'|t }}</span>{% endif -%}
-                            </{{ tag }}>
+                            {% include '_partials/nav-link' with { node: node, activeClass: ['underline', 'underline-offset-4'] } only %}
                         </li>
                     {% endfor %}
                 </ul>
