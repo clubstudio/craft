@@ -29,52 +29,46 @@ Install or update [DDEV](https://ddev.com/) (which requires [Docker](https://dde
    ```
    ddev composer create-project "clubstudio/craft"
    ```
-   This replaces this README with one for your project, from `README.md.default`, and removes the starter's own `AGENTS.md`.
-4. Run Craft's installer, answering each prompt as it's asked:
+   This replaces this README and `composer.json` with your project's own, from `README.md.default` and `composer.json.default`, and removes the starter's `AGENTS.md` and `CHANGELOG.md`.
+4. Finish setting up the project:
+   ```
+   ddev setup
+   ```
+   This restarts DDEV so it loads the config the starter ships in `.ddev/` (the Vite dev server port and the MCP server's keys), and installs npm dependencies.
+5. Run Craft's installer, answering each prompt as it's asked:
    ```
    ddev craft install
    ```
-5. Run `ddev launch` to view your site in the browser
-6. Log in to the Craft control panel at `/admin` (or run `ddev launch /admin`) with the admin account you created during install
+6. Run `ddev launch` to view your site in the browser
+7. Log in to the Craft control panel at `/admin` (or run `ddev launch /admin`) with the admin account you created during install
 
 Next, feel free to read the official [Craft installation documentation](https://craftcms.com/docs/5.x/install.html).
 
 ## Developing
 
-After setting up Craft, you're almost ready to start building! This starter ships a `.ddev/config.vite.yaml` config that exposes the Vite dev server port (5173), so there's no DDEV configuration to edit by hand.
-
-Apply the shipped config and pull in frontend dependencies:
-
-```
-ddev restart
-ddev npm install
-```
-
-Once the dependencies have been installed, you can compile assets and start a watcher (with hot-module reloading) using:
+Start the Vite dev server, with hot reloading, and leave it running while you work:
 
 ```
 ddev npm run dev
 ```
 
-Leave this running while you work. When you're ready to generate optimised, production-ready assets, run:
+Pages render without styles unless it's running. To build optimised, cache-busted assets into `web/dist/`:
 
 ```
 ddev npm run build
 ```
 
-This writes hashed, cache-busted files to `web/dist/`.
-
-That's it! Happy coding! 🎉
-
 When you've finished working, run `ddev stop` to shut down the project containers and free up resources.
+
+Your project's README lists the other DDEV commands you'll use, including `ddev setup` for teammates cloning the project.
 
 ## Project Config
 
 Craft's [project config](https://craftcms.com/docs/5.x/system/project-config.html) is the source of truth for your site's schema — fields, entry types, sections and settings. It's stored as version-controlled YAML in `config/project/`.
 
-- After pulling changes from a teammate, sync your database with:
+- After pulling changes from a teammate, run any pending migrations and sync your database with:
   ```
-  ddev craft project-config/apply
+  ddev craft up
   ```
 - In `dev`, `CRAFT_ALLOW_ADMIN_CHANGES=true` lets you edit the schema from the control panel. Craft writes those edits back to `config/project/`, so commit the updated YAML alongside your code.
 
@@ -84,7 +78,7 @@ Craft's built-in [MCP server](https://github.com/craftcms/cms/blob/5.x/docs/mcp.
 
 - **Enabled in project config.** The authenticated server is turned on under **Settings → MCP**, at `/admin/mcp`. The public server stays off.
 - **Dev only.** `config/app.web.php` switches the server off unless `CRAFT_ENVIRONMENT=dev`, so on staging and production its endpoints return a 404.
-- **OAuth keys.** The `.ddev/config.mcp.yaml` hook generates signing keys in `storage/` the first time DDEV starts with Composer dependencies installed (the `ddev restart` step above). The keys are git-ignored. To generate them by hand, run `ddev craft oauth/generate-keys`.
+- **OAuth keys.** The `.ddev/config.mcp.yaml` hook generates signing keys in `storage/` the first time DDEV starts with Composer dependencies installed, and `ddev setup` generates them if they're missing. The keys are git-ignored. To generate them by hand, run `ddev craft oauth/generate-keys`.
 - **Claude Code.** `composer create-project` writes a `.mcp.json` pointing at your DDEV site. Commit it so your team shares it. In Claude Code, run `/mcp`, choose `craft`, sign in to Craft and approve the request. Access is read-only by default, and admins can grant full access.
 
 Other MCP clients can connect to `https://<project>.ddev.site/admin/mcp/auth`. To skip OAuth for a local client, use stdio: `ddev craft mcp/serve --user=<email>` runs as that user.

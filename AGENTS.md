@@ -30,7 +30,7 @@ ddev composer install
 ddev npm install
 ddev npm run dev                  # Vite dev server; pages render without styles unless it's running
 ddev npm run build                # production build to web/dist/
-ddev craft project-config/apply   # sync the database with config/project/ after a pull
+ddev craft up                     # run migrations and apply config/project/ after a pull
 ```
 
 ## Testing a change

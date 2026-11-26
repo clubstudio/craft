@@ -6,24 +6,15 @@ A Craft CMS 5 site, built on Club Studio's [`clubstudio/craft`](https://github.c
 
 ## Getting started
 
-Install or update [DDEV](https://ddev.com/) (which needs Docker), then, from the project folder:
+Install or update [DDEV](https://ddev.com/) (which needs Docker), then, from the project folder, set the project up with a copy of the database:
 
 ```
-ddev start
-ddev composer install
-ddev npm install
-cp .env.example.dev .env
-ddev craft setup/keys
+ddev setup path/to/dump.sql.gz
 ```
 
-Then either import a copy of the database:
+This starts DDEV, installs Composer and npm dependencies, creates `.env` with an app ID and security key, imports the database and runs `ddev craft up`. To install Craft from scratch instead, run `ddev setup` without a dump, then `ddev craft install`.
 
-```
-ddev import-db --file=path/to/dump.sql.gz
-ddev craft up
-```
-
-or install Craft from scratch with `ddev craft install`.
+It's safe to run again: it won't overwrite an existing `.env` or keys.
 
 Run `ddev launch` to open the site, and `ddev launch /admin` for the control panel.
 
@@ -43,11 +34,65 @@ ddev npm run build
 
 Run `ddev stop` when you've finished.
 
+## Commands
+
+Everything runs through DDEV, so nothing else needs installing. These are the commands you'll use most. Run `ddev help` for the full list, or `ddev <command> --help` for a command's options.
+
+### Project
+
+| Command | What it does |
+|---|---|
+| `ddev setup [dump.sql.gz]` | Set up the project after cloning it, importing the database if one is given |
+| `ddev start` / `ddev stop` | Start or stop the project's containers |
+| `ddev restart` | Restart, after changing anything in `.ddev/` |
+| `ddev launch` | Open the site (`ddev launch /admin` for the control panel) |
+| `ddev describe` | Show the project's URLs, services and database details |
+| `ddev mailpit` | Open Mailpit, which catches every email the site sends |
+| `ddev ssh` | Open a shell in the web container |
+| `ddev logs -f` | Follow the web container's logs |
+| `ddev poweroff` | Stop every DDEV project |
+
+### Tools
+
+These run inside the web container, so the versions match the ones the site runs on.
+
+| Command | What it does |
+|---|---|
+| `ddev craft <command>` | Run a Craft console command |
+| `ddev composer <command>` | Run Composer |
+| `ddev npm <command>` | Run npm |
+| `ddev php <file>` | Run PHP |
+
+### Craft
+
+| Command | What it does |
+|---|---|
+| `ddev craft up` | Run pending migrations and apply project config, after pulling changes |
+| `ddev craft project-config/apply` | Apply project config only |
+| `ddev craft clear-caches/all` | Clear Craft's caches |
+| `ddev craft resave/entries` | Resave entries, after changing fields that affect saved content |
+
+### Database
+
+| Command | What it does |
+|---|---|
+| `ddev import-db --file=dump.sql.gz` | Replace the local database with a dump |
+| `ddev export-db --file=dump.sql.gz` | Export the local database |
+| `ddev snapshot` | Save a snapshot of the database, before anything risky |
+| `ddev snapshot restore --latest` | Restore the latest snapshot |
+| `ddev tableplus` | Open the database in TablePlus, if it's installed |
+
+### Debugging
+
+| Command | What it does |
+|---|---|
+| `ddev xdebug on` / `ddev xdebug off` | Turn Xdebug on or off. It slows every request, so leave it off when you're not using it |
+
 ## Project config
 
 The site's schema (fields, entry types, sections and settings) lives in `config/project/` as YAML, under version control.
 
-- After pulling changes, sync your database with `ddev craft project-config/apply`.
+- After pulling changes, run `ddev craft up`. It runs any pending migrations, then applies project config to your database.
 - In `dev`, schema changes made in the control panel are written back to `config/project/`. Commit the YAML with the templates that use it.
 
 ## Templates

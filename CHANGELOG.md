@@ -4,6 +4,29 @@ Notable changes to the `clubstudio/craft` starter. The major version follows Cra
 
 Projects get their own copy of the starter when they're created, without this file, so nothing here reaches an existing site until it's ported.
 
+## Unreleased
+
+### Added
+
+- A Commands section in `README.md.default`, listing the DDEV commands used most on a project.
+- A `ddev setup` command (`.ddev/commands/host/setup`) for setting up a new or cloned project. It restarts DDEV so config in `.ddev/` is loaded, installs Composer and npm dependencies, creates `.env` with an app ID and security key, generates the MCP server's OAuth keys, and imports a database dump if one is given, then runs `ddev craft up`.
+
+### Changed
+
+- The READMEs and `AGENTS.md` use `ddev craft up` after a pull in place of `ddev craft project-config/apply`, so pending migrations run too.
+- Creating a project is now `composer create-project`, `ddev setup` and `ddev craft install`. The starter's README covers only that and running Vite, and leaves other commands to the project's README.
+
+### Fixed
+
+- `composer.lock` matched neither `composer.json` nor `composer.json.default`, so Composer warned that the lock file was out of date. The starter's lock is refreshed, and `post-create-project-cmd` refreshes the hash for the project's `composer.json` after the swap, without changing any versions.
+- `composer.json.default` allows the `php-http/discovery` plugin, as the starter's `composer.json` already did, so Composer doesn't ask about it in new projects.
+
+### Upgrading
+
+- If Composer warns that the lock file is out of date, run `ddev composer update --lock`. If it asks about `php-http/discovery`, add `"php-http/discovery": true` to `allow-plugins` in `composer.json`.
+
+- Optional: copy `.ddev/commands/host/setup` into the project, keeping it executable, and update the project's `README.md` from `README.md.default` (Getting started and Commands).
+
 ## 5.3.0 - 2026-11-25
 
 A review of the starter's content model, templates and accessibility, so it's a simpler base for editors and a more consistent one for developers.

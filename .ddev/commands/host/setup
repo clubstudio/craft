@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+## Description: Set up a project: (re)start DDEV, install dependencies, create .env and keys, and import a database if one is given
+## Usage: setup [path/to/dump.sql.gz]
+## Example: "ddev setup" or "ddev setup ~/Downloads/dump.sql.gz"
+## HostWorkingDir: true
+
+set -euo pipefail
+
+# Resolve the dump's path before moving to the project root, so a relative path works from any folder.
+dump=""
+if [ $# -gt 0 ]; then
+  if [ ! -f "$1" ]; then
+    echo "Can't find the database dump: $1" >&2
+    exit 1
+  fi
+  dump="$(cd "$(dirname "$1")" && pwd)/$(basename "$1")"
+fi
+
+cd "$DDEV_APPROOT"
+
+if [ ! -f .env ]; then
+  cp .env.example.dev .env
+  echo "Created .env from .env.example.dev"
+fi
+
+# Restart rather than start, so DDEV loads any config in .ddev/ that arrived since it last started
+# (after `composer create-project`, for example). A stopped project is simply started.
+ddev restart
+ddev composer install
+ddev npm install
+
+# Adds an app ID and security key to .env, only where they're missing.
+ddev craft setup/keys
+
+# The post-start hook in config.mcp.yaml only generates these once Composer dependencies are
+# installed, which on a fresh clone they weren't when DDEV started.
+ddev exec '[ -f storage/oauth-private.key ] || php craft oauth/generate-keys'
+
+if [ -n "$dump" ]; then
+  ddev import-db --file="$dump"
+  ddev craft up
+elif ddev craft install/check > /dev/null 2>&1; then
+  ddev craft up
+else
+  echo
+  echo "Craft isn't installed yet. Either import a copy of the database:"
+  echo
+  echo "  ddev setup path/to/dump.sql.gz"
+  echo
+  echo "or install Craft from scratch with: ddev craft install"
+  exit 0
+fi
+
+echo
+echo "Done. Run \`ddev launch\` to open the site, and \`ddev npm run dev\` to start Vite."
