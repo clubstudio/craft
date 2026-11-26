@@ -31,6 +31,7 @@
       "@php -r \"file_exists('.mcp.json') || !getenv('DDEV_PRIMARY_URL') || file_put_contents('.mcp.json', json_encode(['mcpServers' => ['craft' => ['type' => 'http', 'url' => getenv('DDEV_PRIMARY_URL') . '/admin/mcp/auth']]], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . PHP_EOL);\"",
       "@php -r \"unlink('composer.json');\"",
       "@php -r \"rename('composer.json.default', 'composer.json');\"",
+      "@composer update --lock --no-install --no-interaction",
       "@php -r \"unlink('README.md');\"",
       "@php -r \"rename('README.md.default', 'README.md');\"",
       "@php -r \"file_exists('AGENTS.md') && unlink('AGENTS.md');\"",
