@@ -14,14 +14,14 @@
 {% set logos = data.logos|filter(logo => logo.image ?? null) %}
 
 {% if logos|length %}
-    <div class="{{ classes.combine('flex items-center justify-between flex-wrap -m-6', data.class) }}">
+    <ul class="{{ classes.combine('flex items-center justify-between flex-wrap -m-6', data.class) }}">
         {% for logo in logos %}
             {% set asset = logo.image %}
             {% set url = logo.url ?? null %}
             {% set newTab = url and (logo.target ?? null) == '_blank' %}
             {% set label = (logo.ariaLabel ?? null) ?: asset.alt ?: (logo.name ?? null) %}
 
-            <figure class="p-6 flex justify-center">
+            <li class="p-6 flex justify-center">
                 {% tag (url ? 'a' : 'div') with url ? {
                     href: url,
                     target: logo.target ?? null,
@@ -52,7 +52,7 @@
                         } only %}
                     {% endif %}
                 {% endtag %}
-            </figure>
+            </li>
         {% endfor %}
-    </div>
+    </ul>
 {% endif %}

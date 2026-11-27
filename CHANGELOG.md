@@ -25,6 +25,14 @@ Projects get their own copy of the starter when they're created, without this fi
 - The Hero's image was always hidden from screen readers, because it was wrapped in `<figure aria-hidden="true">`, so its alt text was never read. The wrapper is gone: an image with alt text is announced, and one without renders `alt=""` and is skipped, as in every other block.
 - A logo whose image had no alt text had no accessible name: a linked one was an empty link, and an unlinked SVG got `role="img" aria-label=""`. The Logos block now passes each logo's Title to `_components/logos` as `name`, the fallback after the link's ARIA label and the image's alt text, and the Title's instructions say so. An unlinked logo with no name at all is hidden from screen readers.
 - The Video and Content & Media blocks passed `block.title` to `_components/video`, but neither has a title field, so every video got a generic `aria-label="Video"`. The blocks no longer pass a title, and the component only labels the video when it's given one. The play button still reads "Play video", or "Play video: {title}" with a title.
+- Smaller accessibility and markup fixes:
+  - The footer's social links are a list, like the other menus.
+  - The social network SVGs in `src/svg/social/` no longer carry `role="img"` and a `<title>`, which contradicted the `aria-hidden` they're drawn with, and the footer no longer adds a `title` attribute to them.
+  - The breadcrumb isn't rendered when the trail is only the current page, such as on the homepage.
+  - The dev-mode breakpoint helper is hidden from screen readers.
+  - Accordions hide the native `<summary>` marker in Safari too.
+  - Image (Inline) no longer wraps its image in a `<figure>` with no caption, and `_components/logos` is a list, each logo a list item, in place of a `<div>` of captionless `<figure>`s.
+  - The Link field's instructions say that an ARIA label replaces the link's text for screen readers, so it should start with that text (WCAG 2.5.3).
 - `composer.lock` matched neither `composer.json` nor `composer.json.default`, so Composer warned that the lock file was out of date. The starter's lock is refreshed, and `post-create-project-cmd` refreshes the hash for the project's `composer.json` after the swap, without changing any versions.
 - `composer.json.default` allows the `php-http/discovery` plugin, as the starter's `composer.json` already did, so Composer doesn't ask about it in new projects.
 
@@ -34,6 +42,7 @@ Projects get their own copy of the starter when they're created, without this fi
 - In `templates/_builder/blocks/hero.twig`, remove the `<figure aria-hidden="true">` around the image include. Check that hero images people should hear about have alt text in Assets.
 - Copy `templates/_components/logos.twig` and `templates/_builder/blocks/logos.twig` from the starter, or pass `name: logo.title` from the block and fall back to it in the component. Optionally update the Logo entry type's Title instructions to match.
 - Remove `title: block.title` from `templates/_builder/blocks/video.twig` and `content-and-media.twig`. In `templates/_components/video.twig`, replace the `<video>` element's `aria-label="{{ data.title ?? 'Video'|t }}"` with `'aria-label': data.title ?: null` in its `attr()` call.
+- Optional: copy the smaller accessibility fixes from the starter: `src/svg/social/*.svg`, the social list in `templates/_partials/footer.twig`, and `templates/_components/breadcrumb.twig`, `accordion.twig`, `logos.twig`, `_builder/blocks/image-inline.twig` and `_dev/breakpoint-helper.twig`. A site that styles `_components/logos` by its `<figure>` or `<div>` elements should target the `<ul>` and `<li>` instead.
 - If Composer warns that the lock file is out of date, run `ddev composer update --lock`. If it asks about `php-http/discovery`, add `"php-http/discovery": true` to `allow-plugins` in `composer.json`.
 
 - Optional: copy `.ddev/commands/host/setup` and `.ddev/share-providers/tailscale.sh` into the project, keeping them executable, with `.ddev/config.share.yaml`, the `beforeRequest` changes in `config/app.web.php` and `allowedHosts` in `vite.config.js`, and update the project's `README.md` from `README.md.default` (Getting started and Commands).

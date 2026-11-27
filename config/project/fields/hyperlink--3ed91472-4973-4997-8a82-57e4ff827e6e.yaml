@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: hyperlink
-instructions: null
+instructions: 'An ARIA label replaces the link’s text for screen readers, so start it with that text. For “Read more”, use “Read more about pricing”, not “Pricing details”.'
 name: Link
 searchable: false
 settings:

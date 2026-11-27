@@ -2,11 +2,11 @@
 {% set image = block.image.eagerly().one() %}
 
 {% if image %}
-    <figure class="inline-block max-w-24 -ml-2 mb-1">
+    <div class="inline-block max-w-24 -ml-2 mb-1">
         {% include '_components/image' with {
             image: image,
             transformKey: 'image-inline',
             aspectRatio: 'auto',
         } only %}
-    </figure>
+    </div>
 {% endif %}

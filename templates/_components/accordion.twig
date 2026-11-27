@@ -17,7 +17,8 @@
     <div class="{{ classes.combine(['divide-y', sizeClasses.list], data.class) }}">
         {% for item in data.items %}
             <details class="group {{ sizeClasses.item }}">
-                <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+                {# list-none hides the native marker; [&::-webkit-details-marker]:hidden does the same in Safari, which ignores it. #}
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
                     {{ item.title }}
                     <span aria-hidden="true" class="shrink-0 text-xl leading-none transition-transform group-open:rotate-45 motion-reduce:transition-none">+</span>
                 </summary>

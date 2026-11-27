@@ -1,14 +1,19 @@
-<nav aria-label="{{ 'Breadcrumb'|t }}">
-    <ol class="mb-6 flex flex-wrap gap-x-2 in-[.text-center]:justify-center in-[.text-right]:justify-end">
-        {% for crumb in craft.navigation.urlBreadcrumbs() %}
-            <li class="whitespace-nowrap">
-                {% if loop.last %}
-                    <span aria-current="page">{{ crumb.title }}</span>
-                {% else %}
-                    <a href="{{ crumb.url }}" class="underline">{{ crumb.title }}</a>
-                    <span aria-hidden="true" class="ml-1">/</span>
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ol>
-</nav>
+{# The trail of pages to the current one. It's left out on the homepage, or anywhere the trail is only the current page. #}
+{% set crumbs = craft.navigation.urlBreadcrumbs() %}
+
+{% if crumbs|length > 1 %}
+    <nav aria-label="{{ 'Breadcrumb'|t }}">
+        <ol class="mb-6 flex flex-wrap gap-x-2 in-[.text-center]:justify-center in-[.text-right]:justify-end">
+            {% for crumb in crumbs %}
+                <li class="whitespace-nowrap">
+                    {% if loop.last %}
+                        <span aria-current="page">{{ crumb.title }}</span>
+                    {% else %}
+                        <a href="{{ crumb.url }}" class="underline">{{ crumb.title }}</a>
+                        <span aria-hidden="true" class="ml-1">/</span>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ol>
+    </nav>
+{% endif %}
