@@ -1,9 +1,4 @@
 {% extends '_layouts/error' %}
 
-{% block error %}
-    {% include '_components/error' with {
-        heading: 'Be right back!'|t,
-        body: "We're currently performing essential maintenance. Please try again in a few minutes."|t,
-    } only %}
-{% endblock %}
-
+{% set heading = 'Be right back!'|t %}
+{% set body = "We're currently performing essential maintenance. Please try again in a few minutes."|t %}

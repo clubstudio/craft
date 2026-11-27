@@ -100,4 +100,12 @@
     ol { list-style: decimal; }
     a { text-decoration: underline; text-underline-offset: 4px; }
     strong { font-weight: 600; }
+
+    /*
+     * The Large and Small paragraph styles in config/ckeditor/Paragraph.json. CKEditor saves these class names in
+     * the content, so they name what the text is rather than how it looks: restyle them here, and never rename them
+     * without updating saved content.
+     */
+    .lead { @apply text-xl; }
+    .small { @apply text-sm; }
 }

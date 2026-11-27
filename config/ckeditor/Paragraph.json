@@ -3,14 +3,14 @@
     "definitions": [
       {
         "classes": [
-          "text-xl"
+          "lead"
         ],
         "element": "p",
         "name": "Large"
       },
       {
         "classes": [
-          "text-sm"
+          "small"
         ],
         "element": "p",
         "name": "Small"

@@ -17,6 +17,10 @@ Projects get their own copy of the starter when they're created, without this fi
 - The READMEs and `AGENTS.md` use `ddev craft up` after a pull in place of `ddev craft project-config/apply`, so pending migrations run too.
 - Creating a project is now `composer create-project`, `ddev setup` and `ddev craft install`. The starter's README covers only that and running Vite, and leaves other commands to the project's README.
 
+- `composer.json` and `composer.json.default` set `config.platform.php` to 8.3, so Composer resolves dependencies for PHP 8.3 whichever version runs it, and `composer.lock` stays installable on the server. The lock already needed 8.3 (league/csv, moneyphp/money and openspout require it), so no versions change. `README.md.default` explains keeping it at production's version.
+- `_layouts/base.twig` no longer prints a `csrf-token` meta tag. Nothing used it, and a token in every page stops pages being cached whole. `README.md` says how to get a token when one's needed.
+- The Large and Small paragraph styles in `config/ckeditor/Paragraph.json` add `lead` and `small` classes in place of `text-xl` and `text-sm`, styled under `.body-copy` in `site.css`. CKEditor saves these class names in the content, so they no longer depend on Tailwind's.
+- `.env.example.production` and `.env.example.staging` leave `PRIMARY_SITE_URL` and `CRAFT_DB_USER` blank, in place of the local DDEV URL and `root`.
 - The Main Navigation and Legal Links menus are fetched with `level(1)`. Both are one level deep (`maxLevels: 1`), so nothing changes on the page, but a project that raises the limit won't get child items rendered as top-level links before it adds markup for them.
 
 ### Fixed
@@ -33,6 +37,8 @@ Projects get their own copy of the starter when they're created, without this fi
   - Accordions hide the native `<summary>` marker in Safari too.
   - Image (Inline) no longer wraps its image in a `<figure>` with no caption, and `_components/logos` is a list, each logo a list item, in place of a `<div>` of captionless `<figure>`s.
   - The Link field's instructions say that an ARIA label replaces the link's text for screen readers, so it should start with that text (WCAG 2.5.3).
+- Error pages could fail to render when the database was the problem, because `_layouts/error` extended `_layouts/base`, which reads Site Settings. The error layout now stands alone: it reads nothing from the database, and uses Vite and SEOmatic only when they're loaded. Error templates set `heading` and `body` in place of overriding an `error` block.
+- `site.webmanifest` printed names and descriptions into JSON unescaped, so a quote in the site's name broke it. It's now built as a hash and JSON-encoded. It also lists `favicon.svg` as the icon for any purpose, beside the maskable PNGs, and falls back to the site name when SEOmatic's names are empty.
 - `composer.lock` matched neither `composer.json` nor `composer.json.default`, so Composer warned that the lock file was out of date. The starter's lock is refreshed, and `post-create-project-cmd` refreshes the hash for the project's `composer.json` after the swap, without changing any versions.
 - `composer.json.default` allows the `php-http/discovery` plugin, as the starter's `composer.json` already did, so Composer doesn't ask about it in new projects.
 
@@ -43,6 +49,11 @@ Projects get their own copy of the starter when they're created, without this fi
 - Copy `templates/_components/logos.twig` and `templates/_builder/blocks/logos.twig` from the starter, or pass `name: logo.title` from the block and fall back to it in the component. Optionally update the Logo entry type's Title instructions to match.
 - Remove `title: block.title` from `templates/_builder/blocks/video.twig` and `content-and-media.twig`. In `templates/_components/video.twig`, replace the `<video>` element's `aria-label="{{ data.title ?? 'Video'|t }}"` with `'aria-label': data.title ?: null` in its `attr()` call.
 - Optional: copy the smaller accessibility fixes from the starter: `src/svg/social/*.svg`, the social list in `templates/_partials/footer.twig`, and `templates/_components/breadcrumb.twig`, `accordion.twig`, `logos.twig`, `_builder/blocks/image-inline.twig` and `_dev/breakpoint-helper.twig`. A site that styles `_components/logos` by its `<figure>` or `<div>` elements should target the `<ul>` and `<li>` instead.
+- Copy `templates/_layouts/error.twig` and `templates/_errors/` from the starter. If the site's error templates override `{% block error %}`, change them to set `heading` and `body` instead.
+- Copy `templates/site.webmanifest.twig` from the starter, keeping the site's own colours.
+- Add `"platform": { "php": "8.3" }` (or the version production runs) to `config` in `composer.json`, then run `ddev composer update --lock`.
+- Remove `<meta name="csrf-token">` from `templates/_layouts/base.twig`, unless the site's own JavaScript reads it. If it does, fetch the token from `/actions/users/session-info` instead.
+- To use semantic rich text classes, copy `config/ckeditor/Paragraph.json` and the `.lead` and `.small` rules in `site.css`, then update saved content: in the database, replace `class="text-xl"` with `class="lead"` and `class="text-sm"` with `class="small"` in rich text fields (back up first, or use `ddev snapshot`). Until then, existing content keeps `text-xl` and `text-sm`, which Tailwind only generates while they appear in the site's source, so add `@source inline("text-xl text-sm");` to `site.css`.
 - If Composer warns that the lock file is out of date, run `ddev composer update --lock`. If it asks about `php-http/discovery`, add `"php-http/discovery": true` to `allow-plugins` in `composer.json`.
 
 - Optional: copy `.ddev/commands/host/setup` and `.ddev/share-providers/tailscale.sh` into the project, keeping them executable, with `.ddev/config.share.yaml`, the `beforeRequest` changes in `config/app.web.php` and `allowedHosts` in `vite.config.js`, and update the project's `README.md` from `README.md.default` (Getting started and Commands).

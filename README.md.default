@@ -91,6 +91,10 @@ These run inside the web container, so the versions match the ones the site runs
 
 `ddev share` uses [Tailscale](https://tailscale.com/download), which needs to be installed and signed in, with HTTPS certificates enabled for the tailnet (in the admin console, under DNS). Nothing is public. Keep `ddev npm run dev` running for styles and hot reloading on the other device. For a public URL, use `ddev share --provider=cloudflared` or `--provider=ngrok` instead.
 
+## PHP version
+
+Composer resolves dependencies for PHP 8.3, set by `config.platform.php` in `composer.json`, whichever PHP version runs it. That keeps `composer.lock` installable on the server. Keep it at the version production runs: when production moves to a newer PHP, change it, set `php_version` in `.ddev/config.yaml` to match, and run `ddev composer update`.
+
 ## Project config
 
 The site's schema (fields, entry types, sections and settings) lives in `config/project/` as YAML, under version control.

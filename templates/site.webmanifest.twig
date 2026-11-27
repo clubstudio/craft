@@ -1,28 +1,31 @@
+{#
+  The web app manifest, linked from _layouts/base. It's built as a hash and JSON-encoded, so names and descriptions
+  with quotes or other special characters stay valid JSON. Names come from SEOmatic's Site Identity, then the site name.
+
+  The PNG icons are maskable: their artwork sits inside a safe zone, so they can be cropped to any shape. favicon.svg
+  is the icon for everywhere else (purpose "any"). Replace them with the site's own from https://realfavicongenerator.net.
+#}
 {% header "Content-Type: application/manifest+json" %}
-{
-  "name": "{{ seomatic.site.identity.genericName ?? siteName }}",
-  "short_name": "{{ seomatic.site.identity.genericAlternateName ?? siteName }}",
-  "description": "{{ seomatic.site.identity.genericDescription ?? '' }}",
-  "start_url": "/",
-  "scope": "/",
-  "id": "/",
-  "lang": "{{ currentSite.language|split('-')|first }}",
-  "dir": "ltr",
-  "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "icons": [
-    {
-      "src": "/web-app-manifest-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/web-app-manifest-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
-  ]
-}
+
+{% set identity = seomatic.site.identity ?? null %}
+
+{% set manifest = {
+    name: (identity.genericName ?? null) ?: siteName,
+    short_name: (identity.genericAlternateName ?? null) ?: siteName,
+    description: (identity.genericDescription ?? null) ?: '',
+    start_url: '/',
+    scope: '/',
+    id: '/',
+    lang: currentSite.language,
+    dir: 'ltr',
+    display: 'standalone',
+    theme_color: '#ffffff',
+    background_color: '#ffffff',
+    icons: [
+        { src: '/favicon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' },
+        { src: '/web-app-manifest-192x192.png', sizes: '192x192', type: 'image/png', purpose: 'maskable' },
+        { src: '/web-app-manifest-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+    ],
+} %}
+
+{{- manifest|json_encode(constant('JSON_PRETTY_PRINT') b-or constant('JSON_UNESCAPED_SLASHES') b-or constant('JSON_UNESCAPED_UNICODE'))|raw -}}

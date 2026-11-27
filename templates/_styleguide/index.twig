@@ -204,6 +204,7 @@
                 <div class="flex flex-col gap-4">
                     {{ guide.label('Rich text') }}
                     {% set sampleRichText %}
+                        <p class="lead">A Large paragraph, the lead style editors can pick in Rich Text.</p>
                         <p>A paragraph of body copy with <a href="#">a link</a> and <strong>some strong text</strong>. It runs long enough to wrap onto a second line so you can check the line height and measure.</p>
                         <ul>
                             <li>A bulleted list item with <a href="#">a link</a></li>
@@ -217,6 +218,7 @@
                         <p>Headings in Rich Text use the same styles as the heading component.</p>
                         <h3>A third-level heading</h3>
                         <p>Another paragraph to show the space below a heading.</p>
+                        <p class="small">A Small paragraph, for notes and fine print.</p>
                     {% endset %}
                     {% include '_components/rich-text' with { body: sampleRichText, class: 'max-w-narrow' } only %}
                 </div>

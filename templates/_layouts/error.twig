@@ -1,12 +1,32 @@
-{% extends '_layouts/base' %}
+{#
+  The layout for error pages (_errors/), which set `heading` and `body` before extending it.
 
-{% block body %}
-    <main id="main-content" class="leading-normal flex justify-center items-center text-center p-6 min-h-screen">
-        {% block error %}
-            {% include '_components/error' with {
-                heading: 'Whoops'|t,
-                body: 'Sorry, but it looks like something has gone wrong.'|t,
-            } only %}
-        {% endblock %}
-    </main>
-{% endblock %}
+  It doesn't extend _layouts/base: error pages have to render when what caused the error is broken, such as the
+  database. So it reads nothing from the database (no Site Settings, navigation or tracking tags), and only uses
+  plugins that are loaded.
+#}
+{%- set heading = heading ?? 'Whoops'|t -%}
+{%- set body = body ?? 'Sorry, but it looks like something has gone wrong.'|t -%}
+
+<!doctype html>
+<html lang="{{ craft.app.language }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {# SEOmatic adds the title and robots tags when it's loaded. #}
+        {% if seomatic is not defined %}
+            <title>{{ heading }}</title>
+            <meta name="robots" content="noindex">
+        {% endif %}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+        <link rel="icon" href="/favicon.ico" sizes="32x32">
+        {% if craft.vite is defined %}
+            {{ craft.vite.script('src/js/site.js', false) }}
+        {% endif %}
+    </head>
+    <body>
+        <main id="main-content" class="leading-normal flex justify-center items-center text-center p-6 min-h-screen">
+            {% include '_components/error' with { heading: heading, body: body } only %}
+        </main>
+    </body>
+</html>

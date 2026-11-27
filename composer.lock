@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "19fe473b08ac2b6bb20c0e26911ba5fc",
+    "content-hash": "5872af9612ffb9a200289522fc34fed4",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -591,7 +591,8 @@
                 "docs": "https://github.com/craftcms/ckeditor/blob/5.x/README.md",
                 "rss": "https://github.com/craftcms/ckeditor/commits/5.x.atom"
             },
-            "time": "2026-11-24T19:00:25+00:00"
+            "time": "2026-11-24T19:00:25+00:00",
+            "published-time": "2026-11-24T19:01:17+00:00"
         },
         {
             "name": "craftcms/cms",
@@ -702,7 +703,8 @@
                 "docs": "https://craftcms.com/docs/5.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2026-11-25T18:17:48+00:00"
+            "time": "2026-11-25T18:17:48+00:00",
+            "published-time": "2026-11-25T18:27:54+00:00"
         },
         {
             "name": "craftcms/html-field",
@@ -743,7 +745,8 @@
                 "docs": "https://github.com/craftcms/html-field/blob/main/README.md",
                 "rss": "https://github.com/craftcms/html-field/commits/main.atom"
             },
-            "time": "2026-10-06T13:37:55+00:00"
+            "time": "2026-10-06T13:37:55+00:00",
+            "published-time": "2026-10-06T13:39:00+00:00"
         },
         {
             "name": "craftcms/plugin-installer",
@@ -4517,7 +4520,8 @@
                 "docs": "https://github.com/nystudio107/craft-plugin-vite/blob/v5/README.md",
                 "issues": "https://github.com/nystudio107/craft-plugin-vite/issues"
             },
-            "time": "2026-08-01T20:20:58+00:00"
+            "time": "2026-08-01T20:20:58+00:00",
+            "published-time": "2026-08-01T20:21:07+00:00"
         },
         {
             "name": "nystudio107/craft-retour",
@@ -4569,7 +4573,8 @@
                 "issues": "https://nystudio107.com/plugins/retour/support",
                 "source": "https://github.com/nystudio107/craft-retour"
             },
-            "time": "2026-02-06T19:51:05+00:00"
+            "time": "2026-02-06T19:51:05+00:00",
+            "published-time": "2026-02-06T19:51:18+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
@@ -4630,7 +4635,8 @@
                 "issues": "https://nystudio107.com/plugins/seomatic/support",
                 "source": "https://github.com/nystudio107/craft-seomatic"
             },
-            "time": "2026-11-24T05:54:35+00:00"
+            "time": "2026-11-24T05:54:35+00:00",
+            "published-time": "2026-11-24T05:54:43+00:00"
         },
         {
             "name": "nystudio107/craft-twig-sandbox",
@@ -4743,7 +4749,8 @@
                 "issues": "https://nystudio107.com/plugins/vite/support",
                 "source": "https://github.com/nystudio107/craft-vite"
             },
-            "time": "2026-08-01T20:38:21+00:00"
+            "time": "2026-08-01T20:38:21+00:00",
+            "published-time": "2026-08-01T20:38:29+00:00"
         },
         {
             "name": "openspout/openspout",
@@ -10834,7 +10841,8 @@
                 "docs": "https://github.com/verbb/formie",
                 "rss": "https://github.com/verbb/formie/commits/v2.atom"
             },
-            "time": "2026-11-24T11:43:48+00:00"
+            "time": "2026-11-24T11:43:48+00:00",
+            "published-time": "2026-11-24T11:43:54+00:00"
         },
         {
             "name": "verbb/navigation",
@@ -10888,7 +10896,8 @@
                 "docs": "https://github.com/verbb/navigation",
                 "rss": "https://github.com/verbb/navigation/commits/v2.atom"
             },
-            "time": "2026-11-24T11:31:31+00:00"
+            "time": "2026-11-24T11:31:31+00:00",
+            "published-time": "2026-11-24T11:32:58+00:00"
         },
         {
             "name": "verbb/tiptap",
@@ -11827,7 +11836,8 @@
                 "source": "https://github.com/craftcms/generator",
                 "rss": "https://github.com/craftcms/generator/releases.atom"
             },
-            "time": "2025-05-29T18:12:44+00:00"
+            "time": "2025-05-29T18:12:44+00:00",
+            "published-time": "2025-05-29T18:12:57+00:00"
         },
         {
             "name": "nette/php-generator",
@@ -12304,5 +12314,8 @@
     "prefer-lowest": false,
     "platform": {},
     "platform-dev": {},
+    "platform-overrides": {
+        "php": "8.3"
+    },
     "plugin-api-version": "2.11.0"
 }

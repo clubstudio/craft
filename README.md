@@ -176,6 +176,7 @@ A Section's **Content Width** sets how wide its content is: Full bleed (edge to 
 - Use `block.fieldName.eagerly().one()` or `.all()` for related content
 - Use `{{ 'Text'|t }}` for all user-facing strings (translation support)
 - Include SVGs with `{{ svg('@svg/path.svg')|attr({...}) }}`
+- Keep CSRF tokens out of the page's shared markup, so pages can be cached whole (Blitz, a CDN). Formie forms add their own. In a hand-written form, use `{{ csrfInput({ async: true }) }}`, which fetches the token when the page loads; `->asyncCsrfInputs()` in `config/general.php` does that for every form, which then needs JavaScript to submit. In JavaScript, get it from `/actions/users/session-info` (with `Accept: application/json`), whose response includes `csrfTokenValue`.
 
 ### Accessibility Standards
 
