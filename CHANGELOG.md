@@ -14,6 +14,7 @@ Projects get their own copy of the starter when they're created, without this fi
 
 ### Changed
 
+- Upgraded to Vite 8, which builds with Rolldown, so `vite.config.js` uses `build.rolldownOptions` in place of `build.rollupOptions`. `@tailwindcss/vite` and `tailwindcss` both require `^4.3.5`, in place of `^4.0.0` and `^4.1.2`, and `package.json` sets `"private": false`.
 - `README.md` matches the templates again. The directory tree drops `cards/`, `_builder/container.twig` and `_critical-css/`, which don't exist, and adds `_components/layout/`, `_styleguide/` and the error layout. Template Hierarchy covers `_pages/entry.twig` and error pages. Accessibility says WCAG 2.2 AA, lists what the templates do, and says heading order is up to editors. The macro list drops `sectionTextContainer` and adds the SVG macro. Creating New Blocks covers adding the entry type to a Matrix field, passing values to a component, and passing `transformKey` and `contentWidth` on.
 - The READMEs and `AGENTS.md` use `ddev craft up` after a pull in place of `ddev craft project-config/apply`, so pending migrations run too.
 - Creating a project is now `composer create-project`, `ddev setup` and `ddev craft install`. The starter's README covers only that and running Vite, and leaves other commands to the project's README.
@@ -55,6 +56,7 @@ Projects get their own copy of the starter when they're created, without this fi
 
 ### Upgrading
 
+- To upgrade to Vite 8, set `vite` to `^8.4.0`, and `tailwindcss` and `@tailwindcss/vite` to `^4.3.5`, in `package.json`, then run `ddev npm install`. Rename `build.rollupOptions` to `build.rolldownOptions` in `vite.config.js` (the old name still works, but is deprecated). Vite 8 needs Node 20.19 or 22.12 or newer; DDEV's default Node 22 is fine. Restart `ddev npm run dev` afterwards.
 - Replace the `:focus-visible` rule in `src/css/site.css` with the starter's, and add `--color-focus` and `--color-focus-contrast` to `@theme`. If the site's buttons or backgrounds use brand colours, pick two that contrast with each other by 3:1 or more.
 - In `templates/_builder/blocks/hero.twig`, remove the `<figure aria-hidden="true">` around the image include. Check that hero images people should hear about have alt text in Assets.
 - Copy `templates/_components/logos.twig` and `templates/_builder/blocks/logos.twig` from the starter, or pass `name: logo.title` from the block and fall back to it in the component. Optionally update the Logo entry type's Title instructions to match.

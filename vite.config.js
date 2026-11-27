@@ -12,7 +12,7 @@ export default defineConfig(({ command, mode }) => {
         build: {
             manifest: true,
             outDir: './web/dist',
-            rollupOptions: {
+            rolldownOptions: {
                 input: {
                     index: './src/js/site.js',
                 }
