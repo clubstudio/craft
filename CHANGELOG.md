@@ -14,6 +14,7 @@ Projects get their own copy of the starter when they're created, without this fi
 
 ### Changed
 
+- `README.md` matches the templates again. The directory tree drops `cards/`, `_builder/container.twig` and `_critical-css/`, which don't exist, and adds `_components/layout/`, `_styleguide/` and the error layout. Template Hierarchy covers `_pages/entry.twig` and error pages. Accessibility says WCAG 2.2 AA, lists what the templates do, and says heading order is up to editors. The macro list drops `sectionTextContainer` and adds the SVG macro. Creating New Blocks covers adding the entry type to a Matrix field, passing values to a component, and passing `transformKey` and `contentWidth` on.
 - The READMEs and `AGENTS.md` use `ddev craft up` after a pull in place of `ddev craft project-config/apply`, so pending migrations run too.
 - Creating a project is now `composer create-project`, `ddev setup` and `ddev craft install`. The starter's README covers only that and running Vite, and leaves other commands to the project's README.
 

@@ -91,21 +91,20 @@ This boilerplate uses a flexible content builder pattern with reusable component
 
 ```
 templates/
-├── _layouts/          Base HTML layouts
-├── _partials/         Layout partials (header, footer, skip-link)
-├── _components/       Reusable UI components; they take the values they show
-│   └── cards/         One card per kind (content)
+├── _layouts/          base (the HTML document), master (header, <main>, footer) and error
+├── _partials/         Header, footer, skip link and the link for a menu item
+├── _pages/            entry.twig, the template every section uses, includes the one for the entry's type
 ├── _builder/          Reads CMS content and passes it to components
 │   ├── blocks/        One template per content block
-│   ├── cards/         Reads an entry for its card (default.twig, or one per entry type)
-│   ├── builder.twig   Block renderer
-│   ├── section.twig   Section wrapper
-│   └── container.twig Container wrapper
-├── _pages/            Page-specific templates
-├── _macros/           Twig macros for utilities
-├── _dev/              Development utilities (breakpoint helper)
-├── _critical-css/     Critical (inline) CSS partials
-└── _errors/           Error page templates
+│   ├── builder.twig   Renders a list of blocks
+│   └── section.twig   The <section> wrapper with padding and background, embedded by the Section block
+├── _components/       Reusable UI; components take the values they show
+│   └── layout/        Container, split and columns, which arrange what's embedded in them
+├── _macros/           Class maps, aspect ratios, transform keys, SVG assets
+├── _styleguide/       Each component with sample values, at /styleguide in dev mode
+├── _dev/              Development helpers (the breakpoint helper)
+├── _errors/           Error pages: 404, 503 and error for everything else
+└── site.webmanifest.twig
 ```
 
 ### Template Hierarchy
@@ -115,6 +114,10 @@ Templates follow an inheritance pattern:
 1. **base.twig** - HTML document structure, head tags, Vite script integration
 2. **master.twig** - Extends base, adds header/footer and `<main>` landmark
 3. **Page templates** - Specific page layouts that extend master
+
+Sections with URLs use `_pages/entry.twig` as their template. It includes `_pages/{entry-type-handle}.twig` (kebab-cased), so each entry type has one page template: Home and Pages use the Builder entry type, rendered by `_pages/builder.twig`.
+
+Error pages in `_errors/` extend `_layouts/error`, which stands alone rather than extending base: it reads nothing from the database, so error pages still render when the database is the problem.
 
 ### Content Builder Pattern
 
@@ -195,13 +198,15 @@ Components in `_components/` take the values they show, never CMS content, so th
 
 ### Accessibility Standards
 
-All templates follow WCAG 2.1 AA standards:
-- Proper semantic HTML with landmarks (`<main>`, `<header>`, `<footer>`, `<nav>`)
-- Skip-to-content link for keyboard navigation
-- ARIA attributes where appropriate (`aria-label`, `aria-current`, `aria-hidden`)
-- Proper heading hierarchy
-- Decorative images/icons marked with `aria-hidden="true"`
-- Form labels and error messages
+Templates aim for WCAG 2.2 AA:
+- Semantic HTML with landmarks (`<header>`, `<main>`, `<footer>`, and a labelled `<nav>` for each menu)
+- A skip-to-content link, and a focus indicator that shows on any background (`--color-focus` and `--color-focus-contrast` in `site.css`)
+- `aria-current` on the current page's links, and screen reader text on links that open in a new tab
+- Decorative images and icons hidden from screen readers: `alt=""` on images, `aria-hidden="true"` on SVGs
+- A mobile menu that works without JavaScript, and animations that respect reduced motion
+- Form labels and error messages, from Formie
+
+Editors choose heading levels in the Heading block, so a page's heading order depends on its content: check that each page has one `<h1>` and no skipped levels.
 
 ### Macros
 
@@ -216,7 +221,6 @@ Utility macros are available in `_macros/`:
 - `backgroundColor(preference)` - Background color utilities
 - `textAlignment(preference)` - Text alignment classes
 - `columnLayout(preference)` - Grid column layouts
-- `sectionTextContainer(preference)` - Gutter for text beside full bleed media
 
 **Media (`_macros/media.twig`):**
 - `aspectRatio(preference)` - The class for an aspect ratio, or with `'value'` the ratio as a number. The one list of ratios; its keys match the Aspect Ratio field's options
@@ -224,21 +228,35 @@ Utility macros are available in `_macros/`:
 **Transforms (`_macros/transforms.twig`):**
 - `buildKey(segments)` - Builds transform keys from array of segments
 
+**SVG (`_macros/svg.twig`):**
+- `asset(asset, attrs, namespace)` - Inlines an uploaded SVG asset, cached so a remote volume isn't read on every request
+
 ### Creating New Blocks
 
-1. Create a new entry type in Craft CMS Control Panel
-2. Add a template in `templates/_builder/blocks/{block-name}.twig`
-3. (Optional) Add context-specific override in `_builder/blocks/{context}/{block-name}.twig`
-4. If the block contains images, add transform configuration in `config/custom.php`
+1. Create a new entry type in the control panel, and add it to the Matrix field it belongs in (Content Blocks, Section Content, Content or Columns)
+2. Add a template in `templates/_builder/blocks/{block-type-handle}.twig` (kebab-cased: `contentAndMedia` is `content-and-media.twig`)
+3. Keep it to reading the block's fields and passing them to a component in `_components/`, adding one if none fits
+4. (Optional) Add a context-specific override in `_builder/blocks/{context}/{block-type-handle}.twig`
+5. If the block contains images, add its transform key suffix with `transforms.buildKey()` and its sizes to `config/custom.php`
 
 **Example block template:**
 ```twig
-{# My Block - Description of what this block does #}
-{% set myData = block.myField.eagerly().all() %}
+{# Quote: a pull quote with who said it. #}
+{% include '_components/quote' with {
+    quote: block.quote,
+    person: block.person,
+} only %}
+```
 
-<div class="my-block">
-    {# Block content #}
-</div>
+A block that renders blocks of its own passes `transformKey` and `contentWidth` on:
+
+```twig
+{% include '_builder/builder' with {
+    context: 'my-block',
+    blocks: block.content.eagerly().all(),
+    transformKey: transformKey,
+    contentWidth: contentWidth,
+} only %}
 ```
 
 ## About Craft CMS
