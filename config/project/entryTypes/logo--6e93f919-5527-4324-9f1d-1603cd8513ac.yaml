@@ -18,7 +18,7 @@ fieldLayouts:
             elementCondition: null
             id: null
             inputType: null
-            instructions: 'The organisation’s name. Only used within the content management system.'
+            instructions: 'The organisation’s name. Screen readers announce it when the logo’s image has no alt text.'
             label: null
             max: null
             min: null

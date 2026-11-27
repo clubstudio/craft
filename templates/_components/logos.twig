@@ -1,4 +1,8 @@
-{# A row of logos. Each logo is { image, url, target, rel, ariaLabel, download, id }; the link fields are optional. #}
+{#
+  A row of logos. Each logo is { name, image, url, target, rel, ariaLabel, download, id }; the link fields are optional.
+  A logo's accessible name is its ariaLabel, then the image's alt text, then name, so give it a name: without one, a
+  logo whose image has no alt text can't be identified by screen readers, and a linked one is an empty link.
+#}
 {% set data = {
     logos: [],
     class: null,
@@ -15,7 +19,7 @@
             {% set asset = logo.image %}
             {% set url = logo.url ?? null %}
             {% set newTab = url and (logo.target ?? null) == '_blank' %}
-            {% set label = (logo.ariaLabel ?? null) ?: asset.alt %}
+            {% set label = (logo.ariaLabel ?? null) ?: asset.alt ?: (logo.name ?? null) %}
 
             <figure class="p-6 flex justify-center">
                 {% tag (url ? 'a' : 'div') with url ? {
@@ -33,14 +37,15 @@
                             focusable: 'false',
                         } : {
                             height: 36,
-                            role: 'img',
-                            'aria-label': asset.alt,
+                            role: label ? 'img' : null,
+                            'aria-label': label ?: null,
+                            'aria-hidden': label ? null : 'true',
                             focusable: 'false',
                         }) }}
                     {% else %}
                         {% include '_components/image' with {
                             image: asset,
-                            alt: url ? '' : null,
+                            alt: url ? '' : (label ?? ''),
                             transformKey: 'logo',
                             aspectRatio: 'auto',
                             class: 'h-9 w-auto',

@@ -1,6 +1,7 @@
 {# Logos: a row of client or partner logos, each optionally linked. #}
 {% include '_components/logos' with {
     logos: block.logos.eagerly().all()|map(logo => {
+        name: logo.title,
         image: logo.image.eagerly().one(),
         url: logo.hyperlink.url ?? null,
         target: logo.hyperlink.target ?? null,

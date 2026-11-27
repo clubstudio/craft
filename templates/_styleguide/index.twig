@@ -317,9 +317,9 @@
                         {{ guide.label('Logos') }}
                         {% include '_components/logos' with {
                             logos: [
-                                { image: sampleSvg ?? sampleImage },
-                                { image: sampleImage, url: '#', ariaLabel: 'A linked logo' },
-                                { image: sampleSvg ?? sampleImage },
+                                { name: 'Sample organisation', image: sampleSvg ?? sampleImage },
+                                { name: 'Linked organisation', image: sampleImage, url: '#' },
+                                { name: 'Another organisation', image: sampleSvg ?? sampleImage },
                             ],
                         } only %}
                     </div>
