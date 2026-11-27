@@ -1,4 +1,9 @@
-{# A row of buttons. Each link is { url, text, theme, target, rel, ariaLabel, download, id }. #}
+{#
+  Links: a row of buttons.
+
+  Inputs:
+  - links: each { url, text, theme, target, rel, ariaLabel, download, id }; links without a url are left out ([])
+#}
 {% set data = {
     links: [],
 }|merge(_context) %}

@@ -1,6 +1,12 @@
 {#
-  Media beside content, stacked on mobiles. Embed it and fill the media and content blocks.
-  fullBleed keeps the gutter on the content's outer edge when the Section has none.
+  Split (layout): media beside content, stacked on mobiles. Embed it and fill the media and content blocks;
+  the media column only renders when its block has content.
+
+  Inputs:
+  - mediaPosition: left or right (left)
+  - verticalAlignment: top, middle or bottom (middle)
+  - fullBleed: keeps the gutter on the content's outer edge, for a Section with none (false)
+  - class: extra classes for the grid
 #}
 {% set data = {
     mediaPosition: 'left',

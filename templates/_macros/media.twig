@@ -1,11 +1,23 @@
-{% macro aspectRatio(preference = 'photo', image) %}
+{#
+  Aspect ratios: the one list of the shapes media can be cropped to. Its keys are the option values of the Aspect
+  Ratio field, so add or rename a ratio in both places.
+
+  aspectRatio(preference) prints the Tailwind class that gives an element the ratio's shape (none for auto).
+  aspectRatio(preference, 'value', image) prints the ratio as a number, width / height, for cropping images. Auto is
+  the image's own shape.
+  An empty or unknown preference is photo (4:3).
+
+  Usage: {{ media.aspectRatio('video') }} → aspect-video, {{ media.aspectRatio('video', 'value') }} → 1.7777…
+#}
+{% macro aspectRatio(preference = 'photo', as = 'class', image = null) %}
     {%- set ratios = {
-        'auto': image ? (image.width / image.height) : (4 / 3),
-        'video': 16 / 9,
-        'photo': 4 / 3,
-        'photo-portrait': 3 / 4,
-        'pano': 21 / 9,
-        'square': 1 / 1,
+        square: { class: 'aspect-square', value: 1 },
+        photo: { class: 'aspect-[4/3]', value: 4 / 3 },
+        'photo-portrait': { class: 'aspect-[3/4]', value: 3 / 4 },
+        video: { class: 'aspect-video', value: 16 / 9 },
+        pano: { class: 'aspect-[21/9]', value: 21 / 9 },
+        auto: { class: '', value: image and image.height ? image.width / image.height : 4 / 3 },
     } -%}
-    {{- ratios[preference ?: 'photo'] ?? ratios.photo -}}
+    {%- set ratio = ratios[preference ?: 'photo'] ?? ratios.photo -%}
+    {{- as == 'value' ? ratio.value : ratio.class -}}
 {% endmacro %}

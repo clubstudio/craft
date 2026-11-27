@@ -33,7 +33,11 @@
     --color-focus-contrast: var(--color-white);
 }
 
-/* The site's side padding, used through px-gutter. Change it here and every section, header and footer follows. */
+/*
+ * The site's side padding, used through px-gutter. Change it here and every section, header and footer follows.
+ * The image sizes in config/custom.php are written for these values and the content widths above, so update them
+ * if any of these change.
+ */
 :root {
     --gutter: --spacing(6);
 

@@ -1,7 +1,8 @@
 {#
   Section Block
-  
-  Wraps content in a section with padding and a content width.
+
+  Wraps content in a section with padding and a content width, and passes that width to the blocks inside it as
+  contentWidth.
   Builds transform key for nested images: section:{contentWidth}
 
   Examples:
@@ -11,21 +12,24 @@
 #}
 {% import '_macros/transforms' as transforms %}
 
-{% set transformKey = transforms.buildKey([transformKey, 'section', block.contentWidth.value ?? 'full-width']) %}
+{% set contentWidth = block.contentWidth.value ?? 'full-width' %}
+{% set transformKey = transforms.buildKey([transformKey, 'section', contentWidth]) %}
 
-{% embed '_builder/section' with { block: block, transformKey: transformKey } only %}
+{% embed '_builder/section' with { block: block, transformKey: transformKey, contentWidth: contentWidth } only %}
     {% block content %}
         {% embed '_components/layout/container' with {
-            width: block.contentWidth.value ?? 'full-width',
+            width: contentWidth,
             alignment: block.horizontalAlignment.value ?? 'center',
             block: block,
             transformKey: transformKey,
+            contentWidth: contentWidth,
         } only %}
             {% block content %}
                 {% include '_builder/builder' with {
                     context: 'section',
                     blocks: block.sectionContent.eagerly().all(),
                     transformKey: transformKey,
+                    contentWidth: contentWidth,
                 } only %}
             {% endblock %}
         {% endembed %}

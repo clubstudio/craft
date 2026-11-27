@@ -48,18 +48,6 @@
     {{- colours[preference ?: 'none'] ?? '' -}}
 {% endmacro %}
 
-{% macro fontSize(preference = 'none') %}
-    {{- attribute({
-        'xs': 'text-xs lg:text-sm',
-        'sm': 'text-sm lg:text-base',
-        'base': 'text-base',
-        'lg': 'text-lg',
-        'xl': 'text-xl',
-        '2xl': 'text-2xl',
-        '3xl': 'text-3xl',
-    }, preference) -}}
-{% endmacro %}
-
 {% macro textAlignment(preference = 'center') %}
     {{- attribute({
         left: 'text-left',
@@ -75,18 +63,6 @@
         middle: 'items-center',
         bottom: 'items-end',
     }, preference) -}}
-{% endmacro %}
-
-{% macro aspectRatio(preference = 'photo') %}
-    {%- set ratios = {
-        'auto': null,
-        'video': 'aspect-video',
-        'photo': 'aspect-[4/3]',
-        'photo-portrait': 'aspect-[3/4]',
-        'pano': 'aspect-[21/9]',
-        'square': 'aspect-square',
-    } -%}
-    {{- (preference ?: 'photo') in ratios|keys ? ratios[preference ?: 'photo'] : ratios.photo -}}
 {% endmacro %}
 
 {% macro columnLayout(preference = null) %}

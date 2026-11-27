@@ -1,4 +1,11 @@
-{# Expandable items using native <details>. Each item is { title, body }. #}
+{#
+  Accordion: expandable items, using native <details>.
+
+  Inputs:
+  - items: the items, each { title, body }, body as rich text ([])
+  - size: the space around each item, base or lg (base)
+  - class: extra classes for the list
+#}
 {% set data = {
     items: [],
     size: 'base',

@@ -2,29 +2,33 @@
   Columns Block
 
   Creates a multi-column layout with responsive grid.
-  Builds transform key for nested images: {parent}:columns:{count}
+  Builds transform key for nested images: {parent}:columns:{layout}, where layout is the Column Layout's value
+  (11, 12, 21, 13, 31 or 111), so images are sized for the widest column.
 
   Examples:
-  - section:full-width:columns:2
-  - section:narrow:columns:2
+  - section:full-width:columns:11
+  - section:narrow:columns:12
 #}
 {% import '_macros/transforms' as transforms %}
 
 {% set columns = block.columns.eagerly().all() %}
-{% set transformKey = transforms.buildKey([transformKey, 'columns', columns|length]) %}
+{% set layout = block.columnLayout.value ?: '11' %}
+{% set transformKey = transforms.buildKey([transformKey, 'columns', layout]) %}
 
 {% if columns|length %}
     {% embed '_components/layout/columns' with {
-        layout: block.columnLayout.value ?? '11',
+        layout: layout,
         verticalAlignment: block.verticalAlignment.value ?? 'top',
         columns: columns,
         transformKey: transformKey,
+        contentWidth: contentWidth,
     } only %}
         {% block content %}
             {% include '_builder/builder' with {
                 blocks: columns,
                 context: ['columns/' ~ columns|length, 'columns'],
                 transformKey: transformKey,
+                contentWidth: contentWidth,
             } only %}
         {% endblock %}
     {% endembed %}

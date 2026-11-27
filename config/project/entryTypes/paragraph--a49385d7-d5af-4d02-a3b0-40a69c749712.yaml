@@ -15,8 +15,8 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 198475be-dc00-42d7-8ed4-b48aa2865944 # Paragraph
-            handle: null
+            fieldUid: e7c39107-95e6-401c-8be7-a07e337fb7b7 # Rich Text
+            handle: paragraph
             instructions: null
             label: null
             required: false

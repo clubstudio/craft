@@ -1,10 +1,8 @@
 {% extends '_layouts/master' %}
 
 {% block content %}
-    <article>
-        {% include '_builder/builder' with {
-            context: 'page',
-            blocks: entry.contentBlocks.all(),
-        } only %}
-    </article>
+    {% include '_builder/builder' with {
+        context: 'page',
+        blocks: entry.contentBlocks.all(),
+    } only %}
 {% endblock %}

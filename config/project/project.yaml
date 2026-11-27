@@ -1,4 +1,4 @@
-dateModified: 1795791773
+dateModified: 1795794915
 elementSources:
   craft\elements\Entry:
     -
@@ -206,7 +206,6 @@ meta:
     62083fb6-1a8c-49b9-9782-374ce3b3a7c8: 'Rich Text (Basic)' # Rich Text (Basic)
     77745ae4-4ee9-4333-8f33-3b943c676d2c: 'Footer Navigation' # Footer Navigation
     89326ae0-829f-4d01-b5df-878778d42c99: 'Video Track' # Video Track
-    198475be-dc00-42d7-8ed4-b48aa2865944: Paragraph # Paragraph
     326377be-c2da-462e-bea3-4eb8ca886573: 'Tag Position' # Tag Position
     410983d4-f274-4ba5-9e68-1c0ae40eceb9: 'VTT File' # VTT File
     761607ea-8c75-4aea-af4a-00d367e51171: 'Heading Level' # Heading Level

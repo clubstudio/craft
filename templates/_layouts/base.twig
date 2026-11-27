@@ -34,7 +34,7 @@
 
         {% block body '' %}
 
-        {% block beforeScripts '' %}
+        {#- Page-specific scripts, after the page's markup. -#}
         {% block afterScripts '' %}
 
         {% for tag in tags|filter(tag => tag.position == 'bodyEnd') %}

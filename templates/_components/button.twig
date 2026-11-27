@@ -1,3 +1,16 @@
+{#
+  Button: a link styled as a button, or a <button>.
+
+  Inputs:
+  - as: a for a link, or button (a)
+  - url: where the link goes
+  - text: the button's text
+  - theme: primary, secondary or tertiary (primary)
+  - size: sm, base, md or lg (base)
+  - class: extra classes for the link or button
+  - attributes: extra HTML attributes for the link or button, such as target, rel or aria-label. A link that opens in
+    a new tab gets rel="noopener" and says so to screen readers. A <button> is type="button" unless attributes sets one.
+#}
 {% set data = {
     as: 'a',
     url: '',
@@ -34,15 +47,18 @@
     tertiary: 'px-0! border border-transparent hover:underline',
 } %}
 
-{% set classList = classes.combine([
-    'inline-block rounded-full transition-opacity motion-reduce:transition-none',
-    themeClasses[data.theme]|default(),
-    sizeClasses[data.size]|default(),
-], data.class) %}
+{#- One set of attributes per element: the class input and any class in attributes join the button's own. -#}
+{% set attributes = attributes|merge({
+    class: classes.combine(classes.combine([
+        'inline-block rounded-full transition-opacity motion-reduce:transition-none',
+        themeClasses[data.theme]|default(),
+        sizeClasses[data.size]|default(),
+    ], data.class)|string, attributes.class ?? null)|string,
+}) %}
 
 {% if data.as == 'a' %}
     <span class="relative inline-flex">
-        <a href="{{ data.url }}" {{ attr(attributes) }} class="{{ classList }}">
+        <a {{ attr({ href: data.url }|merge(attributes)) }}>
             {{ data.text }}
             {%- if newTab %}<span class="sr-only"> {{ newTabText }}</span>{% endif %}
         </a>
@@ -53,5 +69,5 @@
         {% endif %}
     </span>
 {% else %}
-    <button {{ attr(attributes) }} type="button" class="{{ classList }}">{{ data.text }}</button>
+    <button {{ attr({ type: 'button' }|merge(attributes)) }}>{{ data.text }}</button>
 {% endif %}

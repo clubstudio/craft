@@ -1,7 +1,16 @@
 {#
-  A video with a custom play button. Without JavaScript the native controls show instead.
-  title is optional: it names the video and its play button ("Play video: {title}") for screen readers. Without it,
-  the video has no name of its own and the button reads "Play video".
+  Video: an MP4 video with a custom play button (src/js/modules/video.js). Without JavaScript the native
+  controls show instead. Nothing renders without a url.
+
+  Inputs:
+  - url: the MP4 file's URL
+  - poster: the URL of an image shown before it plays
+  - title: names the video and its play button ("Play video: {title}") for screen readers. Without it, the video
+    has no name of its own and the button reads "Play video".
+  - tracks: caption files, each { label, src }; the first is on by default ([])
+  - aspectRatio: a ratio from _macros/media (video)
+  - class: extra classes for the <video>
+  - attributes: HTML attributes for the <video>, in place of the defaults (controls, playsinline)
 #}
 {% set data = {
     title: null,
@@ -17,9 +26,10 @@
 }|merge(_context) %}
 
 {% import '_macros/classes' as classes %}
+{% import '_macros/media' as media %}
 
 {% if data.url %}
-    <figure data-video class="relative overflow-hidden bg-black {{ classes.aspectRatio(data.aspectRatio) }}">
+    <div data-module="video" class="{{ classes.combine(['relative overflow-hidden bg-black', media.aspectRatio(data.aspectRatio)]) }}">
         <video {{ attr(data.attributes|merge({ poster: data.poster ?: null, 'aria-label': data.title ?: null })) }} class="{{ classes.combine('w-full h-full object-cover', data.class) }}" preload="metadata">
             <source src="{{ data.url }}" type="video/mp4">
             {% for track in data.tracks|filter(track => track.src ?? null) %}
@@ -38,5 +48,5 @@
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" class="size-7 md:size-8"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.6-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14Z"/></svg>
             </span>
         </button>
-    </figure>
+    </div>
 {% endif %}

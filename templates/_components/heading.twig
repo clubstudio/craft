@@ -1,3 +1,14 @@
+{#
+  Heading: a heading at any level, styled as that level or another.
+
+  Inputs:
+  - heading: the text
+  - level: the element, h1 to h6 (h2)
+  - appearance: the level it looks like, h1 to h6 (level)
+  - classMap: the class for each appearance (heading-1 to heading-6, from site.css)
+  - class: extra classes
+  - attributes: extra HTML attributes
+#}
 {% set data = {
     level: 'h2',
     appearance: null,

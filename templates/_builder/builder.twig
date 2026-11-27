@@ -7,12 +7,16 @@
   - blocks: the blocks to render
   - context: optional, a name or a list of names tried in order (e.g. ['columns/2', 'columns'])
   - transformKey: optional, the image transform key so far (see config/custom.php)
+  - contentWidth: optional, the Content Width of the Section the blocks are in (full-bleed, full-width, medium or
+    narrow), set by the Section block
 
   Template resolution, for each context in turn, then the default:
   1. _builder/blocks/{context}/{block-type}.twig
   2. _builder/blocks/{block-type}.twig
 
-  Each block receives block, context (as a list) and transformKey.
+  Each block receives block, context (as a list), transformKey and contentWidth. A block that renders blocks of its
+  own passes transformKey and contentWidth on. transformKey only chooses image sizes: a block that lays itself out
+  by its Section's width reads contentWidth, never the key.
 #}
 {% set contexts = (context ?? null) is iterable ? context : [context ?? null] %}
 {% set contexts = contexts|filter %}
@@ -24,5 +28,6 @@
         block: block,
         context: contexts,
         transformKey: transformKey ?? null,
+        contentWidth: contentWidth ?? null,
     } only %}
 {% endfor %}

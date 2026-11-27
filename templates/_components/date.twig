@@ -1,8 +1,19 @@
+{#
+  Date: a <time>, relative ("3 days ago") within the last 7 days, otherwise formatted.
+
+  Inputs:
+  - date: a DateTime, or a string date() understands (now)
+  - relative: whether dates in the last 7 days are relative (true)
+  - format: the format for other dates (jS F Y)
+#}
 {% set data = {
     date: 'now',
     relative: true,
     format: 'jS F Y',
 }|merge(_context) %}
+
+{# A string such as 'now' or '2026-01-31' becomes a DateTime, so the relative branch can compare it. #}
+{% set data = data|merge({ date: date(data.date) }) %}
 
 <time datetime="{{ data.date|date('Y-m-d') }}">
     {%- if data.relative and now|date('U') <= data.date|date_modify('+7 days')|date('U') -%}

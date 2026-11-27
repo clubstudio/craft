@@ -1,4 +1,9 @@
-{# The trail of pages to the current one. It's left out on the homepage, or anywhere the trail is only the current page. #}
+{#
+  Breadcrumb: the trail of pages to the current one, from Navigation's urlBreadcrumbs(). It's left out on the
+  homepage, or anywhere the trail is only the current page.
+
+  Inputs: none.
+#}
 {% set crumbs = craft.navigation.urlBreadcrumbs() %}
 
 {% if crumbs|length > 1 %}

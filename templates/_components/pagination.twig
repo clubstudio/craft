@@ -1,3 +1,9 @@
+{#
+  Pagination: previous and next links, and up to 5 page numbers either side of the current page.
+
+  Inputs:
+  - pageInfo: the page info from {% paginate %}
+#}
 {% set data = {
     pageInfo: null,
 }|merge(_context) %}

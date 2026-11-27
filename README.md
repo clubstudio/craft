@@ -147,10 +147,13 @@ Keys are built hierarchically as blocks nest:
 - `section:full-bleed` - Full bleed section (edge to edge)
 - `section:full-width` - Full width section (inside the site's gutters)
 - `section:medium`, `section:narrow` - Capped content widths
-- `section:full-width:columns:2` - 2-column layout in a full width section
+- `section:full-width:columns:12` - Columns in a full width section, keyed by Column Layout (`11`, `12`, `21`, `13`, `31` or `111`); images are sized for the widest column
 - `section:full-width:content-and-media` - Content & Media block
+- `section:full-width:faqs` - FAQs block
 
-A key that isn't in `config/custom.php` falls back to its nearest parent that is (`section:narrow:columns:2` uses `section:narrow`), then to `default`.
+A key that isn't in `config/custom.php` falls back to its nearest parent that is (`section:narrow:my-block` uses `section:narrow`), then to `default`.
+
+Each `sizes` is written for the gutter, content widths and gaps the CSS uses, which are listed at the top of `config/custom.php`. If you change any of them in the CSS, update the sizes that use them.
 
 **Building Transform Keys:**
 ```twig
@@ -170,12 +173,24 @@ In development mode, HTML comments show the transform key used for each image, a
 
 A Section's **Content Width** sets how wide its content is: Full bleed (edge to edge), Full width (inside the gutters, the default), Medium or Narrow. The gutter is one CSS variable, `--gutter` in `src/css/site.css`, used through the `px-gutter` class by sections, the header, footer and hero. The Medium and Narrow widths are `--container-medium` and `--container-narrow` in the same file, and the space between blocks in a Section is `--block-gap`, used through `gap-block`.
 
+### Components
+
+Components in `_components/` take the values they show, never CMS content, so they work anywhere: in blocks, page templates and the style guide. Each one follows the same contract:
+
+- It starts with a header comment: its name and what it is, then its inputs, each with its default in brackets.
+- It sets those defaults with `{% set data = { … }|merge(_context) %}` and reads its inputs from `data`.
+- `class` adds classes to the element its header names, as a string or an array, joined with `classes.combine()`.
+- Where its header lists `attributes`, that adds HTML attributes to the element it names, merged into one `attr()` call, so a class or type given there joins the component's own rather than repeating the attribute.
+- It's included with `only`, so it sees nothing but its inputs.
+
 ### Template Conventions
 
-- Block templates receive `block`, `context` and `transformKey` variables
+- Block templates receive `block`, `context`, `transformKey` and `contentWidth` variables. A block that renders blocks of its own passes `transformKey` and `contentWidth` on to them.
+- `transformKey` only chooses image sizes. A block that lays itself out by its Section's Content Width reads `contentWidth` (`full-bleed`, `full-width`, `medium` or `narrow`), never the key.
 - Use `block.fieldName.eagerly().one()` or `.all()` for related content
 - Use `{{ 'Text'|t }}` for all user-facing strings (translation support)
 - Include SVGs with `{{ svg('@svg/path.svg')|attr({...}) }}`
+- Add JavaScript as a module in `src/js/modules/` whose default export takes an element, and give the elements it works on `data-module="name"`. `site.js` loads a module only on pages whose markup names it.
 - Keep CSRF tokens out of the page's shared markup, so pages can be cached whole (Blitz, a CDN). Formie forms add their own. In a hand-written form, use `{{ csrfInput({ async: true }) }}`, which fetches the token when the page loads; `->asyncCsrfInputs()` in `config/general.php` does that for every form, which then needs JavaScript to submit. In JavaScript, get it from `/actions/users/session-info` (with `Accept: application/json`), whose response includes `csrfTokenValue`.
 
 ### Accessibility Standards
@@ -200,10 +215,11 @@ Utility macros are available in `_macros/`:
 - `verticalAlignment(preference)` - Flexbox vertical alignment
 - `backgroundColor(preference)` - Background color utilities
 - `textAlignment(preference)` - Text alignment classes
-- `fontSize(preference)` - Font size classes
-- `aspectRatio(preference)` - Aspect ratio for media
 - `columnLayout(preference)` - Grid column layouts
 - `sectionTextContainer(preference)` - Gutter for text beside full bleed media
+
+**Media (`_macros/media.twig`):**
+- `aspectRatio(preference)` - The class for an aspect ratio, or with `'value'` the ratio as a number. The one list of ratios; its keys match the Aspect Ratio field's options
 
 **Transforms (`_macros/transforms.twig`):**
 - `buildKey(segments)` - Builds transform keys from array of segments

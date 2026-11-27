@@ -1,3 +1,17 @@
+{#
+  Image: a responsive image from an asset, cropped to an aspect ratio and sized by a transform key.
+
+  Inputs:
+  - image: the asset. Nothing renders without one.
+  - alt: alt text in place of the asset's; '' marks the image as decorative (the asset's)
+  - caption: rich text shown under the image, which then sits in a <figure>
+  - transformKey: the key in config/custom.php for its width, srcset and sizes, or its nearest parent key (default)
+  - aspectRatio: a ratio from _macros/media (photo)
+  - loading: lazy or eager (lazy)
+  - decoding: async, sync or auto (async)
+  - class: extra classes for the <img>
+  - attributes: extra HTML attributes for the <img>
+#}
 {% set data = {
     image: null,
     alt: null,
@@ -25,7 +39,7 @@
     {% endif %}
 {% endfor %}
 {% set transformInfo = attribute(transforms, transformKey) %}
-{% set aspectRatio = media.aspectRatio(data.aspectRatio, data.image)|string|float ?: 4 / 3 %}
+{% set aspectRatio = media.aspectRatio(data.aspectRatio, 'value', data.image)|string|float ?: 4 / 3 %}
 
 {% if data.image %}
     {% if craft.app.config.general.devMode %}
@@ -34,7 +48,7 @@
 
     {% if data.caption|length %}<figure>{% endif %}
 
-    <div class="{{ classes.aspectRatio(data.aspectRatio) }} overflow-hidden">
+    <div class="{{ classes.combine([media.aspectRatio(data.aspectRatio), 'overflow-hidden']) }}">
         {% do data.image.setTransform({
             width: transformInfo.width,
             height: transformInfo.width / aspectRatio

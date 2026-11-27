@@ -1,7 +1,11 @@
 {#
-  A row of logos. Each logo is { name, image, url, target, rel, ariaLabel, download, id }; the link fields are optional.
-  A logo's accessible name is its ariaLabel, then the image's alt text, then name, so give it a name: without one, a
-  logo whose image has no alt text can't be identified by screen readers, and a linked one is an empty link.
+  Logos: a row of logos, each optionally a link.
+
+  Inputs:
+  - logos: each { name, image, url, target, rel, ariaLabel, download, id }; only image is needed ([]). A logo's
+    accessible name is its ariaLabel, then the image's alt text, then name, so give it a name: without one, a logo
+    whose image has no alt text can't be identified by screen readers, and a linked one is an empty link.
+  - class: extra classes for the <ul>
 #}
 {% set data = {
     logos: [],

@@ -1,4 +1,11 @@
-{# The site logo from src/svg/logo.svg, linked to the homepage. Its accessible name is the site name. #}
+{#
+  Site Logo: src/svg/logo.svg, linked to the homepage. Its accessible name is the site name.
+
+  Inputs:
+  - url: where it links (the homepage)
+  - label: its accessible name (siteName)
+  - class: classes for the <svg> (h-10 w-auto)
+#}
 {% set data = {
     url: url('/'),
     label: siteName,

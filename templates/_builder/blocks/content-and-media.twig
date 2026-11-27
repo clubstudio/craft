@@ -11,9 +11,10 @@
 {% embed '_components/layout/split' with {
     mediaPosition: block.mediaPosition.value ?? 'left',
     verticalAlignment: block.verticalAlignment.value ?? 'middle',
-    fullBleed: 'full-bleed' in transformKey|split(':'),
+    fullBleed: contentWidth == 'full-bleed',
     block: block,
     transformKey: transformKey,
+    contentWidth: contentWidth,
 } only %}
     {% block media %}
         {% set image = block.image.eagerly().one() %}
@@ -44,6 +45,7 @@
                 context: 'content-and-media',
                 blocks: block.content.eagerly().all(),
                 transformKey: transformKey,
+                contentWidth: contentWidth,
             } only %}
         </div>
     {% endblock %}

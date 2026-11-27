@@ -1,4 +1,10 @@
-{# Rich text from a CKEditor field, styled with body-copy. #}
+{#
+  Rich Text: rich text from a CKEditor field, styled by .body-copy in site.css. Nothing renders without a body.
+
+  Inputs:
+  - body: the rich text
+  - class: extra classes for the wrapper
+#}
 {% set data = {
     body: null,
     class: null,

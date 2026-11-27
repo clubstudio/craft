@@ -1,6 +1,11 @@
 {#
-  A grid of columns, stacked on mobiles. Embed it and fill the content block with one element per column.
-  layout: 11, 12, 21, 13, 31 or 111, the relative width of each column.
+  Columns (layout): a grid of columns, stacked on mobiles. Embed it and fill the content block with one
+  element per column.
+
+  Inputs:
+  - layout: the relative width of each column: 11, 12, 21, 13, 31 or 111 (11)
+  - verticalAlignment: top, middle or bottom (top)
+  - class: extra classes for the grid
 #}
 {% set data = {
     layout: '11',
