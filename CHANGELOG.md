@@ -17,6 +17,8 @@ Projects get their own copy of the starter when they're created, without this fi
 - The READMEs and `AGENTS.md` use `ddev craft up` after a pull in place of `ddev craft project-config/apply`, so pending migrations run too.
 - Creating a project is now `composer create-project`, `ddev setup` and `ddev craft install`. The starter's README covers only that and running Vite, and leaves other commands to the project's README.
 
+- The Main Navigation and Legal Links menus are fetched with `level(1)`. Both are one level deep (`maxLevels: 1`), so nothing changes on the page, but a project that raises the limit won't get child items rendered as top-level links before it adds markup for them.
+
 ### Fixed
 
 - The focus indicator was invisible on primary buttons: it was drawn in `currentColor`, so a button with white text got a white outline on a white page. It's now a ring of `--color-focus-contrast` inside an outline of `--color-focus` (black and white by default, in `site.css`), so one of the two shows on any background.

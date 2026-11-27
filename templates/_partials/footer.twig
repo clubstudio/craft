@@ -49,7 +49,7 @@
                     ':siteName': siteName,
                 }) }}</p>
             {% endif %}
-            {% set nodes = craft.navigation.nodes().handle('legalLinks').all() %}
+            {% set nodes = craft.navigation.nodes().handle('legalLinks').level(1).all() %}
             {% if nodes|length %}
                 <nav aria-label="{{ 'Legal'|t }}">
                     <ul class="flex flex-wrap gap-6">

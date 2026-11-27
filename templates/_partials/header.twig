@@ -1,7 +1,8 @@
 <header class="py-8">
     <div class="px-gutter flex flex-wrap items-center justify-between gap-x-6">
         {% include '_components/site-logo' only %}
-        {% set nodes = craft.navigation.nodes().handle('mainNavigation').all() %}
+        {# The menu is one level deep (maxLevels: 1). level(1) keeps it that way here if a project allows submenus, until it renders them. #}
+        {% set nodes = craft.navigation.nodes().handle('mainNavigation').level(1).all() %}
         {% if nodes|length %}
             <button type="button" class="peer -m-2 p-2 font-medium md:hidden no-js:hidden" aria-expanded="false" aria-controls="main-navigation" data-nav-toggle>
                 {{ 'Menu'|t }}
