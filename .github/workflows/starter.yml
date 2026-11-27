@@ -1,0 +1,93 @@
+# Tests that the starter makes a working project: composer create-project from this branch, checks the files
+# create-project swaps and removes, installs Craft, and checks project config applies cleanly.
+#
+# This file is for the starter only. create-project removes it (see post-create-project-cmd in composer.json), so
+# projects don't inherit it.
+
+name: Starter
+
+on:
+    push:
+        branches: [master]
+    pull_request:
+    workflow_dispatch:
+
+# A newer push to the same branch or pull request cancels the run still going for the older one.
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    create-project:
+        runs-on: ubuntu-24.04
+
+        services:
+            mysql:
+                image: mysql:8.0
+                env:
+                    MYSQL_ROOT_PASSWORD: root
+                    MYSQL_DATABASE: craft
+                ports: ['3306:3306']
+                options: >-
+                    --health-cmd="mysqladmin ping -proot"
+                    --health-interval=5s
+                    --health-timeout=5s
+                    --health-retries=20
+
+        steps:
+            - name: Check out the starter
+              uses: actions/checkout@v4
+              with:
+                  path: starter
+
+            - name: Set up PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: '8.3'
+                  extensions: bcmath, gd, intl, mbstring, pdo_mysql, zip
+                  tools: composer:v2
+
+            # A path repository stands in for Packagist, so the project is made from this branch's files.
+            - name: Create a project from the starter
+              run: |
+                  composer create-project clubstudio/craft site dev-ci --no-interaction \
+                    --repository='{"type": "path", "url": "starter", "options": {"symlink": false, "versions": {"clubstudio/craft": "dev-ci"}}}'
+
+            - name: Check the files create-project swaps and removes
+              working-directory: site
+              run: |
+                  fail() { echo "::error::$1"; exit 1; }
+                  [ -f .env ] || fail ".env wasn't created from .env.example.dev"
+                  [ ! -e composer.json.default ] || fail "composer.json.default wasn't swapped in"
+                  [ ! -e README.md.default ] || fail "README.md.default wasn't swapped in"
+                  grep -q '"clubstudio/craft"' composer.json && fail "composer.json is still the starter's"
+                  head -1 README.md | grep -q '^# Site name' || fail "README.md is still the starter's"
+                  [ ! -e AGENTS.md ] || fail "AGENTS.md wasn't removed"
+                  [ ! -e CHANGELOG.md ] || fail "CHANGELOG.md wasn't removed"
+                  [ ! -e .github ] || fail ".github wasn't removed"
+                  composer validate --no-check-publish || fail "composer.json or composer.lock isn't valid"
+                  echo "All files swapped and removed."
+
+            - name: Install Craft
+              working-directory: site
+              run: |
+                  cat >> .env <<'EOF'
+                  CRAFT_DB_DRIVER=mysql
+                  CRAFT_DB_SERVER=127.0.0.1
+                  CRAFT_DB_PORT=3306
+                  CRAFT_DB_DATABASE=craft
+                  CRAFT_DB_USER=root
+                  CRAFT_DB_PASSWORD=root
+                  PRIMARY_SITE_URL=http://127.0.0.1
+                  EOF
+                  php craft setup/keys --interactive=0
+                  php craft install/craft --interactive=0 \
+                    --username=admin --email=ci@example.com --password=ci-password-not-secret \
+                    --site-name="Starter CI" --site-url="http://127.0.0.1" --language=en-GB
+
+            - name: Check project config applies cleanly
+              working-directory: site
+              run: |
+                  php craft up --interactive=0
+                  php craft project-config/diff | tee diff.txt
+                  grep -q 'No pending project config YAML changes' diff.txt || { echo "::error::Project config doesn't match the database after install"; exit 1; }
