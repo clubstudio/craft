@@ -6,19 +6,18 @@
         {% block content %}
             {% embed '_components/layout/split' with { mediaPosition: 'right', image: image, block: block } only %}
                 {% block media %}
+                    {# The image's alt text comes from the asset; an asset with none renders alt="" and is skipped by screen readers. #}
                     {% if image %}
-                        <figure aria-hidden="true">
-                            {% include '_components/image' with {
-                                image: image,
-                                transformKey: 'hero',
-                                loading: 'eager',
-                                aspectRatio: 'photo',
-                                class: 'w-full h-full object-cover',
-                                attributes: {
-                                    fetchpriority: 'high',
-                                },
-                            } only %}
-                        </figure>
+                        {% include '_components/image' with {
+                            image: image,
+                            transformKey: 'hero',
+                            loading: 'eager',
+                            aspectRatio: 'photo',
+                            class: 'w-full h-full object-cover',
+                            attributes: {
+                                fetchpriority: 'high',
+                            },
+                        } only %}
                     {% endif %}
                 {% endblock %}
 
