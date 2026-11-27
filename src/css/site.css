@@ -26,6 +26,11 @@
     /* Content widths: max-w-medium and max-w-narrow. */
     --container-medium: 64rem;
     --container-narrow: 45rem;
+
+    /* The focus indicator's two colours, which must contrast with each other (3:1 or more), so one of them
+       always shows, whatever the background. */
+    --color-focus: var(--color-black);
+    --color-focus-contrast: var(--color-white);
 }
 
 /* The site's side padding, used through px-gutter. Change it here and every section, header and footer follows. */
@@ -53,11 +58,17 @@
     gap: var(--block-gap);
 }
 
-/* A visible focus outline for everything keyboard users can reach. */
+/*
+ * A visible focus indicator for everything keyboard users can reach: a ring of --color-focus-contrast inside an
+ * outline of --color-focus. One of the two always contrasts with what's behind it, light or dark (WCAG 2.4.7,
+ * technique C40). currentColor isn't used, because on a button with white text it draws a white outline on a
+ * white page.
+ */
 @layer base {
     :focus-visible {
-        outline: 2px solid currentColor;
+        outline: 2px solid var(--color-focus);
         outline-offset: 2px;
+        box-shadow: 0 0 0 2px var(--color-focus-contrast);
     }
 }
 

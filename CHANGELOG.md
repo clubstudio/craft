@@ -19,11 +19,13 @@ Projects get their own copy of the starter when they're created, without this fi
 
 ### Fixed
 
+- The focus indicator was invisible on primary buttons: it was drawn in `currentColor`, so a button with white text got a white outline on a white page. It's now a ring of `--color-focus-contrast` inside an outline of `--color-focus` (black and white by default, in `site.css`), so one of the two shows on any background.
 - `composer.lock` matched neither `composer.json` nor `composer.json.default`, so Composer warned that the lock file was out of date. The starter's lock is refreshed, and `post-create-project-cmd` refreshes the hash for the project's `composer.json` after the swap, without changing any versions.
 - `composer.json.default` allows the `php-http/discovery` plugin, as the starter's `composer.json` already did, so Composer doesn't ask about it in new projects.
 
 ### Upgrading
 
+- Replace the `:focus-visible` rule in `src/css/site.css` with the starter's, and add `--color-focus` and `--color-focus-contrast` to `@theme`. If the site's buttons or backgrounds use brand colours, pick two that contrast with each other by 3:1 or more.
 - If Composer warns that the lock file is out of date, run `ddev composer update --lock`. If it asks about `php-http/discovery`, add `"php-http/discovery": true` to `allow-plugins` in `composer.json`.
 
 - Optional: copy `.ddev/commands/host/setup` and `.ddev/share-providers/tailscale.sh` into the project, keeping them executable, with `.ddev/config.share.yaml`, the `beforeRequest` changes in `config/app.web.php` and `allowedHosts` in `vite.config.js`, and update the project's `README.md` from `README.md.default` (Getting started and Commands).
