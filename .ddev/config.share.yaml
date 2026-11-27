@@ -1,0 +1,4 @@
+# Makes `ddev share` use the Tailscale provider in .ddev/share-providers/tailscale.sh, which
+# shares the site with devices on your tailnet only. Use `ddev share --provider=ngrok` or
+# `--provider=cloudflared` for a public URL instead.
+share_default_provider: tailscale

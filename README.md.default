@@ -87,6 +87,9 @@ These run inside the web container, so the versions match the ones the site runs
 | Command | What it does |
 |---|---|
 | `ddev xdebug on` / `ddev xdebug off` | Turn Xdebug on or off. It slows every request, so leave it off when you're not using it |
+| `ddev share` | Share the site with devices on your tailnet, such as your phone, until you press Ctrl+C |
+
+`ddev share` uses [Tailscale](https://tailscale.com/download), which needs to be installed and signed in, with HTTPS certificates enabled for the tailnet (in the admin console, under DNS). Nothing is public. Keep `ddev npm run dev` running for styles and hot reloading on the other device. For a public URL, use `ddev share --provider=cloudflared` or `--provider=ngrok` instead.
 
 ## Project config
 

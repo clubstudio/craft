@@ -10,6 +10,7 @@ Projects get their own copy of the starter when they're created, without this fi
 
 - A Commands section in `README.md.default`, listing the DDEV commands used most on a project.
 - A `ddev setup` command (`.ddev/commands/host/setup`) for setting up a new or cloned project. It restarts DDEV so config in `.ddev/` is loaded, installs Composer and npm dependencies, creates `.env` with an app ID and security key, generates the MCP server's OAuth keys, and imports a database dump if one is given, then runs `ddev craft up`.
+- `ddev share` shares the site, with Vite's hot reloading, with devices on your tailnet, through a Tailscale share provider (`.ddev/share-providers/tailscale.sh`, made the default in `.ddev/config.share.yaml`). In dev, `config/app.web.php` builds the site's URLs from the host a request arrives at when it isn't `PRIMARY_SITE_URL`'s, and `vite.config.js` allows `.ts.net` hosts. The provider clears SEOmatic's metadata caches when sharing starts and stops, because SEOmatic caches tags such as `og:url` by page, not by host.
 
 ### Changed
 
@@ -25,7 +26,7 @@ Projects get their own copy of the starter when they're created, without this fi
 
 - If Composer warns that the lock file is out of date, run `ddev composer update --lock`. If it asks about `php-http/discovery`, add `"php-http/discovery": true` to `allow-plugins` in `composer.json`.
 
-- Optional: copy `.ddev/commands/host/setup` into the project, keeping it executable, and update the project's `README.md` from `README.md.default` (Getting started and Commands).
+- Optional: copy `.ddev/commands/host/setup` and `.ddev/share-providers/tailscale.sh` into the project, keeping them executable, with `.ddev/config.share.yaml`, the `beforeRequest` changes in `config/app.web.php` and `allowedHosts` in `vite.config.js`, and update the project's `README.md` from `README.md.default` (Getting started and Commands).
 
 ## 5.3.0 - 2026-11-25
 

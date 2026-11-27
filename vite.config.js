@@ -24,6 +24,8 @@ export default defineConfig(({ command, mode }) => {
             strictPort: true,
             origin: origin,
             cors: true,
+            // Accept requests for the site's Tailscale hostname when it's shared with `ddev share`.
+            allowedHosts: ['.ts.net'],
         },
         plugins: [
             tailwindcss(),
