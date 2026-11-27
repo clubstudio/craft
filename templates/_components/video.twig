@@ -1,4 +1,8 @@
-{# A video with a custom play button. Without JavaScript the native controls show instead. #}
+{#
+  A video with a custom play button. Without JavaScript the native controls show instead.
+  title is optional: it names the video and its play button ("Play video: {title}") for screen readers. Without it,
+  the video has no name of its own and the button reads "Play video".
+#}
 {% set data = {
     title: null,
     url: null,
@@ -16,7 +20,7 @@
 
 {% if data.url %}
     <figure data-video class="relative overflow-hidden bg-black {{ classes.aspectRatio(data.aspectRatio) }}">
-        <video {{ attr(data.attributes|merge({ poster: data.poster ?: null })) }} class="{{ classes.combine('w-full h-full object-cover', data.class) }}" aria-label="{{ data.title ?? 'Video'|t }}" preload="metadata">
+        <video {{ attr(data.attributes|merge({ poster: data.poster ?: null, 'aria-label': data.title ?: null })) }} class="{{ classes.combine('w-full h-full object-cover', data.class) }}" preload="metadata">
             <source src="{{ data.url }}" type="video/mp4">
             {% for track in data.tracks|filter(track => track.src ?? null) %}
                 <track

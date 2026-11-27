@@ -6,7 +6,6 @@
         url: block.videoUrl,
         poster: poster ? poster.getUrl({ width: 1600 }) : null,
         aspectRatio: block.aspectRatio.value,
-        title: block.title,
         tracks: block.videoTracks.eagerly().all()|map(track => {
             label: track.title,
             src: track.vttFile.eagerly().one().url ?? null,
