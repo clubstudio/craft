@@ -12,6 +12,7 @@ Everything in the repository is copied into a new project, then `post-create-pro
 - `composer.json.default` becomes the project's `composer.json`.
 - `README.md.default` becomes the project's `README.md`.
 - This file and `CHANGELOG.md` are removed.
+- `.github/workflows/starter.yml`, the starter's own CI, is removed, with `.github/` if nothing else is in it.
 
 Keep templates, config and project config generic: no client names, content or credentials.
 Instructions and coding rules for projects are added to each project separately, so don't add
@@ -45,3 +46,8 @@ ddev craft install
 
 Check that the `.default` files were swapped in, this file and `CHANGELOG.md` are gone, and the
 site renders.
+
+The Starter workflow (`.github/workflows/starter.yml`) does the project part on every push to
+`master` and every pull request: it creates a project from the branch, checks the files are swapped
+and removed, installs Craft and checks project config applies cleanly. It doesn't render pages, so
+check the site renders yourself.
